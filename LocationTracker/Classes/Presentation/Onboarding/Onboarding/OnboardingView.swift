@@ -9,15 +9,18 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome
+        case welcome, name
     }
     
     var didFinish: (() -> Void)?
     var didTapDisclaimer: (() -> Void)?
     
-    private lazy var contentViews: [OSlideView] = {
+    lazy var nameView = ONameView(step: .name)
+    
+    lazy var contentViews: [OSlideView] = {
         [
-            OWelcomeView(step: .welcome)
+            OWelcomeView(step: .welcome),
+            nameView
         ]
     }()
     
@@ -86,6 +89,8 @@ private extension OnboardingView {
                     addSubview(view)
                 }
             }
+        
+        nameView.mainDelegate = combineData
     }
     
     func scroll(to newStep: Step) {

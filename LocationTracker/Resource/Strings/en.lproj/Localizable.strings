@@ -53,3 +53,6 @@
 // MARK: Onboarding
 "Onboarding.Welcome.Text" = "Stay connected and\nensure the safety\nof your loved ones";
 "Onboarding.Welcome.Button" = "Get started";
+"Onboarding.Name.Title" = "Welcome to App";
+"Onboarding.Name.SubTitle" = "Let's get personal! What do your loved ones call you?";
+"Onboarding.Name.Placeholder" = "Name";

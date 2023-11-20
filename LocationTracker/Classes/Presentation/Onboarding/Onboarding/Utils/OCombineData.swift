@@ -7,10 +7,29 @@
 
 import Foundation
 
-struct OCombineData {}
+struct OCombineData {
+    let name: String
+}
 
 final class OnboardingCombineData {
+    var name: String?
+    
     func combineData() -> OCombineData? {
-        OCombineData()
+        guard
+            let name = name
+        else {
+            return nil
+        }
+        
+        return OCombineData(
+            name: name
+        )
+    }
+}
+
+// MARK: ONameViewDelegate
+extension OnboardingCombineData: ONameViewDelegate {
+    func nameViewDidEnter(name: String) {
+        self.name = name
     }
 }

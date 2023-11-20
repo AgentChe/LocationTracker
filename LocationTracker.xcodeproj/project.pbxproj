@@ -106,6 +106,8 @@
 		DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908F2B0B8FA400F1AE09 /* RobotoCondensed-Regular.ttf */; };
 		DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908E2B0B8F9F00F1AE09 /* RobotoCondensed-Bold.ttf */; };
 		DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */; };
+		DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */; };
+		DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +213,8 @@
 		DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
 		DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
+		DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONameView.swift; sourceTree = "<group>"; };
+		DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +354,7 @@
 				DEB3909A2B0B907F00F1AE09 /* ObservableAndSingle+Extension.swift */,
 				DEB3909B2B0B907F00F1AE09 /* String+Extension.swift */,
 				DEB3909C2B0B907F00F1AE09 /* UIViewRxExtension.swift */,
+				DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 			children = (
 				DEB390F12B0B907F00F1AE09 /* OSlideView.swift */,
 				DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */,
+				DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
 				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
 				DEB391242B0B907F00F1AE09 /* DefaultRequestWrapper.swift in Sources */,
+				DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
@@ -855,6 +862,7 @@
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
+				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,
 				DEB391202B0B907F00F1AE09 /* ObservableAndSingle+Extension.swift in Sources */,
 				DEB391782B0B907F00F1AE09 /* IAPError.swift in Sources */,
 				DEB3917A2B0B907F00F1AE09 /* Session.swift in Sources */,
