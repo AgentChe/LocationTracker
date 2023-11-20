@@ -105,6 +105,7 @@
 		DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB390902B0B8FDD00F1AE09 /* RobotoCondensed-ExtraBold.ttf */; };
 		DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908F2B0B8FA400F1AE09 /* RobotoCondensed-Regular.ttf */; };
 		DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908E2B0B8F9F00F1AE09 /* RobotoCondensed-Bold.ttf */; };
+		DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		DEB3917D2B0B96CE00F1AE09 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
 		DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
 		DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
+		DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB390F12B0B907F00F1AE09 /* OSlideView.swift */,
+				DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				DEB391272B0B907F00F1AE09 /* Scalable.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
+				DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */,
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,

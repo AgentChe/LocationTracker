@@ -49,3 +49,7 @@
 "Paygate.Lifetime.BottomDescription" = "once";
 "Paygate.Discount" = "SAVE %i%%";
 "Paygate.Price.Period" = "month";
+
+// MARK: Onboarding
+"Onboarding.Welcome.Text" = "Stay connected and\nensure the safety\nof your loved ones";
+"Onboarding.Welcome.Button" = "Get started";
