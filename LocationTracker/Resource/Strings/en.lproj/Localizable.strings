@@ -63,3 +63,9 @@
 "Onboarding.Intro2.Title" = "Only those you trust will receive your SOS signal";
 "Onboarding.Intro2.SubTitle" = "Includes location sharing, allowing your Сircle to pinpoint your exact location, aiding first responders in finding you more easily.";
 "Onboarding.Intro2.ContinueButton" = "How to use SOS";
+"Onboarding.SOSInstruction.Title" = "SOS Button";
+"Onboarding.SOSInstruction.SubTitle" = "From providing a swift response to offering peace of mind, this feature can rescue you or your group of close contacts during an emergency, ensuring that you feel safe and secure in times of crisis.";
+"Onboarding.SOSInstruction.Block1" = "In case of an emergency, press and hold the SOS button within the app";
+"Onboarding.SOSInstruction.Block2" = "Releasing the button will automatically notify the members of your Circle";
+"Onboarding.SOSInstruction.Block3" = "If you accidentally triggered the SOS or no longer require assistance, you can cancel it by entering the PIN code";
+"Onboarding.SOSInstruction.ContinueButton" = "Accept all";

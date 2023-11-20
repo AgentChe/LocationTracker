@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, name, photo, intro1, intro2
+        case welcome, name, photo, intro1, intro2, sosInstruction
     }
     
     var didFinish: (() -> Void)?
@@ -24,7 +24,8 @@ final class OnboardingView: UIView {
             nameView,
             photoView,
             OIntroView(step: .intro1, intro: .one),
-            OIntroView(step: .intro2, intro: .two)
+            OIntroView(step: .intro2, intro: .two),
+            OSOSInstructionView(step: .sosInstruction)
         ]
     }()
     

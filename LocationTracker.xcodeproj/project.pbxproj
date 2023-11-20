@@ -110,6 +110,8 @@
 		DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */; };
 		DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */; };
 		DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391922B0BBE0900F1AE09 /* OIntroView.swift */; };
+		DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */; };
+		DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,6 +221,8 @@
 		DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPhotoView.swift; sourceTree = "<group>"; };
 		DEB391922B0BBE0900F1AE09 /* OIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIntroView.swift; sourceTree = "<group>"; };
+		DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSOSInstructionView.swift; sourceTree = "<group>"; };
+		DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionBlockView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -547,11 +551,13 @@
 		DEB390ED2B0B907F00F1AE09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEB391962B0BC59800F1AE09 /* Atoms */,
 				DEB390F12B0B907F00F1AE09 /* OSlideView.swift */,
 				DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */,
 				DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */,
 				DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */,
 				DEB391922B0BBE0900F1AE09 /* OIntroView.swift */,
+				DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -708,6 +714,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DEB391962B0BC59800F1AE09 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -848,6 +862,7 @@
 				DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
+				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
 				DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */,
 				DEB391252B0B907F00F1AE09 /* APIRequestBody.swift in Sources */,
@@ -874,6 +889,7 @@
 				DEB391782B0B907F00F1AE09 /* IAPError.swift in Sources */,
 				DEB3917A2B0B907F00F1AE09 /* Session.swift in Sources */,
 				DEB3913A2B0B907F00F1AE09 /* PaddingTextField.swift in Sources */,
+				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
