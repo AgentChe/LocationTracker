@@ -47,9 +47,6 @@
 		DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390BE2B0B907F00F1AE09 /* GradientView.swift */; };
 		DEB3913E2B0B907F00F1AE09 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390BF2B0B907F00F1AE09 /* CircleProgressView.swift */; };
 		DEB3913F2B0B907F00F1AE09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C02B0B907F00F1AE09 /* AppDelegate.swift */; };
-		DEB391402B0B907F00F1AE09 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C22B0B907F00F1AE09 /* PushNotificationsManager.swift */; };
-		DEB391412B0B907F00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C42B0B907F00F1AE09 /* PushNotificationsAuthorizationStatus.swift */; };
-		DEB391422B0B907F00F1AE09 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C52B0B907F00F1AE09 /* PushNotificationsModel.swift */; };
 		DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C62B0B907F00F1AE09 /* SceneDelegate.swift */; };
 		DEB391442B0B907F00F1AE09 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C72B0B907F00F1AE09 /* Appearance.swift */; };
 		DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390CA2B0B907F00F1AE09 /* BranchManager.swift */; };
@@ -100,6 +97,9 @@
 		DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391162B0B907F00F1AE09 /* IAPErrorHelper.swift */; };
 		DEB3917A2B0B907F00F1AE09 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391192B0B907F00F1AE09 /* Session.swift */; };
 		DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3911A2B0B907F00F1AE09 /* SessionManager.swift */; };
+		DEB391812B0B96CE00F1AE09 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3917D2B0B96CE00F1AE09 /* PushNotificationsManager.swift */; };
+		DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */; };
+		DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,9 +151,6 @@
 		DEB390BE2B0B907F00F1AE09 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DEB390BF2B0B907F00F1AE09 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		DEB390C02B0B907F00F1AE09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEB390C22B0B907F00F1AE09 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
-		DEB390C42B0B907F00F1AE09 /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
-		DEB390C52B0B907F00F1AE09 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DEB390C62B0B907F00F1AE09 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEB390C72B0B907F00F1AE09 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		DEB390CA2B0B907F00F1AE09 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
@@ -204,6 +201,9 @@
 		DEB391162B0B907F00F1AE09 /* IAPErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPErrorHelper.swift; sourceTree = "<group>"; };
 		DEB391192B0B907F00F1AE09 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		DEB3911A2B0B907F00F1AE09 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		DEB3917D2B0B96CE00F1AE09 /* PushNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsManager.swift; sourceTree = "<group>"; };
+		DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsAuthorizationStatus.swift; sourceTree = "<group>"; };
+		DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,13 +317,13 @@
 		DEB390932B0B907F00F1AE09 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				DEB3917C2B0B96CE00F1AE09 /* PushNotifications */,
 				DEB390C82B0B907F00F1AE09 /* Analytics */,
 				DEB390942B0B907F00F1AE09 /* Extension */,
 				DEB3909E2B0B907F00F1AE09 /* Network */,
 				DEB390A32B0B907F00F1AE09 /* Utils */,
 				DEB390B02B0B907F00F1AE09 /* Components */,
 				DEB390B52B0B907F00F1AE09 /* CustomViews */,
-				DEB390C12B0B907F00F1AE09 /* PushNotifications */,
 				DEB390C62B0B907F00F1AE09 /* SceneDelegate.swift */,
 				DEB390C02B0B907F00F1AE09 /* AppDelegate.swift */,
 				DEB3909D2B0B907F00F1AE09 /* GlobalDefinitions.swift */,
@@ -422,24 +422,6 @@
 				DEB390B82B0B907F00F1AE09 /* NavigationController.swift */,
 			);
 			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		DEB390C12B0B907F00F1AE09 /* PushNotifications */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390C32B0B907F00F1AE09 /* Models */,
-				DEB390C22B0B907F00F1AE09 /* PushNotificationsManager.swift */,
-			);
-			path = PushNotifications;
-			sourceTree = "<group>";
-		};
-		DEB390C32B0B907F00F1AE09 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390C42B0B907F00F1AE09 /* PushNotificationsAuthorizationStatus.swift */,
-				DEB390C52B0B907F00F1AE09 /* PushNotificationsModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DEB390C82B0B907F00F1AE09 /* Analytics */ = {
@@ -688,6 +670,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DEB3917C2B0B96CE00F1AE09 /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3917E2B0B96CE00F1AE09 /* Models */,
+				DEB3917D2B0B96CE00F1AE09 /* PushNotificationsManager.swift */,
+			);
+			path = PushNotifications;
+			sourceTree = "<group>";
+		};
+		DEB3917E2B0B96CE00F1AE09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */,
+				DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -813,7 +813,6 @@
 				DEB3911D2B0B907F00F1AE09 /* UIColor+Extension.swift in Sources */,
 				DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */,
 				DEB391332B0B907F00F1AE09 /* ImagePicker.swift in Sources */,
-				DEB391402B0B907F00F1AE09 /* PushNotificationsManager.swift in Sources */,
 				DEB391212B0B907F00F1AE09 /* String+Extension.swift in Sources */,
 				DEB391342B0B907F00F1AE09 /* RxActivityIndicator.swift in Sources */,
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
@@ -833,6 +832,7 @@
 				DEB3916C2B0B907F00F1AE09 /* Profile.swift in Sources */,
 				DEB3913F2B0B907F00F1AE09 /* AppDelegate.swift in Sources */,
 				DEB391762B0B907F00F1AE09 /* IAPActionResult.swift in Sources */,
+				DEB391812B0B96CE00F1AE09 /* PushNotificationsManager.swift in Sources */,
 				DEB3912A2B0B907F00F1AE09 /* ScreenSize.swift in Sources */,
 				DEB391702B0B907F00F1AE09 /* SyncTokensRequest.swift in Sources */,
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
@@ -841,7 +841,6 @@
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
-				DEB391422B0B907F00F1AE09 /* PushNotificationsModel.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB391202B0B907F00F1AE09 /* ObservableAndSingle+Extension.swift in Sources */,
 				DEB391782B0B907F00F1AE09 /* IAPError.swift in Sources */,
@@ -871,6 +870,7 @@
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
+				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
 				DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */,
 				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
@@ -879,6 +879,7 @@
 				DEB3913E2B0B907F00F1AE09 /* CircleProgressView.swift in Sources */,
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
+				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEB3915C2B0B907F00F1AE09 /* OCombineData.swift in Sources */,
 				DEB3916E2B0B907F00F1AE09 /* GetProfileResponse.swift in Sources */,
 				DEB391392B0B907F00F1AE09 /* Spinner.swift in Sources */,
@@ -886,7 +887,6 @@
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,
-				DEB391412B0B907F00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
 				DEB3912D2B0B907F00F1AE09 /* Fonts.swift in Sources */,

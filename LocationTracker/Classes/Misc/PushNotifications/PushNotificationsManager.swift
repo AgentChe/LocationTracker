@@ -1,6 +1,6 @@
 //
 //  PushNotificationsManager.swift
-//  Soccer
+//  CarCheckUK
 //
 //  Created by Андрей Чернышев on 28.06.2022.
 //
@@ -10,10 +10,9 @@ import FirebaseMessaging
 protocol PushNotificationsDelegate: AnyObject {
     func pushNotificationsDidReceive(authorizationStatus: PushNotificationsAuthorizationStatus)
     func pushNotificationsDidReceive(token: String?)
-    func pushNotificationsDidReceive(model: PushNotificationsModel)
+    func pushNotificationsDidReceive(application: UIApplication, model: PushNotificationsModel)
 }
 
-// TODO: Взять реализацию из CarCheckUK
 final class PushNotificationsManager: NSObject {
     static let shared = PushNotificationsManager()
     
@@ -31,7 +30,12 @@ final class PushNotificationsManager: NSObject {
 // MARK: UNUserNotificationCenterDelegate
 extension PushNotificationsManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        received(userInfo: response.notification.request.content.userInfo)
+        received(application: UIApplication.shared, userInfo: response.notification.request.content.userInfo)
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner])
     }
 }
 
@@ -91,12 +95,6 @@ extension PushNotificationsManager {
     func application(didFailToRegisterForRemoteNotificationsWithError error: Error) {
         received(pushToken: nil, error: error)
     }
-    
-    func application(didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        received(userInfo: userInfo)
-        
-        completionHandler(.noData)
-    }
 }
 
 // MARK: Private
@@ -113,11 +111,11 @@ private extension PushNotificationsManager {
         }
     }
     
-    func received(userInfo: [AnyHashable : Any]) {
+    func received(application: UIApplication, userInfo: [AnyHashable : Any]) {
         let model = PushNotificationsModel(userInfo: userInfo)
         
         DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach { $0.weak?.pushNotificationsDidReceive(model: model) }
+            self?.delegates.forEach { $0.weak?.pushNotificationsDidReceive(application: application, model: model) }
         }
     }
 }
