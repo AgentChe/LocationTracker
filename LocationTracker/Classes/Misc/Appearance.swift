@@ -16,6 +16,6 @@ struct Appearance {
     static let background1 = UIColor(integralRed: 251, green: 249, blue: 244)
     static let background2 = UIColor(integralRed: 240, green: 233, blue: 219)
     static let white = UIColor.white
-    static let black = UIColor(integralRed: 77, green: 77, blue: 77)
-    
+    static let black1 = UIColor(integralRed: 77, green: 77, blue: 77)
+    static let black2 = UIColor(integralRed: 24, green: 24, blue: 26)
 }

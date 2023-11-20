@@ -33,7 +33,7 @@ final class TryAgainView: UIView {
 // MARK: Private
 private extension TryAgainView {
     func initialize() {
-        backgroundColor = Appearance.secondary
+        backgroundColor = Appearance.background1
     }
     
     func errorMessage() -> String {
@@ -54,8 +54,8 @@ private extension TryAgainView {
 private extension TryAgainView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 344.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 262.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 238.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 255.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16.scale)
         ])
@@ -74,16 +74,16 @@ private extension TryAgainView {
         
         NSLayoutConstraint.activate([
             tryAgainButton.widthAnchor.constraint(equalToConstant: 343.scale),
-            tryAgainButton.heightAnchor.constraint(equalToConstant: 57.scale),
+            tryAgainButton.heightAnchor.constraint(equalToConstant: 56.scale),
             tryAgainButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tryAgainButton.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 80.scale : 40.scale)
+            tryAgainButton.bottomAnchor.constraint(equalTo: contactButton.topAnchor, constant: -16.scale)
         ])
         
         NSLayoutConstraint.activate([
             contactButton.widthAnchor.constraint(equalToConstant: 343.scale),
-            contactButton.heightAnchor.constraint(equalToConstant: 57.scale),
+            contactButton.heightAnchor.constraint(equalToConstant: 56.scale),
             contactButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            contactButton.topAnchor.constraint(equalTo: tryAgainButton.bottomAnchor, constant: 16.scale)
+            contactButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.scale)
         ])
     }
 }
@@ -101,8 +101,9 @@ private extension TryAgainView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.RobotoCondensed.bold(size: 21.scale))
+            .textColor(Appearance.black2)
+            .font(Fonts.RobotoCondensed.semiBold(size: 24.scale))
+            .lineHeight(33.6.scale)
             .textAlignment(.center)
         
         let view = UILabel()
@@ -115,9 +116,9 @@ private extension TryAgainView {
     
     func makeSubTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
-            .font(Fonts.RobotoCondensed.regular(size: 15.scale))
-            .lineHeight(21.scale)
+            .textColor(Appearance.black1)
+            .font(Fonts.RobotoCondensed.regular(size: 16.scale))
+            .lineHeight(22.4.scale)
             .textAlignment(.center)
         
         let view = UILabel()
@@ -131,11 +132,11 @@ private extension TryAgainView {
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
             .textColor(Appearance.white)
-            .font(Fonts.RobotoCondensed.regular(size: 15.scale))
+            .font(Fonts.RobotoCondensed.medium(size: 16.scale))
         
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Button".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 10.scale
+        view.layer.cornerRadius = 28.scale
         view.backgroundColor = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -144,15 +145,13 @@ private extension TryAgainView {
     
     func makeContactButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.primary1.withAlphaComponent(0.5))
-            .font(Fonts.RobotoCondensed.bold(size: 15.scale))
+            .textColor(Appearance.primary1)
+            .font(Fonts.RobotoCondensed.medium(size: 16.scale))
         
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Contact".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
-        view.layer.borderWidth = 2.scale
-        view.layer.borderColor = Appearance.primary1.withAlphaComponent(0.5).cgColor
-        view.backgroundColor = UIColor.clear
+        view.layer.cornerRadius = 28.scale
+        view.backgroundColor = Appearance.primary2
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

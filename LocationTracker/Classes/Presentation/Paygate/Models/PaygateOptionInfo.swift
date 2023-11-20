@@ -35,7 +35,7 @@ private extension PaygateOptionInfo {
         return line
             .compactMap { component -> NSAttributedString? in
                 let attrs = TextAttributes()
-                    .textColor(Appearance.black)
+                    .textColor(Appearance.black2)
                     .font(font(at: component.weight))
                 let promoAttrs = TextAttributes()
                     .textColor(Appearance.white)

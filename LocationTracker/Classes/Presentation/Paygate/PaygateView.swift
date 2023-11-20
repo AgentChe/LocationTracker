@@ -184,7 +184,7 @@ private extension PaygateView {
     
     func makeRestoreButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.medium(size: 13.scale))
         
         let view = TapAreaButton()
@@ -206,7 +206,7 @@ private extension PaygateView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.extraBold(size: 25.scale))
             .textAlignment(.center)
         
@@ -248,7 +248,7 @@ private extension PaygateView {
     
     func makeSecuredLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.regular(size: 13.scale))
         
         let view = UILabel()
@@ -275,10 +275,10 @@ private extension PaygateView {
     
     func makeTermsOfServiceButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.medium(size: 13.scale))
             .underlineStyle(.single)
-            .underlineColor(Appearance.black)
+            .underlineColor(Appearance.black2)
         
         let view = TapAreaButton()
         view.setAttributedTitle("Paygate.TermsOfUse".localized.attributed(with: attrs), for: .normal)
@@ -290,7 +290,7 @@ private extension PaygateView {
     
     func makeAndLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.medium(size: 13.scale))
             .textAlignment(.center)
         
@@ -303,10 +303,10 @@ private extension PaygateView {
     
     func makePrivacyPolicyButton() -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.medium(size: 13.scale))
             .underlineStyle(.single)
-            .underlineColor(Appearance.black)
+            .underlineColor(Appearance.black2)
         
         let view = TapAreaButton()
         view.setAttributedTitle("Paygate.PrivacyPolicy".localized.attributed(with: attrs), for: .normal)

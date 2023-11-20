@@ -26,7 +26,7 @@ final class PaygateInfoCell: UIView {
 extension PaygateInfoCell {
     func setup(text: String) {
         let attrs = TextAttributes()
-            .textColor(Appearance.black)
+            .textColor(Appearance.black2)
             .font(Fonts.RobotoCondensed.regular(size: 15.scale))
             .lineHeight(21.scale)
         label.attributedText = text.attributed(with: attrs)

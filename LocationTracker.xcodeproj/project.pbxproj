@@ -100,6 +100,11 @@
 		DEB391812B0B96CE00F1AE09 /* PushNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3917D2B0B96CE00F1AE09 /* PushNotificationsManager.swift */; };
 		DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3917F2B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift */; };
 		DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391802B0B96CE00F1AE09 /* PushNotificationsModel.swift */; };
+		DEB391842B0B9A0700F1AE09 /* RobotoCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB390922B0B8FE600F1AE09 /* RobotoCondensed-SemiBold.ttf */; };
+		DEB391852B0B9A0700F1AE09 /* RobotoCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB390912B0B8FE200F1AE09 /* RobotoCondensed-Medium.ttf */; };
+		DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB390902B0B8FDD00F1AE09 /* RobotoCondensed-ExtraBold.ttf */; };
+		DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908F2B0B8FA400F1AE09 /* RobotoCondensed-Regular.ttf */; };
+		DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEB3908E2B0B8F9F00F1AE09 /* RobotoCondensed-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -501,8 +506,8 @@
 		DEB390E22B0B907F00F1AE09 /* TryAgain */ = {
 			isa = PBXGroup;
 			children = (
-				DEB390E32B0B907F00F1AE09 /* TryAgainView.swift */,
 				DEB390E42B0B907F00F1AE09 /* TryAgainViewController.swift */,
+				DEB390E32B0B907F00F1AE09 /* TryAgainView.swift */,
 			);
 			path = TryAgain;
 			sourceTree = "<group>";
@@ -748,6 +753,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB391842B0B9A0700F1AE09 /* RobotoCondensed-SemiBold.ttf in Resources */,
+				DEB391852B0B9A0700F1AE09 /* RobotoCondensed-Medium.ttf in Resources */,
+				DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */,
+				DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */,
+				DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */,
 				DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */,
 				DEB3908B2B0B8F2E00F1AE09 /* Localizable.strings in Resources */,
 				DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */,
