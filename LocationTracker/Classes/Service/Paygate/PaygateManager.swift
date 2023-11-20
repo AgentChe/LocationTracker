@@ -60,7 +60,7 @@ private extension PaygateManager {
                     return Disposables.create()
                 }
                 
-                event(.success(paygate))
+                event(.success(paygate)) 
                 
                 return Disposables.create()
             }

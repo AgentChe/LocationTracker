@@ -476,11 +476,11 @@
 			children = (
 				DEB390D82B0B907F00F1AE09 /* Models */,
 				DEB390DF2B0B907F00F1AE09 /* Views */,
-				DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */,
 				DEB390DB2B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift */,
 				DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */,
-				DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */,
 				DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */,
+				DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */,
+				DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */,
 			);
 			path = Paygate;
 			sourceTree = "<group>";
@@ -1047,8 +1047,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
@@ -1062,8 +1063,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.LocationTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.dermatology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1079,8 +1081,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
@@ -1094,8 +1097,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.LocationTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.dermatology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

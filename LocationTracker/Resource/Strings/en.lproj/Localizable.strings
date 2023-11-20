@@ -27,17 +27,16 @@
 
 // MARK: Splash
 "Splash.Preloader1" = "Checking your account...";
-"Splash.Preloader2" = "Syncing the drug library";
+"Splash.Preloader2" = "Syncing the library";
 "Splash.Preloader3" = "Setting up your account...";
 
 // MARK: Paygate
-"Paygate.Title" = "Get unlimited access";
-"Paygate.Cell1" = "Comprehensive Diseases & Conditions\nDatabase";
-"Paygate.Cell2" = "Dermatologic Terms &\nProcedures Guides";
-"Paygate.Cell3" = "Photo-based Symptom Checker";
+"Paygate.Title" = "Unlock Premium Status";
+"Paygate.Cell1" = "Stay connected with loved ones";
+"Paygate.Cell2" = "Create or join Сircles";
+"Paygate.Cell3" = "Stay alert to emergencies";
 "Paygate.Secured" = "Secured by the App Store. Cancel anytime.";
 "Paygate.TermsOfUse" = "Terms of use";
-"Paygate.And" = "and";
 "Paygate.PrivacyPolicy" = "Privacy Policy";
 "Paygate.RestorePurchases" = "Restore Purchase";
 "Paygate.Failed" = "Failed to make purchase";

@@ -95,10 +95,9 @@ private extension SplashViewController {
         state == .none ? mainView.preloader.stopAnimating() : mainView.preloader.startAnimating()
         
         let attrs = TextAttributes()
-            .textColor(Appearance.primary1)
-            .font(Fonts.RobotoCondensed.regular(size: 15.scale))
-            .lineHeight(21.scale)
-            .letterSpacing(-0.17.scale)
+            .textColor(Appearance.black2)
+            .font(Fonts.RobotoCondensed.medium(size: 16.scale))
+            .lineHeight(22.4.scale)
             .textAlignment(.center)
         mainView.preloaderLabel.attributedText = state.text.attributed(with: attrs)
     }

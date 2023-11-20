@@ -11,25 +11,18 @@ final class PaygateInfoCell: UIView {
     lazy var imageView = makeImageView()
     lazy var label = makeLabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let text: String
+    
+    init(text: String) {
+        self.text = text
+        
+        super.init(frame: .zero)
         
         makeConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: Public
-extension PaygateInfoCell {
-    func setup(text: String) {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black2)
-            .font(Fonts.RobotoCondensed.regular(size: 15.scale))
-            .lineHeight(21.scale)
-        label.attributedText = text.attributed(with: attrs)
     }
 }
 
@@ -62,7 +55,13 @@ private extension PaygateInfoCell {
     }
     
     func makeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black1)
+            .font(Fonts.RobotoCondensed.regular(size: 16.scale))
+            .lineHeight(22.4.scale)
+        
         let view = UILabel()
+        view.attributedText = text.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

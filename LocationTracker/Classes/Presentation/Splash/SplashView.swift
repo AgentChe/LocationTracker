@@ -27,7 +27,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.secondary
+        backgroundColor = Appearance.background1
     }
 }
 
@@ -35,8 +35,8 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 276.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 276.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 124.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 124.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
@@ -58,6 +58,7 @@ private extension SplashView {
 private extension SplashView {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
+        view.clipsToBounds = true
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Splash.Image")
         view.translatesAutoresizingMaskIntoConstraints = false
