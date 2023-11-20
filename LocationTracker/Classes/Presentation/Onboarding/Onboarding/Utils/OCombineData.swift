@@ -10,18 +10,26 @@ import UIKit
 struct OCombineData {
     let name: String
     let photo: UIImage?
+    let pin: String
 }
 
 final class OnboardingCombineData {
     var name: String?
     var photo: UIImage?
+    var pin: String?
     
     func combineData() -> OCombineData? {
-        guard let name = name else { return nil }
+        guard
+            let name = name,
+            let pin = pin
+        else {
+            return nil
+        }
         
         return OCombineData(
             name: name,
-            photo: photo
+            photo: photo,
+            pin: pin
         )
     }
 }
@@ -37,5 +45,12 @@ extension OnboardingCombineData: ONameViewDelegate {
 extension OnboardingCombineData: OPhotoViewDelegate {
     func photoViewDidSelect(image: UIImage) {
         self.photo = image
+    }
+}
+
+// MARK: OPINViewDelegate
+extension OnboardingCombineData: OPINViewDelegate {
+    func pinViewDidSet(pin: String) {
+        self.pin = pin
     }
 }

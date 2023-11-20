@@ -112,6 +112,8 @@
 		DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391922B0BBE0900F1AE09 /* OIntroView.swift */; };
 		DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */; };
 		DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */; };
+		DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391992B0BCE7100F1AE09 /* OPINView.swift */; };
+		DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3919E2B0BCEC900F1AE09 /* PINField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +225,8 @@
 		DEB391922B0BBE0900F1AE09 /* OIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIntroView.swift; sourceTree = "<group>"; };
 		DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSOSInstructionView.swift; sourceTree = "<group>"; };
 		DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionBlockView.swift; sourceTree = "<group>"; };
+		DEB391992B0BCE7100F1AE09 /* OPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPINView.swift; sourceTree = "<group>"; };
+		DEB3919E2B0BCEC900F1AE09 /* PINField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINField.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -558,6 +562,7 @@
 				DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */,
 				DEB391922B0BBE0900F1AE09 /* OIntroView.swift */,
 				DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */,
+				DEB391992B0BCE7100F1AE09 /* OPINView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */,
+				DEB3919E2B0BCEC900F1AE09 /* PINField.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -877,6 +883,7 @@
 				DEB391812B0B96CE00F1AE09 /* PushNotificationsManager.swift in Sources */,
 				DEB3912A2B0B907F00F1AE09 /* ScreenSize.swift in Sources */,
 				DEB391702B0B907F00F1AE09 /* SyncTokensRequest.swift in Sources */,
+				DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */,
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
 				DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */,
@@ -933,6 +940,7 @@
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,
+				DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
 				DEB3912D2B0B907F00F1AE09 /* Fonts.swift in Sources */,

@@ -69,3 +69,6 @@
 "Onboarding.SOSInstruction.Block2" = "Releasing the button will automatically notify the members of your Circle";
 "Onboarding.SOSInstruction.Block3" = "If you accidentally triggered the SOS or no longer require assistance, you can cancel it by entering the PIN code";
 "Onboarding.SOSInstruction.ContinueButton" = "Accept all";
+"Onboarding.PIN.Title" = "Set up PIN";
+"Onboarding.PIN.SubTitle" = "Choose you 4-digit PIN to cancel your SOS";
+"Onboarding.PIN.ContinueButton" = "Confirm";
