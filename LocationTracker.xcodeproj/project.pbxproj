@@ -108,6 +108,8 @@
 		DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */; };
 		DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */; };
 		DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */; };
+		DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */; };
+		DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391922B0BBE0900F1AE09 /* OIntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +217,8 @@
 		DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
 		DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONameView.swift; sourceTree = "<group>"; };
 		DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPhotoView.swift; sourceTree = "<group>"; };
+		DEB391922B0BBE0900F1AE09 /* OIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIntroView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -546,6 +550,8 @@
 				DEB390F12B0B907F00F1AE09 /* OSlideView.swift */,
 				DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */,
 				DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */,
+				DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */,
+				DEB391922B0BBE0900F1AE09 /* OIntroView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -838,6 +844,7 @@
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
 				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
 				DEB391242B0B907F00F1AE09 /* DefaultRequestWrapper.swift in Sources */,
+				DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */,
 				DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
@@ -906,6 +913,7 @@
 				DEB3916E2B0B907F00F1AE09 /* GetProfileResponse.swift in Sources */,
 				DEB391392B0B907F00F1AE09 /* Spinner.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
+				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,

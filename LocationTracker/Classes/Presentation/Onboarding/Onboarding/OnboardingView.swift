@@ -9,18 +9,22 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, name
+        case welcome, name, photo, intro1, intro2
     }
     
     var didFinish: (() -> Void)?
     var didTapDisclaimer: (() -> Void)?
     
     lazy var nameView = ONameView(step: .name)
+    lazy var photoView = OPhotoView(step: .photo, vc: vc)
     
     lazy var contentViews: [OSlideView] = {
         [
             OWelcomeView(step: .welcome),
-            nameView
+            nameView,
+            photoView,
+            OIntroView(step: .intro1, intro: .one),
+            OIntroView(step: .intro2, intro: .two)
         ]
     }()
     
@@ -91,6 +95,7 @@ private extension OnboardingView {
             }
         
         nameView.mainDelegate = combineData
+        photoView.mainDelegate = combineData
     }
     
     func scroll(to newStep: Step) {
