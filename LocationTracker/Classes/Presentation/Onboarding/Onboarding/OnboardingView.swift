@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, name, photo, intro1, intro2, sosInstruction, pin
+        case welcome, name, photo, intro1, intro2, sosInstruction, pin, permissions, preloader
     }
     
     var didFinish: (() -> Void)?
@@ -18,6 +18,8 @@ final class OnboardingView: UIView {
     lazy var nameView = ONameView(step: .name)
     lazy var photoView = OPhotoView(step: .photo, vc: vc)
     lazy var pinView = OPINView(step: .pin)
+    lazy var permissionsView = OPermissionsView(step: .permissions)
+    lazy var preloaderView = OPreloaderView(step: .preloader, combineData: combineData, vc: vc)
     
     lazy var contentViews: [OSlideView] = {
         [
@@ -27,7 +29,9 @@ final class OnboardingView: UIView {
             OIntroView(step: .intro1, intro: .one),
             OIntroView(step: .intro2, intro: .two),
             OSOSInstructionView(step: .sosInstruction),
-            pinView
+            pinView,
+            permissionsView,
+            preloaderView
         ]
     }()
     
@@ -100,6 +104,7 @@ private extension OnboardingView {
         nameView.mainDelegate = combineData
         photoView.mainDelegate = combineData
         pinView.mainDelegate = combineData
+        permissionsView.mainDelegate = combineData
     }
     
     func scroll(to newStep: Step) {

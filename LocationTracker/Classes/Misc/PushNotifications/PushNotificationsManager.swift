@@ -27,18 +27,6 @@ final class PushNotificationsManager: NSObject {
     }
 }
 
-// MARK: UNUserNotificationCenterDelegate
-extension PushNotificationsManager: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        received(application: UIApplication.shared, userInfo: response.notification.request.content.userInfo)
-        completionHandler()
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.banner])
-    }
-}
-
 // MARK: Public
 extension PushNotificationsManager {
     func retriveAuthorizationStatus(handler: ((PushNotificationsAuthorizationStatus) -> Void)?) {
@@ -83,6 +71,18 @@ extension PushNotificationsManager {
         if let index = delegates.firstIndex(where: { $0.weak === observer }) {
             delegates.remove(at: index)
         }
+    }
+}
+
+// MARK: UNUserNotificationCenterDelegate
+extension PushNotificationsManager: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        received(application: UIApplication.shared, userInfo: response.notification.request.content.userInfo)
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner])
     }
 }
 

@@ -114,6 +114,13 @@
 		DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */; };
 		DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391992B0BCE7100F1AE09 /* OPINView.swift */; };
 		DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3919E2B0BCEC900F1AE09 /* PINField.swift */; };
+		DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6124A2B0CC90400F09899 /* PermissionView.swift */; };
+		DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6124E2B0CCF8400F09899 /* OPermissionsView.swift */; };
+		DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612522B0CD54000F09899 /* GeoLocationManager.swift */; };
+		DED612562B0CD55900F09899 /* GeoLocationPermissionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612552B0CD55900F09899 /* GeoLocationPermissionStatus.swift */; };
+		DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612572B0CE10600F09899 /* EnablePermissionView.swift */; };
+		DED6125A2B0CF40900F09899 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612592B0CF40900F09899 /* OPreloaderView.swift */; };
+		DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +234,14 @@
 		DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionBlockView.swift; sourceTree = "<group>"; };
 		DEB391992B0BCE7100F1AE09 /* OPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPINView.swift; sourceTree = "<group>"; };
 		DEB3919E2B0BCEC900F1AE09 /* PINField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINField.swift; sourceTree = "<group>"; };
+		DED6124A2B0CC90400F09899 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		DED6124E2B0CCF8400F09899 /* OPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPermissionsView.swift; sourceTree = "<group>"; };
+		DED612502B0CD1E700F09899 /* LocationTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocationTracker.entitlements; sourceTree = "<group>"; };
+		DED612522B0CD54000F09899 /* GeoLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationManager.swift; sourceTree = "<group>"; };
+		DED612552B0CD55900F09899 /* GeoLocationPermissionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationPermissionStatus.swift; sourceTree = "<group>"; };
+		DED612572B0CE10600F09899 /* EnablePermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnablePermissionView.swift; sourceTree = "<group>"; };
+		DED612592B0CF40900F09899 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
+		DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCirclePreloaderView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +295,7 @@
 		DEB3906F2B0B8C2900F1AE09 /* LocationTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DED612502B0CD1E700F09899 /* LocationTracker.entitlements */,
 				DEB390842B0B8C3700F1AE09 /* Classes */,
 				DEB390852B0B8C3E00F1AE09 /* Resource */,
 			);
@@ -340,6 +356,7 @@
 		DEB390932B0B907F00F1AE09 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				DED612512B0CD52C00F09899 /* GeoLocation */,
 				DEB3917C2B0B96CE00F1AE09 /* PushNotifications */,
 				DEB390C82B0B907F00F1AE09 /* Analytics */,
 				DEB390942B0B907F00F1AE09 /* Extension */,
@@ -563,6 +580,8 @@
 				DEB391922B0BBE0900F1AE09 /* OIntroView.swift */,
 				DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */,
 				DEB391992B0BCE7100F1AE09 /* OPINView.swift */,
+				DED6124E2B0CCF8400F09899 /* OPermissionsView.swift */,
+				DED612592B0CF40900F09899 /* OPreloaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -724,8 +743,28 @@
 			children = (
 				DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */,
 				DEB3919E2B0BCEC900F1AE09 /* PINField.swift */,
+				DED6124A2B0CC90400F09899 /* PermissionView.swift */,
+				DED612572B0CE10600F09899 /* EnablePermissionView.swift */,
+				DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DED612512B0CD52C00F09899 /* GeoLocation */ = {
+			isa = PBXGroup;
+			children = (
+				DED612542B0CD54300F09899 /* Models */,
+				DED612522B0CD54000F09899 /* GeoLocationManager.swift */,
+			);
+			path = GeoLocation;
+			sourceTree = "<group>";
+		};
+		DED612542B0CD54300F09899 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DED612552B0CD55900F09899 /* GeoLocationPermissionStatus.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -887,6 +926,8 @@
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
 				DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */,
+				DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */,
+				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
@@ -900,6 +941,7 @@
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
+				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
 				DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */,
 				DEB3911C2B0B907F00F1AE09 /* UIDevice+Extension.swift in Sources */,
 				DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */,
@@ -910,6 +952,7 @@
 				DEB391732B0B907F00F1AE09 /* IAPManager.swift in Sources */,
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,
 				DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */,
+				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
@@ -918,6 +961,7 @@
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
 				DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */,
+				DED612562B0CD55900F09899 /* GeoLocationPermissionStatus.swift in Sources */,
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
@@ -929,6 +973,7 @@
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
 				DEB3913E2B0B907F00F1AE09 /* CircleProgressView.swift in Sources */,
+				DED6125A2B0CF40900F09899 /* OPreloaderView.swift in Sources */,
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
 				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
@@ -943,6 +988,7 @@
 				DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
+				DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */,
 				DEB3912D2B0B907F00F1AE09 /* Fonts.swift in Sources */,
 				DEB3911F2B0B907F00F1AE09 /* Collection+Extension.swift in Sources */,
 				DEB391582B0B907F00F1AE09 /* TryAgainView.swift in Sources */,
@@ -1091,12 +1137,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = M73NH26C3Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Permission for receive geolocation";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Permission for receive geolocation";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1107,9 +1158,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobile.dermatology;
+				PRODUCT_BUNDLE_IDENTIFIER = locationtracker.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "LocationTrackerSample Development";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1125,12 +1177,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = M73NH26C3Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Permission for receive geolocation";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Permission for receive geolocation";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1141,9 +1198,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobile.dermatology;
+				PRODUCT_BUNDLE_IDENTIFIER = locationtracker.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "LocationTrackerSample Development";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

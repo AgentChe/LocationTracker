@@ -11,12 +11,14 @@ struct OCombineData {
     let name: String
     let photo: UIImage?
     let pin: String
+    let pushToken: String?
 }
 
 final class OnboardingCombineData {
     var name: String?
     var photo: UIImage?
     var pin: String?
+    var pushToken: String?
     
     func combineData() -> OCombineData? {
         guard
@@ -29,7 +31,8 @@ final class OnboardingCombineData {
         return OCombineData(
             name: name,
             photo: photo,
-            pin: pin
+            pin: pin,
+            pushToken: pushToken
         )
     }
 }
@@ -52,5 +55,12 @@ extension OnboardingCombineData: OPhotoViewDelegate {
 extension OnboardingCombineData: OPINViewDelegate {
     func pinViewDidSet(pin: String) {
         self.pin = pin
+    }
+}
+
+// MARK: OPermissionsViewDelegate
+extension OnboardingCombineData: OPermissionsViewDelegate {
+    func permissionsViewDidReceive(pushToken: String?) {
+        self.pushToken = pushToken
     }
 }
