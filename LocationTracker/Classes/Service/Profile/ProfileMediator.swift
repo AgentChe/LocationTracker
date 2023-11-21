@@ -11,23 +11,39 @@ import RxCocoa
 final class ProfileMediator {
     static let shared = ProfileMediator()
     
-    private lazy var spellsCategoriesIdsChangeTrigger = PublishRelay<[Int]>()
+    private lazy var didChangeNameTrigger = PublishRelay<String>()
+    private lazy var didChangePhotoURLTrigger = PublishRelay<URL>()
+    private lazy var didChangePINTrigger = PublishRelay<String>()
     
     private init() {}
 }
 
 // MARK: Public
 extension ProfileMediator {
-    func notify(spellsCategoriesIds: [Int]) {
-        DispatchQueue.main.async { [weak self] in
-            self?.spellsCategoriesIdsChangeTrigger.accept(spellsCategoriesIds)
-        }
+    func notify(name: String) {
+        didChangeNameTrigger.accept(name)
+    }
+    
+    func notify(photoURL: URL) {
+        didChangePhotoURLTrigger.accept(photoURL)
+    }
+    
+    func notify(pin: String) {
+        didChangePINTrigger.accept(pin)
     }
 }
 
 // MARK: Public (Rx)
 extension ProfileMediator {
-    var spellsCategoriesIdsChange: Signal<[Int]> {
-        spellsCategoriesIdsChangeTrigger.asSignal()
+    var didChangeName: Signal<String> {
+        didChangeNameTrigger.asSignal()
+    }
+    
+    var didChangePhotoURL: Signal<URL> {
+        didChangePhotoURLTrigger.asSignal()
+    }
+    
+    var didChangePIN: Signal<String> {
+        didChangePINTrigger.asSignal()
     }
 }

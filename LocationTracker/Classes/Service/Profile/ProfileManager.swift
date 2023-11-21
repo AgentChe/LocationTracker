@@ -8,7 +8,13 @@
 import RxSwift
 
 protocol ProfileManagerProtocol {
-    func set(spellsCategoriesIds: [Int]?) -> Single<Void>
+    func upload(photo: Data) -> Single<URL?>
+    func set(
+        name: String,
+        photoUrl: URL?,
+        pin: String?,
+        pushToken: String?
+    ) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
@@ -16,17 +22,37 @@ protocol ProfileManagerProtocol {
 
 final class ProfileManager {
     enum Constants {
-        static let spellsCategoriesIds = "profile_manager_spells_categories_ids_key"
+        static let nameKey = "profile_manager_name_key"
+        static let photoUrlKey = "profile_manager_photo_url_key"
+        static let pinKey = "profile_manager_pin_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
+    private lazy var restAPITransport = RestAPITransport()
     
     private lazy var sessionManager = SessionManager()
 }
 
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
-    func set(spellsCategoriesIds: [Int]?) -> Single<Void> {
+    func upload(photo: Data) -> Single<URL?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = UploadPhotoRequest(userToken: userToken)
+        
+        return restAPITransport
+            .formBody(data: photo, request: request)
+            .map { UploadPhotoResponse.map(from: $0) }
+    }
+    
+    func set(
+        name: String,
+        photoUrl: URL?,
+        pin: String?,
+        pushToken: String?
+    ) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -75,6 +101,52 @@ private extension ProfileManager {
     }
     
     func cachedProfile() -> Single<Profile?> {
-        .deferred { .just(nil) }
+        Single<Profile?>.create { single in
+            let name = UserDefaults.standard.string(forKey: Constants.nameKey)
+            let photoUrl = UserDefaults.standard.url(forKey: Constants.photoUrlKey)
+            let pin = UserDefaults.standard.string(forKey: Constants.pinKey)
+            
+            var profile: Profile? {
+                guard let name else {
+                    return nil
+                }
+                
+                return Profile(
+                    name: name,
+                    photoUrl: photoUrl,
+                    pin: pin
+                )
+            }
+            
+            single(.success(profile))
+            
+            return Disposables.create()
+        }
+    }
+    
+    func store(name: String) {
+        UserDefaults.standard.set(name, forKey: Constants.nameKey)
+        
+        ProfileMediator.shared.notify(name: name)
+    }
+    
+    func store(photoUrl: URL?) {
+        guard let photoUrl else {
+            return
+        }
+        
+        UserDefaults.standard.set(photoUrl, forKey: Constants.photoUrlKey)
+        
+        ProfileMediator.shared.notify(photoURL: photoUrl)
+    }
+    
+    func store(pin: String?) {
+        guard let pin else {
+            return
+        }
+        
+        UserDefaults.standard.set(pin, forKey: Constants.pinKey)
+        
+        ProfileMediator.shared.notify(pin: pin)
     }
 }

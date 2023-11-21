@@ -65,16 +65,30 @@ private extension OPreloaderView {
             return
         }
         
-        // TODO: загрузить фото -> /set
         func source() -> Single<Void> {
-            .deferred { .just(()) }
-//            profileManager
-//                .set(
-//                    name: data.name,
-//                    skillLevelId: data.skillLevel.id,
-//                    weekSchedule: data.weekSchedule,
-//                    commandGroupIds: data.commandsGroupsIds
-//                )
+            var photoUrl: Single<URL?> {
+                guard let photo = data.photo?.jpegData(compressionQuality: 0.5) else {
+                    return .deferred { .just(nil) }
+                }
+                
+                return profileManager
+                    .upload(photo: photo)
+            }
+            
+            return photoUrl
+                .flatMap { [weak self] photoUrl -> Single<Void> in
+                    guard let self else {
+                        return .never()
+                    }
+                    
+                    return self.profileManager
+                        .set(
+                            name: data.name,
+                            photoUrl: photoUrl,
+                            pin: data.pin,
+                            pushToken: data.pushToken
+                        )
+                }
         }
         
         func error(err: Error) -> Observable<Void> {

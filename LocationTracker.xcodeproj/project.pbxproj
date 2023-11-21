@@ -121,6 +121,8 @@
 		DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612572B0CE10600F09899 /* EnablePermissionView.swift */; };
 		DED6125A2B0CF40900F09899 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612592B0CF40900F09899 /* OPreloaderView.swift */; };
 		DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */; };
+		DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6125E2B0CF95D00F09899 /* UploadPhotoRequest.swift */; };
+		DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612602B0CF97A00F09899 /* UploadPhotoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +244,8 @@
 		DED612572B0CE10600F09899 /* EnablePermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnablePermissionView.swift; sourceTree = "<group>"; };
 		DED612592B0CF40900F09899 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
 		DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCirclePreloaderView.swift; sourceTree = "<group>"; };
+		DED6125E2B0CF95D00F09899 /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
+		DED612602B0CF97A00F09899 /* UploadPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoResponse.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -656,6 +660,7 @@
 		DEB391052B0B907F00F1AE09 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DED6125D2B0CF95200F09899 /* UploadPhoto */,
 				DEB391062B0B907F00F1AE09 /* GetProfile */,
 				DEB391092B0B907F00F1AE09 /* LoginRequest.swift */,
 				DEB3910A2B0B907F00F1AE09 /* SyncTokensRequest.swift */,
@@ -765,6 +770,15 @@
 				DED612552B0CD55900F09899 /* GeoLocationPermissionStatus.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DED6125D2B0CF95200F09899 /* UploadPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				DED6125E2B0CF95D00F09899 /* UploadPhotoRequest.swift */,
+				DED612602B0CF97A00F09899 /* UploadPhotoResponse.swift */,
+			);
+			path = UploadPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -898,6 +912,7 @@
 				DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */,
 				DEB391332B0B907F00F1AE09 /* ImagePicker.swift in Sources */,
 				DEB391212B0B907F00F1AE09 /* String+Extension.swift in Sources */,
+				DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */,
 				DEB391342B0B907F00F1AE09 /* RxActivityIndicator.swift in Sources */,
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
@@ -967,6 +982,7 @@
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
+				DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */,
 				DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */,
 				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
