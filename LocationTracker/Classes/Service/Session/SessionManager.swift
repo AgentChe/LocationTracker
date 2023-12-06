@@ -45,7 +45,7 @@ extension SessionManager {
         guard let paymentData = OtterScale.shared.getPaymentData() else {
             return false
         }
-
+        
         let subscriptions = paymentData.subscriptions.appleAppStore
             + paymentData.subscriptions.googlePlay
             + paymentData.subscriptions.stripe

@@ -123,6 +123,27 @@
 		DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */; };
 		DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6125E2B0CF95D00F09899 /* UploadPhotoRequest.swift */; };
 		DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612602B0CF97A00F09899 /* UploadPhotoResponse.swift */; };
+		DED612FF2B1F281400F09899 /* CircleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612FE2B1F281400F09899 /* CircleManager.swift */; };
+		DED613012B1F281C00F09899 /* CircleMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613002B1F281C00F09899 /* CircleMediator.swift */; };
+		DED613052B1F284300F09899 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613042B1F284300F09899 /* Circle.swift */; };
+		DED613072B1F28D700F09899 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613062B1F28D700F09899 /* Role.swift */; };
+		DED613092B1F28F100F09899 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613082B1F28F100F09899 /* Member.swift */; };
+		DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613112B1F4F1300F09899 /* GetRolesRequest.swift */; };
+		DED613142B1F4F3C00F09899 /* GetRolesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613132B1F4F3C00F09899 /* GetRolesResponse.swift */; };
+		DED613162B1F4FB300F09899 /* CreateCircleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613152B1F4FB300F09899 /* CreateCircleRequest.swift */; };
+		DED613182B1F50D900F09899 /* CreateCircleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613172B1F50D900F09899 /* CreateCircleResponse.swift */; };
+		DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613192B1F54AD00F09899 /* JoinToCircleRequest.swift */; };
+		DED6131C2B1F64A700F09899 /* EditCircleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6131B2B1F64A700F09899 /* EditCircleRequest.swift */; };
+		DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6131D2B1F665F00F09899 /* GetCirclesRequest.swift */; };
+		DED613202B1F66A200F09899 /* GetCirclesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6131F2B1F66A200F09899 /* GetCirclesResponse.swift */; };
+		DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613212B1F679800F09899 /* DeleteCircleRequest.swift */; };
+		DED613242B1F67D200F09899 /* ExcludeMemberRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613232B1F67D200F09899 /* ExcludeMemberRequest.swift */; };
+		DED6132C2B206C1E00F09899 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6132B2B206C1E00F09899 /* CirclesViewController.swift */; };
+		DED6132E2B206C2300F09899 /* CirclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6132D2B206C2300F09899 /* CirclesViewModel.swift */; };
+		DED613302B206C2800F09899 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6132F2B206C2800F09899 /* CirclesView.swift */; };
+		DED613342B206D1000F09899 /* CirclesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613332B206D1000F09899 /* CirclesTableView.swift */; };
+		DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613382B206D3500F09899 /* CirclesTableCell.swift */; };
+		DED6133D2B20712500F09899 /* CirclesTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6133C2B20712500F09899 /* CirclesTableElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +267,27 @@
 		DED6125B2B0CF57100F09899 /* OCirclePreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCirclePreloaderView.swift; sourceTree = "<group>"; };
 		DED6125E2B0CF95D00F09899 /* UploadPhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoRequest.swift; sourceTree = "<group>"; };
 		DED612602B0CF97A00F09899 /* UploadPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoResponse.swift; sourceTree = "<group>"; };
+		DED612FE2B1F281400F09899 /* CircleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleManager.swift; sourceTree = "<group>"; };
+		DED613002B1F281C00F09899 /* CircleMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMediator.swift; sourceTree = "<group>"; };
+		DED613042B1F284300F09899 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		DED613062B1F28D700F09899 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		DED613082B1F28F100F09899 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		DED613112B1F4F1300F09899 /* GetRolesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRolesRequest.swift; sourceTree = "<group>"; };
+		DED613132B1F4F3C00F09899 /* GetRolesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRolesResponse.swift; sourceTree = "<group>"; };
+		DED613152B1F4FB300F09899 /* CreateCircleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircleRequest.swift; sourceTree = "<group>"; };
+		DED613172B1F50D900F09899 /* CreateCircleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircleResponse.swift; sourceTree = "<group>"; };
+		DED613192B1F54AD00F09899 /* JoinToCircleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleRequest.swift; sourceTree = "<group>"; };
+		DED6131B2B1F64A700F09899 /* EditCircleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleRequest.swift; sourceTree = "<group>"; };
+		DED6131D2B1F665F00F09899 /* GetCirclesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCirclesRequest.swift; sourceTree = "<group>"; };
+		DED6131F2B1F66A200F09899 /* GetCirclesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCirclesResponse.swift; sourceTree = "<group>"; };
+		DED613212B1F679800F09899 /* DeleteCircleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCircleRequest.swift; sourceTree = "<group>"; };
+		DED613232B1F67D200F09899 /* ExcludeMemberRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcludeMemberRequest.swift; sourceTree = "<group>"; };
+		DED6132B2B206C1E00F09899 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
+		DED6132D2B206C2300F09899 /* CirclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewModel.swift; sourceTree = "<group>"; };
+		DED6132F2B206C2800F09899 /* CirclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesView.swift; sourceTree = "<group>"; };
+		DED613332B206D1000F09899 /* CirclesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesTableView.swift; sourceTree = "<group>"; };
+		DED613382B206D3500F09899 /* CirclesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesTableCell.swift; sourceTree = "<group>"; };
+		DED6133C2B20712500F09899 /* CirclesTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesTableElement.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -483,6 +525,7 @@
 		DEB390CE2B0B907F00F1AE09 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DED613292B206BCF00F09899 /* Circle */,
 				DEB390E92B0B907F00F1AE09 /* Onboarding */,
 				DEB390CF2B0B907F00F1AE09 /* Splash */,
 				DEB390D62B0B907F00F1AE09 /* Paygate */,
@@ -593,6 +636,7 @@
 		DEB390F62B0B907F00F1AE09 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DED612FD2B1F27CA00F09899 /* Circle */,
 				DEB390F72B0B907F00F1AE09 /* Paygate */,
 				DEB391012B0B907F00F1AE09 /* Profile */,
 				DEB3910D2B0B907F00F1AE09 /* Purchase */,
@@ -781,6 +825,137 @@
 			path = UploadPhoto;
 			sourceTree = "<group>";
 		};
+		DED612FD2B1F27CA00F09899 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				DED613032B1F282700F09899 /* Requests */,
+				DED613022B1F281F00F09899 /* Models */,
+				DED612FE2B1F281400F09899 /* CircleManager.swift */,
+				DED613002B1F281C00F09899 /* CircleMediator.swift */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		DED613022B1F281F00F09899 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DED613042B1F284300F09899 /* Circle.swift */,
+				DED613062B1F28D700F09899 /* Role.swift */,
+				DED613082B1F28F100F09899 /* Member.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DED613032B1F282700F09899 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DED613102B1F4EE100F09899 /* ExcludeMember */,
+				DED6130F2B1F4ECE00F09899 /* DeleteCircle */,
+				DED6130E2B1F4E2F00F09899 /* GetCircles */,
+				DED6130D2B1F4E1C00F09899 /* EditCircle */,
+				DED6130C2B1F4E0C00F09899 /* JoinToCircle */,
+				DED6130B2B1F4E0000F09899 /* CreateCircle */,
+				DED6130A2B1F4DF800F09899 /* GetRoles */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		DED6130A2B1F4DF800F09899 /* GetRoles */ = {
+			isa = PBXGroup;
+			children = (
+				DED613112B1F4F1300F09899 /* GetRolesRequest.swift */,
+				DED613132B1F4F3C00F09899 /* GetRolesResponse.swift */,
+			);
+			path = GetRoles;
+			sourceTree = "<group>";
+		};
+		DED6130B2B1F4E0000F09899 /* CreateCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DED613152B1F4FB300F09899 /* CreateCircleRequest.swift */,
+				DED613172B1F50D900F09899 /* CreateCircleResponse.swift */,
+			);
+			path = CreateCircle;
+			sourceTree = "<group>";
+		};
+		DED6130C2B1F4E0C00F09899 /* JoinToCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DED613192B1F54AD00F09899 /* JoinToCircleRequest.swift */,
+			);
+			path = JoinToCircle;
+			sourceTree = "<group>";
+		};
+		DED6130D2B1F4E1C00F09899 /* EditCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DED6131B2B1F64A700F09899 /* EditCircleRequest.swift */,
+			);
+			path = EditCircle;
+			sourceTree = "<group>";
+		};
+		DED6130E2B1F4E2F00F09899 /* GetCircles */ = {
+			isa = PBXGroup;
+			children = (
+				DED6131D2B1F665F00F09899 /* GetCirclesRequest.swift */,
+				DED6131F2B1F66A200F09899 /* GetCirclesResponse.swift */,
+			);
+			path = GetCircles;
+			sourceTree = "<group>";
+		};
+		DED6130F2B1F4ECE00F09899 /* DeleteCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DED613212B1F679800F09899 /* DeleteCircleRequest.swift */,
+			);
+			path = DeleteCircle;
+			sourceTree = "<group>";
+		};
+		DED613102B1F4EE100F09899 /* ExcludeMember */ = {
+			isa = PBXGroup;
+			children = (
+				DED613232B1F67D200F09899 /* ExcludeMemberRequest.swift */,
+			);
+			path = ExcludeMember;
+			sourceTree = "<group>";
+		};
+		DED613292B206BCF00F09899 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				DED6132A2B206C0F00F09899 /* Circles */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		DED6132A2B206C0F00F09899 /* Circles */ = {
+			isa = PBXGroup;
+			children = (
+				DED613312B206D0100F09899 /* Views */,
+				DED6132B2B206C1E00F09899 /* CirclesViewController.swift */,
+				DED6132D2B206C2300F09899 /* CirclesViewModel.swift */,
+				DED6132F2B206C2800F09899 /* CirclesView.swift */,
+			);
+			path = Circles;
+			sourceTree = "<group>";
+		};
+		DED613312B206D0100F09899 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED613322B206D0600F09899 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DED613322B206D0600F09899 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DED613332B206D1000F09899 /* CirclesTableView.swift */,
+				DED613382B206D3500F09899 /* CirclesTableCell.swift */,
+				DED6133C2B20712500F09899 /* CirclesTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -904,6 +1079,7 @@
 			files = (
 				DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */,
 				DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */,
+				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
 				DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */,
 				DEB391752B0B907F00F1AE09 /* ProductPrice.swift in Sources */,
 				DEB391742B0B907F00F1AE09 /* PurchaseValidationObserver.swift in Sources */,
@@ -917,23 +1093,30 @@
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
 				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
+				DED613342B206D1000F09899 /* CirclesTableView.swift in Sources */,
 				DEB391242B0B907F00F1AE09 /* DefaultRequestWrapper.swift in Sources */,
 				DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */,
 				DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
+				DED613162B1F4FB300F09899 /* CreateCircleRequest.swift in Sources */,
+				DED613142B1F4F3C00F09899 /* GetRolesResponse.swift in Sources */,
+				DED6132E2B206C2300F09899 /* CirclesViewModel.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
 				DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */,
 				DEB391252B0B907F00F1AE09 /* APIRequestBody.swift in Sources */,
+				DED613242B1F67D200F09899 /* ExcludeMemberRequest.swift in Sources */,
 				DEB3911E2B0B907F00F1AE09 /* Date+Extension.swift in Sources */,
 				DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */,
 				DEB3914A2B0B907F00F1AE09 /* SplashViewController.swift in Sources */,
 				DEB391562B0B907F00F1AE09 /* PaygateProductButton.swift in Sources */,
 				DEB391312B0B907F00F1AE09 /* Weak.swift in Sources */,
 				DEB3916C2B0B907F00F1AE09 /* Profile.swift in Sources */,
+				DED6132C2B206C1E00F09899 /* CirclesViewController.swift in Sources */,
 				DEB3913F2B0B907F00F1AE09 /* AppDelegate.swift in Sources */,
 				DEB391762B0B907F00F1AE09 /* IAPActionResult.swift in Sources */,
+				DED6131C2B1F64A700F09899 /* EditCircleRequest.swift in Sources */,
 				DEB391812B0B96CE00F1AE09 /* PushNotificationsManager.swift in Sources */,
 				DEB3912A2B0B907F00F1AE09 /* ScreenSize.swift in Sources */,
 				DEB391702B0B907F00F1AE09 /* SyncTokensRequest.swift in Sources */,
@@ -941,6 +1124,8 @@
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
 				DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */,
+				DED6133D2B20712500F09899 /* CirclesTableElement.swift in Sources */,
+				DED613202B1F66A200F09899 /* GetCirclesResponse.swift in Sources */,
 				DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
@@ -949,14 +1134,17 @@
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,
 				DEB391202B0B907F00F1AE09 /* ObservableAndSingle+Extension.swift in Sources */,
+				DED612FF2B1F281400F09899 /* CircleManager.swift in Sources */,
 				DEB391782B0B907F00F1AE09 /* IAPError.swift in Sources */,
 				DEB3917A2B0B907F00F1AE09 /* Session.swift in Sources */,
 				DEB3913A2B0B907F00F1AE09 /* PaddingTextField.swift in Sources */,
+				DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */,
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
 				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
+				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
 				DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */,
 				DEB3911C2B0B907F00F1AE09 /* UIDevice+Extension.swift in Sources */,
 				DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */,
@@ -968,6 +1156,7 @@
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,
 				DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
+				DED613092B1F28F100F09899 /* Member.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
@@ -977,20 +1166,27 @@
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
 				DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */,
 				DED612562B0CD55900F09899 /* GeoLocationPermissionStatus.swift in Sources */,
+				DED613052B1F284300F09899 /* Circle.swift in Sources */,
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
+				DED613302B206C2800F09899 /* CirclesView.swift in Sources */,
+				DED613182B1F50D900F09899 /* CreateCircleResponse.swift in Sources */,
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
 				DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */,
+				DED613012B1F281C00F09899 /* CircleMediator.swift in Sources */,
 				DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */,
 				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
+				DED613072B1F28D700F09899 /* Role.swift in Sources */,
+				DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */,
 				DEB3913E2B0B907F00F1AE09 /* CircleProgressView.swift in Sources */,
 				DED6125A2B0CF40900F09899 /* OPreloaderView.swift in Sources */,
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
+				DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
 				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEB3915C2B0B907F00F1AE09 /* OCombineData.swift in Sources */,

@@ -36,6 +36,8 @@ final class OnboardingViewController: UIViewController {
             let step = self.viewModel.whatNext()
             self.goToNext(at: step)
         }
+        
+        mainView.contentViews.forEach { $0.delegate = self } // TODO: remove
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -79,5 +81,19 @@ private extension OnboardingViewController {
             vc.delegate = self
             present(vc, animated: true)
         }
+    }
+}
+
+// TODO: remove
+extension OnboardingViewController: OSlideViewDelegate {
+    func slideViewDidNext(from step: OnboardingView.Step) {
+        if step == .welcome {
+            let vc = CirclesViewController.make()
+            present(vc, animated: true)
+        }
+    }
+    
+    func slideViewDidBack(from step: OnboardingView.Step) {
+        
     }
 }

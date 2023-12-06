@@ -84,3 +84,9 @@
 "Onboarding.Preloader.Action1" = "Analyzing your preferences...";
 "Onboarding.Preloader.Action2" = "Creating SOS Button PIN...";
 "Onboarding.Preloader.Action3" = "Setting up the app layout...";
+
+// MARK: Circles
+"Circles.Title" = "Circles";
+"Circles.Create" = "Create a Circle";
+"Circles.Join" = "Join a Circle";
+"Circles.MembersCount" = "%i members";

@@ -10,7 +10,6 @@ import UIKit
 protocol OSlideViewDelegate: AnyObject {
     func slideViewDidNext(from step: OnboardingView.Step)
     func slideViewDidBack(from step: OnboardingView.Step)
-    func slideViewDidTapDisclaimer()
 }
 
 class OSlideView: UIView {
@@ -38,10 +37,5 @@ class OSlideView: UIView {
     @objc
     func onBack() {
         delegate?.slideViewDidBack(from: step)
-    }
-    
-    @objc
-    func didTapDisclaimer() {
-        delegate?.slideViewDidTapDisclaimer()
     }
 }
