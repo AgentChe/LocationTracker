@@ -50,14 +50,14 @@ extension CircleManager: CircleManagerProtocol {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
-        
+
         let request = CreateCircleRequest(
             userToken: userToken,
             photoPath: photo,
             name: name,
             roleId: roleId
         )
-        
+
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { CreateCircleResponse.map(from: $0) }
@@ -65,7 +65,7 @@ extension CircleManager: CircleManagerProtocol {
                 guard let circle else {
                     return
                 }
-                
+
                 CircleMediator.shared.created(circle: circle)
             })
     }
@@ -108,177 +108,16 @@ extension CircleManager: CircleManagerProtocol {
             .map { CreateCircleResponse.map(from: $0) }
     }
     
-    // TODO
     func obtainCircles() -> Single<[Circle]> {
-        Single<[Circle]>.create { single in
-            let member = Member(
-                id: "1",
-                name: "Member 1",
-                photoUrl: nil,
-                roleId: "1"
-            )
-            
-            let circles = [
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "1",
-                    name: "Circle 1",
-                    imageUrl: nil,
-                    inviteCode: "ADADAD",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-                Circle(
-                    id: "2",
-                    name: "Circle 2",
-                    imageUrl: URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    inviteCode: "BJBJBJ",
-                    owner: member,
-                    members: [member, member, member]
-                ),
-            ]
-            
-            single(.success(circles))
-            
-            return Disposables.create()
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetCirclesRequest(userToken: userToken)
-//
-//        return restApiTransport
-//            .callServerApi(requestBody: request)
-//            .map { GetCirclesResponse.map(from: $0) }
+
+        let request = GetCirclesRequest(userToken: userToken)
+
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetCirclesResponse.map(from: $0) }
     }
     
     func delete(id: String) -> Single<Void> {

@@ -54,8 +54,6 @@ final class CirclesViewController: UIViewController {
                 base.route(route)
             })
             .disposed(by: disposeBag)
-        
-        
     }
 }
 
@@ -87,7 +85,8 @@ private extension CirclesViewController {
     func route(_ route: CirclesViewModel.Route) {
         switch route {
         case .create:
-            break
+            let nc = NavigationController(rootViewController: CreateCircleViewController.make())
+            present(nc, animated: true)
         case .join:
             break
         case .dismiss:
