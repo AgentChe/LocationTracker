@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		80450355F38A33FCDF88D36C /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B606C07486BFACE419646B /* Pods_LocationTracker.framework */; };
+		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
+		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -158,11 +160,17 @@
 		DED6135E2B222A8D00F09899 /* CreateCircleCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6135D2B222A8D00F09899 /* CreateCircleCodeView.swift */; };
 		DED613612B230E7A00F09899 /* InviteWorksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613602B230E7A00F09899 /* InviteWorksCell.swift */; };
 		DED613642B23176800F09899 /* CreateCircleCombineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613632B23176800F09899 /* CreateCircleCombineData.swift */; };
+		DED613682B2361CA00F09899 /* JoinToCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613672B2361CA00F09899 /* JoinToCircleViewController.swift */; };
+		DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */; };
+		DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */; };
+		DED6136F2B2368B200F09899 /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136E2B2368B200F09899 /* CodeField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		050C27C6E697D649D40E304F /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		60B606C07486BFACE419646B /* Pods_LocationTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
+		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -316,6 +324,10 @@
 		DED6135D2B222A8D00F09899 /* CreateCircleCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircleCodeView.swift; sourceTree = "<group>"; };
 		DED613602B230E7A00F09899 /* InviteWorksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteWorksCell.swift; sourceTree = "<group>"; };
 		DED613632B23176800F09899 /* CreateCircleCombineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCircleCombineData.swift; sourceTree = "<group>"; };
+		DED613672B2361CA00F09899 /* JoinToCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleViewController.swift; sourceTree = "<group>"; };
+		DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleViewModel.swift; sourceTree = "<group>"; };
+		DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleView.swift; sourceTree = "<group>"; };
+		DED6136E2B2368B200F09899 /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +358,15 @@
 				60B606C07486BFACE419646B /* Pods_LocationTracker.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE1D27882B2498A70022FB9D /* CircleMembers */ = {
+			isa = PBXGroup;
+			children = (
+				DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */,
+				DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */,
+			);
+			path = CircleMembers;
 			sourceTree = "<group>";
 		};
 		DEB390642B0B8C2900F1AE09 = {
@@ -950,6 +971,8 @@
 		DED613292B206BCF00F09899 /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				DE1D27882B2498A70022FB9D /* CircleMembers */,
+				DED613662B2361BE00F09899 /* JoinToCircle */,
 				DED613582B222A3F00F09899 /* CreateCircleCode */,
 				DED613492B221BEB00F09899 /* SelectRole */,
 				DED6133E2B2092E100F09899 /* CreateCircle */,
@@ -1052,6 +1075,25 @@
 				DED613632B23176800F09899 /* CreateCircleCombineData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DED613662B2361BE00F09899 /* JoinToCircle */ = {
+			isa = PBXGroup;
+			children = (
+				DED6136D2B2368A800F09899 /* Views */,
+				DED613672B2361CA00F09899 /* JoinToCircleViewController.swift */,
+				DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */,
+				DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */,
+			);
+			path = JoinToCircle;
+			sourceTree = "<group>";
+		};
+		DED6136D2B2368A800F09899 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED6136E2B2368B200F09899 /* CodeField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1208,6 +1250,7 @@
 				DED613242B1F67D200F09899 /* ExcludeMemberRequest.swift in Sources */,
 				DEB3911E2B0B907F00F1AE09 /* Date+Extension.swift in Sources */,
 				DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */,
+				DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */,
 				DEB3914A2B0B907F00F1AE09 /* SplashViewController.swift in Sources */,
 				DEB391562B0B907F00F1AE09 /* PaygateProductButton.swift in Sources */,
 				DEB391312B0B907F00F1AE09 /* Weak.swift in Sources */,
@@ -1228,9 +1271,11 @@
 				DED6133D2B20712500F09899 /* CirclesTableElement.swift in Sources */,
 				DED613202B1F66A200F09899 /* GetCirclesResponse.swift in Sources */,
 				DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */,
+				DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
+				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,
@@ -1241,6 +1286,7 @@
 				DEB3913A2B0B907F00F1AE09 /* PaddingTextField.swift in Sources */,
 				DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */,
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
+				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
@@ -1275,6 +1321,7 @@
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
 				DED613302B206C2800F09899 /* CirclesView.swift in Sources */,
 				DED613182B1F50D900F09899 /* CreateCircleResponse.swift in Sources */,
+				DED613682B2361CA00F09899 /* JoinToCircleViewController.swift in Sources */,
 				DED613532B221DC100F09899 /* RolesTableView.swift in Sources */,
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
@@ -1295,6 +1342,7 @@
 				DED6125A2B0CF40900F09899 /* OPreloaderView.swift in Sources */,
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
 				DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */,
+				DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
 				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEB3915C2B0B907F00F1AE09 /* OCombineData.swift in Sources */,

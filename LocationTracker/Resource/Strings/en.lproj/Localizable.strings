@@ -108,3 +108,12 @@
 "CreateCircleCode.Works.Title" = "How it works";
 "CreateCircleCode.Works.Cell1" = "Share your invite code any way you like: email it, write it down, or say it";
 "CreateCircleCode.Works.Cell2" = "Member should download the app and write down the invite code to join your Circle";
+
+// MARK: JoinToCircle
+"JoinToCircle.Title" = "Join a Circle";
+"JoinToCircle.Description" = "Ask the Circle creator for their code";
+"JoinToCircle.SubmitButton" = "Submit";
+
+// MARK: CircleMembers
+"CircleMembers.Title" = "Join this %@";
+"CircleMembers.SubTitle" = "There is %i members waiting for you";

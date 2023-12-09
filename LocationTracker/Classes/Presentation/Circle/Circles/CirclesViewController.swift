@@ -88,7 +88,8 @@ private extension CirclesViewController {
             let nc = NavigationController(rootViewController: CreateCircleViewController.make())
             present(nc, animated: true)
         case .join:
-            break
+            let nc = NavigationController(rootViewController: JoinToCircleViewController.make())
+            present(nc, animated: true)
         case .dismiss:
             dismiss(animated: true)
         }

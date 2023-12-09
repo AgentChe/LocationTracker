@@ -74,12 +74,12 @@ extension CircleManager: CircleManagerProtocol {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
-        
+
         let request = JoinToCircleRequest(
             userToken: userToken,
             inviteCode: inviteCode
         )
-        
+
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { CreateCircleResponse.map(from: $0) }
