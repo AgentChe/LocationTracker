@@ -12,7 +12,7 @@ protocol CircleManagerProtocol: AnyObject {
     func create(
         name: String,
         photo: String?,
-        roleId: String
+        roleId: Int
     ) -> Single<Circle?>
     func join(inviteCode: String) -> Single<Circle?>
     func edit(
@@ -45,7 +45,7 @@ extension CircleManager: CircleManagerProtocol {
     func create(
         name: String,
         photo: String?,
-        roleId: String
+        roleId: Int
     ) -> Single<Circle?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)

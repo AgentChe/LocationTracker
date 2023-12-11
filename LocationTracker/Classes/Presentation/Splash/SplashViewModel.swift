@@ -99,7 +99,6 @@ private extension SplashViewModel {
         }
     }
     
-    // TODO
     func library() -> Observable<Void> {
         func source() -> Single<Void> {
             let paygate = paygateManager
@@ -112,14 +111,13 @@ private extension SplashViewModel {
                 .obtainRoles(forceUpdate: true)
                 .mapToVoid()
             
-//            return Single
-//                .zip([
-//                    paygate,
-//                    profile,
-//                    roles
-//                ])
-//                .mapToVoid()
-            return .deferred { .just(()) }
+            return Single
+                .zip([
+//                    paygate, // TODO
+                    profile,
+                    roles
+                ])
+                .mapToVoid()
         }
         
         func trigger(error: Error) -> Observable<Void> {

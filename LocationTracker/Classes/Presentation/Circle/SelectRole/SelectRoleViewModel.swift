@@ -67,7 +67,7 @@ private extension SelectRoleViewModel {
                 didSelect
                     .asDriver(onErrorDriveWith: .never())
                     .map { $0.role.id }
-                    .startWith("-1")
+                    .startWith(-1)
             ) { roles, selectionId -> [RolesTableElement] in
                 roles.map { role -> RolesTableElement in
                     RolesTableElement(

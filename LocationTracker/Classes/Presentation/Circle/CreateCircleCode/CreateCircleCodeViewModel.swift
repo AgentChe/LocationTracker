@@ -100,7 +100,7 @@ private extension CreateCircleCodeViewModel {
                                 .create(
                                     name: data.name,
                                     photo: url?.absoluteString,
-                                    roleId: data.roleId ?? ""
+                                    roleId: data.roleId ?? -1
                                 )
                         }
                         .flatMap { circle -> Single<String> in

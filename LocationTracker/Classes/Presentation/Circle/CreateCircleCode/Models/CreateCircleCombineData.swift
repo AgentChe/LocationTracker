@@ -10,12 +10,12 @@ import UIKit
 struct CreateCircleCombineData {
     var name: String
     var image: UIImage?
-    var roleId: String?
+    var roleId: Int?
     
     init(
         name: String,
         image: UIImage? = nil,
-        roleId: String? = nil
+        roleId: Int? = nil
     ) {
         self.name = name
         self.image = image
@@ -34,7 +34,7 @@ struct CreateCircleCombineData {
         return copy
     }
     
-    func roleId(_ roleId: String?) -> CreateCircleCombineData {
+    func roleId(_ roleId: Int?) -> CreateCircleCombineData {
         var copy = self
         copy.roleId = roleId
         return copy
