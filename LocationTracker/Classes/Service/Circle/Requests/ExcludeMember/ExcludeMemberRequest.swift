@@ -9,7 +9,7 @@ import Alamofire
 
 struct ExcludeMemberRequest: APIRequestBody {
     let userToken: String
-    let memberId: String
+    let membersIds: [String]
     let circleId: String
 
     var url: String {
@@ -24,7 +24,7 @@ struct ExcludeMemberRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "member_id": memberId,
+            "members_ids": membersIds,
             "circle_id": circleId
         ]
     }

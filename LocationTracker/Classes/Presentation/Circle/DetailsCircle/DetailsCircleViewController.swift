@@ -104,8 +104,9 @@ private extension DetailsCircleViewController {
         switch route {
         case .dismiss:
             dismiss(animated: true)
-        case .edit:
-            break
+        case .edit(let circle):
+            let nc = NavigationController(rootViewController: EditCircleViewController.make(circle: circle))
+            present(nc, animated: true)
         case .delete:
             let vc = CircleConfirmDeleteViewController.make { [weak self] in
                 self?.didDeleteTrigger.accept(Void())

@@ -10,7 +10,7 @@ import RxCocoa
 
 final class DetailsCircleViewModel {
     enum Route {
-        case dismiss, edit, delete, addMember(String)
+        case dismiss, edit(Circle), delete, addMember(String)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -82,7 +82,7 @@ private extension DetailsCircleViewModel {
                     result.append(.member(element))
                 }
                 
-                let isOwner = circle.owner.id == userId
+                let isOwner = circle.owner.id != userId // TODO: != -> ==
                 let actions: [DetailsCircleTableAction] = isOwner ? [.edit, .delete] : [.addMember]
                 actions.forEach { result.append(.action($0)) }
                 
@@ -149,7 +149,7 @@ private extension DetailsCircleViewModel {
                 
                 switch action {
                 case .edit:
-                    return .edit
+                    return .edit(circle)
                 case .delete:
                     return .delete
                 case .addMember:

@@ -9,14 +9,14 @@ import RxSwift
 import RxCocoa
 
 final class CircleMediator {
-    typealias Excluded = (memberId: String, circleId: String)
+    typealias Excluded = (membersIds: [String], circleId: String)
     
     static let shared = CircleMediator()
     
     private lazy var didCreatedCircleTrigger = PublishRelay<Circle>()
     private lazy var didJoinedToCircleTrigger = PublishRelay<Circle>()
     private lazy var didEditedCircleTrigger = PublishRelay<Circle>()
-    private lazy var didDeletedCircleTrigger = PublishRelay<String>()
+    private lazy var didDeletedCircleTrigger = PublishRelay<Int>()
     private lazy var didExcludedFromCircleTrigger = PublishRelay<Excluded>()
     
     private init() {}
@@ -36,7 +36,7 @@ extension CircleMediator {
         didEditedCircleTrigger.accept(circle)
     }
     
-    func deleted(id: String) {
+    func deleted(id: Int) {
         didDeletedCircleTrigger.accept(id)
     }
     
@@ -56,7 +56,7 @@ extension CircleMediator {
         didEditedCircleTrigger.asSignal()
     }
     
-    var didDeletedCircle: Signal<String> {
+    var didDeletedCircle: Signal<Int> {
         didDeletedCircleTrigger.asSignal()
     }
     

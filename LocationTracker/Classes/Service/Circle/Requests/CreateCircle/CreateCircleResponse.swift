@@ -23,13 +23,19 @@ enum CreateCircleResponse {
         guard
             let id = circleJSON["id"] as? Int,
             let name = circleJSON["name"] as? String,
-            let photoPath = circleJSON["image"] as? String,
-            let photoUrl = URL(string: photoPath),
             let inviteCode = circleJSON["invite_code"] as? String,
             let ownerJSON = circleJSON["owner"] as? [String: Any],
             let owner = map(memberJSON: ownerJSON)
         else {
             return nil
+        }
+        
+        var photoUrl: URL? {
+            guard let photoPath = circleJSON["image"] as? String else {
+                return nil
+            }
+            
+            return URL(string: photoPath)
         }
         
         let membersArray = circleJSON["members"] as? [[String: Any]] ?? []
@@ -47,7 +53,7 @@ enum CreateCircleResponse {
     
     static func map(memberJSON: [String: Any]) -> Member? {
         guard
-            let id = memberJSON["id"] as? String,
+            let id = memberJSON["id"] as? Int, // TODO: должен приходить тип String
             let name = memberJSON["name"] as? String,
             let photoPath = memberJSON["image"] as? String,
             let photoUrl = URL(string: photoPath),
@@ -57,7 +63,7 @@ enum CreateCircleResponse {
         }
         
         return Member(
-            id: id,
+            id: String(id),
             name: name,
             photoUrl: photoUrl,
             roleId: roleId

@@ -23,7 +23,7 @@ protocol CircleManagerProtocol: AnyObject {
     ) -> Single<Circle?>
     func obtainCircles() -> Single<[Circle]>
     func delete(id: Int) -> Single<Void>
-    func exclude(memberId: String, circleId: String) -> Single<Void>
+    func exclude(membersIds: [String], circleId: String) -> Single<Void>
 }
 
 final class CircleManager {
@@ -57,7 +57,7 @@ extension CircleManager: CircleManagerProtocol {
             name: name,
             roleId: roleId
         )
-
+        
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { CreateCircleResponse.map(from: $0) }
@@ -83,6 +83,13 @@ extension CircleManager: CircleManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { CreateCircleResponse.map(from: $0) }
+            .do(onSuccess: { circle in
+                guard let circle else {
+                    return
+                }
+                
+                CircleMediator.shared.joinedTo(circle: circle)
+            })
     }
     
     func edit(
@@ -103,70 +110,31 @@ extension CircleManager: CircleManagerProtocol {
             roleId: roleId
         )
         
+        // TODO
+        print("edit: \(request.url), params: \(request.parameters)")
+        
         return restApiTransport
             .callServerApi(requestBody: request)
             .map { CreateCircleResponse.map(from: $0) }
-    }
-    
-    // TODO
-    func obtainCircles() -> Single<[Circle]> {
-        Single<[Circle]>.create { single in
-            func circle() -> Circle {
-                let id = Int.random(in: 1...10000000)
-                
-                let images = [
-                    URL(string: "https://www.freeiconspng.com/thumbs/family-icon/family-icon-6.png"),
-                    URL(string: "https://static.vecteezy.com/system/resources/thumbnails/019/038/988/small/happy-family-family-with-children-together-png.png"),
-                    URL(string: "https://png.pngtree.com/png-vector/20220319/ourmid/pngtree-big-family-with-three-generation-png-image_4503557.png"),
-                    nil
-                ]
-                
-                func member(me: Bool = false) -> Member {
-                    let mId = Int.random(in: 1...123123123)
-                    
-                    return Member(
-                        id: me ? SessionManager().userId : "\(mId)",
-                        name: "Member \(mId)",
-                        photoUrl: nil,
-                        roleId: Int.random(in: 1...5)
-                    )
+            .do(onSuccess: { circle in
+                guard let circle else {
+                    return
                 }
                 
-                return Circle(
-                    id: id,
-                    name: "Circle \(id)",
-                    imageUrl: images.randomElement()!,
-                    inviteCode: "AAASAS",
-                    owner: member(me: true),
-                    members: [member(), member(), member(), member()]
-                )
-            }
-            
-            let circles = [
-                circle(),
-                circle(),
-                circle(),
-                circle(),
-                circle(),
-                circle(),
-                circle(),
-                circle(),
-            ]
-            single(.success(circles))
-            
-            return Disposables.create()
+                CircleMediator.shared.edited(circle: circle)
+            })
+    }
+    
+    func obtainCircles() -> Single<[Circle]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-        
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetCirclesRequest(userToken: userToken)
-//
-//        return restApiTransport
-//            .callServerApi(requestBody: request)
-//            .map { GetCirclesResponse.map(from: $0) }
+
+        let request = GetCirclesRequest(userToken: userToken)
+
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetCirclesResponse.map(from: $0) }
     }
     
     func delete(id: Int) -> Single<Void> {
@@ -179,22 +147,31 @@ extension CircleManager: CircleManagerProtocol {
         return restApiTransport
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: {
+                CircleMediator.shared.deleted(id: id)
+            })
     }
     
-    func exclude(memberId: String, circleId: String) -> Single<Void> {
+    func exclude(membersIds: [String], circleId: String) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
         let request = ExcludeMemberRequest(
             userToken: userToken,
-            memberId: memberId,
+            membersIds: membersIds,
             circleId: circleId
         )
+        
+        // TODO
+        print("exclude: \(request.url), params: \(request.parameters)")
         
         return restApiTransport
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: {
+                CircleMediator.shared.excluded((membersIds, circleId))
+            })
     }
 }
 
