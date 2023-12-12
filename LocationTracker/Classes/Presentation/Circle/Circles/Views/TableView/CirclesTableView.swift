@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class CirclesTableView: UITableView {
     lazy var elements = [CirclesTableElement]()
+    
+    private lazy var didSelectTrigger = PublishRelay<CirclesTableElement>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -27,6 +31,10 @@ extension CirclesTableView {
         self.elements = elements
         
         reloadData()
+    }
+    
+    var didSelect: Signal<CirclesTableElement> {
+        didSelectTrigger.asSignal()
     }
 }
 
@@ -47,6 +55,11 @@ extension CirclesTableView: UITableViewDataSource {
 extension CirclesTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let element = elements[indexPath.row]
+        didSelectTrigger.accept(element)
     }
 }
 

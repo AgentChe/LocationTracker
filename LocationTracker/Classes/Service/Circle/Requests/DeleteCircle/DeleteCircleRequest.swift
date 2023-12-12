@@ -9,7 +9,7 @@ import Alamofire
 
 struct DeleteCircleRequest: APIRequestBody {
     let userToken: String
-    let id: String
+    let id: Int
 
     var url: String {
         GlobalDefinitions.domain + "/api/circle/delete"

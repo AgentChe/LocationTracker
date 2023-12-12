@@ -11,5 +11,5 @@ struct Member: Codable {
     let id: String
     let name: String
     let photoUrl: URL?
-    let roleId: String?
+    let roleId: Int?
 }

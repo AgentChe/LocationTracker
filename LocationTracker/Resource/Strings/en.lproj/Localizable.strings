@@ -117,3 +117,21 @@
 // MARK: CircleMembers
 "CircleMembers.Title" = "Join this %@";
 "CircleMembers.SubTitle" = "There is %i members waiting for you";
+
+// MARK: DetailsCircle
+"DetailsCircle.Members" = "Members";
+"DetailsCircle.Me" = "Me";
+"DetailsCircle.Edit" = "Edit";
+"DetailsCircle.Delete" = "Delete a Circle";
+"DetailsCircle.AddMember" = "Add a new member";
+"DetailsCircle.ConfirmDelete.Title" = "Delete this member";
+"DetailsCircle.ConfirmDelete.SubTitle" = "Are you sure? The member will have to join again";
+"DetailsCircle.ConfirmDelete.DeleteButton" = "Delete";
+
+// MARK: EditCircle
+"EditCircle.Title" = "Edit";
+"EditCircle.MyRole" = "My role";
+"EditCircle.Change" = "Change";
+"EditCircle.Members" = "Members";
+"EditCircle.AddMember" = "Add a new member";
+"EditCircle.SaveButton" = "Save";

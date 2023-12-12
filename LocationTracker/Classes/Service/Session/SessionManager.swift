@@ -41,6 +41,10 @@ extension SessionManager {
         return session
     }
     
+    var userId: String {
+        OtterScale.shared.getInternalID()
+    }
+    
     func hasActiveSubscriptions() -> Bool {
         guard let paymentData = OtterScale.shared.getPaymentData() else {
             return false

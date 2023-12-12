@@ -10,7 +10,7 @@ import RxCocoa
 
 final class CirclesViewModel {
     enum Route {
-        case create, join, dismiss
+        case create, join, dismiss, details(Circle)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -28,6 +28,7 @@ extension CirclesViewModel {
         let didTapCreate: Signal<Void>
         let didTapJoin: Signal<Void>
         let didTapClose: Signal<Void>
+        let didSelectElement: Signal<CirclesTableElement>
     }
     
     struct Output {
@@ -48,7 +49,8 @@ extension CirclesViewModel {
             route: makeRoute(
                 didTapCreate: input.didTapCreate,
                 didTapJoin: input.didTapJoin,
-                didTapClose: input.didTapClose
+                didTapClose: input.didTapClose,
+                didSelectElement: input.didSelectElement
             )
         )
     }
@@ -80,7 +82,8 @@ private extension CirclesViewModel {
     func makeRoute(
         didTapCreate: Signal<Void>,
         didTapJoin: Signal<Void>,
-        didTapClose: Signal<Void>
+        didTapClose: Signal<Void>,
+        didSelectElement: Signal<CirclesTableElement>
     ) -> Driver<Route> {
         let create = didTapCreate
             .map { Route.create }
@@ -91,8 +94,11 @@ private extension CirclesViewModel {
         let dismiss = didTapClose
             .map { Route.dismiss }
             .asDriver(onErrorDriveWith: .never())
+        let select = didSelectElement
+            .map { Route.details($0.circle) }
+            .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(create, join, dismiss)
+            .merge(create, join, dismiss, select)
     }
 }

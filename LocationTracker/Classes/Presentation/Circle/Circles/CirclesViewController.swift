@@ -33,7 +33,8 @@ final class CirclesViewController: UIViewController {
         let output = viewModel.configure(input: CirclesViewModel.Input(
             didTapCreate: mainView.createButton.rx.tap.asSignal(),
             didTapJoin: mainView.joinButton.rx.tap.asSignal(),
-            didTapClose: mainView.closeButton.rx.tap.asSignal()
+            didTapClose: mainView.closeButton.rx.tap.asSignal(),
+            didSelectElement: mainView.tableView.didSelect
         ))
         
         output.activity
@@ -92,6 +93,9 @@ private extension CirclesViewController {
             present(nc, animated: true)
         case .dismiss:
             dismiss(animated: true)
+        case .details(let circle):
+            let vc = DetailsCircleViewController.make(circle: circle)
+            present(vc, animated: true)
         }
     }
 }
