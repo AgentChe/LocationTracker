@@ -96,7 +96,11 @@ private extension EditCircleViewController {
         case .editInfo(let info):
             break
         case .editRole(let role):
-            break
+            let vc = SelectRoleViewController.make(mode: .select(role)) { [weak self] selected in
+                self?.updatedRoleTrigger.accept(selected)
+            }
+            let nc = NavigationController(rootViewController: vc)
+            present(nc, animated: true)
         case .addMember(let inviteCode):
             let vc = InviteViewController.make(inviteCode: inviteCode)
             present(vc, animated: true)

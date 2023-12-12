@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 
 final class SelectRoleViewController: UIViewController {
+    enum Mode {
+        case flow(CreateCircleCombineData)
+        case select(Role?)
+    }
+    
     lazy var mainView = SelectRoleView()
     
     private let viewModel: SelectRoleViewModel
@@ -17,8 +22,11 @@ final class SelectRoleViewController: UIViewController {
     
     private lazy var closeButton = UIButton()
     
-    private init(data: CreateCircleCombineData) {
-        viewModel = SelectRoleViewModel(data: data)
+    private let selected: ((Role) -> Void)?
+    
+    private init(mode: SelectRoleViewController.Mode, selected: ((Role) -> Void)?) {
+        self.viewModel = SelectRoleViewModel(mode: mode)
+        self.selected = selected
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -65,8 +73,8 @@ final class SelectRoleViewController: UIViewController {
 
 // MARK: Public
 extension SelectRoleViewController {
-    static func make(data: CreateCircleCombineData) -> SelectRoleViewController {
-        let vc = SelectRoleViewController(data: data)
+    static func make(mode: SelectRoleViewController.Mode, selected: ((Role) -> Void)? = nil) -> SelectRoleViewController {
+        let vc = SelectRoleViewController(mode: mode, selected: selected)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "SelectRole.Title".localized
         return vc
@@ -94,6 +102,10 @@ private extension SelectRoleViewController {
         case .createCode(let data):
             let vc = CreateCircleCodeViewController.make(data: data)
             navigationController?.pushViewController(vc, animated: true)
+        case .complete(let role):
+            navigationController?.dismiss(animated: true) { [weak self] in
+                self?.selected?(role)
+            }
         }
     }
 }

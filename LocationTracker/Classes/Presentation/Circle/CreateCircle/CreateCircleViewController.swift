@@ -124,7 +124,7 @@ private extension CreateCircleViewController {
         case .dismiss:
             navigationController?.dismiss(animated: true)
         case .selectRole(let data):
-            let vc = SelectRoleViewController.make(data: data)
+            let vc = SelectRoleViewController.make(mode: .flow(data))
             navigationController?.pushViewController(vc, animated: true)
         }
     }

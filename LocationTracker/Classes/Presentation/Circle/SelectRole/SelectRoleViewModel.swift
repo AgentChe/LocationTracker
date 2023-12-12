@@ -10,13 +10,13 @@ import RxCocoa
 
 final class SelectRoleViewModel {
     enum Route {
-        case dismiss, createCode(CreateCircleCombineData)
+        case dismiss, createCode(CreateCircleCombineData), complete(Role)
     }
     
-    private let data: Driver<CreateCircleCombineData>
+    private let mode: Driver<SelectRoleViewController.Mode>
     
-    init(data: CreateCircleCombineData) {
-        self.data = BehaviorRelay(value: data).asDriver()
+    init(mode: SelectRoleViewController.Mode) {
+        self.mode = BehaviorRelay(value: mode).asDriver()
     }
     
     private lazy var circleManager = CircleManager()
@@ -61,13 +61,24 @@ private extension SelectRoleViewModel {
         roles: Driver<[Role]>,
         didSelect: Signal<RolesTableElement>
     ) -> Driver<[RolesTableElement]> {
-        Driver
+        let initial = mode
+            .map { mode -> Int in
+                guard case let .select(role) = mode else {
+                    return -1
+                }
+                
+                return role?.id ?? -1
+            }
+        let select = didSelect
+            .asDriver(onErrorDriveWith: .never())
+            .map { $0.role.id }
+        let selectionId = Driver
+            .merge(initial, select)
+        
+        return Driver
             .combineLatest(
                 roles,
-                didSelect
-                    .asDriver(onErrorDriveWith: .never())
-                    .map { $0.role.id }
-                    .startWith(-1)
+                selectionId
             ) { roles, selectionId -> [RolesTableElement] in
                 roles.map { role -> RolesTableElement in
                     RolesTableElement(
@@ -95,13 +106,20 @@ private extension SelectRoleViewModel {
         
         let createCode = didTapContinue
             .asDriver(onErrorDriveWith: .never())
-            .withLatestFrom(data)
+            .withLatestFrom(mode)
             .withLatestFrom(elements) { ($0, $1) }
-            .map { data, elements -> Route in
-                let roleId = elements.first(where: { $0.marked })?.role.id
-                let copy = data.roleId(roleId)
+            .compactMap { mode, elements -> Route? in
+                guard let role = elements.first(where: { $0.marked })?.role else {
+                    return nil
+                }
                 
-                return .createCode(copy)
+                switch mode {
+                case .flow(let data):
+                    let copy = data.roleId(role.id)
+                    return .createCode(copy)
+                case .select:
+                    return .complete(role)
+                }
             }
         
         return Driver
