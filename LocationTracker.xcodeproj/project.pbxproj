@@ -191,6 +191,7 @@
 		DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */; };
 		DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */; };
 		DED6136F2B2368B200F09899 /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136E2B2368B200F09899 /* CodeField.swift */; };
+		DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6B6D32B29DF6D00F7C04D /* OCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -382,6 +383,7 @@
 		DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleViewModel.swift; sourceTree = "<group>"; };
 		DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleView.swift; sourceTree = "<group>"; };
 		DED6136E2B2368B200F09899 /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
+		DEF6B6D32B29DF6D00F7C04D /* OCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCircleView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -861,6 +863,7 @@
 				DEB3918A2B0BA78800F1AE09 /* OWelcomeView.swift */,
 				DEB3918C2B0BABAC00F1AE09 /* ONameView.swift */,
 				DEB391902B0BB3CC00F1AE09 /* OPhotoView.swift */,
+				DEF6B6D32B29DF6D00F7C04D /* OCircleView.swift */,
 				DEB391922B0BBE0900F1AE09 /* OIntroView.swift */,
 				DEB391942B0BC38400F1AE09 /* OSOSInstructionView.swift */,
 				DEB391992B0BCE7100F1AE09 /* OPINView.swift */,
@@ -1576,6 +1579,7 @@
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,
 				DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
+				DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */,
 				DED613572B221DD000F09899 /* RolesTableElement.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
 				DE1D27C52B287AF40022FB9D /* CircleConfirmDeleteView.swift in Sources */,

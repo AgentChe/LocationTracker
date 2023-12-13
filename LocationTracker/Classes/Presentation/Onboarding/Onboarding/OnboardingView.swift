@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, name, photo, intro1, intro2, sosInstruction, pin, permissions, preloader
+        case welcome, name, photo, circle, intro1, intro2, sosInstruction, pin, permissions, preloader
     }
     
     var didFinish: (() -> Void)?
@@ -17,6 +17,7 @@ final class OnboardingView: UIView {
     
     lazy var nameView = ONameView(step: .name)
     lazy var photoView = OPhotoView(step: .photo, vc: vc)
+    lazy var circleView = OCircleView(step: .circle)
     lazy var pinView = OPINView(step: .pin)
     lazy var permissionsView = OPermissionsView(step: .permissions)
     lazy var preloaderView = OPreloaderView(step: .preloader, combineData: combineData, vc: vc)
@@ -26,6 +27,7 @@ final class OnboardingView: UIView {
             OWelcomeView(step: .welcome),
             nameView,
             photoView,
+            circleView,
             OIntroView(step: .intro1, intro: .one),
             OIntroView(step: .intro2, intro: .two),
             OSOSInstructionView(step: .sosInstruction),
@@ -101,10 +103,27 @@ private extension OnboardingView {
                 }
             }
         
-        nameView.mainDelegate = combineData
+        nameView.add(observer: combineData)
+        nameView.add(observer: circleView)
         photoView.mainDelegate = combineData
         pinView.mainDelegate = combineData
         permissionsView.mainDelegate = combineData
+        
+        circleView.onSkip = { [weak self] in
+            self?.scroll(to: .intro1)
+        }
+        
+        circleView.createCircle = { [weak self] in
+            let vc = CreateCircleViewController.make(mode: .flow)
+            let nc = NavigationController(rootViewController: vc)
+            self?.vc?.present(nc, animated: true)
+        }
+        
+        circleView.joinToCircle = { [weak self] in
+            let vc = JoinToCircleViewController.make()
+            let nc = NavigationController(rootViewController: vc)
+            self?.vc?.present(nc, animated: true)
+        }
     }
     
     func scroll(to newStep: Step) {

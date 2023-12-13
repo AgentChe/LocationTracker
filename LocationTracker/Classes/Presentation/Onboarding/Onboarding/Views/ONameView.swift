@@ -12,7 +12,7 @@ protocol ONameViewDelegate: AnyObject {
 }
 
 final class ONameView: OSlideView {
-    weak var mainDelegate: ONameViewDelegate?
+    private var delegates = [Weak<ONameViewDelegate>]()
     
     lazy var titleLabel = makeTitleLabel()
     lazy var subTitleLabel = makeSubTitleLabel()
@@ -38,6 +38,21 @@ final class ONameView: OSlideView {
     }
 }
 
+// MARK: Public
+extension ONameView {
+    func add(observer: ONameViewDelegate) {
+        let weakly = observer as AnyObject
+        delegates.append(Weak<ONameViewDelegate>(weakly))
+        delegates = delegates.filter { $0.weak != nil }
+    }
+    
+    func remove(observer: ONameViewDelegate) {
+        if let index = delegates.firstIndex(where: { $0.weak === observer }) {
+            delegates.remove(at: index)
+        }
+    }
+}
+
 // MARK: UITextFieldDelegate
 extension ONameView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -54,7 +69,8 @@ private extension ONameView {
     
     @objc
     func continueTapped() {
-        mainDelegate?.nameViewDidEnter(name: textField.text ?? "")
+        let name = textField.text ?? ""
+        delegates.forEach { $0.weak?.nameViewDidEnter(name: name) }
         
         onNext()
     }

@@ -58,6 +58,11 @@
 "Onboarding.Name.Placeholder" = "Name";
 "Onboarding.Photo.Title" = "Add a photo";
 "Onboarding.Photo.Skip" = "Skip";
+"Onboarding.Circle.Skip" = "Skip";
+"Onboarding.Circle.Title" = "Glad to have you with us,\n";
+"Onboarding.Circle.SubTitle" = "Now you can join or create your Circle";
+"Onboarding.Circle.CreateCircle" = "Create a Сircle";
+"Onboarding.Circle.JoinToCircle" = "Join a Сircle";
 "Onboarding.Intro1.Title" = "Feel more secure in potentially risky situations";
 "Onboarding.Intro1.SubTitle" = "It offers peace of mind, alleviating anxiety and fear, knowing that your loved ones are just a button press away.";
 "Onboarding.Intro2.Title" = "Only those you trust will receive your SOS signal";
