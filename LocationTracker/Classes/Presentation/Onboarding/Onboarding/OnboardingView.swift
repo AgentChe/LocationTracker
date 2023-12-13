@@ -114,13 +114,17 @@ private extension OnboardingView {
         }
         
         circleView.createCircle = { [weak self] in
-            let vc = CreateCircleViewController.make(mode: .flow)
+            let vc = CreateCircleViewController.make(mode: .flow, flowCompleted: { [weak self] in
+                self?.scroll(to: .intro1)
+            })
             let nc = NavigationController(rootViewController: vc)
             self?.vc?.present(nc, animated: true)
         }
         
         circleView.joinToCircle = { [weak self] in
-            let vc = JoinToCircleViewController.make()
+            let vc = JoinToCircleViewController.make { [weak self] in
+                self?.scroll(to: .intro1)
+            }
             let nc = NavigationController(rootViewController: vc)
             self?.vc?.present(nc, animated: true)
         }

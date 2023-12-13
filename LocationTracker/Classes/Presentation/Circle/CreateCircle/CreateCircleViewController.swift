@@ -28,10 +28,16 @@ final class CreateCircleViewController: UIViewController {
     private lazy var didChangeImageTrigger = PublishRelay<UIImage?>()
     
     private let changed: ((EditCircleViewModel.Info) -> Void)?
+    private let flowCompleted: (() -> Void)?
     
-    private init(mode: Mode, changed: ((EditCircleViewModel.Info) -> Void)?) {
+    private init(
+        mode: Mode,
+        changed: ((EditCircleViewModel.Info) -> Void)?,
+        flowCompleted: (() -> Void)?
+    ) {
         self.viewModel = CreateCircleViewModel(mode: mode)
         self.changed = changed
+        self.flowCompleted = flowCompleted
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -122,8 +128,12 @@ extension CreateCircleViewController: UITextFieldDelegate {
 
 // MARK: Public
 extension CreateCircleViewController {
-    static func make(mode: Mode, changed: ((EditCircleViewModel.Info) -> Void)? = nil) -> CreateCircleViewController {
-        let vc = CreateCircleViewController(mode: mode, changed: changed)
+    static func make(
+        mode: Mode,
+        changed: ((EditCircleViewModel.Info) -> Void)? = nil,
+        flowCompleted: (() -> Void)? = nil
+    ) -> CreateCircleViewController {
+        let vc = CreateCircleViewController(mode: mode, changed: changed, flowCompleted: flowCompleted)
         vc.title = mode.title
         vc.navigationItem.backButtonTitle = " "
         return vc
@@ -159,9 +169,11 @@ private extension CreateCircleViewController {
     func route(_ route: CreateCircleViewModel.Route) {
         switch route {
         case .dismiss:
-            navigationController?.dismiss(animated: true)
+            navigationController?.dismiss(animated: true) { [weak self] in
+                self?.flowCompleted?()
+            }
         case .selectRole(let data):
-            let vc = SelectRoleViewController.make(mode: .flow(data))
+            let vc = SelectRoleViewController.make(mode: .flow(data), flowCompleted: flowCompleted)
             navigationController?.pushViewController(vc, animated: true)
         case .changed(let info):
             navigationController?.dismiss(animated: true) { [weak self] in

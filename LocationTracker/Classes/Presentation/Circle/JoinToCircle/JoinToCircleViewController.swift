@@ -17,6 +17,18 @@ final class JoinToCircleViewController: UIViewController {
     
     private lazy var closeButton = UIButton()
     
+    private let flowCompleted: (() -> Void)?
+    
+    private init(flowCompleted: (() -> Void)?) {
+        self.flowCompleted = flowCompleted
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = mainView
     }
@@ -70,8 +82,8 @@ final class JoinToCircleViewController: UIViewController {
 
 // MARK: Public
 extension JoinToCircleViewController {
-    static func make() -> JoinToCircleViewController {
-        let vc = JoinToCircleViewController()
+    static func make(flowCompleted: (() -> Void)? = nil) -> JoinToCircleViewController {
+        let vc = JoinToCircleViewController(flowCompleted: flowCompleted)
         vc.navigationItem.title = "JoinToCircle.Title".localized
         vc.navigationItem.backButtonTitle = " "
         return vc
@@ -111,9 +123,11 @@ private extension JoinToCircleViewController {
     func route(_ route: JoinToCircleViewModel.Route) {
         switch route {
         case .dismiss:
-            navigationController?.dismiss(animated: true)
+            navigationController?.dismiss(animated: true) { [weak self] in
+                self?.flowCompleted?()
+            }
         case .toCircle(let circle):
-            let vc = CircleMembersViewController.make(circle: circle)
+            let vc = CircleMembersViewController.make(circle: circle, flowCompleted: flowCompleted)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

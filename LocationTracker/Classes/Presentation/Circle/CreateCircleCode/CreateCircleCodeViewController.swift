@@ -15,8 +15,11 @@ final class CreateCircleCodeViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private init(data: CreateCircleCombineData) {
-        viewModel = CreateCircleCodeViewModel(data: data)
+    private let flowCompleted: (() -> Void)?
+    
+    private init(data: CreateCircleCombineData, flowCompleted: (() -> Void)?) {
+        self.viewModel = CreateCircleCodeViewModel(data: data)
+        self.flowCompleted = flowCompleted
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -79,8 +82,8 @@ final class CreateCircleCodeViewController: UIViewController {
 
 // MARK: Public
 extension CreateCircleCodeViewController {
-    static func make(data: CreateCircleCombineData) -> CreateCircleCodeViewController {
-        let vc = CreateCircleCodeViewController(data: data)
+    static func make(data: CreateCircleCombineData, flowCompleted: (() -> Void)? = nil) -> CreateCircleCodeViewController {
+        let vc = CreateCircleCodeViewController(data: data, flowCompleted: flowCompleted)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -119,7 +122,9 @@ private extension CreateCircleCodeViewController {
     func route(_ route: CreateCircleCodeViewModel.Route) {
         switch route {
         case .dismiss:
-            navigationController?.dismiss(animated: true)
+            navigationController?.dismiss(animated: true) { [weak self] in
+                self?.flowCompleted?()
+            }
         case .share(let code):
             let controller = UIActivityViewController(activityItems: [code], applicationActivities: nil)
             present(controller, animated: true)

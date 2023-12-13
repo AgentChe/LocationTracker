@@ -23,10 +23,16 @@ final class SelectRoleViewController: UIViewController {
     private lazy var closeButton = UIButton()
     
     private let selected: ((Role) -> Void)?
+    private let flowCompleted: (() -> Void)?
     
-    private init(mode: SelectRoleViewController.Mode, selected: ((Role) -> Void)?) {
+    private init(
+        mode: SelectRoleViewController.Mode,
+        selected: ((Role) -> Void)?,
+        flowCompleted: (() -> Void)?
+    ) {
         self.viewModel = SelectRoleViewModel(mode: mode)
         self.selected = selected
+        self.flowCompleted = flowCompleted
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -73,8 +79,12 @@ final class SelectRoleViewController: UIViewController {
 
 // MARK: Public
 extension SelectRoleViewController {
-    static func make(mode: SelectRoleViewController.Mode, selected: ((Role) -> Void)? = nil) -> SelectRoleViewController {
-        let vc = SelectRoleViewController(mode: mode, selected: selected)
+    static func make(
+        mode: SelectRoleViewController.Mode,
+        selected: ((Role) -> Void)? = nil,
+        flowCompleted: (() -> Void)? = nil
+    ) -> SelectRoleViewController {
+        let vc = SelectRoleViewController(mode: mode, selected: selected, flowCompleted: flowCompleted)
         vc.navigationItem.backButtonTitle = " "
         vc.navigationItem.title = "SelectRole.Title".localized
         return vc
@@ -98,9 +108,11 @@ private extension SelectRoleViewController {
     func route(_ route: SelectRoleViewModel.Route) {
         switch route {
         case .dismiss:
-            navigationController?.dismiss(animated: true)
+            navigationController?.dismiss(animated: true) { [weak self] in
+                self?.flowCompleted?()
+            }
         case .createCode(let data):
-            let vc = CreateCircleCodeViewController.make(data: data)
+            let vc = CreateCircleCodeViewController.make(data: data, flowCompleted: flowCompleted)
             navigationController?.pushViewController(vc, animated: true)
         case .complete(let role):
             navigationController?.dismiss(animated: true) { [weak self] in

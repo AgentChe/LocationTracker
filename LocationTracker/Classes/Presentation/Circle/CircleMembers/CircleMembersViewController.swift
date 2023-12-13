@@ -14,9 +14,11 @@ final class CircleMembersViewController: UIViewController {
     private lazy var disposeBag = DisposeBag()
     
     private let circle: Circle
+    private let flowCompleted: (() -> Void)?
     
-    private init(circle: Circle) {
+    private init(circle: Circle, flowCompleted: (() -> Void)?) {
         self.circle = circle
+        self.flowCompleted = flowCompleted
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,7 +40,9 @@ final class CircleMembersViewController: UIViewController {
                 mainView.okButton.rx.tap.asObservable()
             )
             .bind(to: Binder(self) { base, void in
-                base.navigationController?.dismiss(animated: true)
+                base.navigationController?.dismiss(animated: true) { [weak self] in
+                    self?.flowCompleted?()
+                }
             })
             .disposed(by: disposeBag)
         
@@ -60,8 +64,8 @@ final class CircleMembersViewController: UIViewController {
 
 // MARK: Public
 extension CircleMembersViewController {
-    static func make(circle: Circle) -> CircleMembersViewController {
-        let vc = CircleMembersViewController(circle: circle)
+    static func make(circle: Circle, flowCompleted: (() -> Void)? = nil) -> CircleMembersViewController {
+        let vc = CircleMembersViewController(circle: circle, flowCompleted: flowCompleted)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
