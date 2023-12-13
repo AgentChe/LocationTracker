@@ -23,7 +23,7 @@ struct GetMembersTrackInfoRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "members_ids": membersIds
+            "member_ids": membersIds
         ]
     }
 }

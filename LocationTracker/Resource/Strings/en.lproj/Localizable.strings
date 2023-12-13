@@ -135,3 +135,4 @@
 "EditCircle.Members" = "Members";
 "EditCircle.AddMember" = "Add a new member";
 "EditCircle.SaveButton" = "Save";
+"EditCircle.Saved.Message" = "Data changed successfully";

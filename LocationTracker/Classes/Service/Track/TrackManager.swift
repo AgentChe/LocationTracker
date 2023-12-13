@@ -22,57 +22,19 @@ final class TrackManager {
 
 // MARK: TrackManagerProtocol
 extension TrackManager: TrackManagerProtocol {
-    // TODO
     func obtainTrackInfo(for membersIds: [String]) -> Single<[MemberTrackInfo]> {
-        Single<[MemberTrackInfo]>.create { single in
-            func member(me: Bool) -> Member {
-                let mId = Int.random(in: 1...123123123)
-                
-                return Member(
-                    id: me ? SessionManager().userId : "\(mId)",
-                    name: "Member \(mId)",
-                    photoUrl: nil,
-                    roleId: Int.random(in: 1...5)
-                )
-            }
-            
-            func info(me: Bool = false) -> MemberTrackInfo {
-                return MemberTrackInfo(
-                    id: UUID().uuidString,
-                    member: member(me: me),
-                    lastLocation: Location(latitude: 41.402040, longitude: -74.324320),
-                    lastUpdated: Calendar.current.date(byAdding: .day, value: Int.random(in: 10...1000), to: Date()),
-                    batteryLevel: 54
-                )
-            }
-            
-            let result = [
-                info(),
-                info(me: true),
-                info(),
-                info(),
-                info(),
-                info(),
-                info(),
-                info()
-            ]
-            single(.success(result))
-            
-            return Disposables.create()
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
-        
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetMembersTrackInfoRequest(
-//            userToken: userToken,
-//            membersIds: membersIds
-//        )
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetMembersTrackInfoResponse.map(from: $0) }
+
+        let request = GetMembersTrackInfoRequest(
+            userToken: userToken,
+            membersIds: membersIds
+        )
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetMembersTrackInfoResponse.map(from: $0) }
     }
     
     func geocode(trackInfo: MemberTrackInfo) -> Single<(MemberTrackInfo, String?)> {

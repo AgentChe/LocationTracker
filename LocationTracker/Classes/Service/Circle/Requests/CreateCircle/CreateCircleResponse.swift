@@ -53,7 +53,7 @@ enum CreateCircleResponse {
     
     static func map(memberJSON: [String: Any]) -> Member? {
         guard
-            let id = memberJSON["id"] as? Int, // TODO: должен приходить тип String
+            let id = memberJSON["id"] as? String, 
             let name = memberJSON["name"] as? String,
             let photoPath = memberJSON["image"] as? String,
             let photoUrl = URL(string: photoPath),
@@ -63,7 +63,7 @@ enum CreateCircleResponse {
         }
         
         return Member(
-            id: String(id),
+            id: id,
             name: name,
             photoUrl: photoUrl,
             roleId: roleId

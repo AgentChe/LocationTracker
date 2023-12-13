@@ -11,14 +11,28 @@ import UIKit
 
 final class EditCircleViewModel {
     enum Route {
-        case dismiss, editInfo(Info), editRole(Role?), addMember(String)
+        case dismiss, editInfo(Info), editRole(Role?), addMember(String), saved
     }
     
     typealias Info = (String, EditCircleName.Photo)
+    typealias Data = (
+        id: Int,
+        excludeMembers: [Member],
+        name: String,
+        image: EditCircleName.Photo,
+        roleId: Int?
+    )
+    
+    var tryAgain: ((Error) -> (Observable<Void>))?
+    
+    private lazy var activity = RxActivityIndicator()
     
     private let circle: Driver<Circle>
     
     private lazy var circleManager = CircleManager()
+    private lazy var profileManager = ProfileManager()
+    
+    private lazy var observableRetrySingle = ObservableRetrySingle()
     
     init(circle: Circle) {
         self.circle = BehaviorRelay(value: circle).asDriver()
@@ -41,6 +55,7 @@ extension EditCircleViewModel {
     struct Output {
         let elements: Driver<[EditCircleTableElement]>
         let route: Driver<Route>
+        let activity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -64,9 +79,12 @@ extension EditCircleViewModel {
                 didEditName: input.didEditName,
                 didEditRole: input.didEditRole,
                 didAddMember: input.didAddMember,
+                didSave: input.didSave,
                 info: info,
-                role: role
-            )
+                role: role,
+                excludeMembers: excludeMembers
+            ),
+            activity: activity.asDriver()
         )
     }
 }
@@ -119,16 +137,13 @@ private extension EditCircleViewModel {
         let initialRole = Driver
             .combineLatest(roles, circle)
             .map { roles, circle -> Role? in
-                // TODO
-                roles.first
-                
-//                let userId = SessionManager().userId
-//
-//                guard let me = circle.members.first(where: { $0.id == userId }) else {
-//                    return nil
-//                }
-//
-//                return roles.first(where: { me.roleId == $0.id })
+                let userId = SessionManager().userId
+
+                guard let me = circle.members.first(where: { $0.id == userId }) else {
+                    return nil
+                }
+
+                return roles.first(where: { me.roleId == $0.id })
             }
         
         return Driver
@@ -171,8 +186,10 @@ private extension EditCircleViewModel {
         didEditName: Signal<Void>,
         didEditRole: Signal<Void>,
         didAddMember: Signal<Void>,
+        didSave: Signal<Void>,
         info: Driver<Info>,
-        role: Driver<Role?>
+        role: Driver<Role?>,
+        excludeMembers: Driver<[Member]>
     ) -> Driver<Route> {
         let dismiss = didTapClose
             .asDriver(onErrorDriveWith: .never())
@@ -189,8 +206,97 @@ private extension EditCircleViewModel {
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(circle)
             .map { Route.addMember($0.inviteCode) }
+        let save = makeSave(
+            didSave: didSave,
+            excludeMembers: excludeMembers,
+            info: info,
+            role: role
+        )
         
         return Driver
-            .merge(dismiss, editInfo, editRole, addMember)
+            .merge(dismiss, editInfo, editRole, addMember, save)
+    }
+    
+    func makeSave(
+        didSave: Signal<Void>,
+        excludeMembers: Driver<[Member]>,
+        info: Driver<Info>,
+        role: Driver<Role?>
+    ) -> Driver<Route> {
+        func photoUrl(source: EditCircleName.Photo) -> Single<URL?> {
+            switch source {
+            case .url(let url):
+                return .just(url)
+            case .image(let image):
+                guard let photo = image.jpegData(compressionQuality: 0.5) else {
+                    return .deferred { .just(nil) }
+                }
+
+                return self.profileManager
+                    .upload(photo: photo)
+            }
+        }
+        
+        func exclude(circleId: Int, members: [Member]) -> Single<Void> {
+            guard !members.isEmpty else {
+                return .just(Void())
+            }
+            
+            return circleManager
+                .exclude(membersIds: members.map { $0.id }, circleId: circleId)
+        }
+        
+        let action = didSave
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(circle.map { $0.id })
+            .withLatestFrom(excludeMembers) { ($0, $1) }
+            .withLatestFrom(info) { ($0.0, $0.1, $1) }
+            .withLatestFrom(role) { ($0.0, $0.1, $0.2, $1) }
+        
+        let route = action
+            .flatMapLatest { [weak self] id, excludeMembers, info, role -> Driver<Route> in
+                guard let self else {
+                    return .never()
+                }
+                
+                func source() -> Single<Route> {
+                    photoUrl(source: info.1)
+                        .flatMap { photoUrl -> Single<Route> in
+                            exclude(circleId: id, members: excludeMembers)
+                                .flatMap {
+                                    self.circleManager
+                                        .edit(
+                                            id: id,
+                                            name: info.0,
+                                            photo: photoUrl?.absoluteString,
+                                            roleId: role?.id ?? -1
+                                        )
+                                }
+                                .map { circle -> Route in
+                                    guard circle != nil else {
+                                        throw ContentError(.notContent)
+                                    }
+                                    
+                                    return .saved
+                                }
+                        }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { trigger(error: $0) })
+                    .trackActivity(self.activity)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+        
+        return route
     }
 }

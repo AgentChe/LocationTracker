@@ -10,6 +10,7 @@ import UIKit
 final class EditCircleView: UIView {
     lazy var tableView = makeTableView()
     lazy var saveButton = makeSaveButton()
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +47,13 @@ private extension EditCircleView {
             saveButton.heightAnchor.constraint(equalToConstant: 56.scale),
             saveButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -60.scale : -30.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 32.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 32.scale),
+            preloader.centerXAnchor.constraint(equalTo: saveButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: saveButton.centerYAnchor)
+        ])
     }
 }
 
@@ -72,6 +80,16 @@ private extension EditCircleView {
         view.backgroundColor = Appearance.primary1
         view.layer.cornerRadius = 20.scale
         view.setAttributedTitle("EditCircle.SaveButton".localized.attributed(with: attrs), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.color = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

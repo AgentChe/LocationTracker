@@ -86,7 +86,7 @@ private extension CirclesViewController {
     func route(_ route: CirclesViewModel.Route) {
         switch route {
         case .create:
-            let nc = NavigationController(rootViewController: CreateCircleViewController.make())
+            let nc = NavigationController(rootViewController: CreateCircleViewController.make(mode: .flow))
             present(nc, animated: true)
         case .join:
             let nc = NavigationController(rootViewController: JoinToCircleViewController.make())

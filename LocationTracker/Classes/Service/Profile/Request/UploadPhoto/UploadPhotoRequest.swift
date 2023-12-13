@@ -11,6 +11,6 @@ struct UploadPhotoRequest: APIRequestBody {
     let userToken: String
     
     var url: String {
-        GlobalDefinitions.domain + "/api/file?_user_token=\(userToken)&_api_key=\(GlobalDefinitions.apiKey)"
+        GlobalDefinitions.domain + "/api/circle/file?_user_token=\(userToken)&_api_key=\(GlobalDefinitions.apiKey)"
     }
 }

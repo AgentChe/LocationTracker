@@ -16,14 +16,14 @@ protocol CircleManagerProtocol: AnyObject {
     ) -> Single<Circle?>
     func join(inviteCode: String) -> Single<Circle?>
     func edit(
-        id: String,
+        id: Int,
         name: String,
         photo: String?,
-        roleId: String
+        roleId: Int
     ) -> Single<Circle?>
     func obtainCircles() -> Single<[Circle]>
     func delete(id: Int) -> Single<Void>
-    func exclude(membersIds: [String], circleId: String) -> Single<Void>
+    func exclude(membersIds: [String], circleId: Int) -> Single<Void>
 }
 
 final class CircleManager {
@@ -93,10 +93,10 @@ extension CircleManager: CircleManagerProtocol {
     }
     
     func edit(
-        id: String,
+        id: Int,
         name: String,
         photo: String?,
-        roleId: String
+        roleId: Int
     ) -> Single<Circle?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
@@ -109,9 +109,6 @@ extension CircleManager: CircleManagerProtocol {
             name: name,
             roleId: roleId
         )
-        
-        // TODO
-        print("edit: \(request.url), params: \(request.parameters)")
         
         return restApiTransport
             .callServerApi(requestBody: request)
@@ -152,7 +149,7 @@ extension CircleManager: CircleManagerProtocol {
             })
     }
     
-    func exclude(membersIds: [String], circleId: String) -> Single<Void> {
+    func exclude(membersIds: [String], circleId: Int) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -162,9 +159,6 @@ extension CircleManager: CircleManagerProtocol {
             membersIds: membersIds,
             circleId: circleId
         )
-        
-        // TODO
-        print("exclude: \(request.url), params: \(request.parameters)")
         
         return restApiTransport
             .callServerApi(requestBody: request)

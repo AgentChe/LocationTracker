@@ -82,7 +82,7 @@ private extension DetailsCircleViewModel {
                     result.append(.member(element))
                 }
                 
-                let isOwner = circle.owner.id != userId // TODO: != -> ==
+                let isOwner = circle.owner.id == userId 
                 let actions: [DetailsCircleTableAction] = isOwner ? [.edit, .delete] : [.addMember]
                 actions.forEach { result.append(.action($0)) }
                 

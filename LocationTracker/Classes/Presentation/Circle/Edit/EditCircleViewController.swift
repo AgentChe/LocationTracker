@@ -38,6 +38,14 @@ final class EditCircleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else {
+                return .never()
+            }
+
+            return self.open(error: error)
+        }
+        
         let output = viewModel.configure(input: EditCircleViewModel.Input(
             didTapClose: closeButton.rx.tap.asSignal(),
             didEditName: mainView.tableView.didEditName,
@@ -61,6 +69,12 @@ final class EditCircleViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        output.activity
+            .drive(Binder(self) { base, activity in
+                base.activity(activity)
+            })
+            .disposed(by: disposeBag)
+        
         addCloseButton()
     }
 }
@@ -77,6 +91,27 @@ extension EditCircleViewController {
 
 // MARK: Private
 private extension EditCircleViewController {
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
+    }
+    
+    func activity(_ activity: Bool) {
+        mainView.saveButton.isHidden = activity
+        activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
+    }
+    
     func addCloseButton() {
         closeButton.setImage(UIImage(named: "CreateCircle.Close"), for: .normal)
         
@@ -94,7 +129,11 @@ private extension EditCircleViewController {
         case .dismiss:
             navigationController?.dismiss(animated: true)
         case .editInfo(let info):
-            break
+            let vc = CreateCircleViewController.make(mode: .change(info)) { [weak self] info in
+                self?.updatedInfoTrigger.accept(info)
+            }
+            let nc = NavigationController(rootViewController: vc)
+            present(nc, animated: true)
         case .editRole(let role):
             let vc = SelectRoleViewController.make(mode: .select(role)) { [weak self] selected in
                 self?.updatedRoleTrigger.accept(selected)
@@ -104,6 +143,13 @@ private extension EditCircleViewController {
         case .addMember(let inviteCode):
             let vc = InviteViewController.make(inviteCode: inviteCode)
             present(vc, animated: true)
+        case .saved:
+            let alert = UIAlertController(title: nil, message: "EditCircle.Saved.Message".localized, preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true)
         }
     }
 }

@@ -9,7 +9,7 @@ import RxSwift
 import RxCocoa
 
 final class CircleMediator {
-    typealias Excluded = (membersIds: [String], circleId: String)
+    typealias Excluded = (membersIds: [String], circleId: Int)
     
     static let shared = CircleMediator()
     

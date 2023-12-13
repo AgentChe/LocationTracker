@@ -9,10 +9,10 @@ import Alamofire
 
 struct EditCircleRequest: APIRequestBody {
     let userToken: String
-    let id: String
+    let id: Int
     let photoPath: String?
     let name: String
-    let roleId: String
+    let roleId: Int
 
     var url: String {
         GlobalDefinitions.domain + "/api/circle/edit"
@@ -29,7 +29,7 @@ struct EditCircleRequest: APIRequestBody {
             "id": id,
             "name": name,
             "role_id": roleId
-        ]
+        ] as [String : Any]
         
         if let photoPath {
             params["image"] = photoPath
