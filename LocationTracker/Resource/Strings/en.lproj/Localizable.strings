@@ -141,3 +141,8 @@
 "EditCircle.AddMember" = "Add a new member";
 "EditCircle.SaveButton" = "Save";
 "EditCircle.Saved.Message" = "Data changed successfully";
+
+// MARK: Tab
+"Tab.Location" = "Location";
+"Tab.Chats" = "Chats";
+"Tab.Profile" = "Profile";

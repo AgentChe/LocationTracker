@@ -37,6 +37,14 @@
 		DE1D27DA2B2891900022FB9D /* EditCircleRoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */; };
 		DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */; };
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
+		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
+		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
+		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
+		DEB343EB2B3457010029F34B /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343EA2B3457010029F34B /* TabItemButton.swift */; };
+		DEB343ED2B3457090029F34B /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343EC2B3457090029F34B /* TabView.swift */; };
+		DEB343F02B3459090029F34B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343EF2B3459090029F34B /* LocationViewController.swift */; };
+		DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343F12B34590E0029F34B /* LocationViewModel.swift */; };
+		DEB343F42B3459120029F34B /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343F32B3459120029F34B /* LocationView.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -226,6 +234,14 @@
 		DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleRoleCell.swift; sourceTree = "<group>"; };
 		DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
+		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DEB343EA2B3457010029F34B /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
+		DEB343EC2B3457090029F34B /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		DEB343EF2B3459090029F34B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		DEB343F12B34590E0029F34B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		DEB343F32B3459120029F34B /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -559,6 +575,44 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DEB343E12B3456B60029F34B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DEB343E82B3456F10029F34B /* Views */,
+				DEB343E42B3456D40029F34B /* MainViewController.swift */,
+				DEB343E22B3456CE0029F34B /* MainView.swift */,
+				DEB343E62B3456DC0029F34B /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DEB343E82B3456F10029F34B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEB343E92B3456F50029F34B /* Tabs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEB343E92B3456F50029F34B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				DEB343EA2B3457010029F34B /* TabItemButton.swift */,
+				DEB343EC2B3457090029F34B /* TabView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		DEB343EE2B3458FE0029F34B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				DEB343EF2B3459090029F34B /* LocationViewController.swift */,
+				DEB343F12B34590E0029F34B /* LocationViewModel.swift */,
+				DEB343F32B3459120029F34B /* LocationView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		DEB390642B0B8C2900F1AE09 = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +818,8 @@
 		DEB390CE2B0B907F00F1AE09 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEB343EE2B3458FE0029F34B /* Location */,
+				DEB343E12B3456B60029F34B /* Main */,
 				DED613292B206BCF00F09899 /* Circle */,
 				DEB390E92B0B907F00F1AE09 /* Onboarding */,
 				DEB390CF2B0B907F00F1AE09 /* Splash */,
@@ -1425,6 +1481,7 @@
 				DEB391382B0B907F00F1AE09 /* TapAreaButton.swift in Sources */,
 				DEB3911D2B0B907F00F1AE09 /* UIColor+Extension.swift in Sources */,
 				DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */,
+				DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */,
 				DEB391332B0B907F00F1AE09 /* ImagePicker.swift in Sources */,
 				DEB391212B0B907F00F1AE09 /* String+Extension.swift in Sources */,
 				DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */,
@@ -1482,10 +1539,12 @@
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
+				DEB343ED2B3457090029F34B /* TabView.swift in Sources */,
 				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,
+				DEB343E32B3456CE0029F34B /* MainView.swift in Sources */,
 				DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */,
 				DEB391202B0B907F00F1AE09 /* ObservableAndSingle+Extension.swift in Sources */,
 				DED612FF2B1F281400F09899 /* CircleManager.swift in Sources */,
@@ -1502,6 +1561,7 @@
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
 				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
 				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
+				DEB343EB2B3457010029F34B /* TabItemButton.swift in Sources */,
 				DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */,
 				DEB3911C2B0B907F00F1AE09 /* UIDevice+Extension.swift in Sources */,
 				DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */,
@@ -1551,9 +1611,11 @@
 				DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */,
 				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DE1D27CB2B288B4A0022FB9D /* EditCircleViewController.swift in Sources */,
+				DEB343F02B3459090029F34B /* LocationViewController.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
+				DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */,
 				DED613072B1F28D700F09899 /* Role.swift in Sources */,
 				DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */,
 				DE1D27CF2B288BFD0022FB9D /* EditCircleView.swift in Sources */,
@@ -1572,12 +1634,14 @@
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
+				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
 				DE1D27A02B2718AF0022FB9D /* TrackManager.swift in Sources */,
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,
 				DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */,
+				DEB343F42B3459120029F34B /* LocationView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */,
 				DED613572B221DD000F09899 /* RolesTableElement.swift in Sources */,
