@@ -146,3 +146,8 @@
 "Tab.Location" = "Location";
 "Tab.Chats" = "Chats";
 "Tab.Profile" = "Profile";
+
+// MARK: Location
+"Location.SOS" = "SOS";
+"Location.Me" = "Me";
+"Location.M" = "M";

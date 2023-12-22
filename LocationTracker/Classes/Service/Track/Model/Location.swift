@@ -19,4 +19,11 @@ extension Location {
         latitude = coordinate.latitude
         longitude = coordinate.longitude
     }
+    
+    var asCLLocation: CLLocation {
+        CLLocation(
+            latitude: latitude,
+            longitude: longitude
+        )
+    }
 }

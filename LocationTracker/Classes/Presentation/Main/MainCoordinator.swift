@@ -12,7 +12,7 @@ final class MainViewCoordinator {
     
     lazy var locationVC = NavigationController(rootViewController: LocationViewController.make())
     lazy var chatsVC = NavigationController(rootViewController: UIViewController())
-    lazy var profileVC = NavigationController(rootViewController: UIViewController())
+    lazy var profileVC = NavigationController(rootViewController: ProfileViewController.make())
     
     private var previousVC: UIViewController?
     

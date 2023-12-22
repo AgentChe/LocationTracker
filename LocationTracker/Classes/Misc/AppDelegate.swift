@@ -21,6 +21,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PurchaseValidationObserver.shared.startObserve()
         
+        GeoLocationMonitoring.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         IAPManager.initialize()
         
         return true

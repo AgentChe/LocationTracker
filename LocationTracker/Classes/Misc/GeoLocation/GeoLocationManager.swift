@@ -9,6 +9,7 @@ import CoreLocation
 
 protocol GeoLocationManagerDelegate: AnyObject {
     func geoLocationDidChange(permissionStatus: GeoLocationPermissionStatus)
+    func geoLocationDidUpdate(locations: [Location])
 }
 
 final class GeoLocationManager: NSObject {
@@ -22,12 +23,53 @@ final class GeoLocationManager: NSObject {
         super.init()
         
         manager.allowsBackgroundLocationUpdates = true
+        manager.showsBackgroundLocationIndicator = true
+        manager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        manager.pausesLocationUpdatesAutomatically = false
         manager.delegate = self
     }
 }
 
 // MARK: Public
 extension GeoLocationManager {
+    var location: Location? {
+        guard let coordinate = manager.location else {
+            return nil
+        }
+        
+        return Location(clLocation: coordinate)
+    }
+    
+    func stopUpdatingLocation() {
+        manager.stopUpdatingLocation()
+    }
+    
+    func startUpdatingLocation() {
+        let status = permissionStatus
+        
+        guard (status == .authorizedAlways) || (status == .authorizedWhenInUse) else {
+            return
+        }
+        
+        manager.stopUpdatingLocation()
+        manager.startUpdatingLocation()
+    }
+    
+    func stopMonitoringSignificantLocation() {
+        manager.stopMonitoringSignificantLocationChanges()
+    }
+    
+    func startMonitoringSignificantLocation() {
+        let status = permissionStatus
+        
+        guard (status == .authorizedAlways) || (status == .authorizedWhenInUse) else {
+            return
+        }
+        
+        manager.stopMonitoringSignificantLocationChanges()
+        manager.startMonitoringSignificantLocationChanges()
+    }
+    
     var permissionStatus: GeoLocationPermissionStatus {
         switch manager.authorizationStatus {
         case .notDetermined:
@@ -76,5 +118,10 @@ extension GeoLocationManager: CLLocationManagerDelegate {
             
             self?.delegates.forEach { $0.weak?.geoLocationDidChange(permissionStatus: status) }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let coordinates = locations.map { Location(clLocation: $0) }
+        delegates.forEach { $0.weak?.geoLocationDidUpdate(locations: coordinates) }
     }
 }

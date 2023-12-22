@@ -19,4 +19,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = SplashViewController.make()
         window?.makeKeyAndVisible()
     }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        GeoLocationMonitoring.shared.sceneDidBecomeActive(scene)
+    }
+    
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        GeoLocationMonitoring.shared.sceneDidEnterBackground(scene)
+    }
 }

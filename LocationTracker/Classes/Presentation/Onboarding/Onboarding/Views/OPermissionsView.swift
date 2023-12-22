@@ -60,6 +60,8 @@ extension OPermissionsView: GeoLocationManagerDelegate {
             onNext()
         }
     }
+    
+    func geoLocationDidUpdate(locations: [Location]) {}
 }
 
 // MARK: Private
