@@ -9,11 +9,28 @@ import UIKit
 import RxSwift
 
 final class CirclesViewController: UIViewController {
+    enum Mode {
+        case list, select(Circle?)
+    }
+    
     lazy var mainView = CirclesView()
     
-    private lazy var viewModel = CirclesViewModel()
+    private let viewModel: CirclesViewModel
     
     private lazy var disposeBag = DisposeBag()
+    
+    private let selected: ((Circle) -> Void)?
+    
+    private init(mode: Mode, selected: ((Circle) -> Void)? = nil) {
+        self.viewModel = CirclesViewModel(mode: mode)
+        self.selected = selected
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = mainView
@@ -60,8 +77,8 @@ final class CirclesViewController: UIViewController {
 
 // MARK: Public
 extension CirclesViewController {
-    static func make() -> CirclesViewController {
-        CirclesViewController()
+    static func make(mode: Mode, selected: ((Circle) -> Void)? = nil) -> CirclesViewController {
+        CirclesViewController(mode: mode, selected: selected)
     }
 }
 
@@ -96,6 +113,10 @@ private extension CirclesViewController {
         case .details(let circle):
             let vc = DetailsCircleViewController.make(circle: circle)
             present(vc, animated: true)
+        case .selected(let circle):
+            dismiss(animated: true) { [weak self] in
+                self?.selected?(circle)
+            }
         }
     }
 }

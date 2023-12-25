@@ -10,9 +10,14 @@ import UIKit
 struct CirclesTableElement {
     let circle: Circle
     let color: UIColor
+    let selected: Bool
     
-    init(circle: Circle) {
+    init(
+        circle: Circle,
+        selected: Bool = false
+    ) {
         self.circle = circle
+        self.selected = selected
         
         if circle.imageUrl != nil {
             self.color = UIColor.clear

@@ -56,6 +56,8 @@ final class CirclesTableCell: UITableViewCell {
 // MARK: Public
 extension CirclesTableCell {
     func setup(element: CirclesTableElement) {
+        container.layer.borderColor = element.selected ? Appearance.primary1.cgColor : Appearance.background2.cgColor
+        
         nameLabel.attributedText = element.circle.name.attributed(with: nameAttrs)
         
         let membersCount = String(format: "Circles.MembersCount".localized, element.circle.members.count)
@@ -133,7 +135,6 @@ private extension CirclesTableCell {
         let view = UIView()
         view.backgroundColor = Appearance.white
         view.layer.cornerRadius = 10.scale
-        view.layer.borderColor = Appearance.primary1.cgColor
         view.layer.borderWidth = 1.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

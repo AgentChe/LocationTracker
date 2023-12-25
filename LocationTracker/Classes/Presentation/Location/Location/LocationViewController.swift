@@ -54,7 +54,7 @@ final class LocationViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        output.activity
+        output.circleActivity
             .drive(Binder(mainView.circleView) { base, activity in
                 base.tableView.isHidden = activity
                 activity ? base.preloader.startAnimating() : base.preloader.stopAnimating()
@@ -119,14 +119,18 @@ private extension LocationViewController {
             present(vc, animated: true)
         case .edit(let circle):
             let vc = EditCircleViewController.make(circle: circle)
-            navigationController?.pushViewController(vc, animated: true)
+            let nc = NavigationController(rootViewController: vc)
+            present(nc, animated: true)
         case .delete(let circle):
             let vc = CircleConfirmDeleteViewController.make { [weak self] in
                 self?.didDeleteCircleTrigger.accept(circle)
             }
             present(vc, animated: false)
         case .select(let circle):
-            break // TODO
+            let vc = CirclesViewController.make(mode: .select(circle)) { [weak self] selected in
+                self?.didSelectCircleTrigger.accept(selected)
+            }
+            present(vc, animated: true)
         case .createCircle:
             let vc = CreateCircleViewController.make(mode: .flow)
             let nc = NavigationController(rootViewController: vc)

@@ -24,7 +24,9 @@ final class LocationViewModel {
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
-    private lazy var activity = RxActivityIndicator()
+    private lazy var obtainCirclesActivity = RxActivityIndicator()
+    private lazy var obtainTrackInfoActivity = RxActivityIndicator()
+    private lazy var geocodeActivity = RxActivityIndicator()
     
     private lazy var didUpdateLocationTrigger = PublishRelay<Location>()
     
@@ -51,7 +53,7 @@ extension LocationViewModel {
     struct Output {
         let moveToMyCoordinate: Driver<Location>
         let meAnnotation: Driver<MeAnnotation>
-        let activity: Driver<Bool>
+        let circleActivity: Driver<Bool>
         let circleElements: Driver<[LocationCircleTableElement]>
         let route: Driver<Route>
         let disposable: Disposable
@@ -74,7 +76,7 @@ extension LocationViewModel {
         return Output(
             moveToMyCoordinate: makeMoveToMyCoordinate(didMoveToMyCoordinate: input.didMoveToMyCoordinate),
             meAnnotation: makeMeAnnotation(myPhotoUrl: myPhotoUrl),
-            activity: activity.asDriver(),
+            circleActivity: makeCircleActivity(),
             circleElements: circleElements,
             route: makeRoute(
                 didSelectElement: input.didSelectElement,
@@ -201,7 +203,7 @@ private extension LocationViewModel {
                     result.append(.member(element))
                 }
 
-                let isOwner = circle.owner.id != userId // TODO: != -> ==
+                let isOwner = circle.owner.id == userId 
                 let actions: [DetailsCircleTableAction] = isOwner ? [.edit, .delete] : [.addMember]
                 actions.forEach { result.append(.action($0)) }
 
@@ -219,7 +221,7 @@ private extension LocationViewModel {
                 return Single
                     .zip(trackInfo.map { self.trackManager.geocode(trackInfo: $0) })
                     .map { result -> [(MemberTrackInfo, String?)]? in result }
-                    .trackActivity(self.activity)
+                    .trackActivity(self.geocodeActivity)
                     .asDriver(onErrorJustReturn: [])
             }
     }
@@ -248,6 +250,7 @@ private extension LocationViewModel {
                 return self.observableRetrySingle
                     .retry(source: { source() },
                            trigger: { trigger(error: $0) })
+                    .trackActivity(self.obtainTrackInfoActivity)
                     .asDriver(onErrorJustReturn: [])
             }
     }
@@ -326,6 +329,7 @@ private extension LocationViewModel {
         return observableRetrySingle
             .retry(source: { source() },
                    trigger: { trigger(error: $0) })
+            .trackActivity(self.obtainCirclesActivity)
             .asDriver(onErrorDriveWith: .never())
     }
     
@@ -333,11 +337,9 @@ private extension LocationViewModel {
         didSelectElement: Signal<LocationCircleTableElement>,
         selectedCircle: Driver<Circle?>
     ) -> Driver<Route> {
-        Driver
-            .combineLatest(
-                didSelectElement.asDriver(onErrorDriveWith: .never()),
-                selectedCircle
-            )
+        didSelectElement
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(selectedCircle) { ($0, $1) }
             .compactMap { element, circle -> Route? in
                 switch element {
                 case .circleName:
@@ -393,6 +395,18 @@ private extension LocationViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
             .drive()
+    }
+    
+    func makeCircleActivity() -> Driver<Bool> {
+        Driver
+            .combineLatest(
+                obtainCirclesActivity,
+                obtainTrackInfoActivity,
+                geocodeActivity
+            )
+            .map { circles, trackInfo, geocode -> Bool in
+                circles || trackInfo || geocode
+            }
     }
 }
 

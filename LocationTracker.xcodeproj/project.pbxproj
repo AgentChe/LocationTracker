@@ -634,10 +634,7 @@
 		DEB343EE2B3458FE0029F34B /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				DEB343FF2B359B450029F34B /* Views */,
-				DEB343EF2B3459090029F34B /* LocationViewController.swift */,
-				DEB343F12B34590E0029F34B /* LocationViewModel.swift */,
-				DEB343F32B3459120029F34B /* LocationView.swift */,
+				DEB3442F2B39E1D30029F34B /* Location */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -715,6 +712,17 @@
 				DEB3442D2B39BE3A0029F34B /* LocationCircleCreateCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEB3442F2B39E1D30029F34B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				DEB343FF2B359B450029F34B /* Views */,
+				DEB343EF2B3459090029F34B /* LocationViewController.swift */,
+				DEB343F12B34590E0029F34B /* LocationViewModel.swift */,
+				DEB343F32B3459120029F34B /* LocationView.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		DEB390642B0B8C2900F1AE09 = {
