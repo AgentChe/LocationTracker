@@ -9,6 +9,7 @@ import MapKit
 
 final class LocationMapView: MKMapView {
     lazy var meAnnotation = [MeAnnotation]()
+    lazy var membersAnnotations = [MemberAnnotation]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +29,13 @@ extension LocationMapView {
         
         meAnnotation = [me]
         addAnnotation(me)
+    }
+    
+    func setup(membersAnnotations: [MemberAnnotation]) {
+        self.membersAnnotations.forEach { removeAnnotation($0) }
+        
+        self.membersAnnotations = membersAnnotations
+        self.membersAnnotations.forEach { addAnnotation($0) }
     }
 }
 

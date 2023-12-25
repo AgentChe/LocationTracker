@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Member: Codable {
+struct Member: Codable, Hashable {
     let id: String
     let name: String
     let photoUrl: URL?

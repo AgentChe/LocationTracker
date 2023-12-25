@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Circle: Codable {
+struct Circle: Codable, Hashable {
     let id: Int
     let name: String
     let imageUrl: URL?
