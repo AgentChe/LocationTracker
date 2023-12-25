@@ -8,7 +8,6 @@
 import MapKit
 
 final class LocationMapView: MKMapView {
-    lazy var meAnnotation = [MeAnnotation]()
     lazy var membersAnnotations = [MemberAnnotation]()
     
     override init(frame: CGRect) {
@@ -24,13 +23,6 @@ final class LocationMapView: MKMapView {
 
 // MARK: Public
 extension LocationMapView {
-    func setup(me: MeAnnotation) {
-        meAnnotation.forEach { removeAnnotation($0) }
-        
-        meAnnotation = [me]
-        addAnnotation(me)
-    }
-    
     func setup(membersAnnotations: [MemberAnnotation]) {
         self.membersAnnotations.forEach { removeAnnotation($0) }
         
@@ -42,11 +34,12 @@ extension LocationMapView {
 // MARK: MKMapViewDelegate
 extension LocationMapView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? MeAnnotation {
-            return mapView.dequeueReusableAnnotationView(withIdentifier: String(describing: MeAnnotationView.self), for: annotation)
+        guard let annotation = annotation as? MemberAnnotation else {
+            return nil
         }
         
-        return nil
+        let key = String(describing: annotation.me ? MeAnnotationView.self : MemberAnnotationView.self)
+        return mapView.dequeueReusableAnnotationView(withIdentifier: key, for: annotation)
     }
 }
 
@@ -56,5 +49,6 @@ private extension LocationMapView {
         delegate = self
         
         register(MeAnnotationView.self, forAnnotationViewWithReuseIdentifier: String(describing: MeAnnotationView.self))
+        register(MemberAnnotationView.self, forAnnotationViewWithReuseIdentifier: String(describing: MemberAnnotationView.self))
     }
 }

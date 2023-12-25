@@ -48,12 +48,6 @@ final class LocationViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        output.meAnnotation
-            .drive(Binder(mainView.mapView) { base, meAnnotation in
-                base.setup(me: meAnnotation)
-            })
-            .disposed(by: disposeBag)
-        
         output.circleActivity
             .drive(Binder(mainView.circleView) { base, activity in
                 base.tableView.isHidden = activity
@@ -64,6 +58,12 @@ final class LocationViewController: UIViewController {
         output.circleElements
             .drive(Binder(mainView.circleView.tableView) { base, elements in
                 base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        output.membersAnnotations
+            .drive(Binder(mainView.mapView) { base, membersAnnotations in
+                base.setup(membersAnnotations: membersAnnotations)
             })
             .disposed(by: disposeBag)
         

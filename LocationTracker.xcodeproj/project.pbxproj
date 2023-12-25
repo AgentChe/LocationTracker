@@ -51,7 +51,6 @@
 		DEB343FE2B3489030029F34B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343FD2B3489030029F34B /* ProfileView.swift */; };
 		DEB344012B359B5A0029F34B /* MeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344002B359B5A0029F34B /* MeAnnotationView.swift */; };
 		DEB344032B359E810029F34B /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344022B359E810029F34B /* LocationMapView.swift */; };
-		DEB344082B359F880029F34B /* MeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344072B359F880029F34B /* MeAnnotation.swift */; };
 		DEB3441E2B35D0510029F34B /* MemberAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3441D2B35D0510029F34B /* MemberAnnotation.swift */; };
 		DEB344202B35D3CD0029F34B /* MemberAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3441F2B35D3CD0029F34B /* MemberAnnotationView.swift */; };
 		DEB344232B39B88F0029F34B /* LocationCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344222B39B88F0029F34B /* LocationCircleView.swift */; };
@@ -59,6 +58,7 @@
 		DEB344292B39BC110029F34B /* LocationCircleTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344282B39BC110029F34B /* LocationCircleTableElement.swift */; };
 		DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3442B2B39BCA70029F34B /* LocationCircleNameCell.swift */; };
 		DEB3442E2B39BE3A0029F34B /* LocationCircleCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3442D2B39BE3A0029F34B /* LocationCircleCreateCell.swift */; };
+		DEB344312B39E5A00029F34B /* ColorGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344302B39E5A00029F34B /* ColorGenerate.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -262,7 +262,6 @@
 		DEB343FD2B3489030029F34B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DEB344002B359B5A0029F34B /* MeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeAnnotationView.swift; sourceTree = "<group>"; };
 		DEB344022B359E810029F34B /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
-		DEB344072B359F880029F34B /* MeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeAnnotation.swift; sourceTree = "<group>"; };
 		DEB3441D2B35D0510029F34B /* MemberAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAnnotation.swift; sourceTree = "<group>"; };
 		DEB3441F2B35D3CD0029F34B /* MemberAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAnnotationView.swift; sourceTree = "<group>"; };
 		DEB344222B39B88F0029F34B /* LocationCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleView.swift; sourceTree = "<group>"; };
@@ -270,6 +269,7 @@
 		DEB344282B39BC110029F34B /* LocationCircleTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleTableElement.swift; sourceTree = "<group>"; };
 		DEB3442B2B39BCA70029F34B /* LocationCircleNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleNameCell.swift; sourceTree = "<group>"; };
 		DEB3442D2B39BE3A0029F34B /* LocationCircleCreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleCreateCell.swift; sourceTree = "<group>"; };
+		DEB344302B39E5A00029F34B /* ColorGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerate.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -680,7 +680,6 @@
 		DEB344062B359F7C0029F34B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DEB344072B359F880029F34B /* MeAnnotation.swift */,
 				DEB3441D2B35D0510029F34B /* MemberAnnotation.swift */,
 			);
 			path = Models;
@@ -869,6 +868,7 @@
 				DEB390A92B0B907F00F1AE09 /* XOREncryption.swift */,
 				DEB390AA2B0B907F00F1AE09 /* Fonts.swift */,
 				DEB390AF2B0B907F00F1AE09 /* Weak.swift */,
+				DEB344302B39E5A00029F34B /* ColorGenerate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1592,7 +1592,6 @@
 				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
 				DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */,
 				DEB391752B0B907F00F1AE09 /* ProductPrice.swift in Sources */,
-				DEB344082B359F880029F34B /* MeAnnotation.swift in Sources */,
 				DEB391742B0B907F00F1AE09 /* PurchaseValidationObserver.swift in Sources */,
 				DEB343FE2B3489030029F34B /* ProfileView.swift in Sources */,
 				DEB344032B359E810029F34B /* LocationMapView.swift in Sources */,
@@ -1743,6 +1742,7 @@
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
 				DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */,
 				DED613072B1F28D700F09899 /* Role.swift in Sources */,
+				DEB344312B39E5A00029F34B /* ColorGenerate.swift in Sources */,
 				DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */,
 				DE1D27CF2B288BFD0022FB9D /* EditCircleView.swift in Sources */,
 				DEB3913E2B0B907F00F1AE09 /* CircleProgressView.swift in Sources */,

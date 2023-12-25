@@ -8,6 +8,9 @@
 import RxSwift
 import RxCocoa
 
+// TODO:
+// 2. обновление раз в n сек
+// 3. маркер пользователя, если у него нет circle
 final class LocationViewModel {
     enum Route {
         case trackInfo(MemberTrackInfo)
@@ -18,27 +21,17 @@ final class LocationViewModel {
         case createCircle
     }
     
-    deinit {
-        GeoLocationManager.shared.remove(observer: self)
-    }
-    
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     private lazy var obtainCirclesActivity = RxActivityIndicator()
     private lazy var obtainTrackInfoActivity = RxActivityIndicator()
     private lazy var geocodeActivity = RxActivityIndicator()
     
-    private lazy var didUpdateLocationTrigger = PublishRelay<Location>()
-    
     private lazy var profileManager = ProfileManager()
     private lazy var circleManager = CircleManager()
     private lazy var trackManager = TrackManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
-    
-    init() {
-        GeoLocationManager.shared.add(observer: self)
-    }
 }
 
 // MARK: Public
@@ -52,15 +45,14 @@ extension LocationViewModel {
     
     struct Output {
         let moveToMyCoordinate: Driver<Location>
-        let meAnnotation: Driver<MeAnnotation>
         let circleActivity: Driver<Bool>
         let circleElements: Driver<[LocationCircleTableElement]>
+        let membersAnnotations: Driver<[MemberAnnotation]>
         let route: Driver<Route>
         let disposable: Disposable
     }
     
     func configure(input: Input) -> Output {
-        let myPhotoUrl = makeMyPhotoUrl()
         let circles = makeCircles()
         let selectedCircle = makeSelectedCircle(
             didSelectCircle: input.didSelectCircle,
@@ -75,28 +67,15 @@ extension LocationViewModel {
         
         return Output(
             moveToMyCoordinate: makeMoveToMyCoordinate(didMoveToMyCoordinate: input.didMoveToMyCoordinate),
-            meAnnotation: makeMeAnnotation(myPhotoUrl: myPhotoUrl),
             circleActivity: makeCircleActivity(),
             circleElements: circleElements,
+            membersAnnotations: makeMembersAnnotations(trackInfo: trackInfo),
             route: makeRoute(
                 didSelectElement: input.didSelectElement,
                 selectedCircle: selectedCircle
             ),
             disposable: makeDisposable(didDeleteCircle: input.didDeleteCircle)
         )
-    }
-}
-
-// MARK: GeoLocationManagerDelegate
-extension LocationViewModel: GeoLocationManagerDelegate {
-    func geoLocationDidChange(permissionStatus: GeoLocationPermissionStatus) {}
-    
-    func geoLocationDidUpdate(locations: [Location]) {
-        guard let location = locations.first else {
-            return
-        }
-        
-        didUpdateLocationTrigger.accept(location)
     }
 }
 
@@ -118,62 +97,22 @@ private extension LocationViewModel {
             .asDriver(onErrorDriveWith: .never())
     }
     
-    func makeMeAnnotation(myPhotoUrl: Driver<URL?>) -> Driver<MeAnnotation> {
-        let meAnnotation = Driver
-            .zip(
-                myPhotoUrl
-                    .asObservable()
-                    .take(1)
-                    .asDriver(onErrorDriveWith: .never()),
-                didUpdateLocationTrigger
-                    .take(1)
-                    .asDriver(onErrorDriveWith: .never())
-            )
-            .map { url, location -> MeAnnotation in
-                MeAnnotation(
-                    coordinate: location.asCLLocation.coordinate,
-                    photoUrl: url
-                )
-            }
-        
-        return meAnnotation
-            .flatMapLatest { [weak self] meAnnotation -> Driver<MeAnnotation> in
-                guard let self else {
-                    return .never()
+    func makeMembersAnnotations(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[MemberAnnotation]> {
+        trackInfo
+            .map { trackInfo -> [MemberAnnotation] in
+                guard let trackInfo else {
+                    return []
                 }
                 
-                return Driver
-                    .combineLatest(
-                        myPhotoUrl
-                            .startWith(meAnnotation.photoUrl),
-                        self.didUpdateLocationTrigger
-                            .asDriver(onErrorDriveWith: .never())
+                let userId = SessionManager().userId
+                
+                return trackInfo.compactMap { info -> MemberAnnotation? in
+                    MemberAnnotation(
+                        trackInfo: info,
+                        me: info.member.id == userId
                     )
-                    .scan(meAnnotation) { annotation, args -> MeAnnotation in
-                        let (url, location) = args
-                        
-                        annotation.coordinate = location.asCLLocation.coordinate
-                        annotation.photoUrl = url
-                        
-                        return annotation
-                    }
-                    .startWith(meAnnotation)
+                }
             }
-    }
-    
-    func makeMyPhotoUrl() -> Driver<URL?> {
-        let initial = profileManager
-            .obtainProfile(forceUpdate: false)
-            .map { $0?.photoUrl }
-            .asDriver(onErrorJustReturn: nil)
-        
-        let updated = ProfileMediator.shared
-            .didChangePhotoURL
-            .map { url -> URL? in url }
-            .asDriver(onErrorJustReturn: nil)
-        
-        return Driver
-            .merge(initial, updated)
     }
     
     func makeCircleElements(

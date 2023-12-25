@@ -10,25 +10,23 @@ import UIKit
 
 final class MemberAnnotation: NSObject, MKAnnotation {
     let trackInfo: MemberTrackInfo
-    var coordinate: CLLocationCoordinate2D
+    let me: Bool
+    let coordinate: CLLocationCoordinate2D
     let color: UIColor
     
-    init?(trackInfo: MemberTrackInfo) {
+    init?(trackInfo: MemberTrackInfo, me: Bool) {
         guard let location = trackInfo.lastLocation?.asCLLocation else {
             return nil
         }
         
         self.trackInfo = trackInfo
+        self.me = me
         self.coordinate = location.coordinate
         
         if trackInfo.member.photoUrl != nil {
             self.color = UIColor.clear
         } else {
-            self.color = UIColor(
-                integralRed: CGFloat.random(in: 0...255),
-                green: CGFloat.random(in: 0...255),
-                blue: CGFloat.random(in: 0...255)
-            )
+            self.color = ColorGenerate.shared.generate(key: trackInfo.member.id)
         }
     }
 }

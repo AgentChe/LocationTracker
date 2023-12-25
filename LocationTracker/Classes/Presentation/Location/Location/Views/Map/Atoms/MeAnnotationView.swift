@@ -38,14 +38,14 @@ final class MeAnnotationView: MKAnnotationView {
     override func prepareForDisplay() {
         super.prepareForDisplay()
 
-        guard let annotation = annotation as? MeAnnotation else {
+        guard let annotation = annotation as? MemberAnnotation else {
             return
         }
 
         imageView.backgroundColor = annotation.color
-        placeholderLabel.isHidden = annotation.photoUrl != nil
+        placeholderLabel.isHidden = annotation.trackInfo.member.photoUrl != nil
 
-        if let url = annotation.photoUrl {
+        if let url = annotation.trackInfo.member.photoUrl {
             imageView.kf.setImage(with: url)
         }
     }

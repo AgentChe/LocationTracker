@@ -28,11 +28,7 @@ final class DetailsCircleTableMember {
         if trackInfo.member.photoUrl != nil {
             self.color = UIColor.clear
         } else {
-            self.color = UIColor(
-                integralRed: CGFloat.random(in: 0...255),
-                green: CGFloat.random(in: 0...255),
-                blue: CGFloat.random(in: 0...255)
-            )
+            self.color = ColorGenerate.shared.generate(key: trackInfo.member.id)
         }
         
         var lastUpdated: String? = nil
