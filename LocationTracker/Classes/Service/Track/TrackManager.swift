@@ -11,7 +11,7 @@ import Contacts
 
 protocol TrackManagerProtocol {
     func obtainTrackInfo(for membersIds: [String]) -> Single<[MemberTrackInfo]>
-    func geocode(trackInfo: MemberTrackInfo) -> Single<(MemberTrackInfo, String?)>
+    func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult>
 }
 
 final class TrackManager {
@@ -37,10 +37,15 @@ extension TrackManager: TrackManagerProtocol {
             .map { GetMembersTrackInfoResponse.map(from: $0) }
     }
     
-    func geocode(trackInfo: MemberTrackInfo) -> Single<(MemberTrackInfo, String?)> {
-        Single<(MemberTrackInfo, String?)>.create { single in
+    func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult> {
+        Single<GeocodeResult>.create { single in
             guard let location = trackInfo.lastLocation else {
-                single(.success((trackInfo, nil)))
+                let result = GeocodeResult(
+                    trackInfo: trackInfo,
+                    address: nil
+                )
+                single(.success(result))
+                
                 return Disposables.create()
             }
             
@@ -64,7 +69,11 @@ extension TrackManager: TrackManagerProtocol {
                     return formatter.string(from: postalAddress)
                 }
                 
-                single(.success((trackInfo, address)))
+                let result = GeocodeResult(
+                    trackInfo: trackInfo,
+                    address: address
+                )
+                single(.success(result))
             }
             
             return Disposables.create {

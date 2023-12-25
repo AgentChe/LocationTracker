@@ -117,7 +117,7 @@ private extension LocationViewModel {
     
     func makeCircleElements(
         selectedCircle: Driver<Circle?>,
-        geocoded: Driver<[(MemberTrackInfo, String?)]?>
+        geocoded: Driver<[GeocodeResult]?>
     ) -> Driver<[LocationCircleTableElement]> {
         Driver
             .combineLatest(selectedCircle, geocoded)
@@ -133,11 +133,11 @@ private extension LocationViewModel {
 
                 let userId = SessionManager().userId
 
-                geocoded.forEach { info, address in
+                geocoded.forEach { geocode in
                     let element = DetailsCircleTableMember(
-                        trackInfo: info,
-                        me: info.member.id == userId,
-                        address: address
+                        trackInfo: geocode.trackInfo,
+                        me: geocode.trackInfo.member.id == userId,
+                        address: geocode.address
                     )
                     result.append(.member(element))
                 }
@@ -150,16 +150,16 @@ private extension LocationViewModel {
             }
     }
     
-    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[(MemberTrackInfo, String?)]?> {
+    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[GeocodeResult]?> {
         trackInfo
-            .flatMapLatest { [weak self] trackInfo -> Driver<[(MemberTrackInfo, String?)]?> in
+            .flatMapLatest { [weak self] trackInfo -> Driver<[GeocodeResult]?> in
                 guard let self, let trackInfo else {
                     return .just(nil)
                 }
                 
                 return Single
                     .zip(trackInfo.map { self.trackManager.geocode(trackInfo: $0) })
-                    .map { result -> [(MemberTrackInfo, String?)]? in result }
+                    .map { result -> [GeocodeResult]? in result }
                     .trackActivity(self.geocodeActivity)
                     .asDriver(onErrorJustReturn: [])
             }
@@ -268,7 +268,7 @@ private extension LocationViewModel {
         return observableRetrySingle
             .retry(source: { source() },
                    trigger: { trigger(error: $0) })
-            .trackActivity(self.obtainCirclesActivity)
+            .trackActivity(obtainCirclesActivity)
             .asDriver(onErrorDriveWith: .never())
     }
     

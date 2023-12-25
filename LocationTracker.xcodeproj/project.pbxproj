@@ -59,6 +59,7 @@
 		DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3442B2B39BCA70029F34B /* LocationCircleNameCell.swift */; };
 		DEB3442E2B39BE3A0029F34B /* LocationCircleCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3442D2B39BE3A0029F34B /* LocationCircleCreateCell.swift */; };
 		DEB344312B39E5A00029F34B /* ColorGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344302B39E5A00029F34B /* ColorGenerate.swift */; };
+		DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344322B39F42B0029F34B /* GeocodeResult.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -270,6 +271,7 @@
 		DEB3442B2B39BCA70029F34B /* LocationCircleNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleNameCell.swift; sourceTree = "<group>"; };
 		DEB3442D2B39BE3A0029F34B /* LocationCircleCreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCircleCreateCell.swift; sourceTree = "<group>"; };
 		DEB344302B39E5A00029F34B /* ColorGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerate.swift; sourceTree = "<group>"; };
+		DEB344322B39F42B0029F34B /* GeocodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResult.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			children = (
 				DE1D27A32B2718E50022FB9D /* MemberTrackInfo.swift */,
 				DE1D27A52B27192F0022FB9D /* Location.swift */,
+				DEB344322B39F42B0029F34B /* GeocodeResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1702,6 +1705,7 @@
 				DED6135C2B222A7C00F09899 /* CreateCircleCodeViewModel.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
+				DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,

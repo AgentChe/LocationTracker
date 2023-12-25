@@ -63,7 +63,7 @@ extension DetailsCircleViewModel {
 
 // MARK: Private
 private extension DetailsCircleViewModel {
-    func makeElements(geocoded: Driver<[(MemberTrackInfo, String?)]>) -> Driver<[DetailsCircleTableElement]> {
+    func makeElements(geocoded: Driver<[GeocodeResult]>) -> Driver<[DetailsCircleTableElement]> {
         Driver
             .combineLatest(circle, geocoded)
             .map { circle, trackInfo -> [DetailsCircleTableElement] in
@@ -73,11 +73,11 @@ private extension DetailsCircleViewModel {
                 
                 let userId = SessionManager().userId
                 
-                trackInfo.forEach { info, address in
+                trackInfo.forEach { geocode in
                     let element = DetailsCircleTableMember(
-                        trackInfo: info,
-                        me: info.member.id == userId,
-                        address: address
+                        trackInfo: geocode.trackInfo,
+                        me: geocode.trackInfo.member.id == userId,
+                        address: geocode.address
                     )
                     result.append(.member(element))
                 }
@@ -90,9 +90,9 @@ private extension DetailsCircleViewModel {
             }
     }
     
-    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]>) -> Driver<[(MemberTrackInfo, String?)]> {
+    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]>) -> Driver<[GeocodeResult]> {
         trackInfo
-            .flatMapLatest { [weak self] trackInfo -> Driver<[(MemberTrackInfo, String?)]> in
+            .flatMapLatest { [weak self] trackInfo -> Driver<[GeocodeResult]> in
                 guard let self else {
                     return .never()
                 }
