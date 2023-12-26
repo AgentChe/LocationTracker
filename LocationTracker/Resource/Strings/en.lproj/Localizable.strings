@@ -152,3 +152,16 @@
 "Location.Me" = "Me";
 "Location.M" = "M";
 "Location.CreateCircle" = "Create new Circle";
+
+// MARK: Profile
+"Profile.Title" = "Profile";
+"Profile.Edit" = "EDIT";
+"Profile.SavedPlaces" = "Saved places";
+"Profile.PIN" = "SOS PIN";
+"Profile.Settings" = "Settings";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.ContactUs" = "Contact us";
+"Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.TermsOfUse" = "Terms of Use";

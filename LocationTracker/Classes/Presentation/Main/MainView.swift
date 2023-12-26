@@ -53,7 +53,7 @@ private extension MainView {
     
     func makeTabView() -> TabView {
         let view = TabView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = Appearance.background1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

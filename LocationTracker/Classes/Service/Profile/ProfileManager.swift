@@ -57,11 +57,22 @@ extension ProfileManager: ProfileManagerProtocol {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = GetProfileRequest(userToken: userToken)
+        let request = SetRequest(
+            userToken: userToken,
+            name: name,
+            photoPath: photoUrl?.absoluteString,
+            pin: pin,
+            pushToken: pushToken
+        )
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: { [weak self] in
+                self?.store(name: name)
+                self?.store(photoUrl: photoUrl)
+                self?.store(pin: pin)
+            })
     }
     
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
