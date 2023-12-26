@@ -9,7 +9,6 @@ import UIKit
 import Foundation
 
 struct MemberTrackInfo: Codable {
-    let id: String
     let member: Member
     let lastLocation: Location?
     let lastUpdated: Date?

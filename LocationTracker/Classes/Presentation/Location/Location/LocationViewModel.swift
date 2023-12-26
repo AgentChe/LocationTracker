@@ -8,9 +8,6 @@
 import RxSwift
 import RxCocoa
 
-// TODO:
-// 2. обновление раз в n сек
-// 3. маркер пользователя, если у него нет circle (объект trackinfo для пользователя)
 final class LocationViewModel {
     enum Route {
         case trackInfo(MemberTrackInfo)
@@ -21,17 +18,41 @@ final class LocationViewModel {
         case createCircle
     }
     
+    deinit {
+        GeoLocationManager.shared.remove(observer: self)
+    }
+    
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     private lazy var obtainCirclesActivity = RxActivityIndicator()
     private lazy var obtainTrackInfoActivity = RxActivityIndicator()
     private lazy var geocodeActivity = RxActivityIndicator()
     
+    private lazy var didUpdateLocationTrigger = BehaviorRelay(value: GeoLocationManager.shared.location)
+    private lazy var didUpdateLocation = didUpdateLocationTrigger.asDriver()
+    
     private lazy var profileManager = ProfileManager()
     private lazy var circleManager = CircleManager()
     private lazy var trackManager = TrackManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
+    
+    init() {
+        GeoLocationManager.shared.add(observer: self)
+    }
+}
+
+// MARK: GeoLocationManagerDelegate
+extension LocationViewModel: GeoLocationManagerDelegate {
+    func geoLocationDidChange(permissionStatus: GeoLocationPermissionStatus) {}
+    
+    func geoLocationDidUpdate(locations: [Location]) {
+        guard let location = locations.first else {
+            return
+        }
+        
+        didUpdateLocationTrigger.accept(location)
+    }
 }
 
 // MARK: Public
@@ -53,13 +74,15 @@ extension LocationViewModel {
     }
     
     func configure(input: Input) -> Output {
+        let myPhotoUrl = makeMyPhotoUrl()
         let circles = makeCircles()
         let selectedCircle = makeSelectedCircle(
             didSelectCircle: input.didSelectCircle,
             circles: circles
         )
-        let trackInfo = makeTrackInfo(for: selectedCircle)
-        let geocoded = makeGeocode(trackInfo: trackInfo)
+        let circleTrackInfo = makeTrackInfo(for: selectedCircle)
+        let myTrackInfo = makeMyTrackInfo(myPhotoUrl: myPhotoUrl)
+        let geocoded = makeGeocode(trackInfo: circleTrackInfo)
         let circleElements = makeCircleElements(
             selectedCircle: selectedCircle,
             geocoded: geocoded
@@ -69,7 +92,10 @@ extension LocationViewModel {
             moveToMyCoordinate: makeMoveToMyCoordinate(didMoveToMyCoordinate: input.didMoveToMyCoordinate),
             circleActivity: makeCircleActivity(),
             circleElements: circleElements,
-            membersAnnotations: makeMembersAnnotations(trackInfo: trackInfo),
+            membersAnnotations: makeMembersAnnotations(
+                circleTrackInfo: circleTrackInfo,
+                myTrackInfo: myTrackInfo
+            ),
             route: makeRoute(
                 didSelectElement: input.didSelectElement,
                 selectedCircle: selectedCircle
@@ -97,13 +123,16 @@ private extension LocationViewModel {
             .asDriver(onErrorDriveWith: .never())
     }
     
-    func makeMembersAnnotations(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[MemberAnnotation]> {
-        trackInfo
+    func makeMembersAnnotations(
+        circleTrackInfo: Driver<[MemberTrackInfo]?>,
+        myTrackInfo: Driver<MemberTrackInfo>
+    ) -> Driver<[MemberAnnotation]> {
+        Driver
+            .combineLatest(circleTrackInfo, myTrackInfo)
+            .map { circleTrackInfo, myTrackInfo -> [MemberTrackInfo] in
+                circleTrackInfo ?? [myTrackInfo]
+            }
             .map { trackInfo -> [MemberAnnotation] in
-                guard let trackInfo else {
-                    return []
-                }
-                
                 let userId = SessionManager().userId
                 
                 return trackInfo.compactMap { info -> MemberAnnotation? in
@@ -162,6 +191,26 @@ private extension LocationViewModel {
                     .map { result -> [GeocodeResult]? in result }
                     .trackActivity(self.geocodeActivity)
                     .asDriver(onErrorJustReturn: [])
+            }
+    }
+    
+    func makeMyTrackInfo(myPhotoUrl: Driver<URL?>) -> Driver<MemberTrackInfo> {
+        Driver
+            .combineLatest(didUpdateLocation, myPhotoUrl)
+            .map { didUpdateLocation, myPhotoUrl -> MemberTrackInfo in
+                let member = Member(
+                    id: SessionManager().userId,
+                    name: "Location.Me".localized,
+                    photoUrl: nil,
+                    roleId: nil
+                )
+                
+                return MemberTrackInfo(
+                    member: member,
+                    lastLocation: didUpdateLocation,
+                    lastUpdated: Date(),
+                    batteryLevel: UIDevice.current.batteryLevel
+                )
             }
     }
     
@@ -334,6 +383,21 @@ private extension LocationViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
             .drive()
+    }
+    
+    func makeMyPhotoUrl() -> Driver<URL?> {
+        let initial = profileManager
+            .obtainProfile(forceUpdate: false)
+            .map { $0?.photoUrl }
+            .asDriver(onErrorJustReturn: nil)
+        
+        let updated = ProfileMediator.shared
+            .didChangePhotoURL
+            .map { url -> URL? in url }
+            .asDriver(onErrorJustReturn: nil)
+        
+        return Driver
+            .merge(initial, updated)
     }
     
     func makeCircleActivity() -> Driver<Bool> {

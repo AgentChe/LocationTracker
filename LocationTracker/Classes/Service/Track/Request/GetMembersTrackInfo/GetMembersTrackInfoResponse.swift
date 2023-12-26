@@ -48,7 +48,6 @@ enum GetMembersTrackInfoResponse {
             }
             
             return MemberTrackInfo(
-                id: json["id"] as? String ?? UUID().uuidString,
                 member: member,
                 lastLocation: location,
                 lastUpdated: lastUpdated,
