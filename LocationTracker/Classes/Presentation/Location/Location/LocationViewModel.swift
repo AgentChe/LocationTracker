@@ -10,7 +10,7 @@ import RxCocoa
 
 // TODO:
 // 2. обновление раз в n сек
-// 3. маркер пользователя, если у него нет circle
+// 3. маркер пользователя, если у него нет circle (объект trackinfo для пользователя)
 final class LocationViewModel {
     enum Route {
         case trackInfo(MemberTrackInfo)
