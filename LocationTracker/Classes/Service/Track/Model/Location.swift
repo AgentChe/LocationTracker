@@ -8,8 +8,8 @@
 import CoreLocation
 
 struct Location: Codable {
-    let latitude: CGFloat
-    let longitude: CGFloat
+    let latitude: Double
+    let longitude: Double
 }
 
 // MARK: Public

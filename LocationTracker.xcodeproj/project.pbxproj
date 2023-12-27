@@ -69,6 +69,8 @@
 		DEB344492B3B3B940029F34B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344482B3B3B940029F34B /* SettingsViewController.swift */; };
 		DEB3444D2B3B3B9F0029F34B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3444C2B3B3B9F0029F34B /* SettingsView.swift */; };
 		DEB344502B3B3C900029F34B /* SettingsLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3444F2B3B3C900029F34B /* SettingsLinkButton.swift */; };
+		DEB344532B3C42F90029F34B /* GeocodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344522B3C42F90029F34B /* GeocodeRequest.swift */; };
+		DEB344552B3C42FF0029F34B /* GeocodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344542B3C42FF0029F34B /* GeocodeResponse.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -290,6 +292,8 @@
 		DEB344482B3B3B940029F34B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DEB3444C2B3B3B9F0029F34B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DEB3444F2B3B3C900029F34B /* SettingsLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLinkButton.swift; sourceTree = "<group>"; };
+		DEB344522B3C42F90029F34B /* GeocodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeRequest.swift; sourceTree = "<group>"; };
+		DEB344542B3C42FF0029F34B /* GeocodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResponse.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -513,6 +517,7 @@
 		DE1D27A12B2718B40022FB9D /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DEB344512B3C42EE0029F34B /* Geocode */,
 				DE1D27A72B271A830022FB9D /* GetMembersTrackInfo */,
 			);
 			path = Request;
@@ -808,6 +813,15 @@
 				DEB3444F2B3B3C900029F34B /* SettingsLinkButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DEB344512B3C42EE0029F34B /* Geocode */ = {
+			isa = PBXGroup;
+			children = (
+				DEB344522B3C42F90029F34B /* GeocodeRequest.swift */,
+				DEB344542B3C42FF0029F34B /* GeocodeResponse.swift */,
+			);
+			path = Geocode;
 			sourceTree = "<group>";
 		};
 		DEB390642B0B8C2900F1AE09 = {
@@ -1683,6 +1697,7 @@
 				DEB344032B359E810029F34B /* LocationMapView.swift in Sources */,
 				DEB391382B0B907F00F1AE09 /* TapAreaButton.swift in Sources */,
 				DEB3911D2B0B907F00F1AE09 /* UIColor+Extension.swift in Sources */,
+				DEB344532B3C42F90029F34B /* GeocodeRequest.swift in Sources */,
 				DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */,
 				DEB343FC2B3488FF0029F34B /* ProfileViewModel.swift in Sources */,
 				DEB344232B39B88F0029F34B /* LocationCircleView.swift in Sources */,
@@ -1785,6 +1800,7 @@
 				DEB391662B0B907F00F1AE09 /* PaygateOptionConfig.swift in Sources */,
 				DEB391442B0B907F00F1AE09 /* Appearance.swift in Sources */,
 				DEB391732B0B907F00F1AE09 /* IAPManager.swift in Sources */,
+				DEB344552B3C42FF0029F34B /* GeocodeResponse.swift in Sources */,
 				DE1D27AB2B271A940022FB9D /* GetMembersTrackInfoResponse.swift in Sources */,
 				DED6134D2B221C0800F09899 /* SelectRoleViewModel.swift in Sources */,
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,

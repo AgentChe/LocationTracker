@@ -19,6 +19,8 @@ final class GlobalDefinitions {
     static let amplitudeApiKey = "11f36fb9021dbfca4a1349a3b2284224"
     static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
+    static let mapBoxApiKey = "pk.eyJ1Ijoic2VyZ2V5a29ycmVrdGVkIiwiYSI6ImNscW5jZmt0dDFieGUycnA5cXVtd2VicXkifQ.NNZjhPY2m7lI4bdi_dSWVw"
+    
     static let termsOfServiceUrl = "https://awesum-apps.com/terms"
     static let privacyPolicyUrl = "https://awesum-apps.com/policy"
     static let contactUsUrl = "https://awesum-apps.com/contact"

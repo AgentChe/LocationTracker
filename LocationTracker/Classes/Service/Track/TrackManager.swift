@@ -17,6 +17,7 @@ protocol TrackManagerProtocol {
 final class TrackManager {
     private lazy var sessionManager = SessionManager()
     
+    private lazy var restAPITransport = RestAPITransport()
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
 }
 
@@ -38,47 +39,19 @@ extension TrackManager: TrackManagerProtocol {
     }
     
     func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult> {
-        Single<GeocodeResult>.create { single in
-            guard let location = trackInfo.lastLocation else {
-                let result = GeocodeResult(
-                    trackInfo: trackInfo,
-                    address: nil
-                )
-                single(.success(result))
-                
-                return Disposables.create()
-            }
-            
-            let geocoder = CLGeocoder()
-            
-            let coordinate = CLLocation(
-                latitude: location.latitude,
-                longitude: location.longitude
-            )
-            let locale = Locale(identifier: "en_EN")
-            
-            geocoder.reverseGeocodeLocation(coordinate, preferredLocale: locale) { result, error in
-                var address: String? {
-                    guard let postalAddress = result?.first?.postalAddress else {
-                        return nil
-                    }
-                    
-                    let formatter = CNPostalAddressFormatter()
-                    formatter.style = .mailingAddress
-                    
-                    return formatter.string(from: postalAddress)
-                }
-                
-                let result = GeocodeResult(
-                    trackInfo: trackInfo,
-                    address: address
-                )
-                single(.success(result))
-            }
-            
-            return Disposables.create {
-                geocoder.cancelGeocode()
-            }
+        guard let lastLocation = trackInfo.lastLocation else {
+            let result = GeocodeResult(trackInfo: trackInfo, address: nil)
+            return .just(result)
         }
+        
+        let request = GeocodeRequest(
+            latitude: lastLocation.latitude,
+            longitude: lastLocation.longitude
+        )
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .map { GeocodeResponse.map(from: $0) }
+            .map { GeocodeResult(trackInfo: trackInfo, address: $0) }
     }
 }

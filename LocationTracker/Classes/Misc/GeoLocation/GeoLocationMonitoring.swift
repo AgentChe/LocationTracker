@@ -41,43 +41,8 @@ extension GeoLocationMonitoring: GeoLocationManagerDelegate {
         manager.startMonitoringSignificantLocation()
     }
     
-    // TODO: remove
+    // TODO: send to server
     func geoLocationDidUpdate(locations: [Location]) {
-        guard let location = locations.first else {
-            return
-        }
         
-        let coordinate = CLLocation(
-            latitude: location.latitude,
-            longitude: location.longitude
-        )
-        
-        let locale = Locale(identifier: "ru_RU")
-        
-        let geoCoder = CLGeocoder()
-        
-        geoCoder.reverseGeocodeLocation(coordinate, preferredLocale: locale) { result, error in
-            var address: String? {
-                guard let postalAddress = result?.first?.postalAddress else {
-                    return nil
-                }
-                
-                let formatter = CNPostalAddressFormatter()
-                formatter.style = .mailingAddress
-                
-                return formatter.string(from: postalAddress)
-            }
-            
-            guard let address else {
-                return
-            }
-            
-            var result = UserDefaults.standard.string(forKey: "test") ?? ""
-            
-            result += "\n\n"
-            result += address
-            
-            UserDefaults.standard.set(result, forKey: "test")
-        }
     }
 }
