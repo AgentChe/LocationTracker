@@ -39,7 +39,7 @@ extension TrackManager: TrackManagerProtocol {
     }
     
     func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult> {
-        guard let lastLocation = trackInfo.lastLocation else {
+        guard let lastLocation = trackInfo.lastPlace?.location else {
             let result = GeocodeResult(trackInfo: trackInfo, address: nil)
             return .just(result)
         }

@@ -24,33 +24,33 @@ enum GetMembersTrackInfoResponse {
                 return nil
             }
             
-            var location: Location? {
+            var place: Place? {
                 guard
-                    let locationJSON = json["location"] as? [String: Any],
+                    let placeJSON = json["place"] as? [String: Any],
+                    let id = placeJSON["id"] as? Int,
+                    let locationJSON = placeJSON["location"] as? [String: Any],
                     let latitude = locationJSON["latitude"] as? CGFloat,
-                    let longitude = locationJSON["longitude"] as? CGFloat
+                    let longitude = locationJSON["longitude"] as? CGFloat,
+                    let lastUpdatedTimestamp = placeJSON["last_updated"] as? TimeInterval
                 else {
                     return nil
                 }
                 
-                return Location(
+                let location = Location(
                     latitude: latitude,
                     longitude: longitude
                 )
-            }
-            
-            var lastUpdated: Date? {
-                guard let lastUpdatedTimestamp = json["last_updated"] as? TimeInterval else {
-                    return nil
-                }
                 
-                return Date(timeIntervalSince1970: lastUpdatedTimestamp)
+                return Place(
+                    id: id,
+                    location: location,
+                    updated: Date(timeIntervalSince1970: lastUpdatedTimestamp)
+                )
             }
             
             return MemberTrackInfo(
                 member: member,
-                lastLocation: location,
-                lastUpdated: lastUpdated,
+                lastPlace: place,
                 batteryLevel: json["battery_level"] as? Float
             )
         }

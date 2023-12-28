@@ -32,7 +32,7 @@ final class DetailsCircleTableMember {
         }
         
         var lastUpdated: String? = nil
-        if let date = trackInfo.lastUpdated, !me {
+        if let date = trackInfo.lastPlace?.updated, !me {
             let formatter = RelativeDateTimeFormatter()
             formatter.unitsStyle = .full
             formatter.locale = Locale(identifier: "en_EN")

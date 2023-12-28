@@ -15,7 +15,7 @@ final class MemberAnnotation: NSObject, MKAnnotation {
     let color: UIColor
     
     init?(trackInfo: MemberTrackInfo, me: Bool) {
-        guard let location = trackInfo.lastLocation?.asCLLocation else {
+        guard let location = trackInfo.lastPlace?.location.asCLLocation else {
             return nil
         }
         

@@ -207,10 +207,21 @@ private extension LocationViewModel {
                     roleId: nil
                 )
                 
+                var place: Place? {
+                    guard let location = didUpdateLocation else {
+                        return nil
+                    }
+                    
+                    return Place(
+                        id: Int.random(in: Int.min...0),
+                        location: location,
+                        updated: Date()
+                    )
+                }
+                
                 return MemberTrackInfo(
                     member: member,
-                    lastLocation: didUpdateLocation,
-                    lastUpdated: Date(),
+                    lastPlace: place,
                     batteryLevel: UIDevice.current.batteryLevel
                 )
             }
