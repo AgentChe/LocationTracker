@@ -165,3 +165,9 @@
 "Settings.ContactUs" = "Contact us";
 "Settings.PrivacyPolicy" = "Privacy Policy";
 "Settings.TermsOfUse" = "Terms of Use";
+
+// MARK: Member
+"Member.CurrentPosition" = "Current position";
+"Member.Chat" = "Chat";
+"Member.GetDirection" = "Get direction";
+"Member.History" = "History";

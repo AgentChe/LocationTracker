@@ -10,7 +10,6 @@ import Foundation
 
 struct MemberTrackInfo: Codable {
     let member: Member
-    let lastLocation: Location?
-    let lastUpdated: Date?
+    let lastPlace: Place?
     let batteryLevel: Float?
 }

@@ -62,6 +62,7 @@ extension LocationViewModel {
         let didSelectCircle: Signal<Circle>
         let didSelectElement: Signal<LocationCircleTableElement>
         let didDeleteCircle: Signal<Circle>
+        let didSelectAnnotation: Signal<MemberAnnotation>
     }
     
     struct Output {
@@ -98,7 +99,8 @@ extension LocationViewModel {
             ),
             route: makeRoute(
                 didSelectElement: input.didSelectElement,
-                selectedCircle: selectedCircle
+                selectedCircle: selectedCircle,
+                didSelectAnnotation: input.didSelectAnnotation
             ),
             disposable: makeDisposable(didDeleteCircle: input.didDeleteCircle)
         )
@@ -323,9 +325,10 @@ private extension LocationViewModel {
     
     func makeRoute(
         didSelectElement: Signal<LocationCircleTableElement>,
-        selectedCircle: Driver<Circle?>
+        selectedCircle: Driver<Circle?>,
+        didSelectAnnotation: Signal<MemberAnnotation>
     ) -> Driver<Route> {
-        didSelectElement
+        let selectElement = didSelectElement
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(selectedCircle) { ($0, $1) }
             .compactMap { element, circle -> Route? in
@@ -354,6 +357,13 @@ private extension LocationViewModel {
                 }
             }
             .asDriver(onErrorDriveWith: .never())
+        
+        let selectAnnotation = didSelectAnnotation
+            .map { Route.trackInfo($0.trackInfo) }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(selectElement, selectAnnotation)
     }
     
     func makeDisposable(didDeleteCircle: Signal<Circle>) -> Disposable {

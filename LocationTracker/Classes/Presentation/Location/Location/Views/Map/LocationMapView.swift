@@ -6,9 +6,13 @@
 //
 
 import MapKit
+import RxSwift
+import RxCocoa
 
 final class LocationMapView: MKMapView {
     lazy var membersAnnotations = [MemberAnnotation]()
+    
+    private lazy var didSelectAnnotationTrigger = PublishRelay<MemberAnnotation>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +33,10 @@ extension LocationMapView {
         self.membersAnnotations = membersAnnotations
         self.membersAnnotations.forEach { addAnnotation($0) }
     }
+    
+    var didSelectAnnotation: Signal<MemberAnnotation> {
+        didSelectAnnotationTrigger.asSignal()
+    }
 }
 
 // MARK: MKMapViewDelegate
@@ -40,6 +48,14 @@ extension LocationMapView: MKMapViewDelegate {
         
         let key = String(describing: annotation.me ? MeAnnotationView.self : MemberAnnotationView.self)
         return mapView.dequeueReusableAnnotationView(withIdentifier: key, for: annotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        guard let memberAnnotation = annotation as? MemberAnnotation else {
+            return
+        }
+        
+        didSelectAnnotationTrigger.accept(memberAnnotation)
     }
 }
 

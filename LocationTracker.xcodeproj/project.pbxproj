@@ -71,6 +71,18 @@
 		DEB344502B3B3C900029F34B /* SettingsLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3444F2B3B3C900029F34B /* SettingsLinkButton.swift */; };
 		DEB344532B3C42F90029F34B /* GeocodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344522B3C42F90029F34B /* GeocodeRequest.swift */; };
 		DEB344552B3C42FF0029F34B /* GeocodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344542B3C42FF0029F34B /* GeocodeResponse.swift */; };
+		DEB344582B3C50C50029F34B /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344572B3C50C50029F34B /* MemberViewController.swift */; };
+		DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344592B3C50CA0029F34B /* MemberViewModel.swift */; };
+		DEB3445C2B3C50CF0029F34B /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3445B2B3C50CF0029F34B /* MemberView.swift */; };
+		DEB344602B3C6C200029F34B /* MemberTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3445F2B3C6C200029F34B /* MemberTableView.swift */; };
+		DEB344622B3C6C270029F34B /* MemberTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344612B3C6C270029F34B /* MemberTableElement.swift */; };
+		DEB344652B3C6C940029F34B /* MemberInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344642B3C6C940029F34B /* MemberInfoCell.swift */; };
+		DEB344672B3C6CEB0029F34B /* MemberTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344662B3C6CEB0029F34B /* MemberTitleCell.swift */; };
+		DEB344692B3C6D0C0029F34B /* MemberButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */; };
+		DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */; };
+		DEB3446E2B3DC4CF0029F34B /* MemberPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */; };
+		DEB344702B3DC6BF0029F34B /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DEB3446F2B3DC6BF0029F34B /* API.json */; };
+		DEB344722B3DC6D30029F34B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344712B3DC6D30029F34B /* Place.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -294,6 +306,18 @@
 		DEB3444F2B3B3C900029F34B /* SettingsLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLinkButton.swift; sourceTree = "<group>"; };
 		DEB344522B3C42F90029F34B /* GeocodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeRequest.swift; sourceTree = "<group>"; };
 		DEB344542B3C42FF0029F34B /* GeocodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResponse.swift; sourceTree = "<group>"; };
+		DEB344572B3C50C50029F34B /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		DEB344592B3C50CA0029F34B /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
+		DEB3445B2B3C50CF0029F34B /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
+		DEB3445F2B3C6C200029F34B /* MemberTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableView.swift; sourceTree = "<group>"; };
+		DEB344612B3C6C270029F34B /* MemberTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableElement.swift; sourceTree = "<group>"; };
+		DEB344642B3C6C940029F34B /* MemberInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoCell.swift; sourceTree = "<group>"; };
+		DEB344662B3C6CEB0029F34B /* MemberTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTitleCell.swift; sourceTree = "<group>"; };
+		DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberButtonsCell.swift; sourceTree = "<group>"; };
+		DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberActionButton.swift; sourceTree = "<group>"; };
+		DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPlaceCell.swift; sourceTree = "<group>"; };
+		DEB3446F2B3DC6BF0029F34B /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		DEB344712B3DC6D30029F34B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -529,6 +553,7 @@
 				DE1D27A32B2718E50022FB9D /* MemberTrackInfo.swift */,
 				DE1D27A52B27192F0022FB9D /* Location.swift */,
 				DEB344322B39F42B0029F34B /* GeocodeResult.swift */,
+				DEB344712B3DC6D30029F34B /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -660,6 +685,7 @@
 		DEB343EE2B3458FE0029F34B /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				DEB344562B3C509F0029F34B /* Member */,
 				DEB3442F2B39E1D30029F34B /* Location */,
 			);
 			path = Location;
@@ -824,6 +850,55 @@
 			path = Geocode;
 			sourceTree = "<group>";
 		};
+		DEB344562B3C509F0029F34B /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3445D2B3C6C0B0029F34B /* Views */,
+				DEB344572B3C50C50029F34B /* MemberViewController.swift */,
+				DEB344592B3C50CA0029F34B /* MemberViewModel.swift */,
+				DEB3445B2B3C50CF0029F34B /* MemberView.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		DEB3445D2B3C6C0B0029F34B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3445E2B3C6C110029F34B /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEB3445E2B3C6C110029F34B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEB344632B3C6C2A0029F34B /* Cells */,
+				DEB3445F2B3C6C200029F34B /* MemberTableView.swift */,
+				DEB344612B3C6C270029F34B /* MemberTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEB344632B3C6C2A0029F34B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3446A2B3C7E7E0029F34B /* Atoms */,
+				DEB344642B3C6C940029F34B /* MemberInfoCell.swift */,
+				DEB344662B3C6CEB0029F34B /* MemberTitleCell.swift */,
+				DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */,
+				DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEB3446A2B3C7E7E0029F34B /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 		DEB390642B0B8C2900F1AE09 = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +933,7 @@
 				DEB390932B0B907F00F1AE09 /* Misc */,
 				DEB390CE2B0B907F00F1AE09 /* Presentation */,
 				DEB390F62B0B907F00F1AE09 /* Service */,
+				DEB3446F2B3DC6BF0029F34B /* API.json */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1626,6 +1702,7 @@
 				DEB391852B0B9A0700F1AE09 /* RobotoCondensed-Medium.ttf in Resources */,
 				DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */,
 				DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */,
+				DEB344702B3DC6BF0029F34B /* API.json in Resources */,
 				DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */,
 				DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */,
 				DEB3908B2B0B8F2E00F1AE09 /* Localizable.strings in Resources */,
@@ -1717,6 +1794,7 @@
 				DEB343F72B346DBA0029F34B /* GeoLocationMonitoring.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DE1D27A62B27192F0022FB9D /* Location.swift in Sources */,
+				DEB344672B3C6CEB0029F34B /* MemberTitleCell.swift in Sources */,
 				DED613162B1F4FB300F09899 /* CreateCircleRequest.swift in Sources */,
 				DE1D27C82B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift in Sources */,
 				DED613142B1F4F3C00F09899 /* GetRolesResponse.swift in Sources */,
@@ -1725,6 +1803,7 @@
 				DE1D27D32B28915B0022FB9D /* EditCircleTableView.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
+				DEB3445C2B3C50CF0029F34B /* MemberView.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
 				DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */,
 				DEB391252B0B907F00F1AE09 /* APIRequestBody.swift in Sources */,
@@ -1734,6 +1813,7 @@
 				DE1D27B82B2725410022FB9D /* CircleHeaderView.swift in Sources */,
 				DEB344492B3B3B940029F34B /* SettingsViewController.swift in Sources */,
 				DEB3911E2B0B907F00F1AE09 /* Date+Extension.swift in Sources */,
+				DEB3446E2B3DC4CF0029F34B /* MemberPlaceCell.swift in Sources */,
 				DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */,
 				DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */,
 				DEB3914A2B0B907F00F1AE09 /* SplashViewController.swift in Sources */,
@@ -1761,6 +1841,7 @@
 				DED613202B1F66A200F09899 /* GetCirclesResponse.swift in Sources */,
 				DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */,
 				DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */,
+				DEB344582B3C50C50029F34B /* MemberViewController.swift in Sources */,
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
@@ -1778,6 +1859,7 @@
 				DEB3917A2B0B907F00F1AE09 /* Session.swift in Sources */,
 				DEB3444D2B3B3B9F0029F34B /* SettingsView.swift in Sources */,
 				DEB3913A2B0B907F00F1AE09 /* PaddingTextField.swift in Sources */,
+				DEB344692B3C6D0C0029F34B /* MemberButtonsCell.swift in Sources */,
 				DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */,
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
 				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
@@ -1787,6 +1869,7 @@
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
 				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
+				DEB344652B3C6C940029F34B /* MemberInfoCell.swift in Sources */,
 				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
 				DEB343EB2B3457010029F34B /* TabItemButton.swift in Sources */,
 				DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */,
@@ -1796,9 +1879,11 @@
 				DE1D27B32B27213C0022FB9D /* DetailsCircleTableElement.swift in Sources */,
 				DED6135E2B222A8D00F09899 /* CreateCircleCodeView.swift in Sources */,
 				DEB391712B0B907F00F1AE09 /* SetRequest.swift in Sources */,
+				DEB344722B3DC6D30029F34B /* Place.swift in Sources */,
 				DE1D27C32B2878B70022FB9D /* InviteView.swift in Sources */,
 				DEB391662B0B907F00F1AE09 /* PaygateOptionConfig.swift in Sources */,
 				DEB391442B0B907F00F1AE09 /* Appearance.swift in Sources */,
+				DEB344602B3C6C200029F34B /* MemberTableView.swift in Sources */,
 				DEB391732B0B907F00F1AE09 /* IAPManager.swift in Sources */,
 				DEB344552B3C42FF0029F34B /* GeocodeResponse.swift in Sources */,
 				DE1D27AB2B271A940022FB9D /* GetMembersTrackInfoResponse.swift in Sources */,
@@ -1837,6 +1922,7 @@
 				DED613432B2092F700F09899 /* CreateCircleViewModel.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
+				DEB344622B3C6C270029F34B /* MemberTableElement.swift in Sources */,
 				DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */,
 				DED613012B1F281C00F09899 /* CircleMediator.swift in Sources */,
 				DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */,
@@ -1851,6 +1937,7 @@
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
 				DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */,
 				DEB344502B3B3C900029F34B /* SettingsLinkButton.swift in Sources */,
+				DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */,
 				DED613072B1F28D700F09899 /* Role.swift in Sources */,
 				DEB344312B39E5A00029F34B /* ColorGenerate.swift in Sources */,
 				DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */,
@@ -1868,6 +1955,7 @@
 				DEB3916E2B0B907F00F1AE09 /* GetProfileResponse.swift in Sources */,
 				DEB3443B2B3B22BA0029F34B /* ProfileTableElement.swift in Sources */,
 				DEB391392B0B907F00F1AE09 /* Spinner.swift in Sources */,
+				DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,

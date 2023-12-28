@@ -39,7 +39,8 @@ final class LocationViewController: UIViewController {
             didMoveToMyCoordinate: mainView.myCoordinateButton.rx.tap.asSignal(),
             didSelectCircle: didSelectCircleTrigger.asSignal(),
             didSelectElement: mainView.circleView.tableView.didSelect,
-            didDeleteCircle: didDeleteCircleTrigger.asSignal()
+            didDeleteCircle: didDeleteCircleTrigger.asSignal(),
+            didSelectAnnotation: mainView.mapView.didSelectAnnotation
         ))
         
         output.moveToMyCoordinate
@@ -113,7 +114,8 @@ private extension LocationViewController {
     func route(_ route: LocationViewModel.Route) {
         switch route {
         case .trackInfo(let memberTrackInfo):
-            break // TODO
+            let vc = MemberViewController.make(memberTrackInfo: memberTrackInfo)
+            present(vc, animated: false)
         case .addMember(let inviteCode):
             let vc = InviteViewController.make(inviteCode: inviteCode)
             present(vc, animated: true)
