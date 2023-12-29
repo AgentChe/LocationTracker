@@ -11,7 +11,11 @@ import Contacts
 
 protocol TrackManagerProtocol {
     func obtainTrackInfo(for membersIds: [String]) -> Single<[MemberTrackInfo]>
-    func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult>
+    func geocode(place: Place) -> Single<GeocodeResult>
+    func places(for memberId: String, date: String) -> Single<[Place]>
+    func save(placeId: Int) -> Single<Void>
+    func delete(placeId: Int) -> Single<Void>
+    func savedPlaces() -> Single<[Place]>
 }
 
 final class TrackManager {
@@ -38,20 +42,73 @@ extension TrackManager: TrackManagerProtocol {
             .map { GetMembersTrackInfoResponse.map(from: $0) }
     }
     
-    func geocode(trackInfo: MemberTrackInfo) -> Single<GeocodeResult> {
-        guard let lastLocation = trackInfo.lastPlace?.location else {
-            let result = GeocodeResult(trackInfo: trackInfo, address: nil)
-            return .just(result)
-        }
-        
+    func geocode(place: Place) -> Single<GeocodeResult> {
         let request = GeocodeRequest(
-            latitude: lastLocation.latitude,
-            longitude: lastLocation.longitude
+            latitude: place.location.latitude,
+            longitude: place.location.longitude
         )
         
         return restAPITransport
             .callServerApi(requestBody: request)
             .map { GeocodeResponse.map(from: $0) }
-            .map { GeocodeResult(trackInfo: trackInfo, address: $0) }
+            .map { GeocodeResult(place: place, address: $0) }
+    }
+    
+    func places(for memberId: String, date: String) -> Single<[Place]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetPlacesOnDayRequest(
+            userToken: userToken,
+            memberId: memberId,
+            date: date
+        )
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .map { GetPlacesOnDayResponse.map(from: $0) }
+    }
+    
+    func save(placeId: Int) -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = AddPlaceRequest(
+            userToken: userToken,
+            placeId: placeId
+        )
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .mapToVoid()
+    }
+    
+    func delete(placeId: Int) -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = DeletePlaceRequest(
+            userToken: userToken,
+            placeId: placeId
+        )
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .mapToVoid()
+    }
+    
+    func savedPlaces() -> Single<[Place]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = SavedPlacesRequest(userToken: userToken)
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .map { SavedPlacesResponse.map(from: $0) }
     }
 }

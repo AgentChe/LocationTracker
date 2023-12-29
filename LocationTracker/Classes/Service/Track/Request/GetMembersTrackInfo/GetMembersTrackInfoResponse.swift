@@ -24,27 +24,45 @@ enum GetMembersTrackInfoResponse {
                 return nil
             }
             
+            // TODO
+//            var place: Place? {
+//                guard
+//                    let placeJSON = json["place"] as? [String: Any],
+//                    let id = placeJSON["id"] as? Int,
+//                    let locationJSON = placeJSON["location"] as? [String: Any],
+//                    let latitude = locationJSON["latitude"] as? CGFloat,
+//                    let longitude = locationJSON["longitude"] as? CGFloat,
+//                    let lastUpdatedTimestamp = placeJSON["last_updated"] as? TimeInterval
+//                else {
+//                    return nil
+//                }
+//
+//                let location = Location(
+//                    latitude: latitude,
+//                    longitude: longitude
+//                )
+//
+//                return Place(
+//                    id: id,
+//                    location: location,
+//                    updated: Date(timeIntervalSince1970: lastUpdatedTimestamp)
+//                )
+//            }
+            
+            // TODO: remove
             var place: Place? {
-                guard
-                    let placeJSON = json["place"] as? [String: Any],
-                    let id = placeJSON["id"] as? Int,
-                    let locationJSON = placeJSON["location"] as? [String: Any],
-                    let latitude = locationJSON["latitude"] as? CGFloat,
-                    let longitude = locationJSON["longitude"] as? CGFloat,
-                    let lastUpdatedTimestamp = placeJSON["last_updated"] as? TimeInterval
-                else {
-                    return nil
-                }
+                let updated = Calendar.current.date(byAdding: .minute, value: Int.random(in: 60...60*24*7), to: Date())!
                 
-                let location = Location(
-                    latitude: latitude,
-                    longitude: longitude
-                )
+                let lat = 55.783566 + Double.random(in: 0...0.1)
+                let lon = 49.128939 + Double.random(in: 0...0.1)
                 
                 return Place(
-                    id: id,
-                    location: location,
-                    updated: Date(timeIntervalSince1970: lastUpdatedTimestamp)
+                    id: Int.random(in: 0...10000000),
+                    location: Location(
+                        latitude: lat,
+                        longitude: lon
+                    ),
+                    updated: updated
                 )
             }
             

@@ -20,7 +20,7 @@ final class MemberAnnotationView: MKAnnotationView {
         .textColor(Appearance.black2)
         .font(Fonts.RobotoCondensed.medium(size: 14.scale))
         .lineHeight(19.6.scale)
-        .textAlignment(.center)
+        .textAlignment(.left)
         .lineBreakMode(.byTruncatingTail)
     private lazy var placeholderPhotoAttrs = TextAttributes()
         .textColor(Appearance.primary1)
@@ -77,7 +77,7 @@ final class MemberAnnotationView: MKAnnotationView {
         batteryLabel.isHidden = annotation.trackInfo.batteryLevel == nil
         
         if let battery = annotation.trackInfo.batteryLevel {
-            batteryLabel.attributedText = "\(Int(battery))".attributed(with: batteryAttrs)
+            batteryLabel.attributedText = "\(Int(battery))%".attributed(with: batteryAttrs)
         }
     }
     

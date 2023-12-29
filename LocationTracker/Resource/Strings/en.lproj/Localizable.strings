@@ -171,3 +171,4 @@
 "Member.Chat" = "Chat";
 "Member.GetDirection" = "Get direction";
 "Member.History" = "History";
+"Member.AddPlace" = "Add to Places";

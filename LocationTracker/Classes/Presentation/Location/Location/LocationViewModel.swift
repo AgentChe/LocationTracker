@@ -9,6 +9,8 @@ import RxSwift
 import RxCocoa
 
 final class LocationViewModel {
+    typealias TrackInfoGeocode = (trackInfo: MemberTrackInfo, result: GeocodeResult)
+    
     enum Route {
         case trackInfo(MemberTrackInfo)
         case addMember(String)
@@ -83,10 +85,10 @@ extension LocationViewModel {
         )
         let circleTrackInfo = makeTrackInfo(for: selectedCircle)
         let myTrackInfo = makeMyTrackInfo(myPhotoUrl: myPhotoUrl)
-        let geocoded = makeGeocode(trackInfo: circleTrackInfo)
+        let geocode = makeGeocode(trackInfo: circleTrackInfo)
         let circleElements = makeCircleElements(
             selectedCircle: selectedCircle,
-            geocoded: geocoded
+            geocode: geocode
         )
         
         return Output(
@@ -148,12 +150,12 @@ private extension LocationViewModel {
     
     func makeCircleElements(
         selectedCircle: Driver<Circle?>,
-        geocoded: Driver<[GeocodeResult]?>
+        geocode: Driver<[TrackInfoGeocode]?>
     ) -> Driver<[LocationCircleTableElement]> {
         Driver
-            .combineLatest(selectedCircle, geocoded)
-            .compactMap { circle, geocoded -> [LocationCircleTableElement]? in
-                guard let circle, let geocoded else {
+            .combineLatest(selectedCircle, geocode)
+            .compactMap { circle, geocode -> [LocationCircleTableElement]? in
+                guard let circle, let geocode else {
                     return [.create]
                 }
                 
@@ -164,11 +166,11 @@ private extension LocationViewModel {
 
                 let userId = SessionManager().userId
 
-                geocoded.forEach { geocode in
+                geocode.forEach { geocode in
                     let element = DetailsCircleTableMember(
                         trackInfo: geocode.trackInfo,
                         me: geocode.trackInfo.member.id == userId,
-                        address: geocode.address
+                        address: geocode.result.address
                     )
                     result.append(.member(element))
                 }
@@ -181,16 +183,27 @@ private extension LocationViewModel {
             }
     }
     
-    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[GeocodeResult]?> {
+    func makeGeocode(trackInfo: Driver<[MemberTrackInfo]?>) -> Driver<[TrackInfoGeocode]?> {
         trackInfo
-            .flatMapLatest { [weak self] trackInfo -> Driver<[GeocodeResult]?> in
+            .flatMapLatest { [weak self] trackInfo -> Driver<[TrackInfoGeocode]?> in
                 guard let self, let trackInfo else {
                     return .just(nil)
                 }
                 
+                let geocode = trackInfo
+                    .compactMap { trackInfo -> Single<TrackInfoGeocode>? in
+                        guard let place = trackInfo.lastPlace else {
+                            return nil
+                        }
+                        
+                        return self.trackManager
+                            .geocode(place: place)
+                            .map { (trackInfo, $0) }
+                    }
+                
                 return Single
-                    .zip(trackInfo.map { self.trackManager.geocode(trackInfo: $0) })
-                    .map { result -> [GeocodeResult]? in result }
+                    .zip(geocode)
+                    .map { result -> [TrackInfoGeocode]? in result }
                     .trackActivity(self.geocodeActivity)
                     .asDriver(onErrorJustReturn: [])
             }

@@ -6,6 +6,6 @@
 //
 
 struct GeocodeResult: Codable {
-    let trackInfo: MemberTrackInfo
+    let place: Place
     let address: String?
 }

@@ -88,7 +88,7 @@ private extension MemberInfoCell {
         batteryLabel.isHidden = element.batteryLevel == nil
         
         if let battery = element.batteryLevel {
-            batteryLabel.attributedText = "\(Int(battery))%%".attributed(with: batteryAttrs)
+            batteryLabel.attributedText = "\(Int(battery))%".attributed(with: batteryAttrs)
         } else {
             batteryLabel.attributedText = "-".attributed(with: batteryAttrs)
         }

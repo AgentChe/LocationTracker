@@ -32,7 +32,17 @@ final class MemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let output = viewModel.configure(input: MemberViewModel.Input())
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else {
+                return .never()
+            }
+
+            return self.open(error: error)
+        }
+        
+        let output = viewModel.configure(input: MemberViewModel.Input(
+            didRefresh: mainView.tableView.didRefreshCurrentPlace
+        ))
         
         output.elements
             .drive(Binder(mainView.tableView) { base, elements in
@@ -141,5 +151,21 @@ private extension MemberViewController {
                 completion?()
             }
         }
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

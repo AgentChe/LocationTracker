@@ -37,6 +37,7 @@
 		DE1D27DA2B2891900022FB9D /* EditCircleRoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */; };
 		DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */; };
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
+		DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -81,8 +82,13 @@
 		DEB344692B3C6D0C0029F34B /* MemberButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */; };
 		DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */; };
 		DEB3446E2B3DC4CF0029F34B /* MemberPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */; };
-		DEB344702B3DC6BF0029F34B /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DEB3446F2B3DC6BF0029F34B /* API.json */; };
 		DEB344722B3DC6D30029F34B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344712B3DC6D30029F34B /* Place.swift */; };
+		DEB344752B3DD7080029F34B /* GetPlacesOnDayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344742B3DD7080029F34B /* GetPlacesOnDayRequest.swift */; };
+		DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344762B3DD70E0029F34B /* GetPlacesOnDayResponse.swift */; };
+		DEB3447A2B3DD8110029F34B /* AddPlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344792B3DD8110029F34B /* AddPlaceRequest.swift */; };
+		DEB3447C2B3DD8240029F34B /* DeletePlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3447B2B3DD8240029F34B /* DeletePlaceRequest.swift */; };
+		DEB3447F2B3DD8CE0029F34B /* SavedPlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3447E2B3DD8CE0029F34B /* SavedPlacesRequest.swift */; };
+		DEB344812B3DD8D50029F34B /* SavedPlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344802B3DD8D50029F34B /* SavedPlacesResponse.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
 		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
@@ -272,6 +278,7 @@
 		DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleRoleCell.swift; sourceTree = "<group>"; };
 		DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
+		DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPreloaderCell.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -316,8 +323,13 @@
 		DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberButtonsCell.swift; sourceTree = "<group>"; };
 		DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberActionButton.swift; sourceTree = "<group>"; };
 		DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPlaceCell.swift; sourceTree = "<group>"; };
-		DEB3446F2B3DC6BF0029F34B /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		DEB344712B3DC6D30029F34B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		DEB344742B3DD7080029F34B /* GetPlacesOnDayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesOnDayRequest.swift; sourceTree = "<group>"; };
+		DEB344762B3DD70E0029F34B /* GetPlacesOnDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesOnDayResponse.swift; sourceTree = "<group>"; };
+		DEB344792B3DD8110029F34B /* AddPlaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceRequest.swift; sourceTree = "<group>"; };
+		DEB3447B2B3DD8240029F34B /* DeletePlaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePlaceRequest.swift; sourceTree = "<group>"; };
+		DEB3447E2B3DD8CE0029F34B /* SavedPlacesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesRequest.swift; sourceTree = "<group>"; };
+		DEB344802B3DD8D50029F34B /* SavedPlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesResponse.swift; sourceTree = "<group>"; };
 		DEB3906D2B0B8C2900F1AE09 /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -541,6 +553,9 @@
 		DE1D27A12B2718B40022FB9D /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DEB3447D2B3DD89B0029F34B /* SavedPlaces */,
+				DEB344782B3DD7FE0029F34B /* BookmarkPlace */,
+				DEB344732B3DD6DE0029F34B /* PlacesOnDay */,
 				DEB344512B3C42EE0029F34B /* Geocode */,
 				DE1D27A72B271A830022FB9D /* GetMembersTrackInfo */,
 			);
@@ -887,6 +902,7 @@
 				DEB344662B3C6CEB0029F34B /* MemberTitleCell.swift */,
 				DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */,
 				DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */,
+				DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -897,6 +913,33 @@
 				DEB3446B2B3C7E870029F34B /* MemberActionButton.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DEB344732B3DD6DE0029F34B /* PlacesOnDay */ = {
+			isa = PBXGroup;
+			children = (
+				DEB344742B3DD7080029F34B /* GetPlacesOnDayRequest.swift */,
+				DEB344762B3DD70E0029F34B /* GetPlacesOnDayResponse.swift */,
+			);
+			path = PlacesOnDay;
+			sourceTree = "<group>";
+		};
+		DEB344782B3DD7FE0029F34B /* BookmarkPlace */ = {
+			isa = PBXGroup;
+			children = (
+				DEB344792B3DD8110029F34B /* AddPlaceRequest.swift */,
+				DEB3447B2B3DD8240029F34B /* DeletePlaceRequest.swift */,
+			);
+			path = BookmarkPlace;
+			sourceTree = "<group>";
+		};
+		DEB3447D2B3DD89B0029F34B /* SavedPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3447E2B3DD8CE0029F34B /* SavedPlacesRequest.swift */,
+				DEB344802B3DD8D50029F34B /* SavedPlacesResponse.swift */,
+			);
+			path = SavedPlaces;
 			sourceTree = "<group>";
 		};
 		DEB390642B0B8C2900F1AE09 = {
@@ -933,7 +976,6 @@
 				DEB390932B0B907F00F1AE09 /* Misc */,
 				DEB390CE2B0B907F00F1AE09 /* Presentation */,
 				DEB390F62B0B907F00F1AE09 /* Service */,
-				DEB3446F2B3DC6BF0029F34B /* API.json */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1702,7 +1744,6 @@
 				DEB391852B0B9A0700F1AE09 /* RobotoCondensed-Medium.ttf in Resources */,
 				DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */,
 				DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */,
-				DEB344702B3DC6BF0029F34B /* API.json in Resources */,
 				DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */,
 				DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */,
 				DEB3908B2B0B8F2E00F1AE09 /* Localizable.strings in Resources */,
@@ -1783,6 +1824,7 @@
 				DEB391212B0B907F00F1AE09 /* String+Extension.swift in Sources */,
 				DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */,
 				DEB391342B0B907F00F1AE09 /* RxActivityIndicator.swift in Sources */,
+				DEB3447F2B3DD8CE0029F34B /* SavedPlacesRequest.swift in Sources */,
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
@@ -1863,11 +1905,15 @@
 				DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */,
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
 				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
+				DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DE1D27A42B2718E50022FB9D /* MemberTrackInfo.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
+				DEB344812B3DD8D50029F34B /* SavedPlacesResponse.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
+				DEB344752B3DD7080029F34B /* GetPlacesOnDayRequest.swift in Sources */,
+				DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */,
 				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
 				DEB344652B3C6C940029F34B /* MemberInfoCell.swift in Sources */,
 				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
@@ -1901,6 +1947,7 @@
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
 				DEB391302B0B907F00F1AE09 /* ContentError.swift in Sources */,
 				DEB391272B0B907F00F1AE09 /* Scalable.swift in Sources */,
+				DEB3447C2B3DD8240029F34B /* DeletePlaceRequest.swift in Sources */,
 				DE1D27D82B2891870022FB9D /* EditCircleNameCell.swift in Sources */,
 				DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
@@ -1980,6 +2027,7 @@
 				DEB343FA2B3488FA0029F34B /* ProfileViewController.swift in Sources */,
 				DEB3911F2B0B907F00F1AE09 /* Collection+Extension.swift in Sources */,
 				DEB391582B0B907F00F1AE09 /* TryAgainView.swift in Sources */,
+				DEB3447A2B3DD8110029F34B /* AddPlaceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

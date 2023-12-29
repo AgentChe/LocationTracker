@@ -100,7 +100,7 @@ private extension DetailsCircleMemberCell {
         batteryLabel.isHidden = element.trackInfo.batteryLevel == nil
         
         if let battery = element.trackInfo.batteryLevel {
-            batteryLabel.attributedText = "\(Int(battery))".attributed(with: batteryAttrs)
+            batteryLabel.attributedText = "\(Int(battery))%".attributed(with: batteryAttrs)
         }
     }
     

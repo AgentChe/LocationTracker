@@ -80,6 +80,10 @@ extension MemberTableView: UITableViewDataSource {
                 self?.didRefreshCurrentPlaceTrigger.accept(Void())
             }
             return cell
+        case .preloader:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MemberPreloaderCell.self), for: indexPath) as! MemberPreloaderCell
+            cell.preloader.startAnimating()
+            return cell
         }
     }
 }
@@ -90,6 +94,8 @@ extension MemberTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .buttons:
             return 119.scale
+        case .preloader:
+            return 69.scale
         default:
             return UITableView.automaticDimension
         }
@@ -103,6 +109,7 @@ private extension MemberTableView {
         register(MemberTitleCell.self, forCellReuseIdentifier: String(describing: MemberTitleCell.self))
         register(MemberButtonsCell.self, forCellReuseIdentifier: String(describing: MemberButtonsCell.self))
         register(MemberPlaceCell.self, forCellReuseIdentifier: String(describing: MemberPlaceCell.self))
+        register(MemberPreloaderCell.self, forCellReuseIdentifier: String(describing: MemberPreloaderCell.self))
         
         dataSource = self
         delegate = self
