@@ -17,6 +17,7 @@ final class MemberTableView: UITableView {
     private lazy var didRefreshCurrentPlaceTrigger = PublishRelay<Void>()
     private lazy var didTapBackDateTrigger = PublishRelay<Date>()
     private lazy var didTapNextDateTrigger = PublishRelay<Date>()
+    private lazy var didTapAddPlaceTrigger = PublishRelay<Int>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -56,6 +57,10 @@ extension MemberTableView {
     var didTapNextDate: Signal<Date> {
         didTapNextDateTrigger.asSignal()
     }
+    
+    var didTapAddPlace: Signal<Int> {
+        didTapAddPlaceTrigger.asSignal()
+    }
 }
 
 // MARK: UITableViewDataSource
@@ -88,6 +93,9 @@ extension MemberTableView: UITableViewDataSource {
             cell.setup(element: element)
             cell.didRefresh = { [weak self] in
                 self?.didRefreshCurrentPlaceTrigger.accept(Void())
+            }
+            cell.didAddPlace = { [weak self] in
+                self?.didTapAddPlaceTrigger.accept(element.id)
             }
             return cell
         case .preloader:

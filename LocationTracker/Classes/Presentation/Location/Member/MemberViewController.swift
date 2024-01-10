@@ -19,6 +19,8 @@ final class MemberViewController: UIViewController {
     
     private lazy var didSelectDirectionTrigger = PublishRelay<GetDirectionViewController.Direction>()
     
+    private lazy var feedbackGenerator = UINotificationFeedbackGenerator()
+    
     private init(memberTrackInfo: MemberTrackInfo) {
         viewModel = MemberViewModel(memberTrackInfo: memberTrackInfo)
         
@@ -49,7 +51,8 @@ final class MemberViewController: UIViewController {
             didBackDate: mainView.tableView.didTapBackDate,
             didNextDate: mainView.tableView.didTapNextDate,
             didGetDirection: mainView.tableView.didTapGetDirection,
-            didSelectDirection: didSelectDirectionTrigger.asSignal()
+            didSelectDirection: didSelectDirectionTrigger.asSignal(),
+            didSavePlace: mainView.tableView.didTapAddPlace
         ))
         
         output.elements
@@ -192,6 +195,8 @@ private extension MemberViewController {
             present(vc, animated: false)
         case .direction(let direction):
             make(direction: direction)
+        case .placeSaved:
+            feedbackGenerator.notificationOccurred(.success)
         }
     }
     

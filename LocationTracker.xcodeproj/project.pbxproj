@@ -41,6 +41,7 @@
 		DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */; };
 		DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */; };
 		DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */; };
+		DE99F1D22B4EE5D000AF96AB /* TrackMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1D12B4EE5D000AF96AB /* TrackMediator.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -285,6 +286,7 @@
 		DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDateCell.swift; sourceTree = "<group>"; };
 		DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
 		DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionView.swift; sourceTree = "<group>"; };
+		DE99F1D12B4EE5D000AF96AB /* TrackMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMediator.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 				DE1D27A22B2718BC0022FB9D /* Model */,
 				DE1D27A12B2718B40022FB9D /* Request */,
 				DE1D279F2B2718AF0022FB9D /* TrackManager.swift */,
+				DE99F1D12B4EE5D000AF96AB /* TrackMediator.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -2022,6 +2025,7 @@
 				DEB3916E2B0B907F00F1AE09 /* GetProfileResponse.swift in Sources */,
 				DEB3443B2B3B22BA0029F34B /* ProfileTableElement.swift in Sources */,
 				DEB391392B0B907F00F1AE09 /* Spinner.swift in Sources */,
+				DE99F1D22B4EE5D000AF96AB /* TrackMediator.swift in Sources */,
 				DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,

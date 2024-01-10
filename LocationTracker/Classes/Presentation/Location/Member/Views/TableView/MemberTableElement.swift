@@ -36,11 +36,13 @@ struct MemberInfoElement {
 }
 
 struct MemberPlaceElement {
+    let id: Int
     let address: String
     let updated: String?
     let withRefresh: Bool
     
-    init(address: String, updated: Date?, withRefresh: Bool = false) {
+    init(id: Int, address: String, updated: Date?, withRefresh: Bool = false) {
+        self.id = id
         self.address = address
         
         var updatedLocalizable: String? = nil

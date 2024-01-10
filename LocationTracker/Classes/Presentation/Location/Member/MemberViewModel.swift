@@ -17,6 +17,7 @@ final class MemberViewModel {
     enum Route {
         case requestDirection
         case direction(Direction)
+        case placeSaved
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -49,6 +50,7 @@ extension MemberViewModel {
         let didNextDate: Signal<Date>
         let didGetDirection: Signal<Void>
         let didSelectDirection: Signal<GetDirectionViewController.Direction>
+        let didSavePlace: Signal<Int>
     }
     
     struct Output {
@@ -78,7 +80,8 @@ extension MemberViewModel {
             route: makeRoute(
                 didGetDirection: input.didGetDirection,
                 didSelectDirection: input.didSelectDirection,
-                lastPlace: geocodedLastPlace
+                lastPlace: geocodedLastPlace,
+                didSavePlace: input.didSavePlace
             )
         )
     }
@@ -109,6 +112,7 @@ private extension MemberViewModel {
                 
                 if let lastPlace = geocodedLastPlace, let address = lastPlace.address {
                     let element = MemberPlaceElement(
+                        id: lastPlace.place.id,
                         address: address,
                         updated: lastPlace.place.updated,
                         withRefresh: true
@@ -134,6 +138,7 @@ private extension MemberViewModel {
                         }
                         
                         let element = MemberPlaceElement(
+                            id: geocode.place.id,
                             address: address,
                             updated: geocode.place.updated
                         )
@@ -271,7 +276,8 @@ private extension MemberViewModel {
     func makeRoute(
         didGetDirection: Signal<Void>,
         didSelectDirection: Signal<GetDirectionViewController.Direction>,
-        lastPlace: Driver<GeocodeResult?>
+        lastPlace: Driver<GeocodeResult?>,
+        didSavePlace: Signal<Int>
     ) -> Driver<Route> {
         func determine(direction: GetDirectionViewController.Direction, geocode: GeocodeResult?) -> Route? {
             guard let geocode else {
@@ -307,7 +313,33 @@ private extension MemberViewModel {
                 determine(direction: direction, geocode: geocode)
             }
         
+        let savePlace = didSavePlace
+            .flatMapLatest { [weak self] placeId -> Driver<Route> in
+                guard let self else {
+                    return .never()
+                }
+                
+                func source() -> Single<Route> {
+                    self.trackManager
+                        .save(placeId: placeId)
+                        .map { _ in Route.placeSaved }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { trigger(error: $0) })
+                    .asDriver(onErrorDriveWith: .never())
+            }
+        
         return Driver
-            .merge(getDirection, select)
+            .merge(getDirection, select, savePlace)
     }
 }

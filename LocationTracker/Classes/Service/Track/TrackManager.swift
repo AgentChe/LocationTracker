@@ -83,6 +83,9 @@ extension TrackManager: TrackManagerProtocol {
         return restAPITransport
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: {
+                TrackMediator.shared.save(placeId: placeId)
+            })
     }
     
     func delete(placeId: Int) -> Single<Void> {
@@ -98,6 +101,9 @@ extension TrackManager: TrackManagerProtocol {
         return restAPITransport
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: {
+                TrackMediator.shared.delete(placeId: placeId)
+            })
     }
     
     func savedPlaces() -> Single<[Place]> {
