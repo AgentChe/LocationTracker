@@ -39,6 +39,8 @@
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
 		DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */; };
 		DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */; };
+		DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */; };
+		DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -281,6 +283,8 @@
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
 		DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPreloaderCell.swift; sourceTree = "<group>"; };
 		DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDateCell.swift; sourceTree = "<group>"; };
+		DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
+		DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionView.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -671,6 +675,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DE99F1CC2B4ED67000AF96AB /* GetDirection */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */,
+				DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */,
+			);
+			path = GetDirection;
+			sourceTree = "<group>";
+		};
 		DEB343E12B3456B60029F34B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +715,7 @@
 		DEB343EE2B3458FE0029F34B /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F1CC2B4ED67000AF96AB /* GetDirection */,
 				DEB344562B3C509F0029F34B /* Member */,
 				DEB3442F2B39E1D30029F34B /* Location */,
 			);
@@ -1839,6 +1853,7 @@
 				DEB343F72B346DBA0029F34B /* GeoLocationMonitoring.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DE1D27A62B27192F0022FB9D /* Location.swift in Sources */,
+				DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */,
 				DEB344672B3C6CEB0029F34B /* MemberTitleCell.swift in Sources */,
 				DED613162B1F4FB300F09899 /* CreateCircleRequest.swift in Sources */,
 				DE1D27C82B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift in Sources */,
@@ -1954,6 +1969,7 @@
 				DE1D27D82B2891870022FB9D /* EditCircleNameCell.swift in Sources */,
 				DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
+				DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */,
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
 				DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */,
 				DE1D27A92B271A8F0022FB9D /* GetMembersTrackInfoRequest.swift in Sources */,

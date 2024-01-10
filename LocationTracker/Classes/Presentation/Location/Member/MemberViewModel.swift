@@ -9,6 +9,16 @@ import RxSwift
 import RxCocoa
 
 final class MemberViewModel {
+    enum Direction {
+        case googleMaps(Location)
+        case appleMaps(Location)
+    }
+    
+    enum Route {
+        case requestDirection
+        case direction(Direction)
+    }
+    
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     private let initialTrackInfo: Driver<MemberTrackInfo>
@@ -37,10 +47,13 @@ extension MemberViewModel {
         let didRefresh: Signal<Void>
         let didBackDate: Signal<Date>
         let didNextDate: Signal<Date>
+        let didGetDirection: Signal<Void>
+        let didSelectDirection: Signal<GetDirectionViewController.Direction>
     }
     
     struct Output {
         let elements: Driver<[MemberTableElement]>
+        let route: Driver<Route>
     }
     
     func configure(input: Input) -> Output {
@@ -61,6 +74,11 @@ extension MemberViewModel {
                 historyDate: historyDate,
                 history: history,
                 historyActivity: historyActivity
+            ),
+            route: makeRoute(
+                didGetDirection: input.didGetDirection,
+                didSelectDirection: input.didSelectDirection,
+                lastPlace: geocodedLastPlace
             )
         )
     }
@@ -248,5 +266,48 @@ private extension MemberViewModel {
             .map { places, geocode -> Bool in
                 places || geocode
             }
+    }
+    
+    func makeRoute(
+        didGetDirection: Signal<Void>,
+        didSelectDirection: Signal<GetDirectionViewController.Direction>,
+        lastPlace: Driver<GeocodeResult?>
+    ) -> Driver<Route> {
+        func determine(direction: GetDirectionViewController.Direction, geocode: GeocodeResult?) -> Route? {
+            guard let geocode else {
+                return nil
+            }
+            
+            switch direction {
+            case .googleMaps:
+                return Route.direction(.googleMaps(geocode.place.location))
+            case .appleMaps:
+                return Route.direction(.appleMaps(geocode.place.location))
+            }
+        }
+        
+        let getDirection = didGetDirection
+            .withLatestFrom(lastPlace)
+            .compactMap { geocode -> Route? in
+                let directions: [GetDirectionViewController.Direction] = [.googleMaps, .appleMaps]
+                let available = directions.filter { $0.isAvailable }
+                
+                if available.count == 1, let direction = available.first {
+                    return determine(direction: direction, geocode: geocode)
+                } else {
+                    return Route.requestDirection
+                }
+            }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let select = didSelectDirection
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(lastPlace) { ($0, $1) }
+            .compactMap { direction, geocode -> Route? in
+                determine(direction: direction, geocode: geocode)
+            }
+        
+        return Driver
+            .merge(getDirection, select)
     }
 }

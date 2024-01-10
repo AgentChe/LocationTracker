@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import MapKit
 
 final class MemberViewController: UIViewController {
     lazy var mainView = MemberView()
@@ -14,6 +16,8 @@ final class MemberViewController: UIViewController {
     private let viewModel: MemberViewModel
     
     private lazy var disposeBag = DisposeBag()
+    
+    private lazy var didSelectDirectionTrigger = PublishRelay<GetDirectionViewController.Direction>()
     
     private init(memberTrackInfo: MemberTrackInfo) {
         viewModel = MemberViewModel(memberTrackInfo: memberTrackInfo)
@@ -43,12 +47,20 @@ final class MemberViewController: UIViewController {
         let output = viewModel.configure(input: MemberViewModel.Input(
             didRefresh: mainView.tableView.didRefreshCurrentPlace,
             didBackDate: mainView.tableView.didTapBackDate,
-            didNextDate: mainView.tableView.didTapNextDate
+            didNextDate: mainView.tableView.didTapNextDate,
+            didGetDirection: mainView.tableView.didTapGetDirection,
+            didSelectDirection: didSelectDirectionTrigger.asSignal()
         ))
         
         output.elements
             .drive(Binder(mainView.tableView) { base, elements in
                 base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        output.route
+            .drive(Binder(self) { base, route in
+                base.route(route)
             })
             .disposed(by: disposeBag)
         
@@ -169,5 +181,39 @@ private extension MemberViewController {
                 
                 return Disposables.create()
             }
+    }
+    
+    func route(_ route: MemberViewModel.Route) {
+        switch route {
+        case .requestDirection:
+            let vc = GetDirectionViewController.make { [weak self] direction in
+                self?.didSelectDirectionTrigger.accept(direction)
+            }
+            present(vc, animated: false)
+        case .direction(let direction):
+            make(direction: direction)
+        }
+    }
+    
+    func make(direction: MemberViewModel.Direction) {
+        switch direction {
+        case .googleMaps(let location):
+            guard let scheme = GetDirectionViewController.Direction.googleMaps.scheme else {
+                return
+            }
+            
+            let string = scheme + "?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving"
+            
+            guard let url = URL(string: string) else {
+                return
+            }
+            
+            UIApplication.shared.open(url)
+        case .appleMaps(let location):
+            let placemark = MKPlacemark(coordinate: location.asCLLocation.coordinate)
+            let destination = MKMapItem(placemark: placemark)
+            
+            MKMapItem.openMaps(with: [destination])
+        }
     }
 }
