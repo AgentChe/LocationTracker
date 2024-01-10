@@ -38,6 +38,7 @@
 		DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */; };
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
 		DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */; };
+		DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -279,6 +280,7 @@
 		DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
 		DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPreloaderCell.swift; sourceTree = "<group>"; };
+		DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDateCell.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 				DEB344682B3C6D0C0029F34B /* MemberButtonsCell.swift */,
 				DEB3446D2B3DC4CF0029F34B /* MemberPlaceCell.swift */,
 				DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */,
+				DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1966,6 +1969,7 @@
 				DED613532B221DC100F09899 /* RolesTableView.swift in Sources */,
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
+				DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */,
 				DED613432B2092F700F09899 /* CreateCircleViewModel.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,

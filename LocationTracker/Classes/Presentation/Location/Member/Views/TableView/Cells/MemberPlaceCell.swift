@@ -51,6 +51,8 @@ extension MemberPlaceCell {
         }
         
         contentLabel.attributedText = result
+        
+        refreshButton.isHidden = !element.withRefresh
     }
 }
 

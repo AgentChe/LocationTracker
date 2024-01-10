@@ -103,17 +103,17 @@ private extension MemberView {
         ])
         
         NSLayoutConstraint.activate([
-            swipeArea.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            swipeArea.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            swipeArea.topAnchor.constraint(equalTo: container.topAnchor),
-            swipeArea.heightAnchor.constraint(equalToConstant: 64.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: swipeView.bottomAnchor, constant: 2.scale),
             tableView.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            swipeArea.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            swipeArea.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            swipeArea.topAnchor.constraint(equalTo: container.topAnchor),
+            swipeArea.heightAnchor.constraint(equalToConstant: 64.scale)
         ])
     }
 }

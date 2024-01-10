@@ -13,6 +13,7 @@ enum MemberTableElement {
     case buttons
     case place(MemberPlaceElement)
     case preloader
+    case date(Date)
 }
 
 struct MemberInfoElement {

@@ -15,6 +15,8 @@ final class MemberTableView: UITableView {
     private lazy var didTapChatTrigger = PublishRelay<Void>()
     private lazy var didTapGetDirectionTrigger = PublishRelay<Void>()
     private lazy var didRefreshCurrentPlaceTrigger = PublishRelay<Void>()
+    private lazy var didTapBackDateTrigger = PublishRelay<Date>()
+    private lazy var didTapNextDateTrigger = PublishRelay<Date>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -45,6 +47,14 @@ extension MemberTableView {
     
     var didRefreshCurrentPlace: Signal<Void> {
         didRefreshCurrentPlaceTrigger.asSignal()
+    }
+    
+    var didTapBackDate: Signal<Date> {
+        didTapBackDateTrigger.asSignal()
+    }
+    
+    var didTapNextDate: Signal<Date> {
+        didTapNextDateTrigger.asSignal()
     }
 }
 
@@ -84,6 +94,16 @@ extension MemberTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: MemberPreloaderCell.self), for: indexPath) as! MemberPreloaderCell
             cell.preloader.startAnimating()
             return cell
+        case .date(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MemberDateCell.self), for: indexPath) as! MemberDateCell
+            cell.setup(element: element)
+            cell.didTapBack = { [weak self] date in
+                self?.didTapBackDateTrigger.accept(date)
+            }
+            cell.didTapNext = { [weak self] date in
+                self?.didTapNextDateTrigger.accept(date)
+            }
+            return cell
         }
     }
 }
@@ -96,6 +116,8 @@ extension MemberTableView: UITableViewDelegate {
             return 119.scale
         case .preloader:
             return 69.scale
+        case .date:
+            return 57.scale
         default:
             return UITableView.automaticDimension
         }
@@ -110,6 +132,7 @@ private extension MemberTableView {
         register(MemberButtonsCell.self, forCellReuseIdentifier: String(describing: MemberButtonsCell.self))
         register(MemberPlaceCell.self, forCellReuseIdentifier: String(describing: MemberPlaceCell.self))
         register(MemberPreloaderCell.self, forCellReuseIdentifier: String(describing: MemberPreloaderCell.self))
+        register(MemberDateCell.self, forCellReuseIdentifier: String(describing: MemberDateCell.self))
         
         dataSource = self
         delegate = self

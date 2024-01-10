@@ -41,7 +41,9 @@ final class MemberViewController: UIViewController {
         }
         
         let output = viewModel.configure(input: MemberViewModel.Input(
-            didRefresh: mainView.tableView.didRefreshCurrentPlace
+            didRefresh: mainView.tableView.didRefreshCurrentPlace,
+            didBackDate: mainView.tableView.didTapBackDate,
+            didNextDate: mainView.tableView.didTapNextDate
         ))
         
         output.elements
