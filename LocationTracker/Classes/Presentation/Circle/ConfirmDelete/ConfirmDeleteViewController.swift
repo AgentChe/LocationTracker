@@ -1,5 +1,5 @@
 //
-//  CircleConfirmDeleteViewController.swift
+//  ConfirmDeleteViewController.swift
 //  LocationTracker
 //
 //  Created by Андрей Чернышев on 12.12.2023.
@@ -8,14 +8,23 @@
 import UIKit
 import RxSwift
 
-class CircleConfirmDeleteViewController: UIViewController {
-    lazy var mainView = CircleConfirmDeleteView()
+class ConfirmDeleteViewController: UIViewController {
+    struct Model {
+        let title: String
+        let text: String
+        let confirmText: String
+        let cancelText: String
+    }
+    
+    lazy var mainView = ConfirmDeleteView(model: model)
 
     private lazy var disposeBag = DisposeBag()
     
+    private let model: Model
     private let delete: () -> Void
     
-    private init(delete: @escaping () -> Void) {
+    private init(model: Model, delete: @escaping () -> Void) {
+        self.model = model
         self.delete = delete
         
         super.init(nibName: nil, bundle: nil)
@@ -55,16 +64,16 @@ class CircleConfirmDeleteViewController: UIViewController {
 }
 
 // MARK: Make
-extension CircleConfirmDeleteViewController {
-    static func make(delete: @escaping () -> Void) -> CircleConfirmDeleteViewController {
-        let vc = CircleConfirmDeleteViewController(delete: delete)
+extension ConfirmDeleteViewController {
+    static func make(model: Model, delete: @escaping () -> Void) -> ConfirmDeleteViewController {
+        let vc = ConfirmDeleteViewController(model: model, delete: delete)
         vc.modalPresentationStyle = .overFullScreen
         return vc
     }
 }
 
 // MARK: Private
-private extension CircleConfirmDeleteViewController {
+private extension ConfirmDeleteViewController {
     func animateShow() {
         mainView.containerYConstraint.isActive = false
         mainView.containerYConstraint = mainView.container.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)

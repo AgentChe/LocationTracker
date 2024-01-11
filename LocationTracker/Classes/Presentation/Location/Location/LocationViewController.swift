@@ -124,7 +124,13 @@ private extension LocationViewController {
             let nc = NavigationController(rootViewController: vc)
             present(nc, animated: true)
         case .delete(let circle):
-            let vc = CircleConfirmDeleteViewController.make { [weak self] in
+            let model = ConfirmDeleteViewController.Model(
+                title: "DetailsCircle.ConfirmDelete.Title".localized,
+                text: "DetailsCircle.ConfirmDelete.SubTitle".localized,
+                confirmText: "DetailsCircle.ConfirmDelete.DeleteButton".localized,
+                cancelText: "Cancel".localized
+            )
+            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
                 self?.didDeleteCircleTrigger.accept(circle)
             }
             present(vc, animated: false)

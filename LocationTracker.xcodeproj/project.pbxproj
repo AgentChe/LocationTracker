@@ -26,8 +26,8 @@
 		DE1D27BC2B275EE40022FB9D /* DetailsCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27BB2B275EE40022FB9D /* DetailsCircleMemberCell.swift */; };
 		DE1D27BF2B2878AE0022FB9D /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27BE2B2878AE0022FB9D /* InviteViewController.swift */; };
 		DE1D27C32B2878B70022FB9D /* InviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27C22B2878B70022FB9D /* InviteView.swift */; };
-		DE1D27C52B287AF40022FB9D /* CircleConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27C42B287AF40022FB9D /* CircleConfirmDeleteView.swift */; };
-		DE1D27C82B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27C72B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift */; };
+		DE1D27C52B287AF40022FB9D /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27C42B287AF40022FB9D /* ConfirmDeleteView.swift */; };
+		DE1D27C82B287FBF0022FB9D /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27C72B287FBF0022FB9D /* ConfirmDeleteViewController.swift */; };
 		DE1D27CB2B288B4A0022FB9D /* EditCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27CA2B288B4A0022FB9D /* EditCircleViewController.swift */; };
 		DE1D27CD2B288B500022FB9D /* EditCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27CC2B288B500022FB9D /* EditCircleViewModel.swift */; };
 		DE1D27CF2B288BFD0022FB9D /* EditCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27CE2B288BFD0022FB9D /* EditCircleView.swift */; };
@@ -42,6 +42,15 @@
 		DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */; };
 		DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */; };
 		DE99F1D22B4EE5D000AF96AB /* TrackMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1D12B4EE5D000AF96AB /* TrackMediator.swift */; };
+		DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1D52B4FD13A00AF96AB /* SavedPlacesViewController.swift */; };
+		DE99F1D82B4FD14100AF96AB /* SavedPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1D72B4FD14100AF96AB /* SavedPlacesViewModel.swift */; };
+		DE99F1DA2B4FD14600AF96AB /* SavedPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1D92B4FD14600AF96AB /* SavedPlacesView.swift */; };
+		DE99F1DD2B4FD25200AF96AB /* SavedPlacesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1DC2B4FD25200AF96AB /* SavedPlacesEmptyView.swift */; };
+		DE99F1E02B4FD3C600AF96AB /* SavedPlacesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1DF2B4FD3C600AF96AB /* SavedPlacesTableView.swift */; };
+		DE99F1E22B4FD3CD00AF96AB /* SavedPlacesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E12B4FD3CD00AF96AB /* SavedPlacesTableCell.swift */; };
+		DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E42B4FF50700AF96AB /* EditPlaceViewController.swift */; };
+		DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E62B4FF50D00AF96AB /* EditPlaceViewModel.swift */; };
+		DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E82B4FF51100AF96AB /* EditPlaceView.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -271,8 +280,8 @@
 		DE1D27BB2B275EE40022FB9D /* DetailsCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27BE2B2878AE0022FB9D /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		DE1D27C22B2878B70022FB9D /* InviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteView.swift; sourceTree = "<group>"; };
-		DE1D27C42B287AF40022FB9D /* CircleConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleConfirmDeleteView.swift; sourceTree = "<group>"; };
-		DE1D27C72B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleConfirmDeleteViewController.swift; sourceTree = "<group>"; };
+		DE1D27C42B287AF40022FB9D /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		DE1D27C72B287FBF0022FB9D /* ConfirmDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewController.swift; sourceTree = "<group>"; };
 		DE1D27CA2B288B4A0022FB9D /* EditCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleViewController.swift; sourceTree = "<group>"; };
 		DE1D27CC2B288B500022FB9D /* EditCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleViewModel.swift; sourceTree = "<group>"; };
 		DE1D27CE2B288BFD0022FB9D /* EditCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleView.swift; sourceTree = "<group>"; };
@@ -287,6 +296,15 @@
 		DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
 		DE99F1CF2B4ED68C00AF96AB /* GetDirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionView.swift; sourceTree = "<group>"; };
 		DE99F1D12B4EE5D000AF96AB /* TrackMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMediator.swift; sourceTree = "<group>"; };
+		DE99F1D52B4FD13A00AF96AB /* SavedPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewController.swift; sourceTree = "<group>"; };
+		DE99F1D72B4FD14100AF96AB /* SavedPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewModel.swift; sourceTree = "<group>"; };
+		DE99F1D92B4FD14600AF96AB /* SavedPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesView.swift; sourceTree = "<group>"; };
+		DE99F1DC2B4FD25200AF96AB /* SavedPlacesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesEmptyView.swift; sourceTree = "<group>"; };
+		DE99F1DF2B4FD3C600AF96AB /* SavedPlacesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesTableView.swift; sourceTree = "<group>"; };
+		DE99F1E12B4FD3CD00AF96AB /* SavedPlacesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesTableCell.swift; sourceTree = "<group>"; };
+		DE99F1E42B4FF50700AF96AB /* EditPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
+		DE99F1E62B4FF50D00AF96AB /* EditPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceViewModel.swift; sourceTree = "<group>"; };
+		DE99F1E82B4FF51100AF96AB /* EditPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceView.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -632,8 +650,8 @@
 		DE1D27C62B287FA90022FB9D /* ConfirmDelete */ = {
 			isa = PBXGroup;
 			children = (
-				DE1D27C72B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift */,
-				DE1D27C42B287AF40022FB9D /* CircleConfirmDeleteView.swift */,
+				DE1D27C72B287FBF0022FB9D /* ConfirmDeleteViewController.swift */,
+				DE1D27C42B287AF40022FB9D /* ConfirmDeleteView.swift */,
 			);
 			path = ConfirmDelete;
 			sourceTree = "<group>";
@@ -687,6 +705,45 @@
 			path = GetDirection;
 			sourceTree = "<group>";
 		};
+		DE99F1D42B4FD13000AF96AB /* SavedPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1DB2B4FD24400AF96AB /* Views */,
+				DE99F1D52B4FD13A00AF96AB /* SavedPlacesViewController.swift */,
+				DE99F1D72B4FD14100AF96AB /* SavedPlacesViewModel.swift */,
+				DE99F1D92B4FD14600AF96AB /* SavedPlacesView.swift */,
+			);
+			path = SavedPlaces;
+			sourceTree = "<group>";
+		};
+		DE99F1DB2B4FD24400AF96AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1DE2B4FD3B800AF96AB /* TableView */,
+				DE99F1DC2B4FD25200AF96AB /* SavedPlacesEmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE99F1DE2B4FD3B800AF96AB /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1DF2B4FD3C600AF96AB /* SavedPlacesTableView.swift */,
+				DE99F1E12B4FD3CD00AF96AB /* SavedPlacesTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE99F1E32B4FF4F900AF96AB /* EditPlace */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1E42B4FF50700AF96AB /* EditPlaceViewController.swift */,
+				DE99F1E62B4FF50D00AF96AB /* EditPlaceViewModel.swift */,
+				DE99F1E82B4FF51100AF96AB /* EditPlaceView.swift */,
+			);
+			path = EditPlace;
+			sourceTree = "<group>";
+		};
 		DEB343E12B3456B60029F34B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +775,8 @@
 		DEB343EE2B3458FE0029F34B /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F1E32B4FF4F900AF96AB /* EditPlace */,
+				DE99F1D42B4FD13000AF96AB /* SavedPlaces */,
 				DE99F1CC2B4ED67000AF96AB /* GetDirection */,
 				DEB344562B3C509F0029F34B /* Member */,
 				DEB3442F2B39E1D30029F34B /* Location */,
@@ -1849,6 +1908,7 @@
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
 				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
+				DE99F1DA2B4FD14600AF96AB /* SavedPlacesView.swift in Sources */,
 				DED613342B206D1000F09899 /* CirclesTableView.swift in Sources */,
 				DEB391242B0B907F00F1AE09 /* DefaultRequestWrapper.swift in Sources */,
 				DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */,
@@ -1859,12 +1919,14 @@
 				DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */,
 				DEB344672B3C6CEB0029F34B /* MemberTitleCell.swift in Sources */,
 				DED613162B1F4FB300F09899 /* CreateCircleRequest.swift in Sources */,
-				DE1D27C82B287FBF0022FB9D /* CircleConfirmDeleteViewController.swift in Sources */,
+				DE99F1E02B4FD3C600AF96AB /* SavedPlacesTableView.swift in Sources */,
+				DE1D27C82B287FBF0022FB9D /* ConfirmDeleteViewController.swift in Sources */,
 				DED613142B1F4F3C00F09899 /* GetRolesResponse.swift in Sources */,
 				DE1D27B62B27224F0022FB9D /* DetailsCircleActionCell.swift in Sources */,
 				DED6132E2B206C2300F09899 /* CirclesViewModel.swift in Sources */,
 				DE1D27D32B28915B0022FB9D /* EditCircleTableView.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
+				DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */,
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
 				DEB3445C2B3C50CF0029F34B /* MemberView.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
@@ -1961,10 +2023,12 @@
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
 				DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */,
+				DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
+				DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */,
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
 				DEB391302B0B907F00F1AE09 /* ContentError.swift in Sources */,
 				DEB391272B0B907F00F1AE09 /* Scalable.swift in Sources */,
@@ -1989,9 +2053,11 @@
 				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */,
+				DE99F1D82B4FD14100AF96AB /* SavedPlacesViewModel.swift in Sources */,
 				DED613432B2092F700F09899 /* CreateCircleViewModel.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
+				DE99F1E22B4FD3CD00AF96AB /* SavedPlacesTableCell.swift in Sources */,
 				DEB344622B3C6C270029F34B /* MemberTableElement.swift in Sources */,
 				DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */,
 				DED613012B1F281C00F09899 /* CircleMediator.swift in Sources */,
@@ -2029,6 +2095,7 @@
 				DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
+				DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
@@ -2039,11 +2106,12 @@
 				DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */,
 				DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */,
 				DEB343F42B3459120029F34B /* LocationView.swift in Sources */,
+				DE99F1DD2B4FD25200AF96AB /* SavedPlacesEmptyView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */,
 				DED613572B221DD000F09899 /* RolesTableElement.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
-				DE1D27C52B287AF40022FB9D /* CircleConfirmDeleteView.swift in Sources */,
+				DE1D27C52B287AF40022FB9D /* ConfirmDeleteView.swift in Sources */,
 				DEB3441E2B35D0510029F34B /* MemberAnnotation.swift in Sources */,
 				DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */,
 				DED613452B2092FD00F09899 /* CreateCircleView.swift in Sources */,

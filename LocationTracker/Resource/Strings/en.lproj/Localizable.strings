@@ -175,3 +175,15 @@
 
 "GetDirection.GoogleMaps" = "Google Maps";
 "GetDirection.AppleMaps" = "Maps";
+
+// MARK: SavedPlaces
+"SavedPlaces.Title" = "Saved places";
+"SavedPlaces.Empty.Title" = "Looks empty here";
+"SavedPlaces.Empty.Text" = "Here will be places that you saved";
+
+// MARK: EditPlace
+"EditPlace.Title" = "Edit place";
+"EditPlace.Address" = "Address";
+"EditPlace.Delete" = "Delete";
+"EditPlace.Confirm.Title" = "Delete this place";
+"EditPlace.Confirm.Text" = "Are you sure? You'll have to re-add this place";

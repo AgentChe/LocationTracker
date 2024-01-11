@@ -1,5 +1,5 @@
 //
-//  CircleConfirmDeleteView.swift
+//  ConfirmDeleteView.swift
 //  LocationTracker
 //
 //  Created by Андрей Чернышев on 12.12.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CircleConfirmDeleteView: UIView {
+final class ConfirmDeleteView: UIView {
     lazy var dimmedView = makeDimmedView()
     lazy var container = makeContainer()
     lazy var titleLabel = makeTitleLabel()
@@ -17,8 +17,12 @@ final class CircleConfirmDeleteView: UIView {
     
     lazy var containerYConstraint = NSLayoutConstraint()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let model: ConfirmDeleteViewController.Model
+    
+    init(model: ConfirmDeleteViewController.Model) {
+        self.model = model
+        
+        super.init(frame: .zero)
         
         makeConstraints()
     }
@@ -29,7 +33,7 @@ final class CircleConfirmDeleteView: UIView {
 }
 
 // MARK: Make constraints
-private extension CircleConfirmDeleteView {
+private extension ConfirmDeleteView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             dimmedView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -74,7 +78,7 @@ private extension CircleConfirmDeleteView {
 }
 
 // MARK: Lazy initialization
-private extension CircleConfirmDeleteView {
+private extension ConfirmDeleteView {
     func makeDimmedView() -> UIView {
         let view = UIView()
         view.alpha = 0
@@ -102,7 +106,7 @@ private extension CircleConfirmDeleteView {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = "DetailsCircle.ConfirmDelete.Title".localized.attributed(with: attrs)
+        view.attributedText = model.title.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
@@ -116,7 +120,7 @@ private extension CircleConfirmDeleteView {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = "DetailsCircle.ConfirmDelete.SubTitle".localized.attributed(with: attrs)
+        view.attributedText = model.text.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
@@ -129,7 +133,7 @@ private extension CircleConfirmDeleteView {
             .font(Fonts.RobotoCondensed.medium(size: 16.scale))
         
         let view = UIButton()
-        view.setAttributedTitle("DetailsCircle.ConfirmDelete.DeleteButton".localized.attributed(with: attrs), for: .normal)
+        view.setAttributedTitle(model.confirmText.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 20.scale
         view.backgroundColor = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -143,7 +147,7 @@ private extension CircleConfirmDeleteView {
             .font(Fonts.RobotoCondensed.medium(size: 16.scale))
         
         let view = UIButton()
-        view.setAttributedTitle("Cancel".localized.attributed(with: attrs), for: .normal)
+        view.setAttributedTitle(model.cancelText.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 20.scale
         view.backgroundColor = Appearance.primary2
         view.translatesAutoresizingMaskIntoConstraints = false

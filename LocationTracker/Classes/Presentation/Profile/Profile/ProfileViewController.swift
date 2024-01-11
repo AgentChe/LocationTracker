@@ -57,7 +57,8 @@ private extension ProfileViewController {
         case .edit:
             break // TODO
         case .savePlaces:
-            break // TODO
+            let nc = NavigationController(rootViewController: SavedPlacesViewController.make())
+            present(nc, animated: true)
         case .changePIN:
             break // TODO
         case .settings:

@@ -108,7 +108,13 @@ private extension DetailsCircleViewController {
             let nc = NavigationController(rootViewController: EditCircleViewController.make(circle: circle))
             present(nc, animated: true)
         case .delete:
-            let vc = CircleConfirmDeleteViewController.make { [weak self] in
+            let model = ConfirmDeleteViewController.Model(
+                title: "DetailsCircle.ConfirmDelete.Title".localized,
+                text: "DetailsCircle.ConfirmDelete.SubTitle".localized,
+                confirmText: "DetailsCircle.ConfirmDelete.DeleteButton".localized,
+                cancelText: "Cancel".localized
+            )
+            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
                 self?.didDeleteTrigger.accept(Void())
             }
             present(vc, animated: false)
