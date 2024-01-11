@@ -187,3 +187,8 @@
 "EditPlace.Delete" = "Delete";
 "EditPlace.Confirm.Title" = "Delete this place";
 "EditPlace.Confirm.Text" = "Are you sure? You'll have to re-add this place";
+
+// MARK: EditProfile
+"EditProfile.Title" = "Edit";
+"EditProfile.Save" = "Save";
+"EditProfile.Name.Placeholder" = "Name";

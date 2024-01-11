@@ -49,9 +49,9 @@ extension ProfileManager: ProfileManagerProtocol {
     
     func set(
         name: String,
-        photoUrl: URL?,
-        pin: String?,
-        pushToken: String?
+        photoUrl: URL? = nil,
+        pin: String? = nil,
+        pushToken: String? = nil
     ) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)

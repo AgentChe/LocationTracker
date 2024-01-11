@@ -55,7 +55,8 @@ private extension ProfileViewController {
     func route(_ route: ProfileViewModel.Route) {
         switch route {
         case .edit:
-            break // TODO
+            let nc = NavigationController(rootViewController: EditProfileViewController.make())
+            present(nc, animated: true)
         case .savePlaces:
             let nc = NavigationController(rootViewController: SavedPlacesViewController.make())
             present(nc, animated: true)

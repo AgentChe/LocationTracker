@@ -51,6 +51,9 @@
 		DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E42B4FF50700AF96AB /* EditPlaceViewController.swift */; };
 		DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E62B4FF50D00AF96AB /* EditPlaceViewModel.swift */; };
 		DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1E82B4FF51100AF96AB /* EditPlaceView.swift */; };
+		DE99F1EE2B50069800AF96AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1ED2B50069800AF96AB /* EditProfileViewController.swift */; };
+		DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */; };
+		DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1F12B5006A100AF96AB /* EditProfileView.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -305,6 +308,9 @@
 		DE99F1E42B4FF50700AF96AB /* EditPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
 		DE99F1E62B4FF50D00AF96AB /* EditPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceViewModel.swift; sourceTree = "<group>"; };
 		DE99F1E82B4FF51100AF96AB /* EditPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceView.swift; sourceTree = "<group>"; };
+		DE99F1ED2B50069800AF96AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		DE99F1F12B5006A100AF96AB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -744,6 +750,16 @@
 			path = EditPlace;
 			sourceTree = "<group>";
 		};
+		DE99F1EC2B50068D00AF96AB /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1ED2B50069800AF96AB /* EditProfileViewController.swift */,
+				DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */,
+				DE99F1F12B5006A100AF96AB /* EditProfileView.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		DEB343E12B3456B60029F34B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +803,7 @@
 		DEB343F82B3488E10029F34B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F1EC2B50068D00AF96AB /* EditProfile */,
 				DEB344472B3B3B880029F34B /* Settings */,
 				DEB344462B3B3B7D0029F34B /* Profile */,
 			);
@@ -1970,6 +1987,7 @@
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
+				DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB343ED2B3457090029F34B /* TabView.swift in Sources */,
 				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
@@ -2071,6 +2089,7 @@
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
+				DE99F1EE2B50069800AF96AB /* EditProfileViewController.swift in Sources */,
 				DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */,
 				DEB344502B3B3C900029F34B /* SettingsLinkButton.swift in Sources */,
 				DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */,
@@ -2099,6 +2118,7 @@
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
+				DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
 				DEB344422B3B233A0029F34B /* ProfileMenuCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
