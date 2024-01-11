@@ -54,6 +54,7 @@
 		DE99F1EE2B50069800AF96AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1ED2B50069800AF96AB /* EditProfileViewController.swift */; };
 		DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */; };
 		DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1F12B5006A100AF96AB /* EditProfileView.swift */; };
+		DE99F1F52B5016C800AF96AB /* SaveGeoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1F42B5016C800AF96AB /* SaveGeoRequest.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -311,6 +312,7 @@
 		DE99F1ED2B50069800AF96AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		DE99F1F12B5006A100AF96AB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		DE99F1F42B5016C800AF96AB /* SaveGeoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGeoRequest.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 		DE1D27A12B2718B40022FB9D /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F1F32B5016BE00AF96AB /* SaveGeo */,
 				DEB3447D2B3DD89B0029F34B /* SavedPlaces */,
 				DEB344782B3DD7FE0029F34B /* BookmarkPlace */,
 				DEB344732B3DD6DE0029F34B /* PlacesOnDay */,
@@ -758,6 +761,14 @@
 				DE99F1F12B5006A100AF96AB /* EditProfileView.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		DE99F1F32B5016BE00AF96AB /* SaveGeo */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F1F42B5016C800AF96AB /* SaveGeoRequest.swift */,
+			);
+			path = SaveGeo;
 			sourceTree = "<group>";
 		};
 		DEB343E12B3456B60029F34B /* Main */ = {
@@ -1991,6 +2002,7 @@
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB343ED2B3457090029F34B /* TabView.swift in Sources */,
 				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
+				DE99F1F52B5016C800AF96AB /* SaveGeoRequest.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,

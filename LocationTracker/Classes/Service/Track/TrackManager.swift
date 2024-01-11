@@ -16,6 +16,7 @@ protocol TrackManagerProtocol {
     func save(placeId: Int) -> Single<Void>
     func delete(placeId: Int) -> Single<Void>
     func savedPlaces() -> Single<[Place]>
+    func saveGeo(location: Location) -> Single<Void>
 }
 
 final class TrackManager {
@@ -116,5 +117,21 @@ extension TrackManager: TrackManagerProtocol {
         return restAPITransport
             .callServerApi(requestBody: request)
             .map { SavedPlacesResponse.map(from: $0) }
+    }
+    
+    func saveGeo(location: Location) -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = SaveGeoRequest(
+            userToken: userToken,
+            latitude: location.latitude,
+            longitude: location.longitude
+        )
+        
+        return restAPITransport
+            .callServerApi(requestBody: request)
+            .mapToVoid()
     }
 }

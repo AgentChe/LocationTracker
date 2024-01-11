@@ -8,11 +8,15 @@
 import UIKit
 import CoreLocation
 import Contacts
+import RxSwift
 
 final class GeoLocationMonitoring {
     static let shared = GeoLocationMonitoring()
     
     private lazy var manager = GeoLocationManager.shared
+    private lazy var trackManager = TrackManager()
+    
+    private lazy var disposeBag = DisposeBag()
     
     private init() {}
 }
@@ -41,8 +45,14 @@ extension GeoLocationMonitoring: GeoLocationManagerDelegate {
         manager.startMonitoringSignificantLocation()
     }
     
-    // TODO: send to server
     func geoLocationDidUpdate(locations: [Location]) {
+        guard let location = locations.first else {
+            return
+        }
         
+        trackManager
+            .saveGeo(location: location)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
