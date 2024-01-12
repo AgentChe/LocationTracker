@@ -10,7 +10,7 @@ import RxSwift
 protocol ProfileManagerProtocol {
     func upload(photo: Data) -> Single<URL?>
     func set(
-        name: String,
+        name: String?,
         photoUrl: URL?,
         pin: String?,
         pushToken: String?
@@ -48,7 +48,7 @@ extension ProfileManager: ProfileManagerProtocol {
     }
     
     func set(
-        name: String,
+        name: String? = nil,
         photoUrl: URL? = nil,
         pin: String? = nil,
         pushToken: String? = nil
@@ -135,7 +135,11 @@ private extension ProfileManager {
         }
     }
     
-    func store(name: String) {
+    func store(name: String?) {
+        guard let name else {
+            return
+        }
+        
         UserDefaults.standard.set(name, forKey: Constants.nameKey)
         
         ProfileMediator.shared.notify(name: name)

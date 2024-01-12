@@ -61,7 +61,8 @@ private extension ProfileViewController {
             let nc = NavigationController(rootViewController: SavedPlacesViewController.make())
             present(nc, animated: true)
         case .changePIN:
-            break // TODO
+            let nc = NavigationController(rootViewController: ConfirmPINViewController.make())
+            present(nc, animated: true)
         case .settings:
             let vc = SettingsViewController.make()
             navigationController?.pushViewController(vc, animated: true)

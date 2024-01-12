@@ -1,0 +1,193 @@
+//
+//  ResetPINView.swift
+//  LocationTracker
+//
+//  Created by Андрей Чернышев on 12.01.2024.
+//
+
+import UIKit
+
+final class ResetPINView: UIView {
+    lazy var titleLabel = makeTitleLabel()
+    lazy var code1Field = makePinField()
+    lazy var code2Field = makePinField()
+    lazy var code3Field = makePinField()
+    lazy var code4Field = makePinField()
+    lazy var subTitleLabel = makeSubTitleLabel()
+    lazy var continueButton = makeContinueButton()
+    lazy var preloader = makePreloader()
+    
+    lazy var codesFields = [
+        code1Field,
+        code2Field,
+        code3Field,
+        code4Field
+    ]
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        makeConstraints()
+        initialize()
+        changeEnable()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Private
+private extension ResetPINView {
+    func initialize() {
+        backgroundColor = Appearance.background1
+    }
+    
+    @objc
+    func didInputCode(inField: UITextField) {
+        changeEnable()
+        
+        if let nextField = nextField(from: inField) {
+            nextField.becomeFirstResponder()
+            return
+        }
+        
+        inField.resignFirstResponder()
+    }
+    
+    func nextField(from: UITextField) -> UITextField? {
+        guard let index = codesFields.firstIndex(where: { $0 === from }) else {
+            return nil
+        }
+        
+        let nextIndex = index + 1
+        
+        guard codesFields.indices.contains(nextIndex) else {
+            return nil
+        }
+        
+        return codesFields[nextIndex]
+    }
+    
+    func changeEnable() {
+        let enable = !codesFields.contains(where: { ($0.text ?? "").isEmpty })
+        continueButton.isEnabled = enable
+        continueButton.alpha = enable ? 1 : 0.4
+    }
+}
+
+// MARK: Make constraints
+private extension ResetPINView {
+    func makeConstraints() {
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 120.scale : 60.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            code1Field.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80.scale),
+            code1Field.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            code2Field.leadingAnchor.constraint(equalTo: code1Field.trailingAnchor, constant: 8.scale),
+            code2Field.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            code3Field.leadingAnchor.constraint(equalTo: code2Field.trailingAnchor, constant: 8.scale),
+            code3Field.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            code4Field.leadingAnchor.constraint(equalTo: code3Field.trailingAnchor, constant: 8.scale),
+            code4Field.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            subTitleLabel.topAnchor.constraint(equalTo: code1Field.bottomAnchor, constant: 24.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            continueButton.heightAnchor.constraint(equalToConstant: 56.scale),
+            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -60.scale : -30.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: continueButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: continueButton.centerYAnchor)
+        ])
+    }
+}
+
+// MARK: Lazy initialization
+private extension ResetPINView {
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black2)
+            .font(Fonts.RobotoCondensed.medium(size: 24.scale))
+            .lineHeight(33.6.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "ResetPIN.Placeholder".localized.attributed(with: attrs)
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePinField() -> PINField {
+        let view = PINField()
+        view.addTarget(self, action: #selector(didInputCode(inField:)), for: .editingChanged)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSubTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black1)
+            .font(Fonts.RobotoCondensed.regular(size: 16.scale))
+            .lineHeight(22.4.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "ResetPIN.Text".localized.attributed(with: attrs)
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeContinueButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(Appearance.white)
+            .font(Fonts.RobotoCondensed.medium(size: 16.scale))
+        
+        let view = UIButton()
+        view.setAttributedTitle("ResetPIN.Button".localized.attributed(with: attrs), for: .normal)
+        view.backgroundColor = Appearance.primary1
+        view.layer.cornerRadius = 20.scale
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.color = Appearance.primary1
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+}

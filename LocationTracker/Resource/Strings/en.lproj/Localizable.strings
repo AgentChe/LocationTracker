@@ -192,3 +192,12 @@
 "EditProfile.Title" = "Edit";
 "EditProfile.Save" = "Save";
 "EditProfile.Name.Placeholder" = "Name";
+
+// MARK: ConfirmPIN
+"ConfirmPIN.Title" = "Your current SOS PIN";
+
+// MARK: ResetPIN
+"ResetPIN.Title" = "Reset PIN";
+"ResetPIN.Placeholder" = "Set up PIN";
+"ResetPIN.Text" = "Choose you 4-digit PIN to cancel your SOS";
+"ResetPIN.Button" = "Confirm";

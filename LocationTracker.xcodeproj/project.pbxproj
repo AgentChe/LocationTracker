@@ -55,6 +55,12 @@
 		DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */; };
 		DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1F12B5006A100AF96AB /* EditProfileView.swift */; };
 		DE99F1F52B5016C800AF96AB /* SaveGeoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1F42B5016C800AF96AB /* SaveGeoRequest.swift */; };
+		DE99F2062B51446000AF96AB /* ConfirmPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2052B51446000AF96AB /* ConfirmPINViewController.swift */; };
+		DE99F2082B51446500AF96AB /* ConfirmPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2072B51446500AF96AB /* ConfirmPINView.swift */; };
+		DE99F20A2B51457500AF96AB /* ConfirmPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2092B51457500AF96AB /* ConfirmPINViewModel.swift */; };
+		DE99F20D2B514CA500AF96AB /* ResetPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F20C2B514CA500AF96AB /* ResetPINViewController.swift */; };
+		DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F20E2B514CAA00AF96AB /* ResetPINViewModel.swift */; };
+		DE99F2112B514CAF00AF96AB /* ResetPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2102B514CAF00AF96AB /* ResetPINView.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -313,6 +319,12 @@
 		DE99F1EF2B50069D00AF96AB /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		DE99F1F12B5006A100AF96AB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		DE99F1F42B5016C800AF96AB /* SaveGeoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGeoRequest.swift; sourceTree = "<group>"; };
+		DE99F2052B51446000AF96AB /* ConfirmPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPINViewController.swift; sourceTree = "<group>"; };
+		DE99F2072B51446500AF96AB /* ConfirmPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPINView.swift; sourceTree = "<group>"; };
+		DE99F2092B51457500AF96AB /* ConfirmPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPINViewModel.swift; sourceTree = "<group>"; };
+		DE99F20C2B514CA500AF96AB /* ResetPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewController.swift; sourceTree = "<group>"; };
+		DE99F20E2B514CAA00AF96AB /* ResetPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewModel.swift; sourceTree = "<group>"; };
+		DE99F2102B514CAF00AF96AB /* ResetPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINView.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -771,6 +783,35 @@
 			path = SaveGeo;
 			sourceTree = "<group>";
 		};
+		DE99F2012B51443500AF96AB /* ChangePIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F20B2B514C8C00AF96AB /* ResetPIN */,
+				DE99F2042B51444600AF96AB /* ConfirmPIN */,
+			);
+			path = ChangePIN;
+			sourceTree = "<group>";
+		};
+		DE99F2042B51444600AF96AB /* ConfirmPIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F2052B51446000AF96AB /* ConfirmPINViewController.swift */,
+				DE99F2092B51457500AF96AB /* ConfirmPINViewModel.swift */,
+				DE99F2072B51446500AF96AB /* ConfirmPINView.swift */,
+			);
+			path = ConfirmPIN;
+			sourceTree = "<group>";
+		};
+		DE99F20B2B514C8C00AF96AB /* ResetPIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F20C2B514CA500AF96AB /* ResetPINViewController.swift */,
+				DE99F20E2B514CAA00AF96AB /* ResetPINViewModel.swift */,
+				DE99F2102B514CAF00AF96AB /* ResetPINView.swift */,
+			);
+			path = ResetPIN;
+			sourceTree = "<group>";
+		};
 		DEB343E12B3456B60029F34B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +855,7 @@
 		DEB343F82B3488E10029F34B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F2012B51443500AF96AB /* ChangePIN */,
 				DE99F1EC2B50068D00AF96AB /* EditProfile */,
 				DEB344472B3B3B880029F34B /* Settings */,
 				DEB344462B3B3B7D0029F34B /* Profile */,
@@ -1952,6 +1994,7 @@
 				DED613142B1F4F3C00F09899 /* GetRolesResponse.swift in Sources */,
 				DE1D27B62B27224F0022FB9D /* DetailsCircleActionCell.swift in Sources */,
 				DED6132E2B206C2300F09899 /* CirclesViewModel.swift in Sources */,
+				DE99F2112B514CAF00AF96AB /* ResetPINView.swift in Sources */,
 				DE1D27D32B28915B0022FB9D /* EditCircleTableView.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */,
@@ -2019,6 +2062,7 @@
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
 				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
 				DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */,
+				DE99F2082B51446500AF96AB /* ConfirmPINView.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DE1D27A42B2718E50022FB9D /* MemberTrackInfo.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
@@ -2037,6 +2081,7 @@
 				DEB3913B2B0B907F00F1AE09 /* PaddingLabel.swift in Sources */,
 				DE1D27B32B27213C0022FB9D /* DetailsCircleTableElement.swift in Sources */,
 				DED6135E2B222A8D00F09899 /* CreateCircleCodeView.swift in Sources */,
+				DE99F2062B51446000AF96AB /* ConfirmPINViewController.swift in Sources */,
 				DEB391712B0B907F00F1AE09 /* SetRequest.swift in Sources */,
 				DEB344722B3DC6D30029F34B /* Place.swift in Sources */,
 				DE1D27C32B2878B70022FB9D /* InviteView.swift in Sources */,
@@ -2054,6 +2099,7 @@
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
 				DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */,
 				DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */,
+				DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
@@ -2114,6 +2160,7 @@
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
 				DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */,
 				DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */,
+				DE99F20D2B514CA500AF96AB /* ResetPINViewController.swift in Sources */,
 				DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
 				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
@@ -2130,6 +2177,7 @@
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
+				DE99F20A2B51457500AF96AB /* ConfirmPINViewModel.swift in Sources */,
 				DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
 				DEB344422B3B233A0029F34B /* ProfileMenuCell.swift in Sources */,
