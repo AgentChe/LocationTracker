@@ -10,7 +10,7 @@ import RxCocoa
 
 final class ProfileViewModel {
     enum Route {
-        case edit, savePlaces, changePIN, settings
+        case edit, savePlaces, changePIN, settings, myTest // TODO: remove myTest
     }
     
     private lazy var profileManager = ProfileManager()
@@ -117,6 +117,8 @@ private extension ProfileViewModel {
                     return .changePIN
                 case .settings:
                     return .settings
+                case .myTest: // TODO: remove
+                    return .myTest
                 }
             }
             .asDriver(onErrorDriveWith: .never())

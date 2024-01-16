@@ -61,6 +61,11 @@
 		DE99F20D2B514CA500AF96AB /* ResetPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F20C2B514CA500AF96AB /* ResetPINViewController.swift */; };
 		DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F20E2B514CAA00AF96AB /* ResetPINViewModel.swift */; };
 		DE99F2112B514CAF00AF96AB /* ResetPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2102B514CAF00AF96AB /* ResetPINView.swift */; };
+		DE99F2142B5157DF00AF96AB /* MyTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2132B5157DF00AF96AB /* MyTestViewController.swift */; };
+		DE99F2162B5157E500AF96AB /* MyTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2152B5157E500AF96AB /* MyTestViewModel.swift */; };
+		DE99F2182B5157EA00AF96AB /* MyTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2172B5157EA00AF96AB /* MyTestView.swift */; };
+		DE99F21B2B5159EC00AF96AB /* MyTestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F21A2B5159EC00AF96AB /* MyTestTableView.swift */; };
+		DE99F21D2B5159F200AF96AB /* MyTestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F21C2B5159F200AF96AB /* MyTestTableCell.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -325,6 +330,11 @@
 		DE99F20C2B514CA500AF96AB /* ResetPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewController.swift; sourceTree = "<group>"; };
 		DE99F20E2B514CAA00AF96AB /* ResetPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewModel.swift; sourceTree = "<group>"; };
 		DE99F2102B514CAF00AF96AB /* ResetPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINView.swift; sourceTree = "<group>"; };
+		DE99F2132B5157DF00AF96AB /* MyTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestViewController.swift; sourceTree = "<group>"; };
+		DE99F2152B5157E500AF96AB /* MyTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestViewModel.swift; sourceTree = "<group>"; };
+		DE99F2172B5157EA00AF96AB /* MyTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestView.swift; sourceTree = "<group>"; };
+		DE99F21A2B5159EC00AF96AB /* MyTestTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestTableView.swift; sourceTree = "<group>"; };
+		DE99F21C2B5159F200AF96AB /* MyTestTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestTableCell.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -812,6 +822,26 @@
 			path = ResetPIN;
 			sourceTree = "<group>";
 		};
+		DE99F2122B5157CF00AF96AB /* MyTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F2192B5159E000AF96AB /* Views */,
+				DE99F2132B5157DF00AF96AB /* MyTestViewController.swift */,
+				DE99F2152B5157E500AF96AB /* MyTestViewModel.swift */,
+				DE99F2172B5157EA00AF96AB /* MyTestView.swift */,
+			);
+			path = MyTest;
+			sourceTree = "<group>";
+		};
+		DE99F2192B5159E000AF96AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F21A2B5159EC00AF96AB /* MyTestTableView.swift */,
+				DE99F21C2B5159F200AF96AB /* MyTestTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DEB343E12B3456B60029F34B /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,6 +885,7 @@
 		DEB343F82B3488E10029F34B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F2122B5157CF00AF96AB /* MyTest */,
 				DE99F2012B51443500AF96AB /* ChangePIN */,
 				DE99F1EC2B50068D00AF96AB /* EditProfile */,
 				DEB344472B3B3B880029F34B /* Settings */,
@@ -1977,6 +2008,7 @@
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
+				DE99F21B2B5159EC00AF96AB /* MyTestTableView.swift in Sources */,
 				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
 				DE99F1DA2B4FD14600AF96AB /* SavedPlacesView.swift in Sources */,
 				DED613342B206D1000F09899 /* CirclesTableView.swift in Sources */,
@@ -1984,6 +2016,7 @@
 				DEB391932B0BBE0900F1AE09 /* OIntroView.swift in Sources */,
 				DEB3918D2B0BABAC00F1AE09 /* ONameView.swift in Sources */,
 				DEB343F72B346DBA0029F34B /* GeoLocationMonitoring.swift in Sources */,
+				DE99F2162B5157E500AF96AB /* MyTestViewModel.swift in Sources */,
 				DEB3912E2B0B907F00F1AE09 /* SignError.swift in Sources */,
 				DE1D27A62B27192F0022FB9D /* Location.swift in Sources */,
 				DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */,
@@ -2028,6 +2061,7 @@
 				DEB391702B0B907F00F1AE09 /* SyncTokensRequest.swift in Sources */,
 				DE1D279D2B2716BD0022FB9D /* DetailsCircleView.swift in Sources */,
 				DED6134F2B221C0C00F09899 /* SelectRoleView.swift in Sources */,
+				DE99F2182B5157EA00AF96AB /* MyTestView.swift in Sources */,
 				DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */,
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
@@ -2094,6 +2128,7 @@
 				DED6134D2B221C0800F09899 /* SelectRoleViewModel.swift in Sources */,
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,
 				DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */,
+				DE99F21D2B5159F200AF96AB /* MyTestTableCell.swift in Sources */,
 				DED6135C2B222A7C00F09899 /* CreateCircleCodeViewModel.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
@@ -2193,6 +2228,7 @@
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
 				DE1D27C52B287AF40022FB9D /* ConfirmDeleteView.swift in Sources */,
 				DEB3441E2B35D0510029F34B /* MemberAnnotation.swift in Sources */,
+				DE99F2142B5157DF00AF96AB /* MyTestViewController.swift in Sources */,
 				DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */,
 				DED613452B2092FD00F09899 /* CreateCircleView.swift in Sources */,
 				DEB3912D2B0B907F00F1AE09 /* Fonts.swift in Sources */,

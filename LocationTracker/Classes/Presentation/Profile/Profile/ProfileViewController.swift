@@ -66,6 +66,9 @@ private extension ProfileViewController {
         case .settings:
             let vc = SettingsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
+        case .myTest: // TODO: remove
+            let vc = MyTestViewController.make()
+            present(vc, animated: true)
         }
     }
 }

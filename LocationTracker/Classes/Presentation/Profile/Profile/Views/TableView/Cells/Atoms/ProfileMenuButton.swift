@@ -9,7 +9,7 @@ import UIKit
 
 final class ProfileMenuButton: UIButton {
     enum MenuItem {
-        case savedPlaces, pin, settings
+        case savedPlaces, pin, settings, myTest // TODO: remove myTest
     }
     
     lazy var label = makeLabel()
@@ -103,6 +103,8 @@ private extension ProfileMenuButton.MenuItem {
             return "Profile.PIN".localized
         case .settings:
             return "Profile.Settings".localized
+        case .myTest:
+            return "My test" // TODO: remove
         }
     }
 }
