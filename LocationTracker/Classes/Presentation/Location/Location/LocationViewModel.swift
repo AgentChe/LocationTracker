@@ -18,6 +18,9 @@ final class LocationViewModel {
         case delete(Circle)
         case select(Circle?)
         case createCircle
+        case proposeAddMember(String)
+        case proposeCreateCircle
+        case sos(Circle)
     }
     
     deinit {
@@ -65,6 +68,7 @@ extension LocationViewModel {
         let didSelectElement: Signal<LocationCircleTableElement>
         let didDeleteCircle: Signal<Circle>
         let didSelectAnnotation: Signal<MemberAnnotation>
+        let didTapSOS: Signal<Void>
     }
     
     struct Output {
@@ -74,6 +78,7 @@ extension LocationViewModel {
         let membersAnnotations: Driver<[MemberAnnotation]>
         let route: Driver<Route>
         let disposable: Disposable
+        let sos: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -90,6 +95,7 @@ extension LocationViewModel {
             selectedCircle: selectedCircle,
             geocode: geocode
         )
+        let sos = makeSos(circleTrackInfo: circleTrackInfo)
         
         return Output(
             moveToMyCoordinate: makeMoveToMyCoordinate(didMoveToMyCoordinate: input.didMoveToMyCoordinate),
@@ -102,9 +108,12 @@ extension LocationViewModel {
             route: makeRoute(
                 didSelectElement: input.didSelectElement,
                 selectedCircle: selectedCircle,
-                didSelectAnnotation: input.didSelectAnnotation
+                didSelectAnnotation: input.didSelectAnnotation,
+                didTapSOS: input.didTapSOS,
+                sos: sos
             ),
-            disposable: makeDisposable(didDeleteCircle: input.didDeleteCircle)
+            disposable: makeDisposable(didDeleteCircle: input.didDeleteCircle),
+            sos: sos
         )
     }
 }
@@ -125,6 +134,19 @@ private extension LocationViewModel {
             .startWith(GeoLocationManager.shared.location)
             .compactMap { $0 }
             .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func makeSos(circleTrackInfo: Driver<[MemberTrackInfo]?>) -> Driver<Bool> {
+        circleTrackInfo
+            .map { circleTrackInfo -> Bool in
+                let userId = SessionManager().userId
+                
+                guard let me = circleTrackInfo?.first(where: { $0.member.id == userId })?.member else {
+                    return false
+                }
+                
+                return me.sos
+            }
     }
     
     func makeMembersAnnotations(
@@ -217,7 +239,8 @@ private extension LocationViewModel {
                     id: SessionManager().userId,
                     name: "Location.Me".localized,
                     photoUrl: nil,
-                    roleId: nil
+                    roleId: nil,
+                    sos: false
                 )
                 
                 var place: Place? {
@@ -350,7 +373,9 @@ private extension LocationViewModel {
     func makeRoute(
         didSelectElement: Signal<LocationCircleTableElement>,
         selectedCircle: Driver<Circle?>,
-        didSelectAnnotation: Signal<MemberAnnotation>
+        didSelectAnnotation: Signal<MemberAnnotation>,
+        didTapSOS: Signal<Void>,
+        sos: Driver<Bool>
     ) -> Driver<Route> {
         let selectElement = didSelectElement
             .asDriver(onErrorDriveWith: .never())
@@ -386,8 +411,24 @@ private extension LocationViewModel {
             .map { Route.trackInfo($0.trackInfo) }
             .asDriver(onErrorDriveWith: .never())
         
+        let sos = didTapSOS
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(sos)
+            .withLatestFrom(selectedCircle) { ($0, $1) }
+            .map { sos, circle -> Route in
+                guard let circle else {
+                    return .proposeCreateCircle
+                }
+                
+                if circle.members.count <= 1 {
+                    return .proposeAddMember(circle.inviteCode)
+                }
+                
+                return .sos(circle)
+            }
+        
         return Driver
-            .merge(selectElement, selectAnnotation)
+            .merge(selectElement, selectAnnotation, sos)
     }
     
     func makeDisposable(didDeleteCircle: Signal<Circle>) -> Disposable {

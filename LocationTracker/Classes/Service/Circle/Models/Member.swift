@@ -12,4 +12,5 @@ struct Member: Codable, Hashable {
     let name: String
     let photoUrl: URL?
     let roleId: Int?
+    let sos: Bool
 }

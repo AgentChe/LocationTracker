@@ -40,7 +40,8 @@ final class LocationViewController: UIViewController {
             didSelectCircle: didSelectCircleTrigger.asSignal(),
             didSelectElement: mainView.circleView.tableView.didSelect,
             didDeleteCircle: didDeleteCircleTrigger.asSignal(),
-            didSelectAnnotation: mainView.mapView.didSelectAnnotation
+            didSelectAnnotation: mainView.mapView.didSelectAnnotation,
+            didTapSOS: mainView.sosButton.rx.tap.asSignal()
         ))
         
         output.moveToMyCoordinate
@@ -75,6 +76,12 @@ final class LocationViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.disposable
+            .disposed(by: disposeBag)
+        
+        output.sos
+            .drive(Binder(mainView.sosButton) { base, sos in
+                base.setup(sos: sos)
+            })
             .disposed(by: disposeBag)
     }
 }
@@ -142,6 +149,35 @@ private extension LocationViewController {
         case .createCircle:
             let vc = CreateCircleViewController.make(mode: .flow)
             let nc = NavigationController(rootViewController: vc)
+            present(nc, animated: true)
+        case .proposeAddMember(let inviteCode):
+            let model = ConfirmDeleteViewController.Model(
+                title: "SOSAddMember.Title".localized,
+                text: "SOSAddMember.SubTitle".localized,
+                confirmText: "SOSAddMember.AddButton".localized,
+                cancelText: "Cancel".localized
+            )
+            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
+                self?.route(.addMember(inviteCode))
+            }
+            present(vc, animated: false)
+        case .proposeCreateCircle:
+            let model = ConfirmDeleteViewController.Model(
+                title: "SOSCreateCircle.Title".localized,
+                text: "SOSCreateCircle.SubTitle".localized,
+                confirmText: "SOSCreateCircle.CreateButton".localized,
+                cancelText: "SOSCreateCircle.JoinButton".localized
+            )
+            let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
+                self?.route(.createCircle)
+            }, cancel: { [weak self] in
+                // TODO
+            })
+            present(vc, animated: false)
+        case .sos(let circle):
+            let vc = SOSViewController.make(circle: circle)
+            let nc = NavigationController(rootViewController: vc)
+            nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)
         }
     }

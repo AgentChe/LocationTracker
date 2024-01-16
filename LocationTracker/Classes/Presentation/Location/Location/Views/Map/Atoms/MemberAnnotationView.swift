@@ -61,6 +61,8 @@ final class MemberAnnotationView: MKAnnotationView {
             return
         }
         
+        container.backgroundColor = annotation.trackInfo.member.sos ? Appearance.red : Appearance.white
+        
         nameLabel.attributedText = annotation.trackInfo.member.name.attributed(with: nameAttrs)
 
         imageView.backgroundColor = annotation.color
@@ -153,7 +155,6 @@ private extension MemberAnnotationView {
 private extension MemberAnnotationView {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.white
         view.layer.cornerRadius = 20.scale
         view.layer.borderWidth = 1.scale
         view.layer.borderColor = Appearance.background2.cgColor

@@ -41,6 +41,8 @@ final class MeAnnotationView: MKAnnotationView {
         guard let annotation = annotation as? MemberAnnotation else {
             return
         }
+        
+        container.backgroundColor = annotation.trackInfo.member.sos ? Appearance.red : Appearance.white
 
         imageView.backgroundColor = annotation.color
         placeholderLabel.isHidden = annotation.trackInfo.member.photoUrl != nil
@@ -109,7 +111,6 @@ private extension MeAnnotationView {
 private extension MeAnnotationView {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.white
         view.layer.cornerRadius = 20.scale
         view.layer.borderWidth = 1.scale
         view.layer.borderColor = Appearance.background2.cgColor

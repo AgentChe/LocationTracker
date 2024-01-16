@@ -201,3 +201,21 @@
 "ResetPIN.Placeholder" = "Set up PIN";
 "ResetPIN.Text" = "Choose you 4-digit PIN to cancel your SOS";
 "ResetPIN.Button" = "Confirm";
+
+// MARK: SOSAddMember
+"SOSAddMember.Title" = "Add members";
+"SOSAddMember.SubTitle" = "In order to use SOS signal feature you should add members to the Circle";
+"SOSAddMember.AddButton" = "Add a new member";
+
+// MARK: SOSCreateCircle
+"SOSCreateCircle.Title" = "No Circles";
+"SOSCreateCircle.SubTitle" = "In order to use SOS signal feature you should join or create your Circle";
+"SOSCreateCircle.CreateButton" = "Create a Circle";
+"SOSCreateCircle.JoinButton" = "Join a Circle";
+
+// MARK: SOS
+"SOS.Title" = "SOS";
+"SOS.CircleMembers" = "Your SOS will be sent to members from the %@";
+"SOS.Action.PressAndHold" = "Press and hold the button below";
+"SOS.Action.Release" = "Release to send SOS";
+"SOS.PIN.Title" = "Your PIN\n\n";

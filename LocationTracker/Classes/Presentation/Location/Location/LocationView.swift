@@ -67,9 +67,7 @@ private extension LocationView {
         
         NSLayoutConstraint.activate([
             sosButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            sosButton.centerYAnchor.constraint(equalTo: myCoordinateButton.centerYAnchor),
-            sosButton.widthAnchor.constraint(equalToConstant: 59.scale),
-            sosButton.heightAnchor.constraint(equalToConstant: 38.scale)
+            sosButton.centerYAnchor.constraint(equalTo: myCoordinateButton.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -99,15 +97,8 @@ private extension LocationView {
         return view
     }
     
-    func makeSOSButton() -> TapAreaButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.white)
-            .font(Fonts.RobotoCondensed.medium(size: 16.scale))
-        
-        let view = TapAreaButton()
-        view.setAttributedTitle("Location.SOS".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.red
-        view.layer.cornerRadius = 20.scale
+    func makeSOSButton() -> SOSButton {
+        let view = SOSButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

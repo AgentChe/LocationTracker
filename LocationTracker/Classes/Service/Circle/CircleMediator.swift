@@ -18,6 +18,8 @@ final class CircleMediator {
     private lazy var didEditedCircleTrigger = PublishRelay<Circle>()
     private lazy var didDeletedCircleTrigger = PublishRelay<Int>()
     private lazy var didExcludedFromCircleTrigger = PublishRelay<Excluded>()
+    private lazy var didSendSOSTrigger = PublishRelay<Int>()
+    private lazy var didCancelSOSTrigger = PublishRelay<Int>()
     
     private init() {}
 }
@@ -44,6 +46,14 @@ extension CircleMediator {
         didExcludedFromCircleTrigger.accept(excluded)
     }
     
+    func sendSOS(circleId: Int) {
+        didSendSOSTrigger.accept(circleId)
+    }
+    
+    func cancelSOS(circleId: Int) {
+        didCancelSOSTrigger.accept(circleId)
+    }
+    
     var didCreatedCircle: Signal<Circle> {
         didCreatedCircleTrigger.asSignal()
     }
@@ -62,5 +72,13 @@ extension CircleMediator {
     
     var didExcludedFromCircle: Signal<Excluded> {
         didExcludedFromCircleTrigger.asSignal()
+    }
+    
+    var didSendSOS: Signal<Int> {
+        didSendSOSTrigger.asSignal()
+    }
+    
+    var didCancelSOS: Signal<Int> {
+        didCancelSOSTrigger.asSignal()
     }
 }

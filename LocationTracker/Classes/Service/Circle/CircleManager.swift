@@ -24,6 +24,8 @@ protocol CircleManagerProtocol: AnyObject {
     func obtainCircles() -> Single<[Circle]>
     func delete(id: Int) -> Single<Void>
     func exclude(membersIds: [String], circleId: Int) -> Single<Void>
+    func sendSOS(circleId: Int) -> Single<Void>
+    func cancelSOS(circleId: Int) -> Single<Void>
 }
 
 final class CircleManager {
@@ -165,6 +167,42 @@ extension CircleManager: CircleManagerProtocol {
             .mapToVoid()
             .do(onSuccess: {
                 CircleMediator.shared.excluded((membersIds, circleId))
+            })
+    }
+    
+    func sendSOS(circleId: Int) -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = SendSOSRequest(
+            userToken: userToken,
+            circleId: circleId
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .mapToVoid()
+            .do(onSuccess: {
+                CircleMediator.shared.sendSOS(circleId: circleId)
+            })
+    }
+    
+    func cancelSOS(circleId: Int) -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = CancelSOSRequest(
+            userToken: userToken,
+            circleId: circleId
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .mapToVoid()
+            .do(onSuccess: {
+                CircleMediator.shared.cancelSOS(circleId: circleId)
             })
     }
 }
