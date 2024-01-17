@@ -63,11 +63,11 @@ enum CreateCircleResponse {
         }
         
         return Member(
-            id: [id, id, id, SessionManager().userId].randomElement()!, // TODO
+            id: id,
             name: name,
             photoUrl: photoUrl,
             roleId: roleId,
-            sos: Bool.random() // TODO memberJSON["sos"] as? Bool ?? false
+            sos: memberJSON["sos"] as? Bool ?? false // TODO
         )
     }
 }

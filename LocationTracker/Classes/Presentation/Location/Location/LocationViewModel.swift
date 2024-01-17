@@ -21,6 +21,7 @@ final class LocationViewModel {
         case proposeAddMember(String)
         case proposeCreateCircle
         case sos(Circle)
+        case cancelSOS(SOS)
     }
     
     deinit {
@@ -419,11 +420,18 @@ private extension LocationViewModel {
                 guard let circle else {
                     return .proposeCreateCircle
                 }
-                
+
                 if circle.members.count <= 1 {
                     return .proposeAddMember(circle.inviteCode)
                 }
-                
+
+                if sos {
+                    return .cancelSOS(SOS(
+                        signal: sos,
+                        circleId: circle.id
+                    ))
+                }
+
                 return .sos(circle)
             }
         

@@ -75,6 +75,11 @@
 		DE99F2442B56BEA600AF96AB /* SOSActiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2432B56BEA600AF96AB /* SOSActiveButton.swift */; };
 		DE99F2472B56C15E00AF96AB /* SOSInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2462B56C15E00AF96AB /* SOSInstructionViewController.swift */; };
 		DE99F24B2B56C16D00AF96AB /* SOSInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F24A2B56C16D00AF96AB /* SOSInstructionView.swift */; };
+		DE99F2512B57BA9700AF96AB /* SOSSignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2502B57BA9700AF96AB /* SOSSignalViewController.swift */; };
+		DE99F2532B57BA9E00AF96AB /* SOSSignalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2522B57BA9E00AF96AB /* SOSSignalViewModel.swift */; };
+		DE99F2552B57BAEA00AF96AB /* SOSSignalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2542B57BAEA00AF96AB /* SOSSignalView.swift */; };
+		DE99F2582B57C67F00AF96AB /* SOSSignalPINField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F2572B57C67F00AF96AB /* SOSSignalPINField.swift */; };
+		DE99F25B2B57CEF700AF96AB /* SOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F25A2B57CEF700AF96AB /* SOS.swift */; };
 		DEB343E32B3456CE0029F34B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E22B3456CE0029F34B /* MainView.swift */; };
 		DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E42B3456D40029F34B /* MainViewController.swift */; };
 		DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB343E62B3456DC0029F34B /* MainCoordinator.swift */; };
@@ -353,6 +358,11 @@
 		DE99F2432B56BEA600AF96AB /* SOSActiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSActiveButton.swift; sourceTree = "<group>"; };
 		DE99F2462B56C15E00AF96AB /* SOSInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionViewController.swift; sourceTree = "<group>"; };
 		DE99F24A2B56C16D00AF96AB /* SOSInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionView.swift; sourceTree = "<group>"; };
+		DE99F2502B57BA9700AF96AB /* SOSSignalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalViewController.swift; sourceTree = "<group>"; };
+		DE99F2522B57BA9E00AF96AB /* SOSSignalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalViewModel.swift; sourceTree = "<group>"; };
+		DE99F2542B57BAEA00AF96AB /* SOSSignalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalView.swift; sourceTree = "<group>"; };
+		DE99F2572B57C67F00AF96AB /* SOSSignalPINField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalPINField.swift; sourceTree = "<group>"; };
+		DE99F25A2B57CEF700AF96AB /* SOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOS.swift; sourceTree = "<group>"; };
 		DEB343E22B3456CE0029F34B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEB343E42B3456D40029F34B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DEB343E62B3456DC0029F34B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -872,6 +882,7 @@
 		DE99F23A2B56B5E200AF96AB /* SOS */ = {
 			isa = PBXGroup;
 			children = (
+				DE99F24F2B57BA0B00AF96AB /* SOSSignal */,
 				DE99F2452B56C14D00AF96AB /* Instruction */,
 				DE99F23B2B56B5EE00AF96AB /* SOS */,
 			);
@@ -904,6 +915,34 @@
 				DE99F24A2B56C16D00AF96AB /* SOSInstructionView.swift */,
 			);
 			path = Instruction;
+			sourceTree = "<group>";
+		};
+		DE99F24F2B57BA0B00AF96AB /* SOSSignal */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F2592B57CEF000AF96AB /* Models */,
+				DE99F2562B57C67100AF96AB /* Views */,
+				DE99F2502B57BA9700AF96AB /* SOSSignalViewController.swift */,
+				DE99F2522B57BA9E00AF96AB /* SOSSignalViewModel.swift */,
+				DE99F2542B57BAEA00AF96AB /* SOSSignalView.swift */,
+			);
+			path = SOSSignal;
+			sourceTree = "<group>";
+		};
+		DE99F2562B57C67100AF96AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F2572B57C67F00AF96AB /* SOSSignalPINField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE99F2592B57CEF000AF96AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE99F25A2B57CEF700AF96AB /* SOS.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DEB343E12B3456B60029F34B /* Main */ = {
@@ -2073,6 +2112,7 @@
 				DEB391342B0B907F00F1AE09 /* RxActivityIndicator.swift in Sources */,
 				DEB3447F2B3DD8CE0029F34B /* SavedPlacesRequest.swift in Sources */,
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
+				DE99F2512B57BA9700AF96AB /* SOSSignalViewController.swift in Sources */,
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
 				DE99F21B2B5159EC00AF96AB /* MyTestTableView.swift in Sources */,
@@ -2132,6 +2172,7 @@
 				DE99F2182B5157EA00AF96AB /* MyTestView.swift in Sources */,
 				DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */,
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
+				DE99F25B2B57CEF700AF96AB /* SOS.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
 				DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */,
 				DED613612B230E7A00F09899 /* InviteWorksCell.swift in Sources */,
@@ -2149,6 +2190,7 @@
 				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
 				DE99F1F52B5016C800AF96AB /* SaveGeoRequest.swift in Sources */,
 				DE99F2332B568F5000AF96AB /* CancelSOSRequest.swift in Sources */,
+				DE99F2532B57BA9E00AF96AB /* SOSSignalViewModel.swift in Sources */,
 				DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */,
 				DEB391722B0B907F00F1AE09 /* ProfileMediator.swift in Sources */,
 				DEB3918F2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift in Sources */,
@@ -2171,6 +2213,7 @@
 				DE1D27A42B2718E50022FB9D /* MemberTrackInfo.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
 				DEB344812B3DD8D50029F34B /* SavedPlacesResponse.swift in Sources */,
+				DE99F2552B57BAEA00AF96AB /* SOSSignalView.swift in Sources */,
 				DEB3914B2B0B907F00F1AE09 /* SplashActivity.swift in Sources */,
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEB344752B3DD7080029F34B /* GetPlacesOnDayRequest.swift in Sources */,
@@ -2225,6 +2268,7 @@
 				DED612562B0CD55900F09899 /* GeoLocationPermissionStatus.swift in Sources */,
 				DED613052B1F284300F09899 /* Circle.swift in Sources */,
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
+				DE99F2582B57C67F00AF96AB /* SOSSignalPINField.swift in Sources */,
 				DE1D27BA2B275B490022FB9D /* DetailsCircleTitleCell.swift in Sources */,
 				DEB344402B3B23310029F34B /* ProfileEditCell.swift in Sources */,
 				DED613302B206C2800F09899 /* CirclesView.swift in Sources */,

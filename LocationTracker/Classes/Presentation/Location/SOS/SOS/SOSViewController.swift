@@ -89,8 +89,9 @@ private extension SOSViewController {
         case .instruction:
             let vc = SOSInstructionViewController.make()
             present(vc, animated: true)
-        case .signal:
-            break // TODO
+        case .signal(let sos):
+            let vc = SOSSignalViewController.make(sos: sos)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

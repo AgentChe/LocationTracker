@@ -12,7 +12,7 @@ final class SOSViewModel {
     enum Route {
         case dismiss
         case instruction
-        case signal
+        case signal(SOS)
     }
     
     private let circle: Driver<Circle>
@@ -65,8 +65,12 @@ private extension SOSViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let signal = didTapSOS
-            .map { Route.signal }
             .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(circle)
+            .map { circle -> Route in
+                let sos = SOS(signal: false, circleId: circle.id)
+                return Route.signal(sos)
+            }
         
         return Driver
             .merge(dismiss, instruction, signal)

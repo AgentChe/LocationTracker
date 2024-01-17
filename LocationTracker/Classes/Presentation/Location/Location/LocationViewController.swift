@@ -137,9 +137,9 @@ private extension LocationViewController {
                 confirmText: "DetailsCircle.ConfirmDelete.DeleteButton".localized,
                 cancelText: "Cancel".localized
             )
-            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
+            let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
                 self?.didDeleteCircleTrigger.accept(circle)
-            }
+            })
             present(vc, animated: false)
         case .select(let circle):
             let vc = CirclesViewController.make(mode: .select(circle)) { [weak self] selected in
@@ -157,9 +157,9 @@ private extension LocationViewController {
                 confirmText: "SOSAddMember.AddButton".localized,
                 cancelText: "Cancel".localized
             )
-            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
+            let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
                 self?.route(.addMember(inviteCode))
-            }
+            })
             present(vc, animated: false)
         case .proposeCreateCircle:
             let model = ConfirmDeleteViewController.Model(
@@ -171,11 +171,17 @@ private extension LocationViewController {
             let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
                 self?.route(.createCircle)
             }, cancel: { [weak self] in
-                // TODO
+                let nc = NavigationController(rootViewController: JoinToCircleViewController.make())
+                self?.present(nc, animated: true)
             })
             present(vc, animated: false)
         case .sos(let circle):
             let vc = SOSViewController.make(circle: circle)
+            let nc = NavigationController(rootViewController: vc)
+            nc.modalPresentationStyle = .fullScreen
+            present(nc, animated: true)
+        case .cancelSOS(let sos):
+            let vc = SOSSignalViewController.make(sos: sos)
             let nc = NavigationController(rootViewController: vc)
             nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)

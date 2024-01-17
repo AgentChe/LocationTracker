@@ -92,9 +92,9 @@ private extension EditPlaceViewController {
             confirmText: "EditPlace.Delete".localized,
             cancelText: "Cancel".localized
         )
-        let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
+        let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
             self?.didDeleteTrigger.accept(Void())
-        }
+        })
         present(vc, animated: false)
     }
     

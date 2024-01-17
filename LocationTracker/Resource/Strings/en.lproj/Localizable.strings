@@ -219,3 +219,14 @@
 "SOS.Action.PressAndHold" = "Press and hold the button below";
 "SOS.Action.Release" = "Release to send SOS";
 "SOS.PIN.Title" = "Your PIN\n\n";
+
+// MARK: SOSSignal
+"SOSSignal.EnterPIN" = "Enter your PIN to cancel SOS";
+"SOSSignal.SignalSended" = "Your SOS and location were sent to your Circle";
+"SOSSignal.Placeholder" = "In just 10 seconds, your SOS and location will be shared with your Circle and emergency contacts.";
+
+// MARK: SOSConfirmCancel
+"SOSConfirmCancel.Title" = "Cancel SOS";
+"SOSConfirmCancel.Text" = "Are you sure? You have to send SOS again if you cancel";
+"SOSConfirmCancel.WaitButton" = "Wait for help";
+"SOSConfirmCancel.CancelButton" = "Cancel SOS";

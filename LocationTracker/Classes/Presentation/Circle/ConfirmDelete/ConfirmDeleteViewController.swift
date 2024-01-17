@@ -21,10 +21,10 @@ class ConfirmDeleteViewController: UIViewController {
     private lazy var disposeBag = DisposeBag()
     
     private let model: Model
-    private let delete: () -> Void
+    private let delete: (() -> Void)?
     private let cancel: (() -> Void)?
     
-    private init(model: Model, delete: @escaping () -> Void, cancel: (() -> Void)?) {
+    private init(model: Model, delete: (() -> Void)?, cancel: (() -> Void)?) {
         self.model = model
         self.delete = delete
         self.cancel = cancel
@@ -46,7 +46,7 @@ class ConfirmDeleteViewController: UIViewController {
         mainView.deleteButton.rx.tap
             .bind(to: Binder(self) { base, void in
                 base.dismiss(completion: {
-                    base.delete()
+                    base.delete?()
                 })
             })
             .disposed(by: disposeBag)
@@ -69,7 +69,7 @@ class ConfirmDeleteViewController: UIViewController {
 
 // MARK: Make
 extension ConfirmDeleteViewController {
-    static func make(model: Model, delete: @escaping () -> Void, cancel: (() -> Void)? = nil) -> ConfirmDeleteViewController {
+    static func make(model: Model, delete: (() -> Void)? = nil, cancel: (() -> Void)? = nil) -> ConfirmDeleteViewController {
         let vc = ConfirmDeleteViewController(model: model, delete: delete, cancel: cancel)
         vc.modalPresentationStyle = .overFullScreen
         return vc

@@ -114,9 +114,9 @@ private extension DetailsCircleViewController {
                 confirmText: "DetailsCircle.ConfirmDelete.DeleteButton".localized,
                 cancelText: "Cancel".localized
             )
-            let vc = ConfirmDeleteViewController.make(model: model) { [weak self] in
+            let vc = ConfirmDeleteViewController.make(model: model, delete: { [weak self] in
                 self?.didDeleteTrigger.accept(Void())
-            }
+            })
             present(vc, animated: false)
         case .addMember(let inviteCode):
             let vc = InviteViewController.make(inviteCode: inviteCode)
