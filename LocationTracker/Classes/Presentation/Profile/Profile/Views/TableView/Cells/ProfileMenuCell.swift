@@ -14,7 +14,6 @@ final class ProfileMenuCell: UITableViewCell {
     lazy var savedPlacesButton = makeItemButton(item: .savedPlaces)
     lazy var pinButton = makeItemButton(item: .pin)
     lazy var settingsButton = makeItemButton(item: .settings)
-    lazy var myTestButton = makeItemButton(item: .myTest) // TODO: remove
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -72,15 +71,8 @@ private extension ProfileMenuCell {
         NSLayoutConstraint.activate([
             settingsButton.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             settingsButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            settingsButton.topAnchor.constraint(equalTo: pinButton.bottomAnchor)
-        ])
-        
-        // TODO: remove, settings bottom
-        NSLayoutConstraint.activate([
-            myTestButton.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            myTestButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            myTestButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor),
-            myTestButton.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            settingsButton.topAnchor.constraint(equalTo: pinButton.bottomAnchor),
+            settingsButton.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         ])
     }
 }

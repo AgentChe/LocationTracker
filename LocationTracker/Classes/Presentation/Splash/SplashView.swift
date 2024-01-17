@@ -47,6 +47,8 @@ private extension SplashView {
         ])
         
         NSLayoutConstraint.activate([
+            preloaderLabel.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloaderLabel.heightAnchor.constraint(equalToConstant: 45.scale),
             preloaderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             preloaderLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             preloaderLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -34.scale : -24.scale)
@@ -66,9 +68,11 @@ private extension SplashView {
         return view
     }
     
-    func makePreloader() -> Spinner {
-        let view = Spinner(size: CGSize(width: 40.scale, height: 40.scale))
-        view.backgroundColor = UIColor.clear
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.color = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

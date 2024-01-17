@@ -141,6 +141,8 @@ private extension PaygateView {
         ])
         
         NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
             preloader.centerXAnchor.constraint(equalTo: continueButton.centerXAnchor),
             preloader.centerYAnchor.constraint(equalTo: continueButton.centerYAnchor)
         ])
@@ -268,8 +270,11 @@ private extension PaygateView {
         return view
     }
     
-    func makePreloader() -> Spinner {
-        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.color = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
