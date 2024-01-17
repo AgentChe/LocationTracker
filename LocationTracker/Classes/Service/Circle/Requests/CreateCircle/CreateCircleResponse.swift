@@ -67,7 +67,7 @@ enum CreateCircleResponse {
             name: name,
             photoUrl: photoUrl,
             roleId: roleId,
-            sos: memberJSON["sos"] as? Bool ?? false // TODO
+            sos: memberJSON["sos"] as? Bool ?? false 
         )
     }
 }

@@ -148,7 +148,7 @@ private extension SOSSignalViewModel {
                 
                 let (timerComplete, sos) = args
                 
-                if !timerComplete {
+                if !sos.signal && !timerComplete {
                     return .just(.dismiss)
                 }
                 

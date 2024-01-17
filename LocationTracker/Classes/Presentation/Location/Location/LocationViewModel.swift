@@ -127,6 +127,7 @@ private extension LocationViewModel {
         case edited(Circle)
         case deleted(Int)
         case excluded(CircleMediator.Excluded)
+        case sos(SOS)
     }
     
     func makeMoveToMyCoordinate(didMoveToMyCoordinate: Signal<Void>) -> Driver<Location> {
@@ -318,7 +319,13 @@ private extension LocationViewModel {
                         CircleMediator.shared.didJoinedToCircle.map { CircleAction.joined($0) },
                         CircleMediator.shared.didEditedCircle.map { CircleAction.edited($0) },
                         CircleMediator.shared.didDeletedCircle.map { CircleAction.deleted($0) },
-                        CircleMediator.shared.didExcludedFromCircle.map { CircleAction.excluded($0) }
+                        CircleMediator.shared.didExcludedFromCircle.map { CircleAction.excluded($0) },
+                        CircleMediator.shared.didSendSOS
+                            .map { SOS(signal: true, circleId: $0) }
+                            .map { CircleAction.sos($0) },
+                        CircleMediator.shared.didCancelSOS
+                            .map { SOS(signal: false, circleId: $0) }
+                            .map { CircleAction.sos($0) }
                     )
                 
                 return action
@@ -342,6 +349,8 @@ private extension LocationViewModel {
                             }
                             
                             return circle.replace(excluded: object.membersIds)
+                        case .sos(let sos):
+                            return circle?.replace(sos: sos)
                         }
                     }
                     .startWith(circle)
@@ -497,24 +506,6 @@ private extension LocationViewModel {
 }
 
 // MARK: Additional
-private extension LocationViewModel.CircleAction {
-    var id: Int {
-        switch self {
-        case .created(let circle):
-            return circle.id
-        case .joined(let circle):
-            return circle.id
-        case .edited(let circle):
-            return circle.id
-        case .deleted(let id):
-            return id
-        case .excluded(let excluded):
-            return excluded.circleId
-        }
-    }
-}
-
-// MARK: Additional
 private extension Circle {
     func replace(excluded: [String]) -> Circle {
         Circle(
@@ -526,6 +517,29 @@ private extension Circle {
             members: members.filter { member -> Bool in
                 !excluded.contains(where: { member.id == $0 })
             }
+        )
+    }
+    
+    func replace(sos: SOS) -> Circle {
+        let myId = SessionManager().userId
+        
+        func member(_ member: Member) -> Member {
+            Member(
+                id: member.id,
+                name: member.name,
+                photoUrl: member.photoUrl,
+                roleId: member.roleId,
+                sos: member.id == myId ? sos.signal : member.sos
+            )
+        }
+        
+        return Circle(
+            id: id,
+            name: name,
+            imageUrl: imageUrl,
+            inviteCode: inviteCode,
+            owner: member(owner),
+            members: members.map { member($0) }
         )
     }
 }
