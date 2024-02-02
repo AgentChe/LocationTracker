@@ -1,0 +1,81 @@
+//
+//  ChatsViewController.swift
+//  LocationTracker
+//
+//  Created by Андрей Чернышев on 02.02.2024.
+//
+
+import UIKit
+import RxSwift
+
+final class ChatsViewController: UIViewController {
+    lazy var mainView = ChatsView()
+    
+    private lazy var viewModel = ChatsViewModel()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var chatsManager = ChatsManager()
+    
+    override func loadView() {
+        view = mainView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainView.tableView
+            .didChangeElementsCount
+            .emit(to: Binder(self) { base, count in
+                base.empty(count == 0)
+            })
+            .disposed(by: disposeBag)
+        
+        let output = viewModel.configure(input: ChatsViewModel.Input())
+        
+        output.disposable
+            .disposed(by: disposeBag)
+        
+        output.action
+            .drive(Binder(self) { base, action in
+                base.action(action)
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: Public
+extension ChatsViewController {
+    static func make() -> ChatsViewController {
+        let vc = ChatsViewController()
+        vc.navigationItem.backButtonTitle = " "
+        return vc
+    }
+}
+
+// MARK: Private
+private extension ChatsViewController {
+    func action(_ action: ChatsViewModel.Action) {
+        switch action {
+        case .elements(let elements):
+            mainView.tableView.setup(elements: elements)
+        case .changed(let element):
+            mainView.tableView.changed(element: element)
+        case .created(let element):
+            mainView.tableView.created(element: element)
+        case .removed(let id):
+            mainView.tableView.removed(id: id)
+        case .error(let error):
+            show(error: error)
+        }
+    }
+    
+    func empty(_ empty: Bool) {
+        mainView.emptyView.isHidden = !empty
+        mainView.tableView.isHidden = empty
+    }
+    
+    func show(error: Error) {
+        // TODO
+    }
+}

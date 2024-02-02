@@ -230,3 +230,9 @@
 "SOSConfirmCancel.Text" = "Are you sure? You have to send SOS again if you cancel";
 "SOSConfirmCancel.WaitButton" = "Wait for help";
 "SOSConfirmCancel.CancelButton" = "Cancel SOS";
+
+// MARK: Chats
+"Chats.Title" = "Chats";
+"Chats.PeerClosed" = "Соединение потеряно";
+"Chats.Empty.Title" = "Looks empty here";
+"Chats.Empty.SubTitle" = "Here will be chats that you started with members from your Circles";

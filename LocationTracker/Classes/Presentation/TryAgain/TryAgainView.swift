@@ -42,7 +42,7 @@ private extension TryAgainView {
          }
 
          switch networkError.code {
-         case .serverNotAvailable:
+         case .serverNotAvailable, .socketUnknownError:
              return "TryAgain.SubTitle".localized
          case .logical(let message):
              return message

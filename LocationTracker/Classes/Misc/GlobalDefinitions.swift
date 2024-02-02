@@ -13,6 +13,9 @@ final class GlobalDefinitions {
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "32xQjC9GIHM8NGbK"
     
+    static let chatHost = "wss://chat.korrekted.com:8802"
+    static let chatAppKey = "0b783352-1929-4e52-9bcf-d91cd217b2c2"
+    
     static let appleAppID = "6464321534"
     
     static let applicationTag = "DERMATOLOGY"

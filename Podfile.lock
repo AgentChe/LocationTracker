@@ -119,6 +119,7 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SnapKit (5.6.0)
+  - Starscream (4.0.6)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
@@ -134,6 +135,7 @@ DEPENDENCIES:
   - OtterScaleiOS (from `https://github.com/AgentChe/OtterScaleiOS.git`)
   - RxCocoa
   - RxSwift
+  - Starscream
   - SwiftyStoreKit
 
 SPEC REPOS:
@@ -163,6 +165,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - Starscream
     - SwiftyStoreKit
 
 EXTERNAL SOURCES:
@@ -201,8 +204,9 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: f931c7dac2e20d90b868f38e6ae71b9525485dd8
+PODFILE CHECKSUM: 1c4eac689f9a4ed19da9c02cac3775bfc33a92d2
 
 COCOAPODS: 1.11.2

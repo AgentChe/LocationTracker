@@ -15,6 +15,8 @@ target 'LocationTracker' do
   pod 'Alamofire'
   
   pod 'SwiftyStoreKit'
+  
+  pod 'Starscream'
 
   pod 'OtterScaleiOS', :git => "https://github.com/AgentChe/OtterScaleiOS.git"
   

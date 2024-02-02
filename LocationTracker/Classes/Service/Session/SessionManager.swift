@@ -41,8 +41,12 @@ extension SessionManager {
         return session
     }
     
+    // TODO
+    //iOS User #1 — ef0eeefa-f0b2-433e-80f8-50016297adaa
+    //iOS User #2 — d011fad5-4097-4c0c-b932-0026f57750ef
     var userId: String {
-        OtterScale.shared.getInternalID()
+        "d011fad5-4097-4c0c-b932-0026f57750ef"
+//        OtterScale.shared.getInternalID()
     }
     
     func hasActiveSubscriptions() -> Bool {

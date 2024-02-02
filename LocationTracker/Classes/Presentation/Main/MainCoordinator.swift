@@ -11,7 +11,7 @@ final class MainViewCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var locationVC = NavigationController(rootViewController: LocationViewController.make())
-    lazy var chatsVC = NavigationController(rootViewController: UIViewController())
+    lazy var chatsVC = NavigationController(rootViewController: ChatsViewController.make())
     lazy var profileVC = NavigationController(rootViewController: ProfileViewController.make())
     
     private var previousVC: UIViewController?

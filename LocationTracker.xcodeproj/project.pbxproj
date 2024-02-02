@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		80450355F38A33FCDF88D36C /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B606C07486BFACE419646B /* Pods_LocationTracker.framework */; };
+		DE09EC392B6BA391006977F3 /* ChatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC382B6BA391006977F3 /* ChatPage.swift */; };
+		DE09EC3B2B6BA610006977F3 /* ChatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */; };
+		DE09EC3F2B6CCDC1006977F3 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC3E2B6CCDC1006977F3 /* ChatsViewController.swift */; };
+		DE09EC432B6CCDCF006977F3 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC422B6CCDCF006977F3 /* ChatsView.swift */; };
+		DE09EC472B6CD0DE006977F3 /* ChatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC462B6CD0DE006977F3 /* ChatsTableView.swift */; };
+		DE09EC492B6CD0E6006977F3 /* ChatsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC482B6CD0E6006977F3 /* ChatsTableCell.swift */; };
+		DE09EC4B2B6CD814006977F3 /* ChatsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC4A2B6CD814006977F3 /* ChatsTableElement.swift */; };
+		DE09EC4D2B6CE545006977F3 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC4C2B6CE545006977F3 /* SocketEvent.swift */; };
+		DE09EC522B6D2FD4006977F3 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC512B6D2FD4006977F3 /* ChatsViewModel.swift */; };
+		DE09EC542B6D3D6D006977F3 /* ChatsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -37,6 +47,13 @@
 		DE1D27DA2B2891900022FB9D /* EditCircleRoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */; };
 		DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */; };
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
+		DE5842352B63C5640093CD69 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842342B63C5640093CD69 /* Chat.swift */; };
+		DE5842372B63C5710093CD69 /* ChatMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842362B63C5710093CD69 /* ChatMember.swift */; };
+		DE5842392B63C5760093CD69 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842382B63C5760093CD69 /* ChatMessage.swift */; };
+		DE58423D2B67E13A0093CD69 /* ChatsEventsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58423C2B67E13A0093CD69 /* ChatsEventsMapper.swift */; };
+		DE58423F2B67E1EF0093CD69 /* ChatsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58423E2B67E1EF0093CD69 /* ChatsEvent.swift */; };
+		DE5842412B67E2350093CD69 /* ChatEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842402B67E2350093CD69 /* ChatEvent.swift */; };
+		DE5842432B67E6820093CD69 /* ChatEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842422B67E6820093CD69 /* ChatEventMapper.swift */; };
 		DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */; };
 		DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */; };
 		DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */; };
@@ -285,6 +302,16 @@
 /* Begin PBXFileReference section */
 		050C27C6E697D649D40E304F /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		60B606C07486BFACE419646B /* Pods_LocationTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE09EC382B6BA391006977F3 /* ChatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPage.swift; sourceTree = "<group>"; };
+		DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsManager.swift; sourceTree = "<group>"; };
+		DE09EC3E2B6CCDC1006977F3 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		DE09EC422B6CCDCF006977F3 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		DE09EC462B6CD0DE006977F3 /* ChatsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableView.swift; sourceTree = "<group>"; };
+		DE09EC482B6CD0E6006977F3 /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
+		DE09EC4A2B6CD814006977F3 /* ChatsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableElement.swift; sourceTree = "<group>"; };
+		DE09EC4C2B6CE545006977F3 /* SocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
+		DE09EC512B6D2FD4006977F3 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEmptyView.swift; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +341,13 @@
 		DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleRoleCell.swift; sourceTree = "<group>"; };
 		DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
+		DE5842342B63C5640093CD69 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		DE5842362B63C5710093CD69 /* ChatMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMember.swift; sourceTree = "<group>"; };
+		DE5842382B63C5760093CD69 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		DE58423C2B67E13A0093CD69 /* ChatsEventsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEventsMapper.swift; sourceTree = "<group>"; };
+		DE58423E2B67E1EF0093CD69 /* ChatsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEvent.swift; sourceTree = "<group>"; };
+		DE5842402B67E2350093CD69 /* ChatEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEvent.swift; sourceTree = "<group>"; };
+		DE5842422B67E6820093CD69 /* ChatEventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEventMapper.swift; sourceTree = "<group>"; };
 		DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPreloaderCell.swift; sourceTree = "<group>"; };
 		DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDateCell.swift; sourceTree = "<group>"; };
 		DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
@@ -592,6 +626,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE09EC3C2B6CCD9B006977F3 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC3D2B6CCDB6006977F3 /* Chats */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		DE09EC3D2B6CCDB6006977F3 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC442B6CD0B5006977F3 /* Views */,
+				DE09EC3E2B6CCDC1006977F3 /* ChatsViewController.swift */,
+				DE09EC512B6D2FD4006977F3 /* ChatsViewModel.swift */,
+				DE09EC422B6CCDCF006977F3 /* ChatsView.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		DE09EC442B6CD0B5006977F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC452B6CD0CC006977F3 /* TableView */,
+				DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE09EC452B6CD0CC006977F3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC462B6CD0DE006977F3 /* ChatsTableView.swift */,
+				DE09EC482B6CD0E6006977F3 /* ChatsTableCell.swift */,
+				DE09EC4A2B6CD814006977F3 /* ChatsTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		DE1D27882B2498A70022FB9D /* CircleMembers */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +813,39 @@
 				DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE5842322B63C4D20093CD69 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				DE58423B2B67E12A0093CD69 /* Mappers */,
+				DE5842332B63C50B0093CD69 /* Model */,
+				DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		DE5842332B63C50B0093CD69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE5842342B63C5640093CD69 /* Chat.swift */,
+				DE5842362B63C5710093CD69 /* ChatMember.swift */,
+				DE5842382B63C5760093CD69 /* ChatMessage.swift */,
+				DE58423E2B67E1EF0093CD69 /* ChatsEvent.swift */,
+				DE5842402B67E2350093CD69 /* ChatEvent.swift */,
+				DE09EC382B6BA391006977F3 /* ChatPage.swift */,
+				DE09EC4C2B6CE545006977F3 /* SocketEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE58423B2B67E12A0093CD69 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				DE58423C2B67E13A0093CD69 /* ChatsEventsMapper.swift */,
+				DE5842422B67E6820093CD69 /* ChatEventMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 		DE99F1CC2B4ED67000AF96AB /* GetDirection */ = {
@@ -1399,6 +1504,7 @@
 		DEB390CE2B0B907F00F1AE09 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE09EC3C2B6CCD9B006977F3 /* Chats */,
 				DEB343F82B3488E10029F34B /* Profile */,
 				DEB343EE2B3458FE0029F34B /* Location */,
 				DEB343E12B3456B60029F34B /* Main */,
@@ -1514,6 +1620,7 @@
 		DEB390F62B0B907F00F1AE09 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE5842322B63C4D20093CD69 /* Chats */,
 				DE1D279E2B2718640022FB9D /* Track */,
 				DED612FD2B1F27CA00F09899 /* Circle */,
 				DEB390F72B0B907F00F1AE09 /* Paygate */,
@@ -2057,6 +2164,7 @@
 				DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */,
 				DED6134B2B221C0300F09899 /* SelectRoleViewController.swift in Sources */,
 				DEB344202B35D3CD0029F34B /* MemberAnnotationView.swift in Sources */,
+				DE09EC3F2B6CCDC1006977F3 /* ChatsViewController.swift in Sources */,
 				DE1D27B12B2721350022FB9D /* DetailsCircleTableView.swift in Sources */,
 				DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */,
 				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
@@ -2109,11 +2217,13 @@
 				DEB391252B0B907F00F1AE09 /* APIRequestBody.swift in Sources */,
 				DED613242B1F67D200F09899 /* ExcludeMemberRequest.swift in Sources */,
 				DEB344012B359B5A0029F34B /* MeAnnotationView.swift in Sources */,
+				DE58423F2B67E1EF0093CD69 /* ChatsEvent.swift in Sources */,
 				DE1D27DA2B2891900022FB9D /* EditCircleRoleCell.swift in Sources */,
 				DE1D27B82B2725410022FB9D /* CircleHeaderView.swift in Sources */,
 				DEB344492B3B3B940029F34B /* SettingsViewController.swift in Sources */,
 				DEB3911E2B0B907F00F1AE09 /* Date+Extension.swift in Sources */,
 				DEB3446E2B3DC4CF0029F34B /* MemberPlaceCell.swift in Sources */,
+				DE5842352B63C5640093CD69 /* Chat.swift in Sources */,
 				DE99F2472B56C15E00AF96AB /* SOSInstructionViewController.swift in Sources */,
 				DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */,
 				DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */,
@@ -2122,6 +2232,7 @@
 				DEB391562B0B907F00F1AE09 /* PaygateProductButton.swift in Sources */,
 				DEB391312B0B907F00F1AE09 /* Weak.swift in Sources */,
 				DEB3916C2B0B907F00F1AE09 /* Profile.swift in Sources */,
+				DE5842432B67E6820093CD69 /* ChatEventMapper.swift in Sources */,
 				DED6132C2B206C1E00F09899 /* CirclesViewController.swift in Sources */,
 				DEB3913F2B0B907F00F1AE09 /* AppDelegate.swift in Sources */,
 				DE1D27BF2B2878AE0022FB9D /* InviteViewController.swift in Sources */,
@@ -2143,14 +2254,17 @@
 				DED613202B1F66A200F09899 /* GetCirclesResponse.swift in Sources */,
 				DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */,
 				DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */,
+				DE5842392B63C5760093CD69 /* ChatMessage.swift in Sources */,
 				DEB344582B3C50C50029F34B /* MemberViewController.swift in Sources */,
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */,
+				DE09EC542B6D3D6D006977F3 /* ChatsEmptyView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
 				DEB343ED2B3457090029F34B /* TabView.swift in Sources */,
 				DED6136F2B2368B200F09899 /* CodeField.swift in Sources */,
+				DE09EC4D2B6CE545006977F3 /* SocketEvent.swift in Sources */,
 				DE99F1F52B5016C800AF96AB /* SaveGeoRequest.swift in Sources */,
 				DE99F2332B568F5000AF96AB /* CancelSOSRequest.swift in Sources */,
 				DE99F2532B57BA9E00AF96AB /* SOSSignalViewModel.swift in Sources */,
@@ -2169,6 +2283,8 @@
 				DEB344692B3C6D0C0029F34B /* MemberButtonsCell.swift in Sources */,
 				DED613392B206D3500F09899 /* CirclesTableCell.swift in Sources */,
 				DEB391952B0BC38400F1AE09 /* OSOSInstructionView.swift in Sources */,
+				DE58423D2B67E13A0093CD69 /* ChatsEventsMapper.swift in Sources */,
+				DE09EC432B6CCDCF006977F3 /* ChatsView.swift in Sources */,
 				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
 				DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */,
 				DE99F2082B51446500AF96AB /* ConfirmPINView.swift in Sources */,
@@ -2190,6 +2306,7 @@
 				DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */,
 				DEB3913B2B0B907F00F1AE09 /* PaddingLabel.swift in Sources */,
 				DE1D27B32B27213C0022FB9D /* DetailsCircleTableElement.swift in Sources */,
+				DE09EC392B6BA391006977F3 /* ChatPage.swift in Sources */,
 				DED6135E2B222A8D00F09899 /* CreateCircleCodeView.swift in Sources */,
 				DE99F2062B51446000AF96AB /* ConfirmPINViewController.swift in Sources */,
 				DEB391712B0B907F00F1AE09 /* SetRequest.swift in Sources */,
@@ -2207,11 +2324,13 @@
 				DED6135C2B222A7C00F09899 /* CreateCircleCodeViewModel.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
+				DE09EC492B6CD0E6006977F3 /* ChatsTableCell.swift in Sources */,
 				DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */,
 				DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */,
 				DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
+				DE09EC4B2B6CD814006977F3 /* ChatsTableElement.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */,
@@ -2219,6 +2338,7 @@
 				DEB391302B0B907F00F1AE09 /* ContentError.swift in Sources */,
 				DEB391272B0B907F00F1AE09 /* Scalable.swift in Sources */,
 				DEB3447C2B3DD8240029F34B /* DeletePlaceRequest.swift in Sources */,
+				DE09EC522B6D2FD4006977F3 /* ChatsViewModel.swift in Sources */,
 				DE1D27D82B2891870022FB9D /* EditCircleNameCell.swift in Sources */,
 				DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
@@ -2230,9 +2350,11 @@
 				DED612562B0CD55900F09899 /* GeoLocationPermissionStatus.swift in Sources */,
 				DED613052B1F284300F09899 /* Circle.swift in Sources */,
 				DEB391292B0B907F00F1AE09 /* TextAttributes.swift in Sources */,
+				DE5842412B67E2350093CD69 /* ChatEvent.swift in Sources */,
 				DE99F2582B57C67F00AF96AB /* SOSSignalPINField.swift in Sources */,
 				DE1D27BA2B275B490022FB9D /* DetailsCircleTitleCell.swift in Sources */,
 				DEB344402B3B23310029F34B /* ProfileEditCell.swift in Sources */,
+				DE09EC3B2B6BA610006977F3 /* ChatsManager.swift in Sources */,
 				DED613302B206C2800F09899 /* CirclesView.swift in Sources */,
 				DED613182B1F50D900F09899 /* CreateCircleResponse.swift in Sources */,
 				DED613682B2361CA00F09899 /* JoinToCircleViewController.swift in Sources */,
@@ -2288,12 +2410,14 @@
 				DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
+				DE5842372B63C5710093CD69 /* ChatMember.swift in Sources */,
 				DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
 				DE99F20A2B51457500AF96AB /* ConfirmPINViewModel.swift in Sources */,
 				DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */,
+				DE09EC472B6CD0DE006977F3 /* ChatsTableView.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
 				DEB344422B3B233A0029F34B /* ProfileMenuCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,

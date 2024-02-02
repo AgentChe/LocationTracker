@@ -9,6 +9,7 @@ struct NetworkError: Error {
     enum Code {
         case serverNotAvailable
         case logical(String)
+        case socketUnknownError
     }
 
     let code: Code
