@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class ChatsViewController: UIViewController {
     lazy var mainView = ChatsView()
@@ -15,7 +16,8 @@ final class ChatsViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var chatsManager = ChatsManager()
+    private lazy var didRetryConnectTrigger = PublishRelay<Void>()
+    private lazy var didDeleteChatTrigger = PublishRelay<Chat>()
     
     override func loadView() {
         view = mainView
@@ -31,7 +33,11 @@ final class ChatsViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        let output = viewModel.configure(input: ChatsViewModel.Input())
+        let output = viewModel.configure(input: ChatsViewModel.Input(
+            didConnect: didRetryConnectTrigger.asSignal(),
+            didTapMenu: mainView.tableView.didTapMenu,
+            didDeleteChat: didDeleteChatTrigger.asSignal()
+        ))
         
         output.disposable
             .disposed(by: disposeBag)
@@ -39,6 +45,12 @@ final class ChatsViewController: UIViewController {
         output.action
             .drive(Binder(self) { base, action in
                 base.action(action)
+            })
+            .disposed(by: disposeBag)
+        
+        output.route
+            .drive(Binder(self) { base, route in
+                base.route(route)
             })
             .disposed(by: disposeBag)
     }
@@ -70,12 +82,25 @@ private extension ChatsViewController {
         }
     }
     
+    func route(_ route: ChatsViewModel.Route) {
+        switch route {
+        case .menu(let chat):
+            let vc = ChatsMenuViewController.make { [weak self] in
+                self?.didDeleteChatTrigger.accept(chat)
+            }
+            present(vc, animated: false)
+        }
+    }
+    
     func empty(_ empty: Bool) {
         mainView.emptyView.isHidden = !empty
         mainView.tableView.isHidden = empty
     }
     
     func show(error: Error) {
-        // TODO
+        let vc = TryAgainViewController.make(error: error) { [weak self] in
+            self?.didRetryConnectTrigger.accept(Void())
+        }
+        present(vc, animated: true)
     }
 }

@@ -236,3 +236,4 @@
 "Chats.PeerClosed" = "Соединение потеряно";
 "Chats.Empty.Title" = "Looks empty here";
 "Chats.Empty.SubTitle" = "Here will be chats that you started with members from your Circles";
+"Chats.Menu.Delete" = "Delete";

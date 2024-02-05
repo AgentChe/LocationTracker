@@ -111,13 +111,13 @@ private extension ChatsTableCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 92.scale),
             nameLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: -16.scale),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.scale)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.scale)
         ])
         
         NSLayoutConstraint.activate([
             messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 92.scale),
             messageLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: -16.scale),
-            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.scale)
+            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.scale)
         ])
         
         NSLayoutConstraint.activate([

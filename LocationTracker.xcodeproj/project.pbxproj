@@ -18,6 +18,8 @@
 		DE09EC4D2B6CE545006977F3 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC4C2B6CE545006977F3 /* SocketEvent.swift */; };
 		DE09EC522B6D2FD4006977F3 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC512B6D2FD4006977F3 /* ChatsViewModel.swift */; };
 		DE09EC542B6D3D6D006977F3 /* ChatsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */; };
+		DE09EC5E2B70E7AE006977F3 /* ChatsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC5D2B70E7AE006977F3 /* ChatsMenuViewController.swift */; };
+		DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -312,6 +314,8 @@
 		DE09EC4C2B6CE545006977F3 /* SocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
 		DE09EC512B6D2FD4006977F3 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEmptyView.swift; sourceTree = "<group>"; };
+		DE09EC5D2B70E7AE006977F3 /* ChatsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsMenuViewController.swift; sourceTree = "<group>"; };
+		DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsMenuView.swift; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -648,6 +652,7 @@
 		DE09EC442B6CD0B5006977F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE09EC5C2B70E7A2006977F3 /* Menu */,
 				DE09EC452B6CD0CC006977F3 /* TableView */,
 				DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */,
 			);
@@ -662,6 +667,15 @@
 				DE09EC4A2B6CD814006977F3 /* ChatsTableElement.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE09EC5C2B70E7A2006977F3 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC5D2B70E7AE006977F3 /* ChatsMenuViewController.swift */,
+				DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		DE1D27882B2498A70022FB9D /* CircleMembers */ = {
@@ -2332,6 +2346,7 @@
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DE09EC4B2B6CD814006977F3 /* ChatsTableElement.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
+				DE09EC5E2B70E7AE006977F3 /* ChatsMenuViewController.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */,
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
@@ -2377,6 +2392,7 @@
 				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DE1D27CB2B288B4A0022FB9D /* EditCircleViewController.swift in Sources */,
 				DE99F23F2B56B5FF00AF96AB /* SOSViewModel.swift in Sources */,
+				DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */,
 				DEB343F02B3459090029F34B /* LocationViewController.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,

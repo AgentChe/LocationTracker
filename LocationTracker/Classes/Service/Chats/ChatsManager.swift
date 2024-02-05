@@ -40,6 +40,7 @@ final class ChatsManager {
 // MARK: ChatsManagerProtocol
 extension ChatsManager: ChatsManagerProtocol {
     func connect() {
+        socket.forceDisconnect()
         socket.connect()
     }
     

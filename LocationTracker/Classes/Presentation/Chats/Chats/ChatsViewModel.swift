@@ -18,7 +18,7 @@ final class ChatsViewModel {
     }
     
     enum Route {
-        case menu
+        case menu(Chat)
     }
     
     private lazy var didSocketErrorTrigger = PublishRelay<Error>()
@@ -30,7 +30,9 @@ final class ChatsViewModel {
 // MARK: Public
 extension ChatsViewModel {
     struct Input {
-        let didTapMenu: Signal<Void>
+        let didConnect: Signal<Void>
+        let didTapMenu: Signal<Chat>
+        let didDeleteChat: Signal<Chat>
     }
     
     struct Output {
@@ -40,10 +42,11 @@ extension ChatsViewModel {
     }
     
     func configure(input: Input) -> Output {
-        chatsManager.connect()
-        
-        return Output(
-            disposable: listenSocket(),
+        Output(
+            disposable: listenSocket(
+                didConnect: input.didConnect,
+                didDeleteChat: input.didDeleteChat
+            ),
             action: makeAction(),
             route: makeRoute(didTapMenu: input.didTapMenu)
         )
@@ -52,8 +55,14 @@ extension ChatsViewModel {
 
 // MARK: Private
 private extension ChatsViewModel {
-    func listenSocket() -> Disposable {
-        chatsManager.event
+    func listenSocket(didConnect: Signal<Void>, didDeleteChat: Signal<Chat>) -> Disposable {
+        let connect = didConnect
+            .startWith(())
+            .emit(to: Binder(self) { base, void in
+                base.chatsManager.connect()
+            })
+        
+        let listen = chatsManager.event
             .bind(to: Binder(self) { base, socketEvent in
                 switch socketEvent {
                 case .connected:
@@ -67,6 +76,13 @@ private extension ChatsViewModel {
                     base.didChatsEventTrigger.accept(event)
                 }
             })
+        
+        let delete = didDeleteChat
+            .emit(to: Binder(self) { base, chat in
+                base.chatsManager.action(action: .remove(chat.id))
+            })
+        
+        return Disposables.create([connect, listen, delete])
     }
     
     func makeAction() -> Driver<Action> {
@@ -110,9 +126,9 @@ private extension ChatsViewModel {
             .merge(error, elements)
     }
     
-    func makeRoute(didTapMenu: Signal<Void>) -> Driver<Route> {
+    func makeRoute(didTapMenu: Signal<Chat>) -> Driver<Route> {
         didTapMenu
-            .map { Route.menu }
+            .map { Route.menu($0) }
             .asDriver(onErrorDriveWith: .never())
     }
 }

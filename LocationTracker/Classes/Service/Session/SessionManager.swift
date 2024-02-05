@@ -42,10 +42,9 @@ extension SessionManager {
     }
     
     // TODO
-    //iOS User #1 — ef0eeefa-f0b2-433e-80f8-50016297adaa
-    //iOS User #2 — d011fad5-4097-4c0c-b932-0026f57750ef
     var userId: String {
-        "d011fad5-4097-4c0c-b932-0026f57750ef"
+        "f70b4caf-677c-44d6-a349-cc7ca8279e36" // iPhone 14 pro, me
+//        "64f06464-2284-4a6a-b5f7-9c8356238259" // iPhone 8, partner
 //        OtterScale.shared.getInternalID()
     }
     
