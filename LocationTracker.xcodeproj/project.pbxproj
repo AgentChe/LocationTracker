@@ -32,8 +32,6 @@
 		DE09EC952B74DABE006977F3 /* DemoTextMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */; };
 		DE09EC972B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */; };
 		DE09EC992B74DD60006977F3 /* DemoMessageInteractionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */; };
-		DE09EC9B2B74E24C006977F3 /* MessagesSelectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */; };
-		DE09EC9D2B74E31A006977F3 /* ChatMessageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */; };
 		DE09EC9F2B74E83B006977F3 /* DemoChatItemsDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */; };
 		DE09ECA12B74E8A0006977F3 /* TimeSeparatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */; };
 		DE09ECA32B74EA86006977F3 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA22B74EA86006977F3 /* ChatInputView.swift */; };
@@ -346,8 +344,6 @@
 		DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextMessageModel.swift; sourceTree = "<group>"; };
 		DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextMessageViewModelBuilder.swift; sourceTree = "<group>"; };
 		DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMessageInteractionHandler.swift; sourceTree = "<group>"; };
-		DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesSelectorProtocol.swift; sourceTree = "<group>"; };
-		DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageSelector.swift; sourceTree = "<group>"; };
 		DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChatItemsDecorator.swift; sourceTree = "<group>"; };
 		DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorModel.swift; sourceTree = "<group>"; };
 		DE09ECA22B74EA86006977F3 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
@@ -754,8 +750,6 @@
 				DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */,
 				DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */,
 				DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */,
-				DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */,
-				DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */,
 				DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */,
 				DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */,
 			);
@@ -2264,7 +2258,6 @@
 				DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */,
 				DED6134B2B221C0300F09899 /* SelectRoleViewController.swift in Sources */,
 				DEB344202B35D3CD0029F34B /* MemberAnnotationView.swift in Sources */,
-				DE09EC9B2B74E24C006977F3 /* MessagesSelectorProtocol.swift in Sources */,
 				DE09EC3F2B6CCDC1006977F3 /* ChatsViewController.swift in Sources */,
 				DE1D27B12B2721350022FB9D /* DetailsCircleTableView.swift in Sources */,
 				DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */,
@@ -2361,7 +2354,6 @@
 				DE5842392B63C5760093CD69 /* ChatMessage.swift in Sources */,
 				DEB344582B3C50C50029F34B /* MemberViewController.swift in Sources */,
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
-				DE09EC9D2B74E31A006977F3 /* ChatMessageSelector.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */,

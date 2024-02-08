@@ -5,20 +5,14 @@
 //  Created by Андрей Чернышев on 08.02.2024.
 //
 
-import Foundation
 import Chatto
 import ChattoAdditions
 
 final class DemoChatItemsDecorator: ChatItemsDecoratorProtocol {
-    private struct Constants {
-        static let shortSeparation: CGFloat = 3
-        static let normalSeparation: CGFloat = 10
+    struct Constants {
+        static let shortSeparation: CGFloat = 3.scale
+        static let normalSeparation: CGFloat = 10.scale
         static let timeIntervalThresholdToIncreaseSeparation: TimeInterval = 120
-    }
-
-    private let messagesSelector: MessagesSelectorProtocol
-    init(messagesSelector: MessagesSelectorProtocol) {
-        self.messagesSelector = messagesSelector
     }
 
     func decorateItems(_ chatItems: [ChatItemProtocol]) -> [DecoratedChatItem] {
@@ -31,10 +25,8 @@ final class DemoChatItemsDecorator: ChatItemsDecoratorProtocol {
 
             let bottomMargin = self.separationAfterItem(chatItem, next: next)
             var showsTail = false
-            var additionalItems =  [DecoratedChatItem]()
+            var additionalItems = [DecoratedChatItem]()
             var addTimeSeparator = false
-            var isSelected = false
-            var isShowingSelectionIndicator = false
 
             if let currentMessage = chatItem as? MessageModelProtocol {
                 if let nextMessage = next as? MessageModelProtocol {
@@ -53,17 +45,12 @@ final class DemoChatItemsDecorator: ChatItemsDecoratorProtocol {
                     let dateTimeStamp = DecoratedChatItem(chatItem: TimeSeparatorModel(uid: "\(currentMessage.uid)-time-separator", date: currentMessage.date.toWeekDayAndDateString()), decorationAttributes: nil)
                     decoratedChatItems.append(dateTimeStamp)
                 }
-
-                isSelected = self.messagesSelector.isMessageSelected(currentMessage)
-                isShowingSelectionIndicator = self.messagesSelector.isActive && self.messagesSelector.canSelectMessage(currentMessage)
             }
 
             let messageDecorationAttributes = BaseMessageDecorationAttributes(
                 canShowFailedIcon: true,
                 isShowingTail: showsTail,
-                isShowingAvatar: showsTail,
-                isShowingSelectionIndicator: isShowingSelectionIndicator,
-                isSelected: isSelected
+                isShowingAvatar: showsTail
             )
 
             decoratedChatItems.append(

@@ -15,8 +15,7 @@ final class ChatViewController: BaseChatViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var dataSource = ChatDataSource(count: 50, pageSize: 10)
-    private lazy var messagesSelector = ChatMessageSelector()
+    private lazy var dataSource = ChatDataSource(count: 10, pageSize: 10)
     
     private lazy var headerView = ChatHeaderView()
     private lazy var chatInputView = ChatInputView()
@@ -61,7 +60,7 @@ final class ChatViewController: BaseChatViewController {
             .disposed(by: disposeBag)
         
         setChatDataSource(dataSource, triggeringUpdateType: .firstLoad)
-        chatItemsDecorator = DemoChatItemsDecorator(messagesSelector: messagesSelector)
+        chatItemsDecorator = DemoChatItemsDecorator()
         
         view.backgroundColor = Appearance.background1
         inputBarContainer.backgroundColor = Appearance.background1
@@ -69,18 +68,15 @@ final class ChatViewController: BaseChatViewController {
         
         addHeader()
         
-        chatInputView.didTapSend = { message in
-            print("chat message: \(message)")
+        chatInputView.didTapSend = { [weak self] message in
+            self?.dataSource.addTextMessage(message)
         }
     }
     
     override func createPresenterBuilders() -> [ChatItemType : [ChatItemPresenterBuilderProtocol]] {
         let textMessagePresenter = TextMessagePresenterBuilder(
             viewModelBuilder: DemoTextMessageViewModelBuilder(),
-            interactionHandler: DemoMessageInteractionHandler(
-                messageSender: dataSource.messageSender,
-                messagesSelector: messagesSelector
-            )
+            interactionHandler: DemoMessageInteractionHandler()
         )
 
         return [

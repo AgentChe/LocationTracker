@@ -9,46 +9,19 @@ import ChattoAdditions
 
 final class DemoMessageInteractionHandler<Model: DemoMessageModelProtocol, ViewModel: MessageViewModelProtocol>: BaseMessageInteractionHandlerProtocol {
 
-    init(messageSender: DemoChatMessageSender, messagesSelector: MessagesSelectorProtocol) {
-        self.messageSender = messageSender
-        self.messagesSelector = messagesSelector
-    }
+    func userDidTapOnFailIcon(message: Model, viewModel: ViewModel, failIconView: UIView) {}
 
-    private let messageSender: DemoChatMessageSender
-    private let messagesSelector: MessagesSelectorProtocol
+    func userDidTapOnAvatar(message: Model, viewModel: ViewModel) {}
 
-    func userDidTapOnFailIcon(message: Model, viewModel: ViewModel, failIconView: UIView) {
-        print(#function)
-        self.messageSender.sendMessage(message)
-    }
+    func userDidTapOnBubble(message: Model, viewModel: ViewModel) { }
 
-    func userDidTapOnAvatar(message: Model, viewModel: ViewModel) {
-        print(#function)
-    }
+    func userDidDoubleTapOnBubble(message: Model, viewModel: ViewModel) {}
 
-    func userDidTapOnBubble(message: Model, viewModel: ViewModel) {
-        print(#function)
-    }
+    func userDidBeginLongPressOnBubble(message: Model, viewModel: ViewModel) {}
 
-    func userDidDoubleTapOnBubble(message: Model, viewModel: ViewModel) {
-        print(#function)
-    }
+    func userDidEndLongPressOnBubble(message: Model, viewModel: ViewModel) {}
 
-    func userDidBeginLongPressOnBubble(message: Model, viewModel: ViewModel) {
-        print(#function)
-    }
+    func userDidSelectMessage(message: Model, viewModel: ViewModel) {}
 
-    func userDidEndLongPressOnBubble(message: Model, viewModel: ViewModel) {
-        print(#function)
-    }
-
-    func userDidSelectMessage(message: Model, viewModel: ViewModel) {
-        print(#function)
-        self.messagesSelector.selectMessage(message)
-    }
-
-    func userDidDeselectMessage(message: Model, viewModel: ViewModel) {
-        print(#function)
-        self.messagesSelector.deselectMessage(message)
-    }
+    func userDidDeselectMessage(message: Model, viewModel: ViewModel) {}
 }
