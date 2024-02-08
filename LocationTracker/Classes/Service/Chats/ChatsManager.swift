@@ -6,7 +6,6 @@
 //
 
 import RxSwift
-import RxCocoa
 import Starscream
 
 protocol ChatsManagerProtocol {
@@ -91,18 +90,6 @@ extension ChatsManager: ChatsManagerProtocol {
             return Disposables.create {
                 self.disconnect()
             }
-        }
-    }
-}
-
-// MARK: Additional
-private extension Dictionary {
-    func jsonString() -> String? {
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
-            return String(data: jsonData, encoding: .ascii)
-        } catch {
-            return nil
         }
     }
 }

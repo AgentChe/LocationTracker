@@ -6,7 +6,6 @@
 //
 
 enum ChatEvent {
-    case chatId(String)
     case list(ChatPage)
     case chatRemoved(String)
     case newMessage(ChatMessage)

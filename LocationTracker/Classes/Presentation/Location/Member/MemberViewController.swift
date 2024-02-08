@@ -50,6 +50,7 @@ final class MemberViewController: UIViewController {
             didRefresh: mainView.tableView.didRefreshCurrentPlace,
             didBackDate: mainView.tableView.didTapBackDate,
             didNextDate: mainView.tableView.didTapNextDate,
+            didTapChat: mainView.tableView.didTapChat,
             didGetDirection: mainView.tableView.didTapGetDirection,
             didSelectDirection: didSelectDirectionTrigger.asSignal(),
             didSavePlace: mainView.tableView.didTapAddPlace
@@ -197,6 +198,9 @@ private extension MemberViewController {
             make(direction: direction)
         case .placeSaved:
             feedbackGenerator.notificationOccurred(.success)
+        case .chat(let member):
+            let vc = ChatViewController.make(member: member)
+            present(vc, animated: true)
         }
     }
     

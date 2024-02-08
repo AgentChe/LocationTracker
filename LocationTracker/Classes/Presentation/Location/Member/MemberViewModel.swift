@@ -18,6 +18,7 @@ final class MemberViewModel {
         case requestDirection
         case direction(Direction)
         case placeSaved
+        case chat(Member)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -48,6 +49,7 @@ extension MemberViewModel {
         let didRefresh: Signal<Void>
         let didBackDate: Signal<Date>
         let didNextDate: Signal<Date>
+        let didTapChat: Signal<Void>
         let didGetDirection: Signal<Void>
         let didSelectDirection: Signal<GetDirectionViewController.Direction>
         let didSavePlace: Signal<Int>
@@ -81,7 +83,9 @@ extension MemberViewModel {
                 didGetDirection: input.didGetDirection,
                 didSelectDirection: input.didSelectDirection,
                 lastPlace: geocodedLastPlace,
-                didSavePlace: input.didSavePlace
+                didSavePlace: input.didSavePlace,
+                didTapChat: input.didTapChat,
+                trackInfo: trackInfo
             )
         )
     }
@@ -277,7 +281,9 @@ private extension MemberViewModel {
         didGetDirection: Signal<Void>,
         didSelectDirection: Signal<GetDirectionViewController.Direction>,
         lastPlace: Driver<GeocodeResult?>,
-        didSavePlace: Signal<Int>
+        didSavePlace: Signal<Int>,
+        didTapChat: Signal<Void>,
+        trackInfo: Driver<MemberTrackInfo>
     ) -> Driver<Route> {
         func determine(direction: GetDirectionViewController.Direction, geocode: GeocodeResult?) -> Route? {
             guard let geocode else {
@@ -339,7 +345,12 @@ private extension MemberViewModel {
                     .asDriver(onErrorDriveWith: .never())
             }
         
+        let chat = didTapChat
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(trackInfo) { $1.member }
+            .map { Route.chat($0) }
+        
         return Driver
-            .merge(getDirection, select, savePlace)
+            .merge(getDirection, select, savePlace, chat)
     }
 }

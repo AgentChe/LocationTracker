@@ -36,7 +36,8 @@ final class ChatsViewController: UIViewController {
         let output = viewModel.configure(input: ChatsViewModel.Input(
             didConnect: didRetryConnectTrigger.asSignal(),
             didTapMenu: mainView.tableView.didTapMenu,
-            didDeleteChat: didDeleteChatTrigger.asSignal()
+            didDeleteChat: didDeleteChatTrigger.asSignal(),
+            didSelectChat: mainView.tableView.didSelectChat
         ))
         
         output.disposable
@@ -89,6 +90,12 @@ private extension ChatsViewController {
                 self?.didDeleteChatTrigger.accept(chat)
             }
             present(vc, animated: false)
+        case .chat(let chat):
+            guard let vc = ChatViewController.make(chat: chat) else {
+                return
+            }
+            
+            present(vc, animated: true)
         }
     }
     

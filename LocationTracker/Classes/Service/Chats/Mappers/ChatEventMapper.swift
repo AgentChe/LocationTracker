@@ -25,8 +25,6 @@ final class ChatEventMapper {
             return removed(result: result)
         case "new_message":
             return newMessage(result: result)
-        case "chat_id":
-            return chatId(result: result)
         default:
             return nil
         }
@@ -57,13 +55,5 @@ private extension ChatEventMapper {
         }
         
         return .newMessage(message)
-    }
-    
-    func chatId(result: [String: Any]) -> ChatEvent? {
-        guard let id = result["data"] as? String else {
-            return nil
-        }
-        
-        return .chatId(id)
     }
 }

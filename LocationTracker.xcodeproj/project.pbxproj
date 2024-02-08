@@ -20,6 +20,24 @@
 		DE09EC542B6D3D6D006977F3 /* ChatsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */; };
 		DE09EC5E2B70E7AE006977F3 /* ChatsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC5D2B70E7AE006977F3 /* ChatsMenuViewController.swift */; };
 		DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */; };
+		DE09EC6D2B73C610006977F3 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6C2B73C610006977F3 /* ChatManager.swift */; };
+		DE09EC6F2B73C698006977F3 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6E2B73C698006977F3 /* Dictionary+Extension.swift */; };
+		DE09EC722B73CCF5006977F3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC712B73CCF5006977F3 /* ChatViewController.swift */; };
+		DE09EC742B73CCFE006977F3 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC732B73CCFE006977F3 /* ChatViewModel.swift */; };
+		DE09EC792B73D81F006977F3 /* ChatInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC782B73D81F006977F3 /* ChatInput.swift */; };
+		DE09EC8D2B74D9AE006977F3 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC8C2B74D9AE006977F3 /* ChatDataSource.swift */; };
+		DE09EC8F2B74D9CF006977F3 /* SlidingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC8E2B74D9CF006977F3 /* SlidingDataSource.swift */; };
+		DE09EC912B74DA10006977F3 /* DemoChatMessageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC902B74DA10006977F3 /* DemoChatMessageFactory.swift */; };
+		DE09EC932B74DA2A006977F3 /* DemoChatMessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC922B74DA2A006977F3 /* DemoChatMessageSender.swift */; };
+		DE09EC952B74DABE006977F3 /* DemoTextMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */; };
+		DE09EC972B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */; };
+		DE09EC992B74DD60006977F3 /* DemoMessageInteractionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */; };
+		DE09EC9B2B74E24C006977F3 /* MessagesSelectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */; };
+		DE09EC9D2B74E31A006977F3 /* ChatMessageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */; };
+		DE09EC9F2B74E83B006977F3 /* DemoChatItemsDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */; };
+		DE09ECA12B74E8A0006977F3 /* TimeSeparatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */; };
+		DE09ECA32B74EA86006977F3 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA22B74EA86006977F3 /* ChatInputView.swift */; };
+		DE09ECA52B7520CB006977F3 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA42B7520CB006977F3 /* ChatHeaderView.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -316,6 +334,24 @@
 		DE09EC532B6D3D6D006977F3 /* ChatsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEmptyView.swift; sourceTree = "<group>"; };
 		DE09EC5D2B70E7AE006977F3 /* ChatsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsMenuViewController.swift; sourceTree = "<group>"; };
 		DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsMenuView.swift; sourceTree = "<group>"; };
+		DE09EC6C2B73C610006977F3 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		DE09EC6E2B73C698006977F3 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		DE09EC712B73CCF5006977F3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DE09EC732B73CCFE006977F3 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DE09EC782B73D81F006977F3 /* ChatInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInput.swift; sourceTree = "<group>"; };
+		DE09EC8C2B74D9AE006977F3 /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		DE09EC8E2B74D9CF006977F3 /* SlidingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingDataSource.swift; sourceTree = "<group>"; };
+		DE09EC902B74DA10006977F3 /* DemoChatMessageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChatMessageFactory.swift; sourceTree = "<group>"; };
+		DE09EC922B74DA2A006977F3 /* DemoChatMessageSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChatMessageSender.swift; sourceTree = "<group>"; };
+		DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextMessageModel.swift; sourceTree = "<group>"; };
+		DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTextMessageViewModelBuilder.swift; sourceTree = "<group>"; };
+		DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMessageInteractionHandler.swift; sourceTree = "<group>"; };
+		DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesSelectorProtocol.swift; sourceTree = "<group>"; };
+		DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageSelector.swift; sourceTree = "<group>"; };
+		DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChatItemsDecorator.swift; sourceTree = "<group>"; };
+		DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorModel.swift; sourceTree = "<group>"; };
+		DE09ECA22B74EA86006977F3 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
+		DE09ECA42B7520CB006977F3 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -633,6 +669,7 @@
 		DE09EC3C2B6CCD9B006977F3 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				DE09EC702B73CCD2006977F3 /* Chat */,
 				DE09EC3D2B6CCDB6006977F3 /* Chats */,
 			);
 			path = Chats;
@@ -676,6 +713,53 @@
 				DE09EC5F2B70E7B3006977F3 /* ChatsMenuView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		DE09EC702B73CCD2006977F3 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC8B2B74D99D006977F3 /* Utils */,
+				DE09EC7A2B74CCEF006977F3 /* Views */,
+				DE09EC772B73D812006977F3 /* Models */,
+				DE09EC712B73CCF5006977F3 /* ChatViewController.swift */,
+				DE09EC732B73CCFE006977F3 /* ChatViewModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DE09EC772B73D812006977F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC782B73D81F006977F3 /* ChatInput.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE09EC7A2B74CCEF006977F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE09ECA22B74EA86006977F3 /* ChatInputView.swift */,
+				DE09ECA42B7520CB006977F3 /* ChatHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE09EC8B2B74D99D006977F3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE09EC8C2B74D9AE006977F3 /* ChatDataSource.swift */,
+				DE09EC8E2B74D9CF006977F3 /* SlidingDataSource.swift */,
+				DE09EC902B74DA10006977F3 /* DemoChatMessageFactory.swift */,
+				DE09EC922B74DA2A006977F3 /* DemoChatMessageSender.swift */,
+				DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */,
+				DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */,
+				DE09EC982B74DD60006977F3 /* DemoMessageInteractionHandler.swift */,
+				DE09EC9A2B74E24C006977F3 /* MessagesSelectorProtocol.swift */,
+				DE09EC9C2B74E31A006977F3 /* ChatMessageSelector.swift */,
+				DE09EC9E2B74E83B006977F3 /* DemoChatItemsDecorator.swift */,
+				DE09ECA02B74E8A0006977F3 /* TimeSeparatorModel.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DE1D27882B2498A70022FB9D /* CircleMembers */ = {
@@ -835,6 +919,7 @@
 				DE58423B2B67E12A0093CD69 /* Mappers */,
 				DE5842332B63C50B0093CD69 /* Model */,
 				DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */,
+				DE09EC6C2B73C610006977F3 /* ChatManager.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -1423,6 +1508,7 @@
 				DEB3909B2B0B907F00F1AE09 /* String+Extension.swift */,
 				DEB3909C2B0B907F00F1AE09 /* UIViewRxExtension.swift */,
 				DEB3918E2B0BAF0C00F1AE09 /* UIEdgeInsets+Extension.swift */,
+				DE09EC6E2B73C698006977F3 /* Dictionary+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2178,9 +2264,11 @@
 				DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */,
 				DED6134B2B221C0300F09899 /* SelectRoleViewController.swift in Sources */,
 				DEB344202B35D3CD0029F34B /* MemberAnnotationView.swift in Sources */,
+				DE09EC9B2B74E24C006977F3 /* MessagesSelectorProtocol.swift in Sources */,
 				DE09EC3F2B6CCDC1006977F3 /* ChatsViewController.swift in Sources */,
 				DE1D27B12B2721350022FB9D /* DetailsCircleTableView.swift in Sources */,
 				DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */,
+				DE09EC6F2B73C698006977F3 /* Dictionary+Extension.swift in Sources */,
 				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
 				DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */,
 				DEB391752B0B907F00F1AE09 /* ProductPrice.swift in Sources */,
@@ -2199,7 +2287,9 @@
 				DED612612B0CF97A00F09899 /* UploadPhotoResponse.swift in Sources */,
 				DEB391342B0B907F00F1AE09 /* RxActivityIndicator.swift in Sources */,
 				DEB3447F2B3DD8CE0029F34B /* SavedPlacesRequest.swift in Sources */,
+				DE09EC792B73D81F006977F3 /* ChatInput.swift in Sources */,
 				DEB391222B0B907F00F1AE09 /* UIViewRxExtension.swift in Sources */,
+				DE09EC9F2B74E83B006977F3 /* DemoChatItemsDecorator.swift in Sources */,
 				DE99F2512B57BA9700AF96AB /* SOSSignalViewController.swift in Sources */,
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
@@ -2271,6 +2361,7 @@
 				DE5842392B63C5760093CD69 /* ChatMessage.swift in Sources */,
 				DEB344582B3C50C50029F34B /* MemberViewController.swift in Sources */,
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
+				DE09EC9D2B74E31A006977F3 /* ChatMessageSelector.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
 				DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */,
@@ -2303,6 +2394,7 @@
 				DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */,
 				DE99F2082B51446500AF96AB /* ConfirmPINView.swift in Sources */,
 				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
+				DE09EC742B73CCFE006977F3 /* ChatViewModel.swift in Sources */,
 				DE1D27A42B2718E50022FB9D /* MemberTrackInfo.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
 				DEB344812B3DD8D50029F34B /* SavedPlacesResponse.swift in Sources */,
@@ -2331,11 +2423,13 @@
 				DEB344602B3C6C200029F34B /* MemberTableView.swift in Sources */,
 				DEB391732B0B907F00F1AE09 /* IAPManager.swift in Sources */,
 				DEB344552B3C42FF0029F34B /* GeocodeResponse.swift in Sources */,
+				DE09EC992B74DD60006977F3 /* DemoMessageInteractionHandler.swift in Sources */,
 				DE1D27AB2B271A940022FB9D /* GetMembersTrackInfoResponse.swift in Sources */,
 				DED6134D2B221C0800F09899 /* SelectRoleViewModel.swift in Sources */,
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,
 				DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */,
 				DED6135C2B222A7C00F09899 /* CreateCircleCodeViewModel.swift in Sources */,
+				DE09EC722B73CCF5006977F3 /* ChatViewController.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
 				DE09EC492B6CD0E6006977F3 /* ChatsTableCell.swift in Sources */,
@@ -2346,6 +2440,7 @@
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DE09EC4B2B6CD814006977F3 /* ChatsTableElement.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
+				DE09ECA12B74E8A0006977F3 /* TimeSeparatorModel.swift in Sources */,
 				DE09EC5E2B70E7AE006977F3 /* ChatsMenuViewController.swift in Sources */,
 				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */,
@@ -2358,6 +2453,7 @@
 				DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
 				DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */,
+				DE09EC8D2B74D9AE006977F3 /* ChatDataSource.swift in Sources */,
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
 				DEB3918B2B0BA78800F1AE09 /* OWelcomeView.swift in Sources */,
 				DE1D27A92B271A8F0022FB9D /* GetMembersTrackInfoRequest.swift in Sources */,
@@ -2378,6 +2474,7 @@
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */,
 				DE99F1D82B4FD14100AF96AB /* SavedPlacesViewModel.swift in Sources */,
+				DE09ECA52B7520CB006977F3 /* ChatHeaderView.swift in Sources */,
 				DED613432B2092F700F09899 /* CreateCircleViewModel.swift in Sources */,
 				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
@@ -2404,6 +2501,7 @@
 				DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */,
 				DED613072B1F28D700F09899 /* Role.swift in Sources */,
 				DE99F23D2B56B5F800AF96AB /* SOSViewController.swift in Sources */,
+				DE09ECA32B74EA86006977F3 /* ChatInputView.swift in Sources */,
 				DEB344312B39E5A00029F34B /* ColorGenerate.swift in Sources */,
 				DE99F24B2B56C16D00AF96AB /* SOSInstructionView.swift in Sources */,
 				DED613222B1F679800F09899 /* DeleteCircleRequest.swift in Sources */,
@@ -2426,12 +2524,15 @@
 				DEB3445A2B3C50CA0029F34B /* MemberViewModel.swift in Sources */,
 				DEB391232B0B907F00F1AE09 /* GlobalDefinitions.swift in Sources */,
 				DEB391912B0BB3CC00F1AE09 /* OPhotoView.swift in Sources */,
+				DE09EC972B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift in Sources */,
 				DE5842372B63C5710093CD69 /* ChatMember.swift in Sources */,
+				DE09EC952B74DABE006977F3 /* DemoTextMessageModel.swift in Sources */,
 				DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */,
 				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
 				DE99F20A2B51457500AF96AB /* ConfirmPINViewModel.swift in Sources */,
+				DE09EC912B74DA10006977F3 /* DemoChatMessageFactory.swift in Sources */,
 				DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */,
 				DE09EC472B6CD0DE006977F3 /* ChatsTableView.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
@@ -2444,12 +2545,15 @@
 				DE99F1DD2B4FD25200AF96AB /* SavedPlacesEmptyView.swift in Sources */,
 				DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */,
 				DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */,
+				DE09EC6D2B73C610006977F3 /* ChatManager.swift in Sources */,
 				DED613572B221DD000F09899 /* RolesTableElement.swift in Sources */,
 				DEB3913D2B0B907F00F1AE09 /* GradientView.swift in Sources */,
 				DE1D27C52B287AF40022FB9D /* ConfirmDeleteView.swift in Sources */,
 				DE99F2312B568F4700AF96AB /* SendSOSRequest.swift in Sources */,
 				DEB3441E2B35D0510029F34B /* MemberAnnotation.swift in Sources */,
 				DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */,
+				DE09EC8F2B74D9CF006977F3 /* SlidingDataSource.swift in Sources */,
+				DE09EC932B74DA2A006977F3 /* DemoChatMessageSender.swift in Sources */,
 				DED613452B2092FD00F09899 /* CreateCircleView.swift in Sources */,
 				DEB3912D2B0B907F00F1AE09 /* Fonts.swift in Sources */,
 				DEB343FA2B3488FA0029F34B /* ProfileViewController.swift in Sources */,

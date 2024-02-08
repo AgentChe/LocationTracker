@@ -19,6 +19,7 @@ final class ChatsViewModel {
     
     enum Route {
         case menu(Chat)
+        case chat(Chat)
     }
     
     private lazy var didSocketErrorTrigger = PublishRelay<Error>()
@@ -33,6 +34,7 @@ extension ChatsViewModel {
         let didConnect: Signal<Void>
         let didTapMenu: Signal<Chat>
         let didDeleteChat: Signal<Chat>
+        let didSelectChat: Signal<Chat>
     }
     
     struct Output {
@@ -48,7 +50,10 @@ extension ChatsViewModel {
                 didDeleteChat: input.didDeleteChat
             ),
             action: makeAction(),
-            route: makeRoute(didTapMenu: input.didTapMenu)
+            route: makeRoute(
+                didTapMenu: input.didTapMenu,
+                didSelectChat: input.didSelectChat
+            )
         )
     }
 }
@@ -126,10 +131,20 @@ private extension ChatsViewModel {
             .merge(error, elements)
     }
     
-    func makeRoute(didTapMenu: Signal<Chat>) -> Driver<Route> {
-        didTapMenu
+    func makeRoute(
+        didTapMenu: Signal<Chat>,
+        didSelectChat: Signal<Chat>
+    ) -> Driver<Route> {
+        let menu = didTapMenu
             .map { Route.menu($0) }
             .asDriver(onErrorDriveWith: .never())
+        
+        let chat = didSelectChat
+            .map { Route.chat($0) }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(menu, chat)
     }
 }
 
