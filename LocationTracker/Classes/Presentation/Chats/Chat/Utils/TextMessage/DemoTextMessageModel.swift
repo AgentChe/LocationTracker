@@ -8,6 +8,7 @@
 import Foundation
 import ChattoAdditions
 
+// TODO
 public class DemoTextMessageModel: TextMessageModel<MessageModel>, DemoMessageModelProtocol {
     public override init(messageModel: MessageModel, text: String) {
         super.init(messageModel: messageModel, text: text)

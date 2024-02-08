@@ -9,6 +9,7 @@ import Foundation
 import Chatto
 import ChattoAdditions
 
+// TODO
 public typealias DemoTextMessageViewModel = TextMessageViewModel<DemoTextMessageModel>
 
 public class DemoTextMessageViewModelBuilder: ViewModelBuilderProtocol {

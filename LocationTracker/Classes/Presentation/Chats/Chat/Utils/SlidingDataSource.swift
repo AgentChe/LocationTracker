@@ -8,6 +8,7 @@
 import Foundation
 import Chatto
 
+// TODO
 public enum InsertPosition {
     case top
     case bottom

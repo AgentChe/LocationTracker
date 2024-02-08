@@ -1,5 +1,5 @@
 //
-//  DemoMessageInteractionHandler.swift
+//  MessageInteractionHandler.swift
 //  LocationTracker
 //
 //  Created by Андрей Чернышев on 08.02.2024.
@@ -7,7 +7,7 @@
 
 import ChattoAdditions
 
-final class DemoMessageInteractionHandler<Model: DemoMessageModelProtocol, ViewModel: MessageViewModelProtocol>: BaseMessageInteractionHandlerProtocol {
+final class MessageInteractionHandler<Model: DemoMessageModelProtocol, ViewModel: MessageViewModelProtocol>: BaseMessageInteractionHandlerProtocol {
 
     func userDidTapOnFailIcon(message: Model, viewModel: ViewModel, failIconView: UIView) {}
 
