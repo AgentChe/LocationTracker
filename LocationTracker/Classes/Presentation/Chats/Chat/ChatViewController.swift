@@ -60,7 +60,7 @@ final class ChatViewController: BaseChatViewController {
             .disposed(by: disposeBag)
         
         setChatDataSource(dataSource, triggeringUpdateType: .firstLoad)
-        chatItemsDecorator = DemoChatItemsDecorator()
+        chatItemsDecorator = ChatItemsDecorator()
         
         view.backgroundColor = Appearance.background1
         inputBarContainer.backgroundColor = Appearance.background1

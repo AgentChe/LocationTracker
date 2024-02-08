@@ -10,9 +10,9 @@ import Chatto
 import ChattoAdditions
 
 // TODO
-public typealias DemoTextMessageViewModel = TextMessageViewModel<DemoTextMessageModel>
+typealias DemoTextMessageViewModel = TextMessageViewModel<DemoTextMessageModel>
 
-public class DemoTextMessageViewModelBuilder: ViewModelBuilderProtocol {
+class DemoTextMessageViewModelBuilder: ViewModelBuilderProtocol {
 
     typealias ObservableImageProvider = (DemoTextMessageModel) -> Observable<UIImage?>
 
@@ -26,14 +26,14 @@ public class DemoTextMessageViewModelBuilder: ViewModelBuilderProtocol {
 
     let messageViewModelBuilder = MessageViewModelDefaultBuilder()
 
-    public func createViewModel(_ textMessage: DemoTextMessageModel) -> DemoTextMessageViewModel {
+    func createViewModel(_ textMessage: DemoTextMessageModel) -> DemoTextMessageViewModel {
         let messageViewModel = self.messageViewModelBuilder.createMessageViewModel(textMessage)
         let textMessageViewModel = DemoTextMessageViewModel(textMessage: textMessage, messageViewModel: messageViewModel)
         textMessageViewModel.avatarImage = self.imageProvider(textMessage)
         return textMessageViewModel
     }
 
-    public func canCreateViewModel(fromModel model: Any) -> Bool {
+    func canCreateViewModel(fromModel model: Any) -> Bool {
         return model is DemoTextMessageModel
     }
 }

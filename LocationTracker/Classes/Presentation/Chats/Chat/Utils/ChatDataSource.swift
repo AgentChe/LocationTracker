@@ -28,15 +28,6 @@ class ChatDataSource: ChatDataSourceProtocol {
         self.slidingWindow = SlidingDataSource(items: messages, pageSize: pageSize)
     }
 
-    lazy var messageSender: DemoChatMessageSender = {
-        let sender = DemoChatMessageSender()
-        sender.onMessageChanged = { [weak self] (message) in
-            guard let sSelf = self else { return }
-            sSelf.delegate?.chatDataSourceDidUpdate(sSelf)
-        }
-        return sender
-    }()
-
     var hasMoreNext: Bool {
         return self.slidingWindow.hasMore()
     }
@@ -67,7 +58,6 @@ class ChatDataSource: ChatDataSourceProtocol {
         let uid = "\(self.nextMessageId)"
         self.nextMessageId += 1
         let message = DemoChatMessageFactory.makeTextMessage(uid, text: text, isIncoming: false)
-        self.messageSender.sendMessage(message)
         self.slidingWindow.insertItem(message, position: .bottom)
         self.delegate?.chatDataSourceDidUpdate(self)
     }

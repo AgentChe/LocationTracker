@@ -5,11 +5,15 @@
 //  Created by Андрей Чернышев on 08.02.2024.
 //
 
-import Foundation
+import Chatto
 import ChattoAdditions
 
+protocol DemoMessageModelProtocol: MessageModelProtocol, ContentEquatableChatItemProtocol {
+    var status: MessageStatus { get set }
+}
+
 // TODO
-public class DemoTextMessageModel: TextMessageModel<MessageModel>, DemoMessageModelProtocol {
+final class DemoTextMessageModel: TextMessageModel<MessageModel>, DemoMessageModelProtocol {
     public override init(messageModel: MessageModel, text: String) {
         super.init(messageModel: messageModel, text: text)
     }
