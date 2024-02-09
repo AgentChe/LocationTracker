@@ -93,3 +93,17 @@ private extension ChatItemsDecorator {
         }
     }
 }
+
+// MARK: Additional
+private extension Date {
+    func toWeekDayAndDateString() -> String {
+        Date.weekdayAndDateStampDateFormatter.string(from: self)
+    }
+    
+    static let weekdayAndDateStampDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+        dateFormatter.dateFormat = "EEEE, MMM dd yyyy"
+        return dateFormatter
+    }()
+}

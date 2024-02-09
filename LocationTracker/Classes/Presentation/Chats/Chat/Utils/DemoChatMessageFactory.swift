@@ -56,13 +56,6 @@ class DemoChatMessageFactory {
     }
 }
 
-extension TextMessageModel {
-    static var chatItemType: ChatItemType {
-        return "text"
-    }
-}
-
-
 extension DemoChatMessageFactory {
 
     private enum DemoMessage {

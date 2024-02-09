@@ -37,6 +37,7 @@
 		DE09ECA52B7520CB006977F3 /* ChatHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA42B7520CB006977F3 /* ChatHeaderView.swift */; };
 		DE09ECA92B753139006977F3 /* TimeSeparatorPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA82B753139006977F3 /* TimeSeparatorPresenterBuilder.swift */; };
 		DE09ECAB2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */; };
+		DE09ECAF2B76151C006977F3 /* TextMessageModel+ChatItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECAE2B76151C006977F3 /* TextMessageModel+ChatItemType.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -350,6 +351,7 @@
 		DE09ECA42B7520CB006977F3 /* ChatHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHeaderView.swift; sourceTree = "<group>"; };
 		DE09ECA82B753139006977F3 /* TimeSeparatorPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorPresenterBuilder.swift; sourceTree = "<group>"; };
 		DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE09ECAE2B76151C006977F3 /* TextMessageModel+ChatItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextMessageModel+ChatItemType.swift"; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 			children = (
 				DE09EC942B74DABE006977F3 /* DemoTextMessageModel.swift */,
 				DE09EC962B74DCE6006977F3 /* DemoTextMessageViewModelBuilder.swift */,
+				DE09ECAE2B76151C006977F3 /* TextMessageModel+ChatItemType.swift */,
 			);
 			path = TextMessage;
 			sourceTree = "<group>";
@@ -2502,6 +2505,7 @@
 				DE99F23F2B56B5FF00AF96AB /* SOSViewModel.swift in Sources */,
 				DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */,
 				DEB343F02B3459090029F34B /* LocationViewController.swift in Sources */,
+				DE09ECAF2B76151C006977F3 /* TextMessageModel+ChatItemType.swift in Sources */,
 				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,

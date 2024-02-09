@@ -6,46 +6,58 @@
 //
 
 import UIKit
-import Chatto
 
-// TODO
-class TimeSeparatorCollectionViewCell: UICollectionViewCell {
-
-    private let label: UILabel = UILabel()
+final class TimeSeparatorCollectionViewCell: UICollectionViewCell {
+    lazy var label = makeLabel()
+    
+    private lazy var attrs = TextAttributes()
+        .textColor(Appearance.black2.withAlphaComponent(0.6))
+        .font(Fonts.RobotoCondensed.regular(size: 16.scale))
+        .lineHeight(22.4.scale)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.commonInit()
+        
+        makeConstraints()
+        initialize()
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+}
 
-    private func commonInit() {
-        self.label.font = UIFont.systemFont(ofSize: 12)
-        self.label.textAlignment = .center
-        self.label.textColor = UIColor.gray
-        self.contentView.addSubview(label)
+// MARK: Public
+extension TimeSeparatorCollectionViewCell {
+    func setup(time: String) {
+        label.attributedText = time.attributed(with: attrs)
     }
+}
 
-    var text: String = "" {
-        didSet {
-            if oldValue != text {
-                self.setTextOnLabel(text)
-            }
-        }
+// MARK: Private
+private extension TimeSeparatorCollectionViewCell {
+    func initialize() {
+        backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.clear
     }
+}
 
-    private func setTextOnLabel(_ text: String) {
-        self.label.text = text
-        self.setNeedsLayout()
+// MARK: Make constraints
+private extension TimeSeparatorCollectionViewCell {
+    func makeConstraints() {
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
     }
+}
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.label.bounds.size = self.label.sizeThatFits(self.contentView.bounds.size)
-        self.label.center = self.contentView.center
+// MARK: Lazy initialization
+private extension TimeSeparatorCollectionViewCell {
+    func makeLabel() -> UILabel {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
     }
 }
