@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import Chatto
 import ChattoAdditions
 
@@ -15,10 +16,12 @@ final class ChatViewController: BaseChatViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var dataSource = ChatDataSource(count: 10, pageSize: 10)
+    private lazy var dataSource = ChatDataSource()
     
     private lazy var headerView = ChatHeaderView()
     private lazy var chatInputView = ChatInputView()
+    
+    private lazy var didSendMessageTrigger = PublishRelay<String>()
     
     private init(input: ChatInput) {
         viewModel = ChatViewModel(input: input)
@@ -43,13 +46,20 @@ final class ChatViewController: BaseChatViewController {
         super.viewDidLoad()
         
         let output = viewModel.configure(input: ChatViewModel.Input(
-            didTapClose: headerView.closeButton.rx.tap.asSignal()
+            didTapClose: headerView.closeButton.rx.tap.asSignal(),
+            didSendMessage: didSendMessageTrigger.asSignal()
         ))
 
         output.partner
             .drive(Binder(self) { base, partner in
                 base.headerView.setup(partner: partner.name)
                 base.chatInputView.setup(partner: partner)
+            })
+            .disposed(by: disposeBag)
+        
+        output.action
+            .drive(Binder(self) { base, action in
+                base.action(action)
             })
             .disposed(by: disposeBag)
 
@@ -69,18 +79,18 @@ final class ChatViewController: BaseChatViewController {
         addHeader()
         
         chatInputView.didTapSend = { [weak self] message in
-            self?.dataSource.addTextMessage(message)
+            self?.didSendMessageTrigger.accept(message)
         }
     }
     
     override func createPresenterBuilders() -> [ChatItemType : [ChatItemPresenterBuilderProtocol]] {
         let textMessagePresenter = TextMessagePresenterBuilder(
-            viewModelBuilder: DemoTextMessageViewModelBuilder(),
+            viewModelBuilder: ChatTextMessageViewModelBuilder(),
             interactionHandler: MessageInteractionHandler()
         )
 
         return [
-            DemoTextMessageModel.chatItemType: [textMessagePresenter],
+            ChatTextMessageModel.chatItemType: [textMessagePresenter],
             TimeSeparatorModel.chatItemType: [TimeSeparatorPresenterBuilder()],
         ]
     }
@@ -114,6 +124,19 @@ extension ChatViewController {
 
 // MARK: Private
 private extension ChatViewController {
+    func action(_ action: ChatViewModel.Action) {
+        switch action {
+        case .error(let error):
+            show(error: error)
+        case .page(let chatPage):
+            print()
+        case .chatRemoved:
+            route(.dismiss)
+        case .newMessage(let chatMessage):
+            print()
+        }
+    }
+    
     func route(_ route: ChatViewModel.Route) {
         switch route {
         case .dismiss:
@@ -131,5 +154,12 @@ private extension ChatViewController {
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.topAnchor.constraint(equalTo: view.topAnchor)
         ])
+    }
+    
+    func show(error: Error) {
+        let vc = TryAgainViewController.make(error: error) { [weak self] in
+            self?.route(.dismiss)
+        }
+        present(vc, animated: true)
     }
 }

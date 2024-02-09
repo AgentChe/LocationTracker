@@ -50,7 +50,7 @@ private extension ChatEventMapper {
     }
     
     func newMessage(result: [String: Any]) -> ChatEvent? {
-        guard let data = result["result"] as? [String: Any], let message = ChatMessage(json: data) else {
+        guard let data = result["data"] as? [String: Any], let message = ChatMessage(json: data) else {
             return nil
         }
         

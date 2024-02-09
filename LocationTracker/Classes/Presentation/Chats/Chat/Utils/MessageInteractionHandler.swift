@@ -7,7 +7,7 @@
 
 import ChattoAdditions
 
-final class MessageInteractionHandler<Model: DemoMessageModelProtocol, ViewModel: MessageViewModelProtocol>: BaseMessageInteractionHandlerProtocol {
+final class MessageInteractionHandler<Model: ChatTextMessageModelProtocol, ViewModel: MessageViewModelProtocol>: BaseMessageInteractionHandlerProtocol {
 
     func userDidTapOnFailIcon(message: Model, viewModel: ViewModel, failIconView: UIView) {}
 

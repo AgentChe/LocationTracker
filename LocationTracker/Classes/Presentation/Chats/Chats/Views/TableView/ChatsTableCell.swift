@@ -13,19 +13,18 @@ final class ChatsTableCell: UITableViewCell {
     
     lazy var photoView = makeImageView()
     lazy var photoPlaceholderLabel = makeLabel()
-    lazy var nameLabel = makeLabel()
-    lazy var messageLabel = makeLabel()
+    lazy var contentLabel = makeLabel()
     lazy var timeLabel = makeLabel()
     lazy var menuButton = makeMenuButton()
     lazy var separator = makeSeparator()
     
-    private lazy var nameAttrs = TextAttributes()
+    private lazy var messageAttrs = TextAttributes()
         .textColor(Appearance.black1.withAlphaComponent(0.6))
         .font(Fonts.RobotoCondensed.regular(size: 16.scale))
         .lineHeight(22.4.scale)
         .textAlignment(.left)
         .lineBreakMode(.byTruncatingTail)
-    private lazy var messageAttrs = TextAttributes()
+    private lazy var nameAttrs = TextAttributes()
         .textColor(Appearance.black2)
         .font(Fonts.RobotoCondensed.medium(size: 16.scale))
         .lineHeight(22.4.scale)
@@ -36,6 +35,12 @@ final class ChatsTableCell: UITableViewCell {
         .font(Fonts.RobotoCondensed.bold(size: 16.scale))
         .lineHeight(22.4.scale)
         .textAlignment(.center)
+    private lazy var timeAttrs = TextAttributes()
+        .textColor(Appearance.black1.withAlphaComponent(0.6))
+        .font(Fonts.RobotoCondensed.regular(size: 12.scale))
+        .lineHeight(16.scale)
+        .textAlignment(.right)
+        .lineBreakMode(.byTruncatingTail)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -70,11 +75,15 @@ extension ChatsTableCell {
             photoPlaceholderLabel.attributedText = string.attributed(with: placeholderPhotoAttrs)
         }
         
-        nameLabel.attributedText = element.partner.name.attributed(with: nameAttrs)
+        let content = NSMutableAttributedString()
+        content.append(element.partner.name.attributed(with: nameAttrs))
+        if let body = element.chat.lastMessage?.body {
+            content.append("\n".attributed(with: nameAttrs))
+            content.append(body.attributed(with: messageAttrs))
+        }
+        contentLabel.attributedText = content
         
-        messageLabel.attributedText = element.chat.lastMessage?.body.attributed(with: messageAttrs)
-        
-        timeLabel.attributedText = element.time?.attributed(with: messageAttrs)
+        timeLabel.attributedText = element.time?.attributed(with: timeAttrs)
     }
 }
 
@@ -85,6 +94,12 @@ private extension ChatsTableCell {
         contentView.backgroundColor = UIColor.clear
         
         selectionStyle = .none
+        
+        contentLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        contentLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        
+        timeLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        timeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
     
     @objc
@@ -109,15 +124,10 @@ private extension ChatsTableCell {
         ])
         
         NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 92.scale),
-            nameLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: -16.scale),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 92.scale),
-            messageLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: -16.scale),
-            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.scale)
+            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 92.scale),
+            contentLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: -16.scale),
+            contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24.scale),
+            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -157,6 +167,7 @@ private extension ChatsTableCell {
     
     func makeLabel() -> UILabel {
         let view = UILabel()
+        view.numberOfLines = 2
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

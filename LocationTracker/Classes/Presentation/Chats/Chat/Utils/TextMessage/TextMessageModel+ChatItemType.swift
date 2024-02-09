@@ -8,8 +8,3 @@
 import Chatto
 import ChattoAdditions
 
-extension TextMessageModel {
-    static var chatItemType: ChatItemType {
-        "text"
-    }
-}

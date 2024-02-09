@@ -54,7 +54,8 @@ extension ChatManager: ChatManagerProtocol {
         case .getList(let page):
             json = ["action": "get_list", "page": page]
         case .sendMessage(let body):
-            json = ["action": "send_message", "body": body]
+            let utf8 = body.utf8_encoded ?? body
+            json = ["action": "send_message", "body": utf8]
         }
         
         guard let jsonString = json.jsonString() else {

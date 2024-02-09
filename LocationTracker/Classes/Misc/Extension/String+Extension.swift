@@ -30,4 +30,20 @@ extension String {
     func removingWhitespaces() -> String {
         components(separatedBy: .whitespaces).joined()
     }
+    
+    var utf8_encoded: String? {
+        guard let messageData = self.data(using: .nonLossyASCII) else {
+            return nil
+        }
+        
+        return String(data: messageData, encoding: .utf8)
+    }
+    
+    var utf8_decoded: String? {
+        guard let data = self.data(using: .utf8) else {
+            return nil
+        }
+        
+        return String(data: data, encoding: .nonLossyASCII)
+    }
 }
