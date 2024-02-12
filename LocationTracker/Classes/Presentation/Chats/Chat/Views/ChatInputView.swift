@@ -101,7 +101,7 @@ private extension ChatInputView {
             container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             container.topAnchor.constraint(equalTo: topAnchor),
-            container.bottomAnchor.constraint(equalTo: bottomAnchor),
+            container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.scale),
             container.heightAnchor.constraint(equalToConstant: 48.scale)
         ])
         

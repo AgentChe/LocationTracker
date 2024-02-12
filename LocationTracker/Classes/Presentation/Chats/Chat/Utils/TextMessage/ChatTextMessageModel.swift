@@ -13,10 +13,6 @@ protocol ChatTextMessageModelProtocol: MessageModelProtocol, ContentEquatableCha
 }
 
 final class ChatTextMessageModel: TextMessageModel<MessageModel>, ChatTextMessageModelProtocol {
-    override init(messageModel: MessageModel, text: String) {
-        super.init(messageModel: messageModel, text: text)
-    }
-
     var status: MessageStatus {
         get {
             _messageModel.status

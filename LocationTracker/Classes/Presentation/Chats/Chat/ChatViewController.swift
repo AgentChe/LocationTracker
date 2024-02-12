@@ -16,12 +16,13 @@ final class ChatViewController: BaseChatViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var dataSource = ChatDataSource()
+    private var dataSource: ChatDataSource?
     
     private lazy var headerView = ChatHeaderView()
     private lazy var chatInputView = ChatInputView()
     
     private lazy var didSendMessageTrigger = PublishRelay<String>()
+    private lazy var didLoadNextPageTrigger = PublishRelay<Int>()
     
     private init(input: ChatInput) {
         viewModel = ChatViewModel(input: input)
@@ -47,7 +48,8 @@ final class ChatViewController: BaseChatViewController {
         
         let output = viewModel.configure(input: ChatViewModel.Input(
             didTapClose: headerView.closeButton.rx.tap.asSignal(),
-            didSendMessage: didSendMessageTrigger.asSignal()
+            didSendMessage: didSendMessageTrigger.asSignal(),
+            didLoadPage: didLoadNextPageTrigger.asSignal()
         ))
 
         output.partner
@@ -69,7 +71,6 @@ final class ChatViewController: BaseChatViewController {
             })
             .disposed(by: disposeBag)
         
-        setChatDataSource(dataSource, triggeringUpdateType: .firstLoad)
         chatItemsDecorator = ChatItemsDecorator()
         
         view.backgroundColor = Appearance.background1
@@ -129,12 +130,36 @@ private extension ChatViewController {
         case .error(let error):
             show(error: error)
         case .page(let chatPage):
-            print()
+            insert(page: chatPage)
         case .chatRemoved:
             route(.dismiss)
         case .newMessage(let chatMessage):
-            print()
+            insert(message: chatMessage)
         }
+    }
+    
+    func insert(page: ChatPage) {
+        if let dataSource {
+            dataSource.insert(page: page)
+        } else {
+            let dataSource = ChatDataSource(chatPage: page)
+            
+            dataSource.didLoadNextPage = { [weak self] page in
+                self?.didLoadNextPageTrigger.accept(page)
+            }
+            
+            setChatDataSource(dataSource, triggeringUpdateType: .firstLoad)
+            
+            self.dataSource = dataSource
+        }
+    }
+    
+    func insert(message: ChatMessage) {
+        guard let dataSource else {
+            return
+        }
+        
+        dataSource.insert(newMessage: message)
     }
     
     func route(_ route: ChatViewModel.Route) {

@@ -40,6 +40,7 @@ extension ChatViewModel {
     struct Input {
         let didTapClose: Signal<Void>
         let didSendMessage: Signal<String>
+        let didLoadPage: Signal<Int>
     }
     
     struct Output {
@@ -58,7 +59,8 @@ extension ChatViewModel {
             route: makeRoute(didTapClose: input.didTapClose),
             disposable: makeDisposable(
                 didTapClose: input.didTapClose,
-                didSendMessage: input.didSendMessage
+                didSendMessage: input.didSendMessage,
+                didLoadPage: input.didLoadPage
             )
         )
     }
@@ -99,7 +101,11 @@ private extension ChatViewModel {
             .asDriver(onErrorDriveWith: .never())
     }
     
-    func makeDisposable(didTapClose: Signal<Void>, didSendMessage: Signal<String>) -> Disposable {
+    func makeDisposable(
+        didTapClose: Signal<Void>,
+        didSendMessage: Signal<String>,
+        didLoadPage: Signal<Int>
+    ) -> Disposable {
         let disconnect = didTapClose
             .emit(to: Binder(self) { base, void in
                 base.chatManager.disconnect()
@@ -125,6 +131,11 @@ private extension ChatViewModel {
                 base.chatManager.action(action: .sendMessage(message))
             })
         
-        return Disposables.create(disconnect, listen, sendMessage)
+        let loadPage = didLoadPage
+            .emit(to: Binder(self) { base, page in
+                base.chatManager.action(action: .getList(page))
+            })
+        
+        return Disposables.create(disconnect, listen, sendMessage, loadPage)
     }
 }
