@@ -127,7 +127,8 @@ extension TrackManager: TrackManagerProtocol {
         let request = SaveGeoRequest(
             userToken: userToken,
             latitude: location.latitude,
-            longitude: location.longitude
+            longitude: location.longitude,
+            batteryLevel: Int(UIDevice.current.batteryLevel * 100)
         )
         
         return restAPITransport

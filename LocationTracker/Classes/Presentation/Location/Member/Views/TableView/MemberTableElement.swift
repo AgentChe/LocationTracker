@@ -19,7 +19,7 @@ enum MemberTableElement {
 struct MemberInfoElement {
     let photoUrl: URL?
     let name: String
-    let batteryLevel: Float?
+    let batteryLevel: Int?
     let color: UIColor
     
     init(trackInfo: MemberTrackInfo) {

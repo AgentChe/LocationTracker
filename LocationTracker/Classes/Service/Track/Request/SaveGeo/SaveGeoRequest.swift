@@ -11,6 +11,7 @@ struct SaveGeoRequest: APIRequestBody {
     let userToken: String
     let latitude: Double
     let longitude: Double
+    let batteryLevel: Int
 
     var url: String {
         GlobalDefinitions.domain + "/api/location/save_geo"
@@ -25,7 +26,8 @@ struct SaveGeoRequest: APIRequestBody {
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
             "latitude": latitude,
-            "longitude": longitude
+            "longitude": longitude,
+            "battery_level": batteryLevel
         ]
     }
 }

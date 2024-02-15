@@ -23,6 +23,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GeoLocationMonitoring.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        
         IAPManager.initialize()
         
         return true

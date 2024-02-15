@@ -51,7 +51,7 @@ enum GetMembersTrackInfoResponse {
             return MemberTrackInfo(
                 member: member,
                 lastPlace: place,
-                batteryLevel: json["battery_level"] as? Float
+                batteryLevel: json["battery_level"] as? Int
             )
         }
     }

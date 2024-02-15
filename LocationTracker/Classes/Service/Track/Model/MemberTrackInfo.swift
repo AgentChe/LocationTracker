@@ -11,5 +11,5 @@ import Foundation
 struct MemberTrackInfo: Codable {
     let member: Member
     let lastPlace: Place?
-    let batteryLevel: Float?
+    let batteryLevel: Int?
 }

@@ -260,7 +260,7 @@ private extension LocationViewModel {
                 return MemberTrackInfo(
                     member: member,
                     lastPlace: place,
-                    batteryLevel: UIDevice.current.batteryLevel
+                    batteryLevel: Int(UIDevice.current.batteryLevel * 100)
                 )
             }
     }

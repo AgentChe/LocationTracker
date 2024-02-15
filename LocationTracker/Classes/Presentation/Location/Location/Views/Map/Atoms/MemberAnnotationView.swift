@@ -79,7 +79,7 @@ final class MemberAnnotationView: MKAnnotationView {
         batteryLabel.isHidden = annotation.trackInfo.batteryLevel == nil
         
         if let battery = annotation.trackInfo.batteryLevel {
-            batteryLabel.attributedText = "\(Int(battery))%".attributed(with: batteryAttrs)
+            batteryLabel.attributedText = "\(battery)%".attributed(with: batteryAttrs)
         }
     }
     
