@@ -103,9 +103,8 @@ private extension OnboardingView {
                 }
             }
         
-        nameView.add(observer: combineData)
         nameView.add(observer: circleView)
-        photoView.mainDelegate = combineData
+        nameView.add(observer: photoView)
         pinView.mainDelegate = combineData
         permissionsView.mainDelegate = combineData
         

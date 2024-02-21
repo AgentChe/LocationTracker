@@ -27,7 +27,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.background1
+        backgroundColor = Appearance.primary1
     }
 }
 
@@ -35,10 +35,10 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 124.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 124.scale),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 480.scale),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 103.scale : 50.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -72,7 +72,7 @@ private extension SplashView {
         let view = UIActivityIndicatorView()
         view.hidesWhenStopped = true
         view.style = .large
-        view.color = Appearance.primary1
+        view.color = Appearance.white
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

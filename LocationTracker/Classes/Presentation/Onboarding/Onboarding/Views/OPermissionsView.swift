@@ -100,7 +100,7 @@ private extension OPermissionsView {
     
     func requestGeoLocationPermission() {
         GeoLocationManager.shared.add(observer: self)
-        GeoLocationManager.shared.requestAlwaysPermission()
+        GeoLocationManager.shared.requestWhenInUsePermission()
     }
 }
 

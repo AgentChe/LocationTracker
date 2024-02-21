@@ -6,26 +6,36 @@
 //
 
 import UIKit
-
-protocol OPhotoViewDelegate: AnyObject {
-    func photoViewDidSelect(image: UIImage)
-}
+import RxSwift
+import RxCocoa
 
 final class OPhotoView: OSlideView {
-    weak var mainDelegate: OPhotoViewDelegate?
-    
     lazy var skipButton = makeSkipButton()
     lazy var titleLabel = makeTitleLabel()
     lazy var photoView = makePhotoView()
     lazy var dimmedView = makePhotoDimmedView()
     lazy var editView = makeEditView()
     lazy var continueButton = makeContinueButton()
+    lazy var preloader = makePreloader()
     
     private var imagePicker: ImagePicker?
+    private var name: String?
     private var photo: UIImage?
+    
+    private weak var vc: UIViewController?
+    
+    private lazy var activity = RxActivityIndicator()
+    
+    private lazy var profileManager = ProfileManager()
+    
+    private lazy var observableRetrySingle = ObservableRetrySingle()
+    
+    private lazy var disposeBag = DisposeBag()
     
     init(step: OnboardingView.Step, vc: UIViewController?) {
         super.init(step: step)
+        
+        self.vc = vc
         
         if let vc {
             imagePicker = ImagePicker(presentationController: vc, delegate: self)
@@ -38,6 +48,13 @@ final class OPhotoView: OSlideView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: ONameViewDelegate
+extension OPhotoView: ONameViewDelegate {
+    func nameViewDidEnter(name: String) {
+        self.name = name
     }
 }
 
@@ -55,6 +72,63 @@ extension OPhotoView: ImagePickerDelegate {
 private extension OPhotoView {
     func initialize() {
         backgroundColor = Appearance.background1
+        
+        activity
+            .drive(Binder(self) { base, activity in
+                activity ? base.preloader.startAnimating() : base.preloader.stopAnimating()
+                base.continueButton.isHidden = activity
+                base.skipButton.isHidden = activity
+            })
+            .disposed(by: disposeBag)
+        
+        Signal
+            .merge(
+                continueButton.rx.tap.asSignal(),
+                skipButton.rx.tap.asSignal()
+            )
+            .flatMapLatest { [weak self] void -> Driver<Void> in
+                guard let self else {
+                    return .never()
+                }
+                
+                func source() -> Single<Void> {
+                    var photoUrl: Single<URL?> {
+                        guard let photo = self.photo?.jpegData(compressionQuality: 0.5) else {
+                            return .deferred { .just(nil) }
+                        }
+                        
+                        return self.profileManager
+                            .upload(photo: photo)
+                    }
+                    
+                    return photoUrl
+                        .flatMap { [weak self] photoUrl -> Single<Void> in
+                            guard let self else {
+                                return .never()
+                            }
+                            
+                            return self.profileManager
+                                .set(
+                                    name: self.name,
+                                    photoUrl: photoUrl
+                                )
+                        }
+                }
+                
+                func error(err: Error) -> Observable<Void> {
+                    self.open(error: err)
+                }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { error(err: $0) })
+                    .trackActivity(self.activity)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+            .drive(Binder(self) { base, void in
+                base.onNext()
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc
@@ -62,13 +136,20 @@ private extension OPhotoView {
         imagePicker?.present(from: self)
     }
     
-    @objc
-    func continueTapped() {
-        if let photo {
-            mainDelegate?.photoViewDidSelect(image: photo)
-        }
-        
-        onNext()
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.vc?.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
     
     func photoChanged() {
@@ -121,6 +202,13 @@ private extension OPhotoView {
             continueButton.heightAnchor.constraint(equalToConstant: 56.scale),
             continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -60.scale : -30.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
+            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
+            preloader.centerXAnchor.constraint(equalTo: continueButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: continueButton.centerYAnchor)
+        ])
     }
 }
 
@@ -133,7 +221,6 @@ private extension OPhotoView {
         
         let view = TapAreaButton()
         view.setAttributedTitle("Onboarding.Photo.Skip".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -199,7 +286,16 @@ private extension OPhotoView {
         view.setAttributedTitle("Next".localized.attributed(with: attrs), for: .normal)
         view.backgroundColor = Appearance.primary1
         view.layer.cornerRadius = 20.scale
-        view.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .large
+        view.color = Appearance.primary1
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

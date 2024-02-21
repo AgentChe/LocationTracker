@@ -42,6 +42,10 @@ extension GeoLocationMonitoring {
 // MARK: GeoLocationManagerDelegate
 extension GeoLocationMonitoring: GeoLocationManagerDelegate {
     func geoLocationDidChange(permissionStatus: GeoLocationPermissionStatus) {
+        guard permissionStatus == .authorizedWhenInUse || permissionStatus == .authorizedAlways else {
+            return
+        }
+        
         manager.startMonitoringSignificantLocation()
     }
     

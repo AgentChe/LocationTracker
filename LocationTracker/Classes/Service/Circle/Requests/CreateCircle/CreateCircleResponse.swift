@@ -54,19 +54,24 @@ enum CreateCircleResponse {
     static func map(memberJSON: [String: Any]) -> Member? {
         guard
             let id = memberJSON["id"] as? String, 
-            let name = memberJSON["name"] as? String,
-            let photoPath = memberJSON["image"] as? String,
-            let photoUrl = URL(string: photoPath),
-            let roleId = memberJSON["role_id"] as? Int
+            let name = memberJSON["name"] as? String
         else {
             return nil
+        }
+        
+        var photoUrl: URL? {
+            guard let photoPath = memberJSON["image"] as? String else {
+                return nil
+            }
+            
+            return URL(string: photoPath)
         }
         
         return Member(
             id: id,
             name: name,
             photoUrl: photoUrl,
-            roleId: roleId,
+            roleId: memberJSON["role_id"] as? Int,
             sos: memberJSON["sos"] as? Bool ?? false 
         )
     }

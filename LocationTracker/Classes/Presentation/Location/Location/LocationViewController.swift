@@ -83,6 +83,8 @@ final class LocationViewController: UIViewController {
                 base.setup(sos: sos)
             })
             .disposed(by: disposeBag)
+        
+        requestAlwaysLocationIfNeeded()
     }
 }
 
@@ -111,6 +113,14 @@ private extension LocationViewController {
                 
                 return Disposables.create()
             }
+    }
+    
+    func requestAlwaysLocationIfNeeded() {
+        guard GeoLocationManager.shared.permissionStatus == .authorizedWhenInUse else {
+            return
+        }
+        
+        GeoLocationManager.shared.requestAlwaysPermission()
     }
     
     func moveToMy(coordinate: Location) {

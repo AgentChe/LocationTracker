@@ -24,7 +24,7 @@ final class GeoLocationManager: NSObject {
         
         manager.allowsBackgroundLocationUpdates = true
         manager.showsBackgroundLocationIndicator = true
-        manager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        manager.distanceFilter = kCLLocationAccuracyHundredMeters
         manager.pausesLocationUpdatesAutomatically = false
         manager.delegate = self
     }
