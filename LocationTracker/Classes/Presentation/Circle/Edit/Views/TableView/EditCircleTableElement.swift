@@ -17,7 +17,7 @@ enum EditCircleTableElement {
 
 struct EditCircleName {
     enum Photo {
-        case url(URL?)
+        case url(Image?)
         case image(UIImage)
     }
     
@@ -32,7 +32,7 @@ struct EditCircleMember {
     init(member: Member) {
         self.member = member
         
-        if member.photoUrl != nil {
+        if member.photo?.url != nil {
             self.color = UIColor.clear
         } else {
             self.color = ColorGenerate.shared.generate(key: member.id)

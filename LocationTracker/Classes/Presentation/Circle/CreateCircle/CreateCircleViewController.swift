@@ -89,9 +89,9 @@ final class CreateCircleViewController: UIViewController {
                 base.image = nil
                 
                 switch image {
-                case .url(let url):
-                    if let url {
-                        base.kf.setImage(with: url)
+                case .url(let photo):
+                    if let photo {
+                        base.kf.setImage(with: photo.url)
                     }
                 case .image(let img):
                     base.image = img

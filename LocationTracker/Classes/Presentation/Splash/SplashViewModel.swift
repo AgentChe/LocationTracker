@@ -114,7 +114,7 @@ private extension SplashViewModel {
             return Single
                 .zip([
 //                    paygate, // TODO
-                    profile, // TODO
+                    profile,
                     roles
                 ])
                 .mapToVoid()

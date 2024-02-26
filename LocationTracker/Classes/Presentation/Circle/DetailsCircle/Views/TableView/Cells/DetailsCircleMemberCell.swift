@@ -85,9 +85,9 @@ private extension DetailsCircleMemberCell {
         let member = element.trackInfo.member
         
         photoView.backgroundColor = element.color
-        placeholderPhotoLabel.isHidden = member.photoUrl != nil
+        placeholderPhotoLabel.isHidden = member.photo != nil
         
-        if let url = member.photoUrl {
+        if let url = member.photo?.url {
             photoView.kf.setImage(with: url)
         } else if let firstCharacter = member.name.first {
             let string = String(firstCharacter)

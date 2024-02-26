@@ -92,7 +92,7 @@ private extension OPhotoView {
                 }
                 
                 func source() -> Single<Void> {
-                    var photoUrl: Single<URL?> {
+                    var photo: Single<Image?> {
                         guard let photo = self.photo?.jpegData(compressionQuality: 0.5) else {
                             return .deferred { .just(nil) }
                         }
@@ -101,8 +101,8 @@ private extension OPhotoView {
                             .upload(photo: photo)
                     }
                     
-                    return photoUrl
-                        .flatMap { [weak self] photoUrl -> Single<Void> in
+                    return photo
+                        .flatMap { [weak self] photo -> Single<Void> in
                             guard let self else {
                                 return .never()
                             }
@@ -110,7 +110,7 @@ private extension OPhotoView {
                             return self.profileManager
                                 .set(
                                     name: self.name,
-                                    photoUrl: photoUrl
+                                    photo: photo
                                 )
                         }
                 }

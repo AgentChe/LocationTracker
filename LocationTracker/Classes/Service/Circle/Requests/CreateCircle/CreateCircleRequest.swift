@@ -9,7 +9,7 @@ import Alamofire
 
 struct CreateCircleRequest: APIRequestBody {
     let userToken: String
-    let photoPath: String?
+    let photoId: Int?
     let name: String
     let roleId: Int
 
@@ -29,8 +29,8 @@ struct CreateCircleRequest: APIRequestBody {
             "role_id": roleId
         ] as [String : Any]
         
-        if let photoPath {
-            params["image"] = photoPath
+        if let photoId {
+            params["file_id"] = photoId
         }
         
         return params

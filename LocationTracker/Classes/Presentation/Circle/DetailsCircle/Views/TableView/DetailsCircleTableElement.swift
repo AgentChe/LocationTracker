@@ -25,7 +25,7 @@ final class DetailsCircleTableMember {
         self.me = me
         self.address = address
         
-        if trackInfo.member.photoUrl != nil {
+        if trackInfo.member.photo != nil {
             self.color = UIColor.clear
         } else {
             self.color = ColorGenerate.shared.generate(key: trackInfo.member.id)

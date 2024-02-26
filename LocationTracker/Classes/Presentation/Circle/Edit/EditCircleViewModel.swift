@@ -128,7 +128,7 @@ private extension EditCircleViewModel {
                     .asDriver(onErrorDriveWith: .never()),
                 circle
                     .map { circle in
-                        (circle.name, .url(circle.imageUrl))
+                        (circle.name, .url(circle.image))
                     }
             )
     }
@@ -223,10 +223,10 @@ private extension EditCircleViewModel {
         info: Driver<Info>,
         role: Driver<Role?>
     ) -> Driver<Route> {
-        func photoUrl(source: EditCircleName.Photo) -> Single<URL?> {
+        func photoUrl(source: EditCircleName.Photo) -> Single<Image?> {
             switch source {
-            case .url(let url):
-                return .just(url)
+            case .url(let image):
+                return .just(image)
             case .image(let image):
                 guard let photo = image.jpegData(compressionQuality: 0.5) else {
                     return .deferred { .just(nil) }
@@ -261,14 +261,14 @@ private extension EditCircleViewModel {
                 
                 func source() -> Single<Route> {
                     photoUrl(source: info.1)
-                        .flatMap { photoUrl -> Single<Route> in
+                        .flatMap { image -> Single<Route> in
                             exclude(circleId: id, members: excludeMembers)
                                 .flatMap {
                                     self.circleManager
                                         .edit(
                                             id: id,
                                             name: info.0,
-                                            photo: photoUrl?.absoluteString,
+                                            photoId: image?.id,
                                             roleId: role?.id ?? -1
                                         )
                                 }

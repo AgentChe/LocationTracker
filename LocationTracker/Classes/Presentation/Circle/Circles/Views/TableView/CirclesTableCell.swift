@@ -64,9 +64,9 @@ extension CirclesTableCell {
         membersCountLabel.attributedText = membersCount.attributed(with: membersCountAttrs)
         
         iconView.backgroundColor = element.color
-        placeholderPhotoLabel.isHidden = element.circle.imageUrl != nil
+        placeholderPhotoLabel.isHidden = element.circle.image != nil
         
-        if let url = element.circle.imageUrl {
+        if let url = element.circle.image?.url {
             iconView.kf.setImage(with: url)
         } else if let firstCharacter = element.circle.name.first {
             let string = String(firstCharacter)

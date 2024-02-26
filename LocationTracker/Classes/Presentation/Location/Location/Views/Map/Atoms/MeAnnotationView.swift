@@ -45,9 +45,9 @@ final class MeAnnotationView: MKAnnotationView {
         container.backgroundColor = annotation.trackInfo.member.sos ? Appearance.red : Appearance.white
 
         imageView.backgroundColor = annotation.color
-        placeholderLabel.isHidden = annotation.trackInfo.member.photoUrl != nil
+        placeholderLabel.isHidden = annotation.trackInfo.member.photo?.url != nil
 
-        if let url = annotation.trackInfo.member.photoUrl {
+        if let url = annotation.trackInfo.member.photo?.url {
             imageView.kf.setImage(with: url)
         }
     }

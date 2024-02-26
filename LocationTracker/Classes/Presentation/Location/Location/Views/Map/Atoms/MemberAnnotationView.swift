@@ -66,9 +66,9 @@ final class MemberAnnotationView: MKAnnotationView {
         nameLabel.attributedText = annotation.trackInfo.member.name.attributed(with: nameAttrs)
 
         imageView.backgroundColor = annotation.color
-        placeholderLabel.isHidden = annotation.trackInfo.member.photoUrl != nil
+        placeholderLabel.isHidden = annotation.trackInfo.member.photo != nil
         
-        if let url = annotation.trackInfo.member.photoUrl {
+        if let url = annotation.trackInfo.member.photo?.url {
             imageView.kf.setImage(with: url)
         } else if let firstCharacter = annotation.trackInfo.member.name.first {
             let string = String(firstCharacter)

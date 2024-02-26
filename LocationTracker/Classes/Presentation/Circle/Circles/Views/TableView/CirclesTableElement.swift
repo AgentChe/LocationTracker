@@ -19,7 +19,7 @@ struct CirclesTableElement {
         self.circle = circle
         self.selected = selected
         
-        if circle.imageUrl != nil {
+        if circle.image != nil {
             self.color = UIColor.clear
         } else {
             self.color = ColorGenerate.shared.generate(key: String(circle.id))

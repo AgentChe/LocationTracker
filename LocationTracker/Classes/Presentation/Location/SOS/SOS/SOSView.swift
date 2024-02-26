@@ -94,9 +94,9 @@ private extension SOSView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             photosContainer.addArrangedSubview(imageView)
             
-            imageView.backgroundColor = member.photoUrl == nil ? Appearance.primary2 : UIColor.clear
+            imageView.backgroundColor = member.photo == nil ? Appearance.primary2 : UIColor.clear
             
-            if let photoUrl = member.photoUrl {
+            if let photoUrl = member.photo?.url {
                 imageView.kf.setImage(with: photoUrl)
             }
             

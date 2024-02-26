@@ -8,10 +8,10 @@
 import RxSwift
 
 protocol ProfileManagerProtocol {
-    func upload(photo: Data) -> Single<URL?>
+    func upload(photo: Data) -> Single<Image?>
     func set(
         name: String?,
-        photoUrl: URL?,
+        photo: Image?,
         pin: String?,
         pushToken: String?
     ) -> Single<Void>
@@ -23,7 +23,7 @@ protocol ProfileManagerProtocol {
 final class ProfileManager {
     enum Constants {
         static let nameKey = "profile_manager_name_key"
-        static let photoUrlKey = "profile_manager_photo_url_key"
+        static let photoKey = "profile_manager_photo_key"
         static let pinKey = "profile_manager_pin_key"
     }
     
@@ -35,7 +35,7 @@ final class ProfileManager {
 
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
-    func upload(photo: Data) -> Single<URL?> {
+    func upload(photo: Data) -> Single<Image?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -49,7 +49,7 @@ extension ProfileManager: ProfileManagerProtocol {
     
     func set(
         name: String? = nil,
-        photoUrl: URL? = nil,
+        photo: Image? = nil,
         pin: String? = nil,
         pushToken: String? = nil
     ) -> Single<Void> {
@@ -60,7 +60,7 @@ extension ProfileManager: ProfileManagerProtocol {
         let request = SetRequest(
             userToken: userToken,
             name: name,
-            photoPath: photoUrl?.absoluteString,
+            photoId: photo?.id,
             pin: pin,
             pushToken: pushToken
         )
@@ -70,7 +70,7 @@ extension ProfileManager: ProfileManagerProtocol {
             .mapToVoid()
             .do(onSuccess: { [weak self] in
                 self?.store(name: name)
-                self?.store(photoUrl: photoUrl)
+                self?.store(photo: photo)
                 self?.store(pin: pin)
             })
     }
@@ -109,13 +109,25 @@ private extension ProfileManager {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { GetProfileResponse.map(from: $0) }
+            .do(onSuccess: { [weak self] profile in
+                self?.store(name: profile?.name)
+                self?.store(photo: profile?.photo)
+                self?.store(pin: profile?.pin)
+            })
     }
     
     func cachedProfile() -> Single<Profile?> {
         Single<Profile?>.create { single in
             let name = UserDefaults.standard.string(forKey: Constants.nameKey)
-            let photoUrl = UserDefaults.standard.url(forKey: Constants.photoUrlKey)
             let pin = UserDefaults.standard.string(forKey: Constants.pinKey)
+            
+            var photo: Image? {
+                guard let data = UserDefaults.standard.data(forKey: Constants.photoKey) else {
+                    return nil
+                }
+                
+                return try? JSONDecoder().decode(Image.self, from: data)
+            }
             
             var profile: Profile? {
                 guard let name else {
@@ -124,7 +136,7 @@ private extension ProfileManager {
                 
                 return Profile(
                     name: name,
-                    photoUrl: photoUrl,
+                    photo: photo,
                     pin: pin
                 )
             }
@@ -145,14 +157,14 @@ private extension ProfileManager {
         ProfileMediator.shared.notify(name: name)
     }
     
-    func store(photoUrl: URL?) {
-        guard let photoUrl else {
+    func store(photo: Image?) {
+        guard let photo, let data = try? JSONEncoder().encode(photo) else {
             return
         }
         
-        UserDefaults.standard.set(photoUrl, forKey: Constants.photoUrlKey)
+        UserDefaults.standard.set(data, forKey: Constants.photoKey)
         
-        ProfileMediator.shared.notify(photoURL: photoUrl)
+        ProfileMediator.shared.notify(photo: photo)
     }
     
     func store(pin: String?) {

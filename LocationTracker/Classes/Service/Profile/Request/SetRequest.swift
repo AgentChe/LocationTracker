@@ -10,7 +10,7 @@ import Alamofire
 struct SetRequest: APIRequestBody {
     let userToken: String
     let name: String?
-    let photoPath: String?
+    let photoId: Int?
     let pin: String?
     let pushToken: String?
     
@@ -32,8 +32,8 @@ struct SetRequest: APIRequestBody {
             params["name"] = name
         }
         
-        if let photoPath {
-            params["photo"] = photoPath
+        if let photoId {
+            params["file_id"] = photoId
         }
         
         if let pin {

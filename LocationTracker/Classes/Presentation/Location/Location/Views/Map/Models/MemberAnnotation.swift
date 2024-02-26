@@ -23,7 +23,7 @@ final class MemberAnnotation: NSObject, MKAnnotation {
         self.me = me
         self.coordinate = location.coordinate
         
-        if trackInfo.member.photoUrl != nil {
+        if trackInfo.member.photo != nil {
             self.color = UIColor.clear
         } else {
             self.color = ColorGenerate.shared.generate(key: trackInfo.member.id)

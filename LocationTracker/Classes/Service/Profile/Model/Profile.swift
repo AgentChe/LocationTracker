@@ -9,6 +9,6 @@ import Foundation
 
 struct Profile: Codable, Hashable {
     let name: String
-    let photoUrl: URL?
+    let photo: Image?
     let pin: String?
 }

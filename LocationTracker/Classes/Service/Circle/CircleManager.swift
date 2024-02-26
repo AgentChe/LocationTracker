@@ -11,14 +11,14 @@ protocol CircleManagerProtocol: AnyObject {
     func obtainRoles(forceUpdate: Bool) -> Single<[Role]>
     func create(
         name: String,
-        photo: String?,
+        photoId: Int?,
         roleId: Int
     ) -> Single<Circle?>
     func join(inviteCode: String) -> Single<Circle?>
     func edit(
         id: Int,
         name: String,
-        photo: String?,
+        photoId: Int?,
         roleId: Int
     ) -> Single<Circle?>
     func obtainCircles() -> Single<[Circle]>
@@ -46,7 +46,7 @@ extension CircleManager: CircleManagerProtocol {
     
     func create(
         name: String,
-        photo: String?,
+        photoId: Int?,
         roleId: Int
     ) -> Single<Circle?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
@@ -55,7 +55,7 @@ extension CircleManager: CircleManagerProtocol {
 
         let request = CreateCircleRequest(
             userToken: userToken,
-            photoPath: photo,
+            photoId: photoId,
             name: name,
             roleId: roleId
         )
@@ -97,7 +97,7 @@ extension CircleManager: CircleManagerProtocol {
     func edit(
         id: Int,
         name: String,
-        photo: String?,
+        photoId: Int?,
         roleId: Int
     ) -> Single<Circle?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
@@ -107,7 +107,7 @@ extension CircleManager: CircleManagerProtocol {
         let request = EditCircleRequest(
             userToken: userToken,
             id: id,
-            photoPath: photo,
+            photoId: photoId,
             name: name,
             roleId: roleId
         )

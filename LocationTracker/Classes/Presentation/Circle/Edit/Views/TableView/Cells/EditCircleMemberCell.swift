@@ -55,9 +55,9 @@ extension EditCircleMemberCell {
         nameLabel.attributedText = element.member.name.attributed(with: nameAttrs)
         
         photoView.backgroundColor = element.color
-        placeholderPhotoLabel.isHidden = element.member.photoUrl != nil
+        placeholderPhotoLabel.isHidden = element.member.photo != nil
         
-        if let url = element.member.photoUrl {
+        if let url = element.member.photo?.url {
             photoView.kf.setImage(with: url)
         } else if let firstCharacter = element.member.name.first {
             let string = String(firstCharacter)

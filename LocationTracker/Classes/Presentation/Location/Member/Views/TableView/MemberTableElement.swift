@@ -23,11 +23,11 @@ struct MemberInfoElement {
     let color: UIColor
     
     init(trackInfo: MemberTrackInfo) {
-        self.photoUrl = trackInfo.member.photoUrl
+        self.photoUrl = trackInfo.member.photo?.url
         self.name = trackInfo.member.name
         self.batteryLevel = trackInfo.batteryLevel
         
-        if trackInfo.member.photoUrl != nil {
+        if trackInfo.member.photo != nil {
             self.color = UIColor.clear
         } else {
             self.color = ColorGenerate.shared.generate(key: trackInfo.member.id)

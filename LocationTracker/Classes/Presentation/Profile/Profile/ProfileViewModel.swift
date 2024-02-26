@@ -45,7 +45,7 @@ extension ProfileViewModel {
 private extension ProfileViewModel {
     enum ProfileChange {
         case name(String)
-        case photoUrl(URL)
+        case photo(Image)
     }
     
     func makeElements(profile: Driver<Profile>) -> Driver<[ProfileTableElement]> {
@@ -54,7 +54,7 @@ private extension ProfileViewModel {
                 [
                     .title,
                     .edit(ProfileEditElement(
-                        photoUrl: profile.photoUrl,
+                        photoUrl: profile.photo?.url,
                         name: profile.name
                     )),
                     .menu
@@ -73,11 +73,11 @@ private extension ProfileViewModel {
                 let name = ProfileMediator.shared.didChangeName
                     .asDriver(onErrorDriveWith: .never())
                     .map { ProfileChange.name($0) }
-                let photoUrl = ProfileMediator.shared.didChangePhotoURL
+                let photo = ProfileMediator.shared.didChangePhoto
                     .asDriver(onErrorDriveWith: .never())
-                    .map { ProfileChange.photoUrl($0) }
+                    .map { ProfileChange.photo($0) }
                 let change = Driver
-                    .merge(name, photoUrl)
+                    .merge(name, photo)
                 
                 return change
                     .scan(profile) { profile, change -> Profile in
@@ -85,13 +85,13 @@ private extension ProfileViewModel {
                         case .name(let name):
                             return Profile(
                                 name: name,
-                                photoUrl: profile.photoUrl,
+                                photo: profile.photo,
                                 pin: profile.pin
                             )
-                        case .photoUrl(let photoUrl):
+                        case .photo(let photo):
                             return Profile(
                                 name: profile.name,
-                                photoUrl: photoUrl,
+                                photo: photo,
                                 pin: profile.pin
                             )
                         }

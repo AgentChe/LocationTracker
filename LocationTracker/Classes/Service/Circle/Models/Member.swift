@@ -10,7 +10,7 @@ import Foundation
 struct Member: Codable, Hashable {
     let id: String
     let name: String
-    let photoUrl: URL?
+    let photo: Image?
     let roleId: Int?
     let sos: Bool
 }

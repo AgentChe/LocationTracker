@@ -12,7 +12,7 @@ final class ProfileMediator {
     static let shared = ProfileMediator()
     
     private lazy var didChangeNameTrigger = PublishRelay<String>()
-    private lazy var didChangePhotoURLTrigger = PublishRelay<URL>()
+    private lazy var didChangePhotoTrigger = PublishRelay<Image>()
     private lazy var didChangePINTrigger = PublishRelay<String>()
     
     private init() {}
@@ -24,8 +24,8 @@ extension ProfileMediator {
         didChangeNameTrigger.accept(name)
     }
     
-    func notify(photoURL: URL) {
-        didChangePhotoURLTrigger.accept(photoURL)
+    func notify(photo: Image) {
+        didChangePhotoTrigger.accept(photo)
     }
     
     func notify(pin: String) {
@@ -39,8 +39,8 @@ extension ProfileMediator {
         didChangeNameTrigger.asSignal()
     }
     
-    var didChangePhotoURL: Signal<URL> {
-        didChangePhotoURLTrigger.asSignal()
+    var didChangePhoto: Signal<Image> {
+        didChangePhotoTrigger.asSignal()
     }
     
     var didChangePIN: Signal<String> {

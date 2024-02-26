@@ -47,9 +47,9 @@ extension EditCircleNameCell {
         nameLabel.attributedText = element.name.attributed(with: attrs)
         
         switch element.photo {
-        case .url(let url):
-            if let url {
-                photoView.kf.setImage(with: url)
+        case .url(let image):
+            if let image {
+                photoView.kf.setImage(with: image.url)
             } else {
                 photoView.image = UIImage(named: "EditCircle.EmptyCirclePhoto")
             }

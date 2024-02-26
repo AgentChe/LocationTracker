@@ -14,7 +14,7 @@ final class EditProfileViewModel {
     }
     
     enum Photo {
-        case url(URL?)
+        case url(Image?)
         case image(UIImage)
     }
     
@@ -102,7 +102,7 @@ private extension EditProfileViewModel {
     
     func makeImage(profile: Driver<Profile>, didChangeImage: Signal<UIImage?>) -> Driver<Photo> {
         let initial = profile
-            .map { Photo.url($0.photoUrl) }
+            .map { Photo.url($0.photo) }
         
         let update = didChangeImage
             .compactMap { $0 }
@@ -125,10 +125,10 @@ private extension EditProfileViewModel {
         name: Driver<String>,
         photo: Driver<Photo>
     ) -> Driver<Route> {
-        func photoUrl(source: Photo) -> Single<URL?> {
+        func photoUrl(source: Photo) -> Single<Image?> {
             switch source {
-            case .url(let url):
-                return .just(url)
+            case .url(let image):
+                return .just(image)
             case .image(let image):
                 guard let photo = image.jpegData(compressionQuality: 0.5) else {
                     return .deferred { .just(nil) }
@@ -150,9 +150,9 @@ private extension EditProfileViewModel {
                 
                 func source() -> Single<Route> {
                     photoUrl(source: args.1)
-                        .flatMap { photoUrl -> Single<Route> in
+                        .flatMap { photo -> Single<Route> in
                             self.profileManager
-                                .set(name: args.0, photoUrl: photoUrl)
+                                .set(name: args.0, photo: photo)
                                 .map { Route.dismiss }
                         }
                 }

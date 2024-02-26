@@ -10,7 +10,7 @@ import Foundation
 struct Circle: Codable, Hashable {
     let id: Int
     let name: String
-    let imageUrl: URL?
+    let image: Image?
     let inviteCode: String
     let owner: Member
     let members: [Member]

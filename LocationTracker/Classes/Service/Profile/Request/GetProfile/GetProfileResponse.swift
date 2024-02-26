@@ -17,17 +17,22 @@ final class GetProfileResponse {
             return nil
         }
         
-        var photoUrl: URL? {
-            guard let path = data["photo"] as? String else {
+        var photo: Image? {
+            guard
+                let json = data["image"] as? [String: Any],
+                let id = json["file_id"] as? Int,
+                let path = json["url"] as? String,
+                let url = URL(string: path)
+            else {
                 return nil
             }
             
-            return URL(string: path)
+            return Image(id: id, url: url)
         }
         
         return Profile(
             name: name,
-            photoUrl: photoUrl,
+            photo: photo,
             pin: data["pin"] as? String
         )
     }

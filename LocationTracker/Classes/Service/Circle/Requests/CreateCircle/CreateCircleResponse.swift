@@ -30,12 +30,17 @@ enum CreateCircleResponse {
             return nil
         }
         
-        var photoUrl: URL? {
-            guard let photoPath = circleJSON["image"] as? String else {
+        var image: Image? {
+            guard
+                let json = circleJSON["image"] as? [String: Any],
+                let id = json["file_id"] as? Int,
+                let path = json["url"] as? String,
+                let url = URL(string: path)
+            else {
                 return nil
             }
             
-            return URL(string: photoPath)
+            return Image(id: id, url: url)
         }
         
         let membersArray = circleJSON["members"] as? [[String: Any]] ?? []
@@ -44,7 +49,7 @@ enum CreateCircleResponse {
         return Circle(
             id: id,
             name: name,
-            imageUrl: photoUrl,
+            image: image,
             inviteCode: inviteCode,
             owner: owner,
             members: members
@@ -59,18 +64,23 @@ enum CreateCircleResponse {
             return nil
         }
         
-        var photoUrl: URL? {
-            guard let photoPath = memberJSON["image"] as? String else {
+        var image: Image? {
+            guard
+                let json = memberJSON["image"] as? [String: Any],
+                let id = json["file_id"] as? Int,
+                let path = json["url"] as? String,
+                let url = URL(string: path)
+            else {
                 return nil
             }
             
-            return URL(string: photoPath)
+            return Image(id: id, url: url)
         }
         
         return Member(
             id: id,
             name: name,
-            photoUrl: photoUrl,
+            photo: image,
             roleId: memberJSON["role_id"] as? Int,
             sos: memberJSON["sos"] as? Bool ?? false 
         )

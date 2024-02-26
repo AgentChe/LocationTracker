@@ -35,6 +35,7 @@
 		DE09ECA92B753139006977F3 /* TimeSeparatorPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECA82B753139006977F3 /* TimeSeparatorPresenterBuilder.swift */; };
 		DE09ECAB2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */; };
 		DE09ECB32B763188006977F3 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECB22B763188006977F3 /* ChatDataSource.swift */; };
+		DE0D27842B8CC212007F1560 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D27832B8CC212007F1560 /* Image.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -346,6 +347,7 @@
 		DE09ECA82B753139006977F3 /* TimeSeparatorPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorPresenterBuilder.swift; sourceTree = "<group>"; };
 		DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE09ECB22B763188006977F3 /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		DE0D27832B8CC212007F1560 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -1790,6 +1792,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB391042B0B907F00F1AE09 /* Profile.swift */,
+				DE0D27832B8CC212007F1560 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2440,6 +2443,7 @@
 				DED613092B1F28F100F09899 /* Member.swift in Sources */,
 				DE09EC492B6CD0E6006977F3 /* ChatsTableCell.swift in Sources */,
 				DEB344332B39F42B0029F34B /* GeocodeResult.swift in Sources */,
+				DE0D27842B8CC212007F1560 /* Image.swift in Sources */,
 				DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */,
 				DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,

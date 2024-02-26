@@ -83,14 +83,14 @@ extension LocationViewModel {
     }
     
     func configure(input: Input) -> Output {
-        let myPhotoUrl = makeMyPhotoUrl()
+        let myPhoto = makeMyPhoto()
         let circles = makeCircles()
         let selectedCircle = makeSelectedCircle(
             didSelectCircle: input.didSelectCircle,
             circles: circles
         )
         let circleTrackInfo = makeTrackInfo(for: selectedCircle)
-        let myTrackInfo = makeMyTrackInfo(myPhotoUrl: myPhotoUrl)
+        let myTrackInfo = makeMyTrackInfo(myPhoto: myPhoto)
         let geocode = makeGeocode(trackInfo: circleTrackInfo)
         let circleElements = makeCircleElements(
             selectedCircle: selectedCircle,
@@ -233,14 +233,14 @@ private extension LocationViewModel {
             }
     }
     
-    func makeMyTrackInfo(myPhotoUrl: Driver<URL?>) -> Driver<MemberTrackInfo> {
+    func makeMyTrackInfo(myPhoto: Driver<Image?>) -> Driver<MemberTrackInfo> {
         Driver
-            .combineLatest(didUpdateLocation, myPhotoUrl)
+            .combineLatest(didUpdateLocation, myPhoto)
             .map { didUpdateLocation, myPhotoUrl -> MemberTrackInfo in
                 let member = Member(
                     id: SessionManager().userId,
                     name: "Location.Me".localized,
-                    photoUrl: nil,
+                    photo: nil,
                     roleId: nil,
                     sos: false
                 )
@@ -477,15 +477,15 @@ private extension LocationViewModel {
             .drive()
     }
     
-    func makeMyPhotoUrl() -> Driver<URL?> {
+    func makeMyPhoto() -> Driver<Image?> {
         let initial = profileManager
             .obtainProfile(forceUpdate: false)
-            .map { $0?.photoUrl }
+            .map { $0?.photo }
             .asDriver(onErrorJustReturn: nil)
         
         let updated = ProfileMediator.shared
-            .didChangePhotoURL
-            .map { url -> URL? in url }
+            .didChangePhoto
+            .map { image -> Image? in image }
             .asDriver(onErrorJustReturn: nil)
         
         return Driver
@@ -511,7 +511,7 @@ private extension Circle {
         Circle(
             id: id,
             name: name,
-            imageUrl: imageUrl,
+            image: image,
             inviteCode: inviteCode,
             owner: owner,
             members: members.filter { member -> Bool in
@@ -527,7 +527,7 @@ private extension Circle {
             Member(
                 id: member.id,
                 name: member.name,
-                photoUrl: member.photoUrl,
+                photo: member.photo,
                 roleId: member.roleId,
                 sos: member.id == myId ? sos.signal : member.sos
             )
@@ -536,7 +536,7 @@ private extension Circle {
         return Circle(
             id: id,
             name: name,
-            imageUrl: imageUrl,
+            image: image,
             inviteCode: inviteCode,
             owner: member(owner),
             members: members.map { member($0) }

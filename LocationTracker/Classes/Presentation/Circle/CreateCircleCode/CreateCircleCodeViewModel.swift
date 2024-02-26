@@ -84,7 +84,7 @@ private extension CreateCircleCodeViewModel {
                     return .never()
                 }
                 
-                func photoUrl() -> Single<URL?> {
+                func photoUrl() -> Single<Image?> {
                     guard let photo = data.image?.jpegData(compressionQuality: 0.5) else {
                         return .deferred { .just(nil) }
                     }
@@ -95,11 +95,11 @@ private extension CreateCircleCodeViewModel {
                 
                 func source() -> Single<String> {
                     photoUrl()
-                        .flatMap { url -> Single<Circle?> in
+                        .flatMap { image -> Single<Circle?> in
                             self.circleManager
                                 .create(
                                     name: data.name,
-                                    photo: url?.absoluteString,
+                                    photoId: image?.id,
                                     roleId: data.roleId ?? -1
                                 )
                         }
