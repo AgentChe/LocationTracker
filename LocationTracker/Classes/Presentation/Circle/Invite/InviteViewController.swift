@@ -44,6 +44,8 @@ final class InviteViewController: UIViewController {
                 base.present(controller, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        mainView.setup(code: inviteCode)
     }
 }
 
