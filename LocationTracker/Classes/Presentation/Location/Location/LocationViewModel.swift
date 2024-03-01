@@ -242,6 +242,7 @@ private extension LocationViewModel {
                     name: "Location.Me".localized,
                     photo: nil,
                     roleId: nil,
+                    chatId: ProfileManager().chatId,
                     sos: false
                 )
                 
@@ -529,6 +530,7 @@ private extension Circle {
                 name: member.name,
                 photo: member.photo,
                 roleId: member.roleId,
+                chatId: member.chatId,
                 sos: member.id == myId ? sos.signal : member.sos
             )
         }

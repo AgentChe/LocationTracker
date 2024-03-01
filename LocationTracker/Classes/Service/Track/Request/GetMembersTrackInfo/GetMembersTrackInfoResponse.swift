@@ -19,7 +19,7 @@ enum GetMembersTrackInfoResponse {
         return data.compactMap { json -> MemberTrackInfo? in
             guard
                 let memberJSON = json["member"] as? [String: Any],
-                let member = CreateCircleResponse.map(memberJSON: memberJSON)
+                let member = Member(json: memberJSON)
             else {
                 return nil
             }

@@ -86,13 +86,15 @@ private extension ProfileViewModel {
                             return Profile(
                                 name: name,
                                 photo: profile.photo,
-                                pin: profile.pin
+                                pin: profile.pin,
+                                chatId: profile.chatId
                             )
                         case .photo(let photo):
                             return Profile(
                                 name: profile.name,
                                 photo: photo,
-                                pin: profile.pin
+                                pin: profile.pin,
+                                chatId: profile.chatId
                             )
                         }
                     }

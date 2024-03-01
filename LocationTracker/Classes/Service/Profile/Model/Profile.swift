@@ -11,4 +11,5 @@ struct Profile: Codable, Hashable {
     let name: String
     let photo: Image?
     let pin: String?
+    let chatId: String?
 }

@@ -33,7 +33,8 @@ final class GetProfileResponse {
         return Profile(
             name: name,
             photo: photo,
-            pin: data["pin"] as? String
+            pin: data["pin"] as? String,
+            chatId: data["chat_identifier"] as? String
         )
     }
 }

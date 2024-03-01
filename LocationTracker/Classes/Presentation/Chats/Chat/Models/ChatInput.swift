@@ -14,7 +14,7 @@ struct ChatInput {
     
     init(member: Member) {
         partnerName = member.name
-        partnerId = member.id
+        partnerId = member.chatId ?? ""
         partnerAvatarUrl = member.photo?.url
     }
     

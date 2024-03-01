@@ -38,7 +38,7 @@ final class ChatDataSource {
         self.windowCount = 0
         self.itemsOffset = count
         
-        let userId = SessionManager().userId
+        let userId = ProfileManager().chatId ?? ""
         
         self.itemGenerator = { message -> ChatItemProtocol in
             let model = MessageModel(

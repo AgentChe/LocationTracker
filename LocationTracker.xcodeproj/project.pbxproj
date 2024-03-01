@@ -36,6 +36,7 @@
 		DE09ECAB2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */; };
 		DE09ECB32B763188006977F3 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECB22B763188006977F3 /* ChatDataSource.swift */; };
 		DE0D27842B8CC212007F1560 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D27832B8CC212007F1560 /* Image.swift */; };
+		DE0D279E2B91E323007F1560 /* SetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D279D2B91E323007F1560 /* SetResponse.swift */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -348,6 +349,7 @@
 		DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeparatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE09ECB22B763188006977F3 /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		DE0D27832B8CC212007F1560 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		DE0D279D2B91E323007F1560 /* SetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetResponse.swift; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -769,6 +771,15 @@
 				DE09ECAA2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift */,
 			);
 			path = TimeSeparator;
+			sourceTree = "<group>";
+		};
+		DE0D279C2B91E315007F1560 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3910B2B0B907F00F1AE09 /* SetRequest.swift */,
+				DE0D279D2B91E323007F1560 /* SetResponse.swift */,
+			);
+			path = Set;
 			sourceTree = "<group>";
 		};
 		DE1D27882B2498A70022FB9D /* CircleMembers */ = {
@@ -1800,11 +1811,11 @@
 		DEB391052B0B907F00F1AE09 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DE0D279C2B91E315007F1560 /* Set */,
 				DED6125D2B0CF95200F09899 /* UploadPhoto */,
 				DEB391062B0B907F00F1AE09 /* GetProfile */,
 				DEB391092B0B907F00F1AE09 /* LoginRequest.swift */,
 				DEB3910A2B0B907F00F1AE09 /* SyncTokensRequest.swift */,
-				DEB3910B2B0B907F00F1AE09 /* SetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2546,6 +2557,7 @@
 				DE99F1F02B50069D00AF96AB /* EditProfileViewModel.swift in Sources */,
 				DE09EC472B6CD0DE006977F3 /* ChatsTableView.swift in Sources */,
 				DED6135A2B222A7600F09899 /* CreateCircleCodeViewController.swift in Sources */,
+				DE0D279E2B91E323007F1560 /* SetResponse.swift in Sources */,
 				DEB344422B3B233A0029F34B /* ProfileMenuCell.swift in Sources */,
 				DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */,
 				DE1D27A02B2718AF0022FB9D /* TrackManager.swift in Sources */,

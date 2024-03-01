@@ -25,7 +25,7 @@ final class ChatsManager {
     private let socket: WebSocket
     
     init() {
-        let userId = SessionManager().userId
+        let userId = ProfileManager().chatId ?? ""
         let path = String(
             format: "%@/ws/chats?user=%@&app_key=%@",
             GlobalDefinitions.chatHost, userId, GlobalDefinitions.chatAppKey

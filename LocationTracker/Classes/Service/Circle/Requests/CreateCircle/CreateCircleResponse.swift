@@ -25,7 +25,7 @@ enum CreateCircleResponse {
             let name = circleJSON["name"] as? String,
             let inviteCode = circleJSON["invite_code"] as? String,
             let ownerJSON = circleJSON["owner"] as? [String: Any],
-            let owner = map(memberJSON: ownerJSON)
+            let owner = Member(json: ownerJSON)
         else {
             return nil
         }
@@ -44,7 +44,7 @@ enum CreateCircleResponse {
         }
         
         let membersArray = circleJSON["members"] as? [[String: Any]] ?? []
-        let members = membersArray.compactMap { map(memberJSON: $0) }
+        let members = membersArray.compactMap { Member(json: $0) }
         
         return Circle(
             id: id,
@@ -53,36 +53,6 @@ enum CreateCircleResponse {
             inviteCode: inviteCode,
             owner: owner,
             members: members
-        )
-    }
-    
-    static func map(memberJSON: [String: Any]) -> Member? {
-        guard
-            let id = memberJSON["id"] as? String, 
-            let name = memberJSON["name"] as? String
-        else {
-            return nil
-        }
-        
-        var image: Image? {
-            guard
-                let json = memberJSON["image"] as? [String: Any],
-                let id = json["file_id"] as? Int,
-                let path = json["url"] as? String,
-                let url = URL(string: path)
-            else {
-                return nil
-            }
-            
-            return Image(id: id, url: url)
-        }
-        
-        return Member(
-            id: id,
-            name: name,
-            photo: image,
-            roleId: memberJSON["role_id"] as? Int,
-            sos: memberJSON["sos"] as? Bool ?? false 
         )
     }
 }

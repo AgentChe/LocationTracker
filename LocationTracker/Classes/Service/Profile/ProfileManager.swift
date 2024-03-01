@@ -18,6 +18,7 @@ protocol ProfileManagerProtocol {
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
+    var chatId: String? { get }
 }
 
 final class ProfileManager {
@@ -25,6 +26,7 @@ final class ProfileManager {
         static let nameKey = "profile_manager_name_key"
         static let photoKey = "profile_manager_photo_key"
         static let pinKey = "profile_manager_pin_key"
+        static let chatIdKey = "profile_manager_chat_id_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -67,12 +69,14 @@ extension ProfileManager: ProfileManagerProtocol {
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .mapToVoid()
-            .do(onSuccess: { [weak self] in
+            .map { SetResponse.map(from: $0) }
+            .do(onSuccess: { [weak self] chatId in
                 self?.store(name: name)
                 self?.store(photo: photo)
                 self?.store(pin: pin)
+                self?.store(chatId: chatId)
             })
+            .mapToVoid()
     }
     
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
@@ -95,6 +99,10 @@ extension ProfileManager: ProfileManagerProtocol {
             .callServerApi(requestBody: request)
             .mapToVoid()
     }
+    
+    var chatId: String? {
+        UserDefaults.standard.string(forKey: Constants.chatIdKey)
+    }
 }
 
 // MARK: Private
@@ -113,6 +121,7 @@ private extension ProfileManager {
                 self?.store(name: profile?.name)
                 self?.store(photo: profile?.photo)
                 self?.store(pin: profile?.pin)
+                self?.store(chatId: profile?.chatId)
             })
     }
     
@@ -120,6 +129,7 @@ private extension ProfileManager {
         Single<Profile?>.create { single in
             let name = UserDefaults.standard.string(forKey: Constants.nameKey)
             let pin = UserDefaults.standard.string(forKey: Constants.pinKey)
+            let chatId = UserDefaults.standard.string(forKey: Constants.chatIdKey)
             
             var photo: Image? {
                 guard let data = UserDefaults.standard.data(forKey: Constants.photoKey) else {
@@ -137,7 +147,8 @@ private extension ProfileManager {
                 return Profile(
                     name: name,
                     photo: photo,
-                    pin: pin
+                    pin: pin,
+                    chatId: chatId
                 )
             }
             
@@ -175,5 +186,13 @@ private extension ProfileManager {
         UserDefaults.standard.set(pin, forKey: Constants.pinKey)
         
         ProfileMediator.shared.notify(pin: pin)
+    }
+    
+    func store(chatId: String?) {
+        guard let chatId else {
+            return
+        }
+        
+        UserDefaults.standard.set(chatId, forKey: Constants.chatIdKey)
     }
 }
