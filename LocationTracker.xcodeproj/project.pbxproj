@@ -37,6 +37,7 @@
 		DE09ECB32B763188006977F3 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09ECB22B763188006977F3 /* ChatDataSource.swift */; };
 		DE0D27842B8CC212007F1560 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D27832B8CC212007F1560 /* Image.swift */; };
 		DE0D279E2B91E323007F1560 /* SetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D279D2B91E323007F1560 /* SetResponse.swift */; };
+		DE0D27BF2B973986007F1560 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE0D27BE2B973986007F1560 /* GoogleService-Info.plist */; };
 		DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */; };
 		DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */; };
 		DE1D27992B2716B30022FB9D /* DetailsCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */; };
@@ -164,7 +165,6 @@
 		DEB344812B3DD8D50029F34B /* SavedPlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB344802B3DD8D50029F34B /* SavedPlacesResponse.swift */; };
 		DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */; };
 		DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */; };
-		DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */; };
 		DEB3908B2B0B8F2E00F1AE09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB390892B0B8F2E00F1AE09 /* Localizable.strings */; };
 		DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390952B0B907F00F1AE09 /* UIApplication+Extension.swift */; };
 		DEB3911C2B0B907F00F1AE09 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390962B0B907F00F1AE09 /* UIDevice+Extension.swift */; };
@@ -350,6 +350,7 @@
 		DE09ECB22B763188006977F3 /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		DE0D27832B8CC212007F1560 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DE0D279D2B91E323007F1560 /* SetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetResponse.swift; sourceTree = "<group>"; };
+		DE0D27BE2B973986007F1560 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE1D27892B2498B50022FB9D /* CircleMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersViewController.swift; sourceTree = "<group>"; };
 		DE1D278D2B2498C40022FB9D /* CircleMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMembersView.swift; sourceTree = "<group>"; };
 		DE1D27982B2716B30022FB9D /* DetailsCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCircleViewController.swift; sourceTree = "<group>"; };
@@ -479,7 +480,6 @@
 		DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEB3907C2B0B8C2B00F1AE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEB3907E2B0B8C2B00F1AE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DEB3908A2B0B8F2E00F1AE09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DEB3908E2B0B8F9F00F1AE09 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		DEB3908F2B0B8FA400F1AE09 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
@@ -1462,7 +1462,7 @@
 				DEB3908C2B0B8F5800F1AE09 /* Fonts */,
 				DEB390882B0B8F2E00F1AE09 /* Strings */,
 				DEB3907E2B0B8C2B00F1AE09 /* Info.plist */,
-				DEB390862B0B8F2A00F1AE09 /* GoogleService-Info.plist */,
+				DE0D27BE2B973986007F1560 /* GoogleService-Info.plist */,
 				DEB3907B2B0B8C2B00F1AE09 /* LaunchScreen.storyboard */,
 				DEB390792B0B8C2B00F1AE09 /* Assets.xcassets */,
 			);
@@ -2222,13 +2222,13 @@
 			files = (
 				DEB391842B0B9A0700F1AE09 /* RobotoCondensed-SemiBold.ttf in Resources */,
 				DEB391852B0B9A0700F1AE09 /* RobotoCondensed-Medium.ttf in Resources */,
+				DE0D27BF2B973986007F1560 /* GoogleService-Info.plist in Resources */,
 				DEB391862B0B9A0700F1AE09 /* RobotoCondensed-ExtraBold.ttf in Resources */,
 				DEB391872B0B9A0700F1AE09 /* RobotoCondensed-Regular.ttf in Resources */,
 				DEB391882B0B9A0700F1AE09 /* RobotoCondensed-Bold.ttf in Resources */,
 				DEB3907D2B0B8C2B00F1AE09 /* LaunchScreen.storyboard in Resources */,
 				DEB3908B2B0B8F2E00F1AE09 /* Localizable.strings in Resources */,
 				DEB3907A2B0B8C2B00F1AE09 /* Assets.xcassets in Resources */,
-				DEB390872B0B8F2A00F1AE09 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2726,11 +2726,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = M73NH26C3Q;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
@@ -2746,10 +2746,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = locationtracker.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "LocationTrackerSample Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Location Tracker AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2766,11 +2766,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = M73NH26C3Q;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
@@ -2786,10 +2786,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = locationtracker.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "LocationTrackerSample Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Location Tracker AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
