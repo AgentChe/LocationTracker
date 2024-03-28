@@ -26,9 +26,8 @@ final class GlobalDefinitions {
     static let privacyPolicyUrl = "https://maria-apps.com/policy"
     static let contactUsUrl = "https://maria-apps.com/contact"
     
-    // TODO: заменить, когда будет пейгейт
     enum Paygate {
-        static let defaultLifetime = "mobile.dermatology.lifetime20"
-        static let defaultMonthly = "mobile.dermatology.monthly10"
+        static let defaultLifetime = "app.locationtracker.life"
+        static let defaultMonthly = "app.locationtracker.month"
     }
 }

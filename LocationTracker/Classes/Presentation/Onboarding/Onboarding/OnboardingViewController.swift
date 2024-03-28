@@ -17,8 +17,6 @@ final class OnboardingViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var viewModel = OnboardingViewModel()
-    
     override func loadView() {
         view = mainView
     }
@@ -27,14 +25,8 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         mainView.didFinish = { [weak self] in
-            guard let self = self else {
-                return
-            }
-            
-            self.markAsViewed()
-            
-            let step = self.viewModel.whatNext()
-            self.goToNext(at: step)
+            self?.markAsViewed()
+            self?.goToNext()
         }
     }
     
@@ -47,13 +39,6 @@ final class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     static func make() -> OnboardingViewController {
         OnboardingViewController()
-    }
-}
-
-// MARK: PaygateViewControllerDelegate
-extension OnboardingViewController: PaygateViewControllerDelegate {
-    func paygateDidClosed(with result: PaygateViewControllerResult) {
-        goToNext(at: .main)
     }
 }
 
@@ -70,14 +55,7 @@ private extension OnboardingViewController {
         UserDefaults.standard.setValue(true, forKey: Constants.wasViewedKey)
     }
     
-    func goToNext(at step: OnboardingViewModel.Step) {
-        switch step {
-        case .main:
-            UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
-        case .paygate:
-            let vc = PaygateViewController.make()
-            vc.delegate = self
-            present(vc, animated: true)
-        }
+    func goToNext() {
+        UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
     }
 }

@@ -214,7 +214,6 @@
 		DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */; };
 		DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D92B0B907F00F1AE09 /* DefaultPaygate.swift */; };
 		DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DA2B0B907F00F1AE09 /* PaygateOptionInfo.swift */; };
-		DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DB2B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift */; };
 		DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */; };
 		DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */; };
 		DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */; };
@@ -226,7 +225,6 @@
 		DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390EC2B0B907F00F1AE09 /* OnboardingViewController.swift */; };
 		DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F12B0B907F00F1AE09 /* OSlideView.swift */; };
 		DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F42B0B907F00F1AE09 /* OnboardingView.swift */; };
-		DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F52B0B907F00F1AE09 /* OnboardingViewModel.swift */; };
 		DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F92B0B907F00F1AE09 /* PaygateOptionLineComponent.swift */; };
 		DEB391662B0B907F00F1AE09 /* PaygateOptionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FA2B0B907F00F1AE09 /* PaygateOptionConfig.swift */; };
 		DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FB2B0B907F00F1AE09 /* Paygate.swift */; };
@@ -267,6 +265,7 @@
 		DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */; };
 		DEB3919A2B0BCE7100F1AE09 /* OPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391992B0BCE7100F1AE09 /* OPINView.swift */; };
 		DEB3919F2B0BCEC900F1AE09 /* PINField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB3919E2B0BCEC900F1AE09 /* PINField.swift */; };
+		DEB5DD512BB5B2D800F21BB0 /* LocationOverlapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5DD502BB5B2D800F21BB0 /* LocationOverlapView.swift */; };
 		DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6124A2B0CC90400F09899 /* PermissionView.swift */; };
 		DED6124F2B0CCF8400F09899 /* OPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6124E2B0CCF8400F09899 /* OPermissionsView.swift */; };
 		DED612532B0CD54000F09899 /* GeoLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED612522B0CD54000F09899 /* GeoLocationManager.swift */; };
@@ -534,7 +533,6 @@
 		DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewModel.swift; sourceTree = "<group>"; };
 		DEB390D92B0B907F00F1AE09 /* DefaultPaygate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPaygate.swift; sourceTree = "<group>"; };
 		DEB390DA2B0B907F00F1AE09 /* PaygateOptionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionInfo.swift; sourceTree = "<group>"; };
-		DEB390DB2B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewControllerDelegate.swift; sourceTree = "<group>"; };
 		DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInteractor.swift; sourceTree = "<group>"; };
 		DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateView.swift; sourceTree = "<group>"; };
 		DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewController.swift; sourceTree = "<group>"; };
@@ -546,7 +544,6 @@
 		DEB390EC2B0B907F00F1AE09 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DEB390F12B0B907F00F1AE09 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		DEB390F42B0B907F00F1AE09 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		DEB390F52B0B907F00F1AE09 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DEB390F92B0B907F00F1AE09 /* PaygateOptionLineComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionLineComponent.swift; sourceTree = "<group>"; };
 		DEB390FA2B0B907F00F1AE09 /* PaygateOptionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionConfig.swift; sourceTree = "<group>"; };
 		DEB390FB2B0B907F00F1AE09 /* Paygate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paygate.swift; sourceTree = "<group>"; };
@@ -582,6 +579,7 @@
 		DEB391972B0BC5A700F1AE09 /* SOSInstructionBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSInstructionBlockView.swift; sourceTree = "<group>"; };
 		DEB391992B0BCE7100F1AE09 /* OPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPINView.swift; sourceTree = "<group>"; };
 		DEB3919E2B0BCEC900F1AE09 /* PINField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINField.swift; sourceTree = "<group>"; };
+		DEB5DD502BB5B2D800F21BB0 /* LocationOverlapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOverlapView.swift; sourceTree = "<group>"; };
 		DED6124A2B0CC90400F09899 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		DED6124E2B0CCF8400F09899 /* OPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPermissionsView.swift; sourceTree = "<group>"; };
 		DED612502B0CD1E700F09899 /* LocationTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocationTracker.entitlements; sourceTree = "<group>"; };
@@ -1205,6 +1203,7 @@
 				DEB344062B359F7C0029F34B /* Models */,
 				DEB344052B359F760029F34B /* Atoms */,
 				DEB344022B359E810029F34B /* LocationMapView.swift */,
+				DEB5DD502BB5B2D800F21BB0 /* LocationOverlapView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1662,7 +1661,6 @@
 			children = (
 				DEB390D82B0B907F00F1AE09 /* Models */,
 				DEB390DF2B0B907F00F1AE09 /* Views */,
-				DEB390DB2B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift */,
 				DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */,
 				DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */,
 				DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */,
@@ -1704,7 +1702,6 @@
 				DEB390EA2B0B907F00F1AE09 /* Utils */,
 				DEB390ED2B0B907F00F1AE09 /* Views */,
 				DEB390EC2B0B907F00F1AE09 /* OnboardingViewController.swift */,
-				DEB390F52B0B907F00F1AE09 /* OnboardingViewModel.swift */,
 				DEB390F42B0B907F00F1AE09 /* OnboardingView.swift */,
 			);
 			name = Onboarding;
@@ -2332,6 +2329,7 @@
 				DED6132E2B206C2300F09899 /* CirclesViewModel.swift in Sources */,
 				DE99F2112B514CAF00AF96AB /* ResetPINView.swift in Sources */,
 				DE1D27D32B28915B0022FB9D /* EditCircleTableView.swift in Sources */,
+				DEB5DD512BB5B2D800F21BB0 /* LocationOverlapView.swift in Sources */,
 				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */,
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
@@ -2447,7 +2445,6 @@
 				DE1D27AB2B271A940022FB9D /* GetMembersTrackInfoResponse.swift in Sources */,
 				DED6134D2B221C0800F09899 /* SelectRoleViewModel.swift in Sources */,
 				DEB3912C2B0B907F00F1AE09 /* XOREncryption.swift in Sources */,
-				DEB391642B0B907F00F1AE09 /* OnboardingViewModel.swift in Sources */,
 				DED6135C2B222A7C00F09899 /* CreateCircleCodeViewModel.swift in Sources */,
 				DE09EC722B73CCF5006977F3 /* ChatViewController.swift in Sources */,
 				DED6124B2B0CC90400F09899 /* PermissionView.swift in Sources */,
@@ -2511,7 +2508,6 @@
 				DE99F23F2B56B5FF00AF96AB /* SOSViewModel.swift in Sources */,
 				DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */,
 				DEB343F02B3459090029F34B /* LocationViewController.swift in Sources */,
-				DEB391522B0B907F00F1AE09 /* PaygateViewControllerDelegate.swift in Sources */,
 				DEB391772B0B907F00F1AE09 /* IAPProduct.swift in Sources */,
 				DEB3913C2B0B907F00F1AE09 /* CircleView.swift in Sources */,
 				DE99F1EE2B50069800AF96AB /* EditProfileViewController.swift in Sources */,

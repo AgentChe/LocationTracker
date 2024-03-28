@@ -41,14 +41,9 @@ final class LocationViewController: UIViewController {
             didSelectElement: mainView.circleView.tableView.didSelect,
             didDeleteCircle: didDeleteCircleTrigger.asSignal(),
             didSelectAnnotation: mainView.mapView.didSelectAnnotation,
-            didTapSOS: mainView.sosButton.rx.tap.asSignal()
+            didTapSOS: mainView.sosButton.rx.tap.asSignal(),
+            didTouchMap: mainView.overlapView.didTouch
         ))
-        
-        output.moveToMyCoordinate
-            .drive(Binder(self) { base, coordinate in
-                base.moveToMy(coordinate: coordinate)
-            })
-            .disposed(by: disposeBag)
         
         output.circleActivity
             .drive(Binder(mainView.circleView) { base, activity in
@@ -81,6 +76,12 @@ final class LocationViewController: UIViewController {
         output.sos
             .drive(Binder(mainView.sosButton) { base, sos in
                 base.setup(sos: sos)
+            })
+            .disposed(by: disposeBag)
+        
+        output.paidCircle
+            .drive(Binder(mainView.overlapView) { base, paidCircle in
+                base.isHidden = !paidCircle
             })
             .disposed(by: disposeBag)
         
@@ -121,11 +122,6 @@ private extension LocationViewController {
         }
         
         GeoLocationManager.shared.requestAlwaysPermission()
-    }
-    
-    func moveToMy(coordinate: Location) {
-        let region = MKCoordinateRegion(center: coordinate.asCLLocation.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
-        mainView.mapView.setRegion(region, animated: false)
     }
     
     func route(_ route: LocationViewModel.Route) {
@@ -195,6 +191,12 @@ private extension LocationViewController {
             let nc = NavigationController(rootViewController: vc)
             nc.modalPresentationStyle = .fullScreen
             present(nc, animated: true)
+        case .moveToMyCoordinate(let coordinate):
+            let region = MKCoordinateRegion(center: coordinate.asCLLocation.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+            mainView.mapView.setRegion(region, animated: false)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
 }

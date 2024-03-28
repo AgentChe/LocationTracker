@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 final class PaygateViewController: UIViewController {
-    weak var delegate: PaygateViewControllerDelegate?
+    var didClose: (() -> Void)?
     
     lazy var mainView =  PaygateView()
     
@@ -56,7 +56,7 @@ final class PaygateViewController: UIViewController {
         
         mainView.closeButton.rx.tap
             .bind(to: Binder(self) { base, void in
-                base.dismiss(with: .cancelled)
+                base.dismiss()
             })
             .disposed(by: disposeBag)
         
@@ -68,7 +68,7 @@ final class PaygateViewController: UIViewController {
                     return
                 }
                 
-                self?.dismiss(with: .bied)
+                self?.dismiss()
             })
             .disposed(by: disposeBag)
         
@@ -80,7 +80,7 @@ final class PaygateViewController: UIViewController {
                     return
                 }
                 
-                self?.dismiss(with: .restored)
+                self?.dismiss()
             })
             .disposed(by: disposeBag)
         
@@ -124,13 +124,9 @@ extension PaygateViewController {
 
 // MARK: Private
 private extension PaygateViewController {
-    func dismiss(with result: PaygateViewControllerResult) {
+    func dismiss() {
         dismiss(animated: true) { [weak self] in
-            guard let self = self else {
-                return
-            }
-            
-            self.delegate?.paygateDidClosed(with: result)
+            self?.didClose?()
         }
     }
     

@@ -22,6 +22,8 @@ final class LocationViewModel {
         case proposeCreateCircle
         case sos(Circle)
         case cancelSOS(SOS)
+        case moveToMyCoordinate(Location)
+        case paygate
     }
     
     deinit {
@@ -70,16 +72,17 @@ extension LocationViewModel {
         let didDeleteCircle: Signal<Circle>
         let didSelectAnnotation: Signal<MemberAnnotation>
         let didTapSOS: Signal<Void>
+        let didTouchMap: Signal<Void>
     }
     
     struct Output {
-        let moveToMyCoordinate: Driver<Location>
         let circleActivity: Driver<Bool>
         let circleElements: Driver<[LocationCircleTableElement]>
         let membersAnnotations: Driver<[MemberAnnotation]>
         let route: Driver<Route>
         let disposable: Disposable
         let sos: Driver<Bool>
+        let paidCircle: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -99,7 +102,6 @@ extension LocationViewModel {
         let sos = makeSos(circleTrackInfo: circleTrackInfo)
         
         return Output(
-            moveToMyCoordinate: makeMoveToMyCoordinate(didMoveToMyCoordinate: input.didMoveToMyCoordinate),
             circleActivity: makeCircleActivity(),
             circleElements: circleElements,
             membersAnnotations: makeMembersAnnotations(
@@ -111,10 +113,13 @@ extension LocationViewModel {
                 selectedCircle: selectedCircle,
                 didSelectAnnotation: input.didSelectAnnotation,
                 didTapSOS: input.didTapSOS,
-                sos: sos
+                sos: sos,
+                didMoveToMyCoordinate: input.didMoveToMyCoordinate,
+                didTouchMap: input.didTouchMap
             ),
             disposable: makeDisposable(didDeleteCircle: input.didDeleteCircle),
-            sos: sos
+            sos: sos,
+            paidCircle: makeCheckPaidCircle(circle: selectedCircle)
         )
     }
 }
@@ -130,12 +135,20 @@ private extension LocationViewModel {
         case sos(SOS)
     }
     
-    func makeMoveToMyCoordinate(didMoveToMyCoordinate: Signal<Void>) -> Driver<Location> {
-        didMoveToMyCoordinate
-            .map { GeoLocationManager.shared.location }
-            .startWith(GeoLocationManager.shared.location)
-            .compactMap { $0 }
-            .asDriver(onErrorDriveWith: .never())
+    func makeCheckPaidCircle(circle: Driver<Circle?>) -> Driver<Bool> {
+        circle
+            .map { circle -> Bool in
+                guard let circle else {
+                    return false
+                }
+                
+                let sessionManager = SessionManager()
+                
+                let isOwner = sessionManager.userId == circle.owner.id
+                
+                return isOwner ? !sessionManager.hasActiveSubscriptions() : false
+            }
+            .startWith(false)
     }
     
     func makeSos(circleTrackInfo: Driver<[MemberTrackInfo]?>) -> Driver<Bool> {
@@ -386,7 +399,9 @@ private extension LocationViewModel {
         selectedCircle: Driver<Circle?>,
         didSelectAnnotation: Signal<MemberAnnotation>,
         didTapSOS: Signal<Void>,
-        sos: Driver<Bool>
+        sos: Driver<Bool>,
+        didMoveToMyCoordinate: Signal<Void>,
+        didTouchMap: Signal<Void>
     ) -> Driver<Route> {
         let selectElement = didSelectElement
             .asDriver(onErrorDriveWith: .never())
@@ -445,8 +460,56 @@ private extension LocationViewModel {
                 return .sos(circle)
             }
         
-        return Driver
-            .merge(selectElement, selectAnnotation, sos)
+        let moveToMyCoordinate = didMoveToMyCoordinate
+            .map { GeoLocationManager.shared.location }
+            .startWith(GeoLocationManager.shared.location)
+            .compactMap { $0 }
+            .asDriver(onErrorDriveWith: .never())
+            .map { Route.moveToMyCoordinate($0) }
+        
+        let route = Driver
+            .merge(selectElement, selectAnnotation, sos, moveToMyCoordinate)
+        
+        let result = route
+            .withLatestFrom(selectedCircle) { ($0, $1) }
+            .map { route, circle -> Route in
+                guard let circle, !route.ignorePaygate else {
+                    return route
+                }
+                
+                let sessionManager = SessionManager()
+                
+                let isOwner = sessionManager.userId == circle.owner.id
+                
+                if isOwner {
+                    let needPayment = !sessionManager.hasActiveSubscriptions()
+                    return needPayment ? .paygate : route
+                }
+                
+                return route
+            }
+        
+        let touchMap = didTouchMap
+            .withLatestFrom(selectedCircle)
+            .compactMap { circle -> Route? in
+                guard let circle else {
+                    return nil
+                }
+                
+                let sessionManager = SessionManager()
+                
+                let isOwner = sessionManager.userId == circle.owner.id
+                
+                if isOwner {
+                    let needPayment = !sessionManager.hasActiveSubscriptions()
+                    return needPayment ? .paygate : nil
+                }
+                
+                return nil
+            }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver.merge(result, touchMap)
     }
     
     func makeDisposable(didDeleteCircle: Signal<Circle>) -> Disposable {
@@ -543,5 +606,17 @@ private extension Circle {
             owner: member(owner),
             members: members.map { member($0) }
         )
+    }
+}
+
+// MARK: Additional
+private extension LocationViewModel.Route {
+    var ignorePaygate: Bool {
+        switch self {
+        case .select:
+            return true
+        default:
+            return false
+        }
     }
 }

@@ -10,6 +10,7 @@ import MapKit
 
 final class LocationView: UIView {
     lazy var mapView = makeMapView()
+    lazy var overlapView = makeOverlapView()
     lazy var sosButton = makeSOSButton()
     lazy var myCoordinateButton = makeMyCoordinateButton()
     lazy var circleView = makeCircleView()
@@ -66,6 +67,13 @@ private extension LocationView {
         ])
         
         NSLayoutConstraint.activate([
+            overlapView.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
+            overlapView.trailingAnchor.constraint(equalTo: mapView.trailingAnchor),
+            overlapView.topAnchor.constraint(equalTo: mapView.topAnchor),
+            overlapView.bottomAnchor.constraint(equalTo: mapView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             sosButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             sosButton.centerYAnchor.constraint(equalTo: myCoordinateButton.centerYAnchor)
         ])
@@ -92,6 +100,14 @@ private extension LocationView {
     func makeMapView() -> LocationMapView {
         let view = LocationMapView()
         view.showsUserLocation = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeOverlapView() -> LocationOverlapView {
+        let view = LocationOverlapView()
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
