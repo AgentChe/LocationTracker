@@ -74,6 +74,7 @@
 		DE58423F2B67E1EF0093CD69 /* ChatsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58423E2B67E1EF0093CD69 /* ChatsEvent.swift */; };
 		DE5842412B67E2350093CD69 /* ChatEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842402B67E2350093CD69 /* ChatEvent.swift */; };
 		DE5842432B67E6820093CD69 /* ChatEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842422B67E6820093CD69 /* ChatEventMapper.swift */; };
+		DE664D282BCFE73900956E9F /* RequestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE664D272BCFE73900956E9F /* RequestReview.swift */; };
 		DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */; };
 		DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */; };
 		DE99F1CE2B4ED68000AF96AB /* GetDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */; };
@@ -386,6 +387,7 @@
 		DE58423E2B67E1EF0093CD69 /* ChatsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEvent.swift; sourceTree = "<group>"; };
 		DE5842402B67E2350093CD69 /* ChatEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEvent.swift; sourceTree = "<group>"; };
 		DE5842422B67E6820093CD69 /* ChatEventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEventMapper.swift; sourceTree = "<group>"; };
+		DE664D272BCFE73900956E9F /* RequestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReview.swift; sourceTree = "<group>"; };
 		DE99F1C62B3F06C600AF96AB /* MemberPreloaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPreloaderCell.swift; sourceTree = "<group>"; };
 		DE99F1CA2B4EC6E400AF96AB /* MemberDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDateCell.swift; sourceTree = "<group>"; };
 		DE99F1CD2B4ED68000AF96AB /* GetDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionViewController.swift; sourceTree = "<group>"; };
@@ -1582,6 +1584,7 @@
 			children = (
 				DEB390B22B0B907F00F1AE09 /* ImagePicker.swift */,
 				DEB390B32B0B907F00F1AE09 /* RxActivityIndicator.swift */,
+				DE664D272BCFE73900956E9F /* RequestReview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2528,6 +2531,7 @@
 				DEB391282B0B907F00F1AE09 /* NumberLaunches.swift in Sources */,
 				DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */,
 				DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */,
+				DE664D282BCFE73900956E9F /* RequestReview.swift in Sources */,
 				DE99F20D2B514CA500AF96AB /* ResetPINViewController.swift in Sources */,
 				DE09ECAB2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */,
@@ -2724,7 +2728,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2742,7 +2746,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2765,7 +2769,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2783,7 +2787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -67,7 +67,6 @@ extension OnboardingView: OSlideViewDelegate {
             return
         }
         
-        openPaygateIfNeeded()
         scroll(to: nextStep)
     }
     
@@ -162,14 +161,5 @@ private extension OnboardingView {
             
             self.step = newStep
         })
-    }
-    
-    func openPaygateIfNeeded() {
-        guard step == .photo else {
-            return
-        }
-        
-        let paygateVC = PaygateViewController.make()
-        vc?.present(paygateVC, animated: true)
     }
 }

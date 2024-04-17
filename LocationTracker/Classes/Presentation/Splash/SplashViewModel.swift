@@ -11,7 +11,7 @@ import OtterScaleiOS
 
 final class SplashViewModel {
     enum Step {
-        case onboarding, main
+        case onboarding, main, paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -137,7 +137,16 @@ private extension SplashViewModel {
     func makeStep() -> Single<Step> {
         Single<Step>
             .create { event in
-                let step = OnboardingViewController.wasViewed() ? Step.main : Step.onboarding
+                let step: Step
+                
+                if !OnboardingViewController.wasViewed() {
+                    step = .onboarding
+                } else if !SessionManager().hasActiveSubscriptions() {
+                    step = .paygate
+                } else {
+                    step = .main
+                }
+                
                 event(.success(step))
                 
                 return Disposables.create()

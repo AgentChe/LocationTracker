@@ -56,6 +56,14 @@ private extension OnboardingViewController {
     }
     
     func goToNext() {
-        UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
+        if SessionManager().hasActiveSubscriptions() {
+            UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
+        } else {
+            let vc = PaygateViewController.make()
+            vc.didClose = {
+                UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
+            }
+            present(vc, animated: true)
+        }
     }
 }
