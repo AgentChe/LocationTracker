@@ -2728,15 +2728,16 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location, tracked in a background, will help your circle to find you in case of emergency";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location might be shared only with your circle";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permission for receive photo for profile";
+				INFOPLIST_KEY_CFBundleDisplayName = "Family locator";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take a photo for your profile. It will be seen only by the members of your circle\n";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location, tracked in a background, will be shared only to the members of your circle and will help to find you in case of emergency";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location will be shared only to the members of your circle and will help to find you in case of emergency";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select a photo for your profile. It will be seen only by the members of your circle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -2746,7 +2747,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2769,15 +2770,16 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Take photo for profile";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location, tracked in a background, will help your circle to find you in case of emergency";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location might be shared only with your circle";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permission for receive photo for profile";
+				INFOPLIST_KEY_CFBundleDisplayName = "Family locator";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take a photo for your profile. It will be seen only by the members of your circle\n";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location, tracked in a background, will be shared only to the members of your circle and will help to find you in case of emergency";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location will be shared only to the members of your circle and will help to find you in case of emergency";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select a photo for your profile. It will be seen only by the members of your circle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -2787,7 +2789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
