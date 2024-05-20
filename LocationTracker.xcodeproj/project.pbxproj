@@ -67,6 +67,16 @@
 		DE1D27DA2B2891900022FB9D /* EditCircleRoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */; };
 		DE1D27DC2B2891A30022FB9D /* EditCircleMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */; };
 		DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */; };
+		DE42B0862BFB6E7300FF61B0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B07B2BFB6E7300FF61B0 /* Currency.swift */; };
+		DE42B0872BFB6E7300FF61B0 /* PaygateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B07C2BFB6E7300FF61B0 /* PaygateInteractor.swift */; };
+		DE42B0882BFB6E7300FF61B0 /* PaygateEnableTrialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B07E2BFB6E7300FF61B0 /* PaygateEnableTrialButton.swift */; };
+		DE42B0892BFB6E7300FF61B0 /* PaygateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B07F2BFB6E7300FF61B0 /* PaygateInfoCell.swift */; };
+		DE42B08A2BFB6E7300FF61B0 /* PaygateProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B0802BFB6E7300FF61B0 /* PaygateProductButton.swift */; };
+		DE42B08B2BFB6E7300FF61B0 /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B0822BFB6E7300FF61B0 /* PaygateView.swift */; };
+		DE42B08C2BFB6E7300FF61B0 /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B0832BFB6E7300FF61B0 /* PaygateViewController.swift */; };
+		DE42B08D2BFB6E7300FF61B0 /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B0842BFB6E7300FF61B0 /* PaygateViewModel.swift */; };
+		DE42B08F2BFB7A9B00FF61B0 /* PaygateInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B08E2BFB7A9B00FF61B0 /* PaygateInfoView.swift */; };
+		DE42B0912BFB809900FF61B0 /* PaygateBestOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42B0902BFB809900FF61B0 /* PaygateBestOfferView.swift */; };
 		DE5842352B63C5640093CD69 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842342B63C5640093CD69 /* Chat.swift */; };
 		DE5842372B63C5710093CD69 /* ChatMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842362B63C5710093CD69 /* ChatMember.swift */; };
 		DE5842392B63C5760093CD69 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5842382B63C5760093CD69 /* ChatMessage.swift */; };
@@ -212,26 +222,12 @@
 		DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D32B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift */; };
 		DEB3914D2B0B907F00F1AE09 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D42B0B907F00F1AE09 /* SplashViewModel.swift */; };
 		DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D52B0B907F00F1AE09 /* SplashView.swift */; };
-		DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */; };
-		DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D92B0B907F00F1AE09 /* DefaultPaygate.swift */; };
-		DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DA2B0B907F00F1AE09 /* PaygateOptionInfo.swift */; };
-		DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */; };
-		DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */; };
-		DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */; };
-		DEB391562B0B907F00F1AE09 /* PaygateProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390E02B0B907F00F1AE09 /* PaygateProductButton.swift */; };
-		DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390E12B0B907F00F1AE09 /* PaygateInfoCell.swift */; };
 		DEB391582B0B907F00F1AE09 /* TryAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390E32B0B907F00F1AE09 /* TryAgainView.swift */; };
 		DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390E42B0B907F00F1AE09 /* TryAgainViewController.swift */; };
 		DEB3915C2B0B907F00F1AE09 /* OCombineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390EB2B0B907F00F1AE09 /* OCombineData.swift */; };
 		DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390EC2B0B907F00F1AE09 /* OnboardingViewController.swift */; };
 		DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F12B0B907F00F1AE09 /* OSlideView.swift */; };
 		DEB391632B0B907F00F1AE09 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F42B0B907F00F1AE09 /* OnboardingView.swift */; };
-		DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390F92B0B907F00F1AE09 /* PaygateOptionLineComponent.swift */; };
-		DEB391662B0B907F00F1AE09 /* PaygateOptionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FA2B0B907F00F1AE09 /* PaygateOptionConfig.swift */; };
-		DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FB2B0B907F00F1AE09 /* Paygate.swift */; };
-		DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FE2B0B907F00F1AE09 /* GetPaygateResponse.swift */; };
-		DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390FF2B0B907F00F1AE09 /* GetPaygateRequest.swift */; };
-		DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391002B0B907F00F1AE09 /* PaygateManager.swift */; };
 		DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391022B0B907F00F1AE09 /* ProfileManager.swift */; };
 		DEB3916C2B0B907F00F1AE09 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391042B0B907F00F1AE09 /* Profile.swift */; };
 		DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB391072B0B907F00F1AE09 /* GetProfileRequest.swift */; };
@@ -380,6 +376,16 @@
 		DE1D27D92B2891900022FB9D /* EditCircleRoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleRoleCell.swift; sourceTree = "<group>"; };
 		DE1D27DB2B2891A30022FB9D /* EditCircleMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleMemberCell.swift; sourceTree = "<group>"; };
 		DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCircleAddMemberCell.swift; sourceTree = "<group>"; };
+		DE42B07B2BFB6E7300FF61B0 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		DE42B07C2BFB6E7300FF61B0 /* PaygateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInteractor.swift; sourceTree = "<group>"; };
+		DE42B07E2BFB6E7300FF61B0 /* PaygateEnableTrialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateEnableTrialButton.swift; sourceTree = "<group>"; };
+		DE42B07F2BFB6E7300FF61B0 /* PaygateInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInfoCell.swift; sourceTree = "<group>"; };
+		DE42B0802BFB6E7300FF61B0 /* PaygateProductButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateProductButton.swift; sourceTree = "<group>"; };
+		DE42B0822BFB6E7300FF61B0 /* PaygateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateView.swift; sourceTree = "<group>"; };
+		DE42B0832BFB6E7300FF61B0 /* PaygateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewController.swift; sourceTree = "<group>"; };
+		DE42B0842BFB6E7300FF61B0 /* PaygateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewModel.swift; sourceTree = "<group>"; };
+		DE42B08E2BFB7A9B00FF61B0 /* PaygateInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateInfoView.swift; sourceTree = "<group>"; };
+		DE42B0902BFB809900FF61B0 /* PaygateBestOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateBestOfferView.swift; sourceTree = "<group>"; };
 		DE5842342B63C5640093CD69 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		DE5842362B63C5710093CD69 /* ChatMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMember.swift; sourceTree = "<group>"; };
 		DE5842382B63C5760093CD69 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -532,26 +538,12 @@
 		DEB390D32B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReceiptValidationObserver.swift; sourceTree = "<group>"; };
 		DEB390D42B0B907F00F1AE09 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DEB390D52B0B907F00F1AE09 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewModel.swift; sourceTree = "<group>"; };
-		DEB390D92B0B907F00F1AE09 /* DefaultPaygate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPaygate.swift; sourceTree = "<group>"; };
-		DEB390DA2B0B907F00F1AE09 /* PaygateOptionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionInfo.swift; sourceTree = "<group>"; };
-		DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInteractor.swift; sourceTree = "<group>"; };
-		DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateView.swift; sourceTree = "<group>"; };
-		DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateViewController.swift; sourceTree = "<group>"; };
-		DEB390E02B0B907F00F1AE09 /* PaygateProductButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateProductButton.swift; sourceTree = "<group>"; };
-		DEB390E12B0B907F00F1AE09 /* PaygateInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateInfoCell.swift; sourceTree = "<group>"; };
 		DEB390E32B0B907F00F1AE09 /* TryAgainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryAgainView.swift; sourceTree = "<group>"; };
 		DEB390E42B0B907F00F1AE09 /* TryAgainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
 		DEB390EB2B0B907F00F1AE09 /* OCombineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCombineData.swift; sourceTree = "<group>"; };
 		DEB390EC2B0B907F00F1AE09 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DEB390F12B0B907F00F1AE09 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		DEB390F42B0B907F00F1AE09 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		DEB390F92B0B907F00F1AE09 /* PaygateOptionLineComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionLineComponent.swift; sourceTree = "<group>"; };
-		DEB390FA2B0B907F00F1AE09 /* PaygateOptionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateOptionConfig.swift; sourceTree = "<group>"; };
-		DEB390FB2B0B907F00F1AE09 /* Paygate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paygate.swift; sourceTree = "<group>"; };
-		DEB390FE2B0B907F00F1AE09 /* GetPaygateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPaygateResponse.swift; sourceTree = "<group>"; };
-		DEB390FF2B0B907F00F1AE09 /* GetPaygateRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPaygateRequest.swift; sourceTree = "<group>"; };
-		DEB391002B0B907F00F1AE09 /* PaygateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaygateManager.swift; sourceTree = "<group>"; };
 		DEB391022B0B907F00F1AE09 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		DEB391042B0B907F00F1AE09 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DEB391072B0B907F00F1AE09 /* GetProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
@@ -931,6 +923,39 @@
 				DE1D27DD2B2891B50022FB9D /* EditCircleAddMemberCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE42B07D2BFB6E7300FF61B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE42B07B2BFB6E7300FF61B0 /* Currency.swift */,
+				DE42B07C2BFB6E7300FF61B0 /* PaygateInteractor.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE42B0812BFB6E7300FF61B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE42B07E2BFB6E7300FF61B0 /* PaygateEnableTrialButton.swift */,
+				DE42B07F2BFB6E7300FF61B0 /* PaygateInfoCell.swift */,
+				DE42B0802BFB6E7300FF61B0 /* PaygateProductButton.swift */,
+				DE42B08E2BFB7A9B00FF61B0 /* PaygateInfoView.swift */,
+				DE42B0902BFB809900FF61B0 /* PaygateBestOfferView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE42B0852BFB6E7300FF61B0 /* Paygate */ = {
+			isa = PBXGroup;
+			children = (
+				DE42B07D2BFB6E7300FF61B0 /* Utils */,
+				DE42B0812BFB6E7300FF61B0 /* Views */,
+				DE42B0832BFB6E7300FF61B0 /* PaygateViewController.swift */,
+				DE42B0842BFB6E7300FF61B0 /* PaygateViewModel.swift */,
+				DE42B0822BFB6E7300FF61B0 /* PaygateView.swift */,
+			);
+			path = Paygate;
 			sourceTree = "<group>";
 		};
 		DE5842322B63C4D20093CD69 /* Chats */ = {
@@ -1626,6 +1651,7 @@
 		DEB390CE2B0B907F00F1AE09 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE42B0852BFB6E7300FF61B0 /* Paygate */,
 				DE09EC3C2B6CCD9B006977F3 /* Chats */,
 				DEB343F82B3488E10029F34B /* Profile */,
 				DEB343EE2B3458FE0029F34B /* Location */,
@@ -1633,7 +1659,6 @@
 				DED613292B206BCF00F09899 /* Circle */,
 				DEB390E92B0B907F00F1AE09 /* Onboarding */,
 				DEB390CF2B0B907F00F1AE09 /* Splash */,
-				DEB390D62B0B907F00F1AE09 /* Paygate */,
 				DEB390E22B0B907F00F1AE09 /* TryAgain */,
 			);
 			path = Presentation;
@@ -1657,37 +1682,6 @@
 				DEB390D32B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		DEB390D62B0B907F00F1AE09 /* Paygate */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390D82B0B907F00F1AE09 /* Models */,
-				DEB390DF2B0B907F00F1AE09 /* Views */,
-				DEB390DC2B0B907F00F1AE09 /* PaygateInteractor.swift */,
-				DEB390DE2B0B907F00F1AE09 /* PaygateViewController.swift */,
-				DEB390D72B0B907F00F1AE09 /* PaygateViewModel.swift */,
-				DEB390DD2B0B907F00F1AE09 /* PaygateView.swift */,
-			);
-			path = Paygate;
-			sourceTree = "<group>";
-		};
-		DEB390D82B0B907F00F1AE09 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390D92B0B907F00F1AE09 /* DefaultPaygate.swift */,
-				DEB390DA2B0B907F00F1AE09 /* PaygateOptionInfo.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		DEB390DF2B0B907F00F1AE09 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390E02B0B907F00F1AE09 /* PaygateProductButton.swift */,
-				DEB390E12B0B907F00F1AE09 /* PaygateInfoCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DEB390E22B0B907F00F1AE09 /* TryAgain */ = {
@@ -1743,49 +1737,11 @@
 				DE5842322B63C4D20093CD69 /* Chats */,
 				DE1D279E2B2718640022FB9D /* Track */,
 				DED612FD2B1F27CA00F09899 /* Circle */,
-				DEB390F72B0B907F00F1AE09 /* Paygate */,
 				DEB391012B0B907F00F1AE09 /* Profile */,
 				DEB3910D2B0B907F00F1AE09 /* Purchase */,
 				DEB391172B0B907F00F1AE09 /* Session */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		DEB390F72B0B907F00F1AE09 /* Paygate */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390F82B0B907F00F1AE09 /* Model */,
-				DEB390FC2B0B907F00F1AE09 /* Request */,
-				DEB391002B0B907F00F1AE09 /* PaygateManager.swift */,
-			);
-			path = Paygate;
-			sourceTree = "<group>";
-		};
-		DEB390F82B0B907F00F1AE09 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390F92B0B907F00F1AE09 /* PaygateOptionLineComponent.swift */,
-				DEB390FA2B0B907F00F1AE09 /* PaygateOptionConfig.swift */,
-				DEB390FB2B0B907F00F1AE09 /* Paygate.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DEB390FC2B0B907F00F1AE09 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390FD2B0B907F00F1AE09 /* GetPaygate */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		DEB390FD2B0B907F00F1AE09 /* GetPaygate */ = {
-			isa = PBXGroup;
-			children = (
-				DEB390FE2B0B907F00F1AE09 /* GetPaygateResponse.swift */,
-				DEB390FF2B0B907F00F1AE09 /* GetPaygateRequest.swift */,
-			);
-			path = GetPaygate;
 			sourceTree = "<group>";
 		};
 		DEB391012B0B907F00F1AE09 /* Profile */ = {
@@ -2291,6 +2247,7 @@
 				DE09EC6F2B73C698006977F3 /* Dictionary+Extension.swift in Sources */,
 				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
 				DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */,
+				DE42B08B2BFB6E7300FF61B0 /* PaygateView.swift in Sources */,
 				DEB391752B0B907F00F1AE09 /* ProductPrice.swift in Sources */,
 				DEB391742B0B907F00F1AE09 /* PurchaseValidationObserver.swift in Sources */,
 				DEB343FE2B3489030029F34B /* ProfileView.swift in Sources */,
@@ -2298,7 +2255,7 @@
 				DEB391382B0B907F00F1AE09 /* TapAreaButton.swift in Sources */,
 				DEB3911D2B0B907F00F1AE09 /* UIColor+Extension.swift in Sources */,
 				DEB344532B3C42F90029F34B /* GeocodeRequest.swift in Sources */,
-				DEB391652B0B907F00F1AE09 /* PaygateOptionLineComponent.swift in Sources */,
+				DE42B08C2BFB6E7300FF61B0 /* PaygateViewController.swift in Sources */,
 				DEB343FC2B3488FF0029F34B /* ProfileViewModel.swift in Sources */,
 				DEB344232B39B88F0029F34B /* LocationCircleView.swift in Sources */,
 				DEB343E52B3456D40029F34B /* MainViewController.swift in Sources */,
@@ -2313,7 +2270,6 @@
 				DE99F2512B57BA9700AF96AB /* SOSSignalViewController.swift in Sources */,
 				DEB344392B3B22B20029F34B /* ProfileTableView.swift in Sources */,
 				DEB3912B2B0B907F00F1AE09 /* ObservableRetrySingle.swift in Sources */,
-				DEB391532B0B907F00F1AE09 /* PaygateInteractor.swift in Sources */,
 				DE99F1DA2B4FD14600AF96AB /* SavedPlacesView.swift in Sources */,
 				DED613342B206D1000F09899 /* CirclesTableView.swift in Sources */,
 				DEB391242B0B907F00F1AE09 /* DefaultRequestWrapper.swift in Sources */,
@@ -2338,7 +2294,6 @@
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
 				DEB3445C2B3C50CF0029F34B /* MemberView.swift in Sources */,
 				DEB3916F2B0B907F00F1AE09 /* LoginRequest.swift in Sources */,
-				DEB391672B0B907F00F1AE09 /* Paygate.swift in Sources */,
 				DEB391252B0B907F00F1AE09 /* APIRequestBody.swift in Sources */,
 				DED613242B1F67D200F09899 /* ExcludeMemberRequest.swift in Sources */,
 				DEB344012B359B5A0029F34B /* MeAnnotationView.swift in Sources */,
@@ -2350,11 +2305,10 @@
 				DEB3446E2B3DC4CF0029F34B /* MemberPlaceCell.swift in Sources */,
 				DE5842352B63C5640093CD69 /* Chat.swift in Sources */,
 				DE99F2472B56C15E00AF96AB /* SOSInstructionViewController.swift in Sources */,
-				DEB3916A2B0B907F00F1AE09 /* PaygateManager.swift in Sources */,
 				DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */,
 				DEB3914A2B0B907F00F1AE09 /* SplashViewController.swift in Sources */,
 				DEB344272B39BBFA0029F34B /* LocationCircleTableView.swift in Sources */,
-				DEB391562B0B907F00F1AE09 /* PaygateProductButton.swift in Sources */,
+				DE42B0912BFB809900FF61B0 /* PaygateBestOfferView.swift in Sources */,
 				DEB391312B0B907F00F1AE09 /* Weak.swift in Sources */,
 				DEB3916C2B0B907F00F1AE09 /* Profile.swift in Sources */,
 				DE5842432B67E6820093CD69 /* ChatEventMapper.swift in Sources */,
@@ -2373,7 +2327,6 @@
 				DEB391262B0B907F00F1AE09 /* RestAPITransport.swift in Sources */,
 				DE99F25B2B57CEF700AF96AB /* SOS.swift in Sources */,
 				DEB391362B0B907F00F1AE09 /* NavigationControllerSettings.swift in Sources */,
-				DEB391502B0B907F00F1AE09 /* DefaultPaygate.swift in Sources */,
 				DED613612B230E7A00F09899 /* InviteWorksCell.swift in Sources */,
 				DED6133D2B20712500F09899 /* CirclesTableElement.swift in Sources */,
 				DE09ECB32B763188006977F3 /* ChatDataSource.swift in Sources */,
@@ -2385,6 +2338,7 @@
 				DEB344452B3B2F630029F34B /* ProfileMenuButton.swift in Sources */,
 				DED6125C2B0CF57100F09899 /* OCirclePreloaderView.swift in Sources */,
 				DEB3914E2B0B907F00F1AE09 /* SplashView.swift in Sources */,
+				DE42B0872BFB6E7300FF61B0 /* PaygateInteractor.swift in Sources */,
 				DE99F1F22B5006A100AF96AB /* EditProfileView.swift in Sources */,
 				DE09EC542B6D3D6D006977F3 /* ChatsEmptyView.swift in Sources */,
 				DEB3915D2B0B907F00F1AE09 /* OnboardingViewController.swift in Sources */,
@@ -2414,7 +2368,6 @@
 				DE1D278A2B2498B50022FB9D /* CircleMembersViewController.swift in Sources */,
 				DEB344772B3DD70E0029F34B /* GetPlacesOnDayResponse.swift in Sources */,
 				DE99F2082B51446500AF96AB /* ConfirmPINView.swift in Sources */,
-				DEB391552B0B907F00F1AE09 /* PaygateViewController.swift in Sources */,
 				DE09EC742B73CCFE006977F3 /* ChatViewModel.swift in Sources */,
 				DE1D27A42B2718E50022FB9D /* MemberTrackInfo.swift in Sources */,
 				DED613412B2092F100F09899 /* CreateCircleViewController.swift in Sources */,
@@ -2429,6 +2382,7 @@
 				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
 				DEB343EB2B3457010029F34B /* TabItemButton.swift in Sources */,
 				DEB3911B2B0B907F00F1AE09 /* UIApplication+Extension.swift in Sources */,
+				DE42B0862BFB6E7300FF61B0 /* Currency.swift in Sources */,
 				DEB3911C2B0B907F00F1AE09 /* UIDevice+Extension.swift in Sources */,
 				DEB3916B2B0B907F00F1AE09 /* ProfileManager.swift in Sources */,
 				DEB3913B2B0B907F00F1AE09 /* PaddingLabel.swift in Sources */,
@@ -2439,7 +2393,6 @@
 				DEB391712B0B907F00F1AE09 /* SetRequest.swift in Sources */,
 				DEB344722B3DC6D30029F34B /* Place.swift in Sources */,
 				DE1D27C32B2878B70022FB9D /* InviteView.swift in Sources */,
-				DEB391662B0B907F00F1AE09 /* PaygateOptionConfig.swift in Sources */,
 				DEB391442B0B907F00F1AE09 /* Appearance.swift in Sources */,
 				DEB344602B3C6C200029F34B /* MemberTableView.swift in Sources */,
 				DEB391732B0B907F00F1AE09 /* IAPManager.swift in Sources */,
@@ -2459,11 +2412,11 @@
 				DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
+				DE42B0892BFB6E7300FF61B0 /* PaygateInfoCell.swift in Sources */,
 				DE09EC4B2B6CD814006977F3 /* ChatsTableElement.swift in Sources */,
 				DEB3443E2B3B22F00029F34B /* ProfileTitleCell.swift in Sources */,
 				DE09ECA12B74E8A0006977F3 /* TimeSeparatorModel.swift in Sources */,
 				DE09EC5E2B70E7AE006977F3 /* ChatsMenuViewController.swift in Sources */,
-				DEB3914F2B0B907F00F1AE09 /* PaygateViewModel.swift in Sources */,
 				DE99F1E92B4FF51100AF96AB /* EditPlaceView.swift in Sources */,
 				DEB3917B2B0B907F00F1AE09 /* SessionManager.swift in Sources */,
 				DEB391302B0B907F00F1AE09 /* ContentError.swift in Sources */,
@@ -2472,6 +2425,7 @@
 				DE09EC522B6D2FD4006977F3 /* ChatsViewModel.swift in Sources */,
 				DE1D27D82B2891870022FB9D /* EditCircleNameCell.swift in Sources */,
 				DEB3442C2B39BCA70029F34B /* LocationCircleNameCell.swift in Sources */,
+				DE42B08A2BFB6E7300FF61B0 /* PaygateProductButton.swift in Sources */,
 				DEB391372B0B907F00F1AE09 /* NavigationController.swift in Sources */,
 				DE99F1D02B4ED68C00AF96AB /* GetDirectionView.swift in Sources */,
 				DEB3912F2B0B907F00F1AE09 /* NetworkError.swift in Sources */,
@@ -2490,23 +2444,19 @@
 				DED613182B1F50D900F09899 /* CreateCircleResponse.swift in Sources */,
 				DED613682B2361CA00F09899 /* JoinToCircleViewController.swift in Sources */,
 				DED613532B221DC100F09899 /* RolesTableView.swift in Sources */,
-				DEB391512B0B907F00F1AE09 /* PaygateOptionInfo.swift in Sources */,
 				DEB391592B0B907F00F1AE09 /* TryAgainViewController.swift in Sources */,
 				DE99F1CB2B4EC6E400AF96AB /* MemberDateCell.swift in Sources */,
 				DE99F1D82B4FD14100AF96AB /* SavedPlacesViewModel.swift in Sources */,
 				DE09ECA52B7520CB006977F3 /* ChatHeaderView.swift in Sources */,
 				DED613432B2092F700F09899 /* CreateCircleViewModel.swift in Sources */,
-				DEB391542B0B907F00F1AE09 /* PaygateView.swift in Sources */,
 				DEB391832B0B96CE00F1AE09 /* PushNotificationsModel.swift in Sources */,
 				DE99F1E22B4FD3CD00AF96AB /* SavedPlacesTableCell.swift in Sources */,
 				DEB344622B3C6C270029F34B /* MemberTableElement.swift in Sources */,
 				DED6125F2B0CF95D00F09899 /* UploadPhotoRequest.swift in Sources */,
 				DED613012B1F281C00F09899 /* CircleMediator.swift in Sources */,
-				DEB391692B0B907F00F1AE09 /* GetPaygateRequest.swift in Sources */,
 				DED613642B23176800F09899 /* CreateCircleCombineData.swift in Sources */,
 				DEB3442E2B39BE3A0029F34B /* LocationCircleCreateCell.swift in Sources */,
 				DE1D27DE2B2891B50022FB9D /* EditCircleAddMemberCell.swift in Sources */,
-				DEB391682B0B907F00F1AE09 /* GetPaygateResponse.swift in Sources */,
 				DE1D27CB2B288B4A0022FB9D /* EditCircleViewController.swift in Sources */,
 				DE99F23F2B56B5FF00AF96AB /* SOSViewModel.swift in Sources */,
 				DE09EC602B70E7B3006977F3 /* ChatsMenuView.swift in Sources */,
@@ -2516,6 +2466,7 @@
 				DE99F1EE2B50069800AF96AB /* EditProfileViewController.swift in Sources */,
 				DE99F2442B56BEA600AF96AB /* SOSActiveButton.swift in Sources */,
 				DEB343E72B3456DC0029F34B /* MainCoordinator.swift in Sources */,
+				DE42B08D2BFB6E7300FF61B0 /* PaygateViewModel.swift in Sources */,
 				DEB344502B3B3C900029F34B /* SettingsLinkButton.swift in Sources */,
 				DEB3446C2B3C7E870029F34B /* MemberActionButton.swift in Sources */,
 				DED613072B1F28D700F09899 /* Role.swift in Sources */,
@@ -2533,10 +2484,12 @@
 				DED613122B1F4F1300F09899 /* GetRolesRequest.swift in Sources */,
 				DE664D282BCFE73900956E9F /* RequestReview.swift in Sources */,
 				DE99F20D2B514CA500AF96AB /* ResetPINViewController.swift in Sources */,
+				DE42B08F2BFB7A9B00FF61B0 /* PaygateInfoView.swift in Sources */,
 				DE09ECAB2B75314E006977F3 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				DE1D278E2B2498C40022FB9D /* CircleMembersView.swift in Sources */,
 				DEB391792B0B907F00F1AE09 /* IAPErrorHelper.swift in Sources */,
 				DEB391822B0B96CE00F1AE09 /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				DE42B0882BFB6E7300FF61B0 /* PaygateEnableTrialButton.swift in Sources */,
 				DE1D27CD2B288B500022FB9D /* EditCircleViewModel.swift in Sources */,
 				DE99F22D2B568AD400AF96AB /* SOSButton.swift in Sources */,
 				DEB3915C2B0B907F00F1AE09 /* OCombineData.swift in Sources */,
@@ -2550,7 +2503,6 @@
 				DE5842372B63C5710093CD69 /* ChatMember.swift in Sources */,
 				DE09EC952B74DABE006977F3 /* ChatTextMessageModel.swift in Sources */,
 				DE99F1E72B4FF50D00AF96AB /* EditPlaceViewModel.swift in Sources */,
-				DEB391572B0B907F00F1AE09 /* PaygateInfoCell.swift in Sources */,
 				DEB343F22B34590E0029F34B /* LocationViewModel.swift in Sources */,
 				DED613552B221DC800F09899 /* RolesTableCell.swift in Sources */,
 				DE99F20A2B51457500AF96AB /* ConfirmPINViewModel.swift in Sources */,
@@ -2728,7 +2680,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2747,7 +2699,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2770,7 +2722,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2789,7 +2741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

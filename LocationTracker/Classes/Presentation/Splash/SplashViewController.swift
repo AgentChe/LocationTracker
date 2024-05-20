@@ -78,8 +78,7 @@ private extension SplashViewController {
         case .main:
             UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
         case .paygate:
-            let vc = PaygateViewController.make()
-            vc.didClose = { [weak self] in
+            let vc = PaygateViewController.make { [weak self] in
                 self?.openScreen(at: .main)
             }
             present(vc, animated: true)

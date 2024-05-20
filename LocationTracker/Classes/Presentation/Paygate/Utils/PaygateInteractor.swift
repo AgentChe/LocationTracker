@@ -1,8 +1,8 @@
 //
 //  PaygateInteractor.swift
-//  Manga
+//  CodeChallenge
 //
-//  Created by Андрей Чернышев on 02.09.2022.
+//  Created by Андрей Чернышев on 20.02.2024.
 //
 
 import RxSwift

@@ -59,8 +59,7 @@ private extension OnboardingViewController {
         if SessionManager().hasActiveSubscriptions() {
             UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
         } else {
-            let vc = PaygateViewController.make()
-            vc.didClose = {
+            let vc = PaygateViewController.make {
                 UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = MainViewController.make()
             }
             present(vc, animated: true)

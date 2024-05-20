@@ -29,7 +29,6 @@ final class SettingsViewController: UIViewController {
                 mainView.termsOfUseButton.rx.tap
                     .map { GlobalDefinitions.termsOfServiceUrl }
             )
-            .compactMap { URL(string: $0) }
             .bind(to: Binder(self) { base, url in
                 UIApplication.shared.open(url)
             })

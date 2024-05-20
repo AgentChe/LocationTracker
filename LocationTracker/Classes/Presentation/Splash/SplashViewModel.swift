@@ -23,7 +23,6 @@ final class SplashViewModel {
     
     private lazy var sessionManager = SessionManager()
     private lazy var profileManager = ProfileManager()
-    private lazy var paygateManager = PaygateManager()
     private lazy var circleManager = CircleManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
@@ -101,9 +100,6 @@ private extension SplashViewModel {
     
     func library() -> Observable<Void> {
         func source() -> Single<Void> {
-            let paygate = paygateManager
-                .obtainPaygate(forceUpdate: true)
-                .mapToVoid()
             let profile = profileManager
                 .obtainProfile(forceUpdate: true)
                 .mapToVoid()
@@ -113,7 +109,6 @@ private extension SplashViewModel {
             
             return Single
                 .zip([
-                    paygate,
                     profile,
                     roles
                 ])
