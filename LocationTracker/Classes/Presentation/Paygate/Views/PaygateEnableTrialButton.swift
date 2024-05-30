@@ -50,6 +50,7 @@ private extension PaygateEnableTrialButton {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -83.scale),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
@@ -66,6 +67,7 @@ private extension PaygateEnableTrialButton {
 private extension PaygateEnableTrialButton {
     func makeLabel() -> UILabel {
         let view = UILabel()
+        view.numberOfLines = 2
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

@@ -20,9 +20,7 @@ final class PaygateView: UIView {
     lazy var enableTrialButton = makeEnableTrialButton()
     lazy var buyButton = makeBuyButton()
     lazy var infoView = makeInfoView()
-    lazy var termsOfUseButton = makeActionButton(text: "Paygate.TermsOfUse".localized)
-    lazy var privacyPolicyButton = makeActionButton(text: "Paygate.PrivacyPolicy".localized)
-    lazy var restoreButton = makeActionButton(text: "Paygate.RestorePurchases".localized)
+    lazy var actionsView = makeActionsView()
     lazy var preloader = makePreloader()
     
     private lazy var buyAttrs = TextAttributes()
@@ -59,9 +57,9 @@ private extension PaygateView {
 private extension PaygateView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 247.scale : 158.scale),
+            imageView.widthAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 328.scale : 276.scale),
+            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 216.scale : 158.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.topAnchor.constraint(equalTo: topAnchor)
         ])
         
@@ -81,40 +79,40 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             cell1.leadingAnchor.constraint(equalTo: leadingAnchor),
             cell1.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cell1.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 8.scale : 12.scale)
+            cell1.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 8.scale : 4.scale)
         ])
         
         NSLayoutConstraint.activate([
             cell2.leadingAnchor.constraint(equalTo: leadingAnchor),
             cell2.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cell2.topAnchor.constraint(equalTo: cell1.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 8.scale : 8.scale)
+            cell2.topAnchor.constraint(equalTo: cell1.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 12.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
             cell3.leadingAnchor.constraint(equalTo: leadingAnchor),
             cell3.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cell3.topAnchor.constraint(equalTo: cell2.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 8.scale : 8.scale)
+            cell3.topAnchor.constraint(equalTo: cell2.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 12.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
             enableTrialButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             enableTrialButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            enableTrialButton.topAnchor.constraint(equalTo: cell3.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale),
+            enableTrialButton.topAnchor.constraint(equalTo: cell3.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 12.scale),
             enableTrialButton.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 66.scale : 60.scale)
         ])
         
         NSLayoutConstraint.activate([
             product1Button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            product1Button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            product1Button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.scale),
             product1Button.topAnchor.constraint(equalTo: enableTrialButton.bottomAnchor, constant: 16.scale),
-            product1Button.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 68.scale : 60.scale)
+            product1Button.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 75.scale : 62.scale)
         ])
         
         NSLayoutConstraint.activate([
             product2Button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            product2Button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            product2Button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.scale),
             product2Button.topAnchor.constraint(equalTo: product1Button.bottomAnchor, constant: 16.scale),
-            product2Button.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 68.scale : 60.scale)
+            product2Button.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 75.scale : 62.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -125,28 +123,28 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             buyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            buyButton.topAnchor.constraint(equalTo: product2Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 14.scale : 16.scale),
-            buyButton.heightAnchor.constraint(equalToConstant: 53.scale)
+            buyButton.topAnchor.constraint(equalTo: product2Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 12.scale),
+            buyButton.heightAnchor.constraint(equalToConstant: 56.scale)
         ])
         
         NSLayoutConstraint.activate([
             infoView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            infoView.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 15.scale)
+            infoView.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 12.scale : 8.scale)
         ])
         
+        let actionsViewHeight: CGFloat = {
+            switch Language() {
+            case .ru, .de, .pt, .ptBr, .fr:
+                return 50.scale
+            default:
+                return 17.scale
+            }
+        }()
         NSLayoutConstraint.activate([
-            termsOfUseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 38.5.scale),
-            termsOfUseButton.centerYAnchor.constraint(equalTo: privacyPolicyButton.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            privacyPolicyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 131.5.scale),
-            privacyPolicyButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 17.scale : 15.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            restoreButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 228.5.scale),
-            restoreButton.centerYAnchor.constraint(equalTo: privacyPolicyButton.centerYAnchor)
+            actionsView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            actionsView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            actionsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 0 : -16.scale),
+            actionsView.heightAnchor.constraint(equalToConstant: actionsViewHeight)
         ])
         
         NSLayoutConstraint.activate([
@@ -181,11 +179,12 @@ private extension PaygateView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(Appearance.black1)
-            .font(Fonts.RobotoCondensed.medium(size: 32.scale))
-            .lineHeight(44.8.scale)
+            .font(Fonts.RobotoCondensed.medium(size: ScreenSize.isIphoneXFamily ? 30.scale : 22.scale))
+            .lineHeight(ScreenSize.isIphoneXFamily ? 38.4.scale : 33.6.scale)
             .textAlignment(.center)
         
         let view = UILabel()
+        view.numberOfLines = 2
         view.attributedText = "Paygate.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -245,14 +244,9 @@ private extension PaygateView {
         return view
     }
     
-    func makeActionButton(text: String) -> TapAreaButton {
-        let attrs = TextAttributes()
-            .textColor(Appearance.black2)
-            .font(Fonts.RobotoCondensed.regular(size: 14.scale))
-        
-        let view = TapAreaButton()
+    func makeActionsView() -> PaygateActionsView {
+        let view = PaygateActionsView()
         view.backgroundColor = UIColor.clear
-        view.setAttributedTitle(text.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

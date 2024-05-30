@@ -58,8 +58,8 @@ private extension PaygateProductButton {
         case true:
             let nameAttrs = TextAttributes()
                 .textColor(Appearance.black1)
-                .font(Fonts.RobotoCondensed.regular(size: 16.scale))
-                .lineHeight(22.4.scale)
+                .font(Fonts.RobotoCondensed.regular(size: ScreenSize.isIphoneXFamily ? 16.scale : 15.scale))
+                .lineHeight(ScreenSize.isIphoneXFamily ? 22.4.scale : 21.scale)
             let name = "Paygate.Yearly".localized + "\n"
             result.append(name.attributed(with: nameAttrs))
             
@@ -73,8 +73,8 @@ private extension PaygateProductButton {
         case false:
             let attrs = TextAttributes()
                 .textColor(Appearance.black1)
-                .font(Fonts.RobotoCondensed.medium(size: 16.scale))
-                .lineHeight(22.4.scale)
+                .font(Fonts.RobotoCondensed.medium(size: ScreenSize.isIphoneXFamily ? 16.scale : 15.scale))
+                .lineHeight(ScreenSize.isIphoneXFamily ? 22.4.scale : 21.scale)
             result.append("Paygate.FreeTrialDays".localized.uppercased().attributed(with: attrs))
         }
         
@@ -101,8 +101,8 @@ private extension PaygateProductButton {
             
             let periodAttrs = TextAttributes()
                 .textColor(Appearance.black1)
-                .font(Fonts.RobotoCondensed.regular(size: 16.scale))
-                .lineHeight(22.4.scale)
+                .font(Fonts.RobotoCondensed.regular(size: ScreenSize.isIphoneXFamily ? 16.scale : 15.scale))
+                .lineHeight(ScreenSize.isIphoneXFamily ? 22.4.scale : 21.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
         case false:
             let priceAttrs = TextAttributes()
@@ -114,8 +114,8 @@ private extension PaygateProductButton {
             
             let periodAttrs = TextAttributes()
                 .textColor(Appearance.black1)
-                .font(Fonts.RobotoCondensed.regular(size: 16.scale))
-                .lineHeight(22.4.scale)
+                .font(Fonts.RobotoCondensed.regular(size: ScreenSize.isIphoneXFamily ? 16.scale : 15.scale))
+                .lineHeight(ScreenSize.isIphoneXFamily ? 22.4.scale : 21.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
         }
         
@@ -139,19 +139,20 @@ private extension PaygateProductButton {
 private extension PaygateProductButton {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            leftLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.scale),
+            leftLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            leftLabel.widthAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 178.scale : 162.scale),
             leftLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            rigthLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 33.scale),
+            rigthLabel.leadingAnchor.constraint(equalTo: leftLabel.trailingAnchor, constant: 16.scale),
             rigthLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
             markerView.widthAnchor.constraint(equalToConstant: 24.scale),
             markerView.heightAnchor.constraint(equalToConstant: 24.scale),
-            markerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25.scale),
+            markerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             markerView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }

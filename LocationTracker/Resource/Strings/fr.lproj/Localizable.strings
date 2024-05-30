@@ -1,0 +1,246 @@
+/*
+  Localizable.strings
+  Soccer
+
+  Created by Андрей Чернышев on 01.02.2023.
+  
+*/
+
+// MARK: General
+"Cancel" = "Annuler";
+"Continue" = "Continuer";
+"Next" = "Suivant";
+"OK" = "OK";
+"Yes" = "Oui";
+"No" = "Non";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Prendre une photo";
+"ImagePicker.CameraRoll" = "Pellicule";
+"ImagePicker.PhotoLibrary" = "Galerie photos";
+
+// MARK: TryAgain
+"TryAgain.Title" = "L'application n'a pas pu exécuter la requête";
+"TryAgain.SubTitle" = "Si tu rencontres un problème de connexion, réessaie. Si la connexion est bonne et que l'erreur persiste, contacte le support.";
+"TryAgain.Button" = "Réessayer";
+"TryAgain.Contact" = "Contacter le support";
+
+// MARK: Splash
+"Splash.Preloader1" = "Vérification de ton compte......";
+"Splash.Preloader2" = "Synchronisation de la bibliothèque";
+"Splash.Preloader3" = "Configuration de ton compte......";
+
+// MARK: Paygate
+"Paygate.Error.Title" = "Erreur";
+"Paygate.Error.Text" = "Une erreur s'est produite lors de l'exécution. Réessaie plus tard.";
+"Paygate.Error.Button" = "OK";
+"Paygate.Title" = "Passer à la version Premium";
+"Paygate.Info1" = "Reste en contact avec tes proches.";
+"Paygate.Info2" = "Crée des Cercles ou rejoins-les";
+"Paygate.Info3" = "Reste vigilant en cas d'urgence";
+"Paygate.EnableFreeTrial" = "Activer l'essai gratuit";
+"Paygate.FreeTrialEnabled" = "Essai gratuit activé";
+"Paygate.Yearly" = "Annuel";
+"Paygate.Yearly.Bottom" = "Juste %@/an";
+"Paygate.PerWeek" = "par semaine";
+"Paygate.FreeTrialDays" = "7 jours d'essai gratuit";
+"Paygate.Then" = "puis %@\n";
+"Paygate.Continue" = "Continuer";
+"Paygate.TryFreeSubscribe" = "Essai gratuit & abonnement";
+"Paygate.CancelAnytime" = "Annuler à tout moment";
+"Paygate.NoPaymentNow" = "Aucun paiement maintenant";
+"Paygate.TermsOfUse" = "Conditions d'utilisation";
+"Paygate.PrivacyPolicy" = "Politique de confidentialité";
+"Paygate.RestorePurchases" = "Restaurer les achats";
+"Paygate.BestOffer" = "⭐ Meilleure offre";
+
+// MARK: Onboarding
+"Onboarding.Welcome.Text" = "Reste connecté et \nveille à la sécurité \nde tes proches";
+"Onboarding.Welcome.Button" = "Commencer";
+"Onboarding.Name.Title" = "Bienvenue dans l'application";
+"Onboarding.Name.SubTitle" = "Ouvrons-nous l'un à l'autre! Comment tes proches te nomment-ils ?";
+"Onboarding.Name.Placeholder" = "Nom";
+"Onboarding.Photo.Title" = "Ajouter une photo";
+"Onboarding.Photo.Skip" = "Skip";
+"Onboarding.Circle.Skip" = "Skip";
+"Onboarding.Circle.Title" = "Ravis de te compter parmi nous,\n";
+"Onboarding.Circle.SubTitle" = "Tu peux désormais rejoindre ou créer ton Cercle";
+"Onboarding.Circle.CreateCircle" = "Créer un Cercle";
+"Onboarding.Circle.JoinToCircle" = "Rejoindre un cercle";
+"Onboarding.Intro1.Title" = "Se sentir plus en sécurité face à des situations à risque potentiel";
+"Onboarding.Intro1.SubTitle" = "Elle procure la sérénité, atténue l'anxiété et la peur, sachant que tes proches ne sont qu'à une touche de toi.";
+"Onboarding.Intro2.Title" = "Seules les personnes en qui tu as confiance reçoivent ton signal SOS.";
+"Onboarding.Intro2.SubTitle" = "Le partage de ta localisation permet à ton Cercle de te localiser précisément afin que les premiers intervenants puissent te trouver plus facilement.";
+"Onboarding.Intro2.ContinueButton" = "Comment lancer SOS";
+"Onboarding.SOSInstruction.Title" = "Bouton SOS";
+"Onboarding.SOSInstruction.SubTitle" = "Que ce soit pour obtenir une réponse rapide ou pour avoir l'esprit tranquille, cette fonction peut te sauver, ainsi que tes proches, en cas d'urgence. Elle te permet de te sentir en sécurité en temps de crise.";
+"Onboarding.SOSInstruction.Block1" = "En cas d'urgence, maintiens la touche SOS de l'application enfoncée.";
+"Onboarding.SOSInstruction.Block2" = "Dès que tu relâches le bouton, les membres de ton cercle sont automatiquement informés.";
+"Onboarding.SOSInstruction.Block3" = "Si tu as déclenché SOS par erreur ou si tu n'as plus besoin d'aide, tu peux l'annuler en saisissant le code PIN.";
+"Onboarding.SOSInstruction.ContinueButton" = "Tout accepter";
+"Onboarding.PIN.Title" = "Définir le code PIN";
+"Onboarding.PIN.SubTitle" = "Saisis ton code PIN à 4 chiffres pour annuler ton SOS";
+"Onboarding.PIN.ContinueButton" = "Confirmer";
+"Onboarding.Permissions.Title" = "Enfin, active les autorisations pour qu'elles fonctionnent.";
+"Onboarding.Permissions.Location.Title" = "Localisation";
+"Onboarding.Permissions.Location.SubTitle" = "Fais savoir aux membres de ton cercle où tu te trouves.";
+"Onboarding.Permissions.Push.Title" = "Notifications push";
+"Onboarding.Permissions.Push.SubTitle" = "Suis les notifications, les mises à jour et les chats des membres de ton cercle.";
+"Onboarding.EnablePermission.Title" = "Es-tu sûr?";
+"Onboarding.EnablePermission.SubTitle" = "L'application ne fonctionnera pas sans ces autorisations";
+"Onboarding.EnablePermission.EnableButton" = "Activer l'autorisation";
+"Onboarding.EnablePermission.SkipButton" = "Skip";
+"Onboarding.Preloader.Action1" = "Gestion des préférences...";
+"Onboarding.Preloader.Action2" = "Création du code PIN du bouton SOS...";
+"Onboarding.Preloader.Action3" = "Configurer la disposition de l'application...";
+
+// MARK: Circles
+"Circles.Title" = "Cercles";
+"Circles.Create" = "Créer un cercle";
+"Circles.Join" = "Rejoindre un cercle";
+"Circles.MembersCount" = "%i membres";
+
+// MARK: CreateCircle
+"CreateCircle.Title" = "Créer un cercle";
+"CreateCircle.NamePlaceholder" = "Nom du cercle";
+"CreateCircle.Description" = "Tu as la possibilité de créer des cercles supplémentaires pour les différents membres de ton entourage.";
+"CreateCircle.Button" = "Sauvegarder";
+
+// MARK: SelectRole
+"SelectRole.Title" = "Choisis le lien";
+
+// MARK: CreateCircleCode
+"CreateCircleCode.Done" = "Terminé";
+"CreateCircleCode.Title" = "Code d'invitation créé";
+"CreateCircleCode.SubTitle" = "Ce code sera actif durant 2 jours";
+"CreateCircleCode.InviteButton" = "Partager le code d'invitation";
+"CreateCircleCode.Works.Title" = "Comment ça marche?";
+"CreateCircleCode.Works.Cell1" = "Partage ton code d'invitation comme tu le souhaites : envoie-le par e-mail, écris-le ou dis-le.";
+"CreateCircleCode.Works.Cell2" = "Le membre doit télécharger l'application et saisir le code d'invitation pour rejoindre ton Cercle.";
+
+// MARK: JoinToCircle
+"JoinToCircle.Title" = "Rejoindre un cercle";
+"JoinToCircle.Description" = "Demande le code au créateur du Cercle";
+"JoinToCircle.SubmitButton" = "Soumettre";
+
+// MARK: CircleMembers
+"CircleMembers.Title" = "Rejoindre ceci %@";
+"CircleMembers.SubTitle" = "Il y a %i membres qui vous attendent";
+
+// MARK: DetailsCircle
+"DetailsCircle.Members" = "Membres";
+"DetailsCircle.Me" = "Moi";
+"DetailsCircle.Edit" = "Modifier";
+"DetailsCircle.Delete" = "Supprimer un Cercle";
+"DetailsCircle.AddMember" = "Ajouter un nouveau membre";
+"DetailsCircle.ConfirmDelete.Title" = "Supprimer ce membre";
+"DetailsCircle.ConfirmDelete.SubTitle" = "Es-tu sûr? Ce membre devra s'inscrire à nouveau";
+"DetailsCircle.ConfirmDelete.DeleteButton" = "Supprimer";
+
+// MARK: EditCircle
+"EditCircle.Title" = "Modifier";
+"EditCircle.MyRole" = "Mon rôle";
+"EditCircle.Change" = "Modifier";
+"EditCircle.Members" = "Membres";
+"EditCircle.AddMember" = "Ajouter un nouveau membre";
+"EditCircle.SaveButton" = "Sauvegarder";
+"EditCircle.Saved.Message" = "Les données ont été modifiées avec succès";
+
+// MARK: Tab
+"Tab.Location" = "Localisation";
+"Tab.Chats" = "Chats";
+"Tab.Profile" = "Profil";
+
+// MARK: Location
+"Location.SOS" = "SOS";
+"Location.Me" = "Moi";
+"Location.M" = "M";
+"Location.CreateCircle" = "Créer un nouveau Cercle";
+
+// MARK: Profile
+"Profile.Title" = "Profil";
+"Profile.Edit" = "Modifier";
+"Profile.SavedPlaces" = "Lieux sauvegardés";
+"Profile.PIN" = "SOS PIN";
+"Profile.Settings" = "Paramètres";
+
+// MARK: Settings
+"Settings.Title" = "Paramètres";
+"Settings.ContactUs" = "Nous contacter";
+"Settings.PrivacyPolicy" = "Politique de confidentialité";
+"Settings.TermsOfUse" = "Conditions d'utilisation";
+
+// MARK: Member
+"Member.CurrentPosition" = "Position actuelle";
+"Member.Chat" = "Chat";
+"Member.GetDirection" = "Obtenir une orientation";
+"Member.History" = "Historique";
+"Member.AddPlace" = "Ajouter aux lieux";
+
+"GetDirection.GoogleMaps" = "Google Maps";
+"GetDirection.AppleMaps" = "Cartes";
+
+// MARK: SavedPlaces
+"SavedPlaces.Title" = "Lieux sauvegardés";
+"SavedPlaces.Empty.Title" = "Il semble qu'il n'y ait rien ici";
+"SavedPlaces.Empty.Text" = "Voici les lieux que tu as sauvegardés";
+
+// MARK: EditPlace
+"EditPlace.Title" = "Editer le lieu";
+"EditPlace.Address" = "Adresse";
+"EditPlace.Delete" = "Supprimer";
+"EditPlace.Confirm.Title" = "Supprimer ce lieu";
+"EditPlace.Confirm.Text" = "Es-tu sûr?Tu dois ajouter à nouveau ce lieu";
+
+// MARK: EditProfile
+"EditProfile.Title" = "Modifier";
+"EditProfile.Save" = "Sauvegarder";
+"EditProfile.Name.Placeholder" = "Nom";
+
+// MARK: ConfirmPIN
+"ConfirmPIN.Title" = "Ton code PIN SOS actuel";
+
+// MARK: ResetPIN
+"ResetPIN.Title" = "Réinitialiser";
+"ResetPIN.Placeholder" = "Configurer le code PIN";
+"ResetPIN.Text" = "Saisis ton code PIN à 4 chiffres pour annuler ton SOS.";
+"ResetPIN.Button" = "Confirmer";
+
+// MARK: SOSAddMember
+"SOSAddMember.Title" = "Ajouter des membres";
+"SOSAddMember.SubTitle" = "La fonction de signal SOS nécessite l'ajout de membres au Cercle.";
+"SOSAddMember.AddButton" = "Ajouter un nouveau membre";
+
+// MARK: SOSCreateCircle
+"SOSCreateCircle.Title" = "Pas de Cercles";
+"SOSCreateCircle.SubTitle" = "La fonction de signal SOS nécessite l'adhésion à un Cercle ou la création d'un Cercle.";
+"SOSCreateCircle.CreateButton" = "Créer un cercle";
+"SOSCreateCircle.JoinButton" = "Rejoindre un cercle";
+
+// MARK: SOS
+"SOS.Title" = "SOS";
+"SOS.CircleMembers" = "Ton SOS sera envoyé aux membres du %@";
+"SOS.Action.PressAndHold" = "Appuie sur le bouton du bas et maintiens-le enfoncé.";
+"SOS.Action.Release" = "Relâche pour envoyer un SOS.";
+"SOS.PIN.Title" = "Ton code PIN\n\n";
+
+// MARK: SOSSignal
+"SOSSignal.EnterPIN" = "Saisis ton code PIN pour annuler le SOS";
+"SOSSignal.SignalSended" = "Ton SOS et ta localisation ont été envoyés à ton Cercle";
+"SOSSignal.Placeholder" = "Ton SOS et ta localisation seront transmis en 10 secondes à ton Cercle et aux personnes qui doivent être contactées en cas d'urgence.";
+
+// MARK: SOSConfirmCancel
+"SOSConfirmCancel.Title" = "Annuler SOS";
+"SOSConfirmCancel.Text" = "Es-tu sûr ? Il faut envoyer à nouveau un SOS en cas d'annulation.";
+"SOSConfirmCancel.WaitButton" = "En attente d'aide";
+"SOSConfirmCancel.CancelButton" = "Annuler le SOS";
+
+// MARK: Chats
+"Chats.Title" = "Chats";
+"Chats.PeerClosed" = "Connexion perdue";
+"Chats.Empty.Title" = "Cet espace semble vide";
+"Chats.Empty.SubTitle" = "Tu trouveras ici les chats que tu as lancés avec les membres de tes Cercles.";
+"Chats.Menu.Delete" = "Supprimer";
+
+// MARK: Chat
+"Chat.Input.Placeholder" = "Tape ton message...";

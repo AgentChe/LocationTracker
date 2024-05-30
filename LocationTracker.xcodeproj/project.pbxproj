@@ -311,6 +311,8 @@
 		DED6136A2B2361D500F09899 /* JoinToCircleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */; };
 		DED6136C2B2361DA00F09899 /* JoinToCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */; };
 		DED6136F2B2368B200F09899 /* CodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6136E2B2368B200F09899 /* CodeField.swift */; };
+		DEDC73202C08AA2A00769135 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC731F2C08AA2A00769135 /* Language.swift */; };
+		DEDC73222C08B02B00769135 /* PaygateActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73212C08B02B00769135 /* PaygateActionsView.swift */; };
 		DEF6B6D42B29DF6D00F7C04D /* OCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF6B6D32B29DF6D00F7C04D /* OCircleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -623,6 +625,16 @@
 		DED613692B2361D500F09899 /* JoinToCircleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleViewModel.swift; sourceTree = "<group>"; };
 		DED6136B2B2361DA00F09899 /* JoinToCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinToCircleView.swift; sourceTree = "<group>"; };
 		DED6136E2B2368B200F09899 /* CodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeField.swift; sourceTree = "<group>"; };
+		DEDC73172C088FDE00769135 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		DEDC73182C088FDE00769135 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DEDC73192C08900D00769135 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DEDC731A2C08900D00769135 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEDC731B2C08902C00769135 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DEDC731C2C08902C00769135 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEDC731D2C08904800769135 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DEDC731E2C08904800769135 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEDC731F2C08AA2A00769135 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		DEDC73212C08B02B00769135 /* PaygateActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateActionsView.swift; sourceTree = "<group>"; };
 		DEF6B6D32B29DF6D00F7C04D /* OCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCircleView.swift; sourceTree = "<group>"; };
 		DF26A50152EFC5FED401B207 /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -942,6 +954,7 @@
 				DE42B0802BFB6E7300FF61B0 /* PaygateProductButton.swift */,
 				DE42B08E2BFB7A9B00FF61B0 /* PaygateInfoView.swift */,
 				DE42B0902BFB809900FF61B0 /* PaygateBestOfferView.swift */,
+				DEDC73212C08B02B00769135 /* PaygateActionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1590,6 +1603,7 @@
 				DEB390AA2B0B907F00F1AE09 /* Fonts.swift */,
 				DEB390AF2B0B907F00F1AE09 /* Weak.swift */,
 				DEB344302B39E5A00029F34B /* ColorGenerate.swift */,
+				DEDC731F2C08AA2A00769135 /* Language.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2160,6 +2174,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				de,
+				ru,
+				fr,
 			);
 			mainGroup = DEB390642B0B8C2900F1AE09;
 			productRefGroup = DEB3906E2B0B8C2900F1AE09 /* Products */;
@@ -2377,6 +2395,7 @@
 				DEB3914C2B0B907F00F1AE09 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEB344752B3DD7080029F34B /* GetPlacesOnDayRequest.swift in Sources */,
 				DE99F1C72B3F06C600AF96AB /* MemberPreloaderCell.swift in Sources */,
+				DEDC73222C08B02B00769135 /* PaygateActionsView.swift in Sources */,
 				DED612582B0CE10600F09899 /* EnablePermissionView.swift in Sources */,
 				DEB344652B3C6C940029F34B /* MemberInfoCell.swift in Sources */,
 				DED6131A2B1F54AD00F09899 /* JoinToCircleRequest.swift in Sources */,
@@ -2410,6 +2429,7 @@
 				DE0D27842B8CC212007F1560 /* Image.swift in Sources */,
 				DE99F1D62B4FD13A00AF96AB /* SavedPlacesViewController.swift in Sources */,
 				DE99F20F2B514CAA00AF96AB /* ResetPINViewModel.swift in Sources */,
+				DEDC73202C08AA2A00769135 /* Language.swift in Sources */,
 				DEB3916D2B0B907F00F1AE09 /* GetProfileRequest.swift in Sources */,
 				DE1D279B2B2716B80022FB9D /* DetailsCircleViewModel.swift in Sources */,
 				DE42B0892BFB6E7300FF61B0 /* PaygateInfoCell.swift in Sources */,
@@ -2542,6 +2562,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				DEB3907C2B0B8C2B00F1AE09 /* Base */,
+				DEDC73172C088FDE00769135 /* pt-BR */,
+				DEDC73192C08900D00769135 /* de */,
+				DEDC731B2C08902C00769135 /* ru */,
+				DEDC731D2C08904800769135 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2550,6 +2574,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				DEB3908A2B0B8F2E00F1AE09 /* en */,
+				DEDC73182C088FDE00769135 /* pt-BR */,
+				DEDC731A2C08900D00769135 /* de */,
+				DEDC731C2C08902C00769135 /* ru */,
+				DEDC731E2C08904800769135 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2561,6 +2589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2621,6 +2650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2680,7 +2710,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2699,7 +2729,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2722,7 +2752,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2741,7 +2771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

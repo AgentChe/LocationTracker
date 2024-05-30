@@ -83,9 +83,9 @@ final class PaygateViewController: UIViewController {
         let output = viewModel.configure(input: PaygateViewModel.Input(
             didTapClose: mainView.closeButton.rx.tap.asSignal(),
             didTapBuy: didBuy,
-            didTapRestore: mainView.restoreButton.rx.tap.asSignal(),
-            didTapTermsOfUse: mainView.termsOfUseButton.rx.tap.asSignal(),
-            didTapPrivacyPolicy: mainView.privacyPolicyButton.rx.tap.asSignal()
+            didTapRestore: mainView.actionsView.restoreButton.rx.tap.asSignal(),
+            didTapTermsOfUse: mainView.actionsView.termsOfUseButton.rx.tap.asSignal(),
+            didTapPrivacyPolicy: mainView.actionsView.privacyPolicyButton.rx.tap.asSignal()
         ))
         
         output.activity
@@ -128,10 +128,9 @@ private extension PaygateViewController {
             mainView.product2Button,
             mainView.enableTrialButton,
             mainView.buyButton,
-            mainView.restoreButton,
-            mainView.termsOfUseButton,
-            mainView.privacyPolicyButton,
-            mainView.closeButton
+            mainView.actionsView,
+            mainView.closeButton,
+            mainView.bestOfferView
         ].forEach { $0.isHidden = activity }
     }
     
