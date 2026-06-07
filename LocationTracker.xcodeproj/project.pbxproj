@@ -213,8 +213,6 @@
 		DEB3913F2B0B907F00F1AE09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C02B0B907F00F1AE09 /* AppDelegate.swift */; };
 		DEB391432B0B907F00F1AE09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C62B0B907F00F1AE09 /* SceneDelegate.swift */; };
 		DEB391442B0B907F00F1AE09 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390C72B0B907F00F1AE09 /* Appearance.swift */; };
-		DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390CA2B0B907F00F1AE09 /* BranchManager.swift */; };
-		DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390CB2B0B907F00F1AE09 /* AmplitudeManager.swift */; };
 		DEB391482B0B907F00F1AE09 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390CC2B0B907F00F1AE09 /* FirebaseManager.swift */; };
 		DEB391492B0B907F00F1AE09 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390CD2B0B907F00F1AE09 /* FacebookManager.swift */; };
 		DEB3914A2B0B907F00F1AE09 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB390D02B0B907F00F1AE09 /* SplashViewController.swift */; };
@@ -531,8 +529,6 @@
 		DEB390C02B0B907F00F1AE09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB390C62B0B907F00F1AE09 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEB390C72B0B907F00F1AE09 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		DEB390CA2B0B907F00F1AE09 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
-		DEB390CB2B0B907F00F1AE09 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DEB390CC2B0B907F00F1AE09 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DEB390CD2B0B907F00F1AE09 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DEB390D02B0B907F00F1AE09 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -1654,8 +1650,6 @@
 		DEB390C82B0B907F00F1AE09 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DEB390CA2B0B907F00F1AE09 /* BranchManager.swift */,
-				DEB390CB2B0B907F00F1AE09 /* AmplitudeManager.swift */,
 				DEB390CC2B0B907F00F1AE09 /* FirebaseManager.swift */,
 				DEB390CD2B0B907F00F1AE09 /* FacebookManager.swift */,
 			);
@@ -2217,9 +2211,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LocationTracker/Pods-LocationTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LocationTracker/Pods-LocationTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2264,7 +2262,6 @@
 				DEB391602B0B907F00F1AE09 /* OSlideView.swift in Sources */,
 				DE09EC6F2B73C698006977F3 /* Dictionary+Extension.swift in Sources */,
 				DED6131E2B1F665F00F09899 /* GetCirclesRequest.swift in Sources */,
-				DEB391472B0B907F00F1AE09 /* AmplitudeManager.swift in Sources */,
 				DE42B08B2BFB6E7300FF61B0 /* PaygateView.swift in Sources */,
 				DEB391752B0B907F00F1AE09 /* ProductPrice.swift in Sources */,
 				DEB391742B0B907F00F1AE09 /* PurchaseValidationObserver.swift in Sources */,
@@ -2307,7 +2304,6 @@
 				DE99F2112B514CAF00AF96AB /* ResetPINView.swift in Sources */,
 				DE1D27D32B28915B0022FB9D /* EditCircleTableView.swift in Sources */,
 				DEB5DD512BB5B2D800F21BB0 /* LocationOverlapView.swift in Sources */,
-				DEB391462B0B907F00F1AE09 /* BranchManager.swift in Sources */,
 				DE99F1E52B4FF50700AF96AB /* EditPlaceViewController.swift in Sources */,
 				DEB391982B0BC5A700F1AE09 /* SOSInstructionBlockView.swift in Sources */,
 				DEB3445C2B3C50CF0029F34B /* MemberView.swift in Sources */,
@@ -2710,7 +2706,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2729,7 +2725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2752,7 +2748,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2771,7 +2767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

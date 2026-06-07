@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (5.8.1)
-  - Amplitude-iOS (4.10.0)
-  - Branch (1.45.2)
   - Chatto (4.1.0)
   - ChattoAdditions (4.1.0):
     - Chatto (= 4.1.0)
@@ -127,8 +125,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Amplitude-iOS
-  - Branch
   - Chatto
   - ChattoAdditions
   - FBSDKCoreKit
@@ -146,8 +142,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Amplitude-iOS
-    - Branch
     - Chatto
     - ChattoAdditions
     - FBAEMKit
@@ -186,8 +180,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
-  Amplitude-iOS: 7d8cdc3408ba35c2e68368fc7c692cd104606b94
-  Branch: c1a7fa1811ef9203c01bc6c2588a229eb3ee1a84
   Chatto: dae34c377e0eca8bdcfe7a05a4d79d55eaccec3e
   ChattoAdditions: 101f0ee674f16ecdf4177939b7ce9271ea732999
   FBAEMKit: 6c7b5eb77c96861bb59e040842c6e55bf39512ce
@@ -216,6 +208,6 @@ SPEC CHECKSUMS:
   Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 5f676ee2a90390c8349789eacd20a61bfd753e7a
+PODFILE CHECKSUM: 9512cb3359badbfb6cb5a3901f8f2618906f04fa
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

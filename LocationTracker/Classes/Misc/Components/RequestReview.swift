@@ -9,9 +9,6 @@ import StoreKit
 
 final class RequestReview {
     static func request() {
-        AmplitudeManager.shared
-            .logEvent(name: "Rating Request")
-        
         DispatchQueue.main.async {
             SKStoreReviewController.requestReview()
         }
