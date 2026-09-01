@@ -25,6 +25,8 @@ target 'LocationTracker' do
   pod 'FBSDKCoreKit'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
+
+  pod 'PostHog'
 end
 
 post_install do |installer|

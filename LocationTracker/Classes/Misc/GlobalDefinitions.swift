@@ -13,6 +13,9 @@ final class GlobalDefinitions {
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "5wOwkcKEe6q4mDQQ"
+
+    static let postHogHost = "https://posthog.korrekted.com"
+    static let postHogApiKey = "phc_a29Kj3MGr3nLv9NN4WLZiRyHF5mluQZaPbVgcCbIqPa"
     
     static let chatHost = "wss://chat.thinkaboutapps.com:8802"
     static let chatAppKey = "0b783352-1929-4e52-9bcf-d91cd217b2c2"

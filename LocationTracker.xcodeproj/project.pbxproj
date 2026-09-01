@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3360559591A51D900A339F39 /* PostHogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB3B5D5C1777714C771E3B /* PostHogManager.swift */; };
 		80450355F38A33FCDF88D36C /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B606C07486BFACE419646B /* Pods_LocationTracker.framework */; };
 		DE09EC392B6BA391006977F3 /* ChatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC382B6BA391006977F3 /* ChatPage.swift */; };
 		DE09EC3B2B6BA610006977F3 /* ChatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */; };
@@ -317,6 +318,7 @@
 /* Begin PBXFileReference section */
 		050C27C6E697D649D40E304F /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		60B606C07486BFACE419646B /* Pods_LocationTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6EB3B5D5C1777714C771E3B /* PostHogManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostHogManager.swift; sourceTree = "<group>"; };
 		DE09EC382B6BA391006977F3 /* ChatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPage.swift; sourceTree = "<group>"; };
 		DE09EC3A2B6BA610006977F3 /* ChatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsManager.swift; sourceTree = "<group>"; };
 		DE09EC3E2B6CCDC1006977F3 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
@@ -1652,6 +1654,7 @@
 			children = (
 				DEB390CC2B0B907F00F1AE09 /* FirebaseManager.swift */,
 				DEB390CD2B0B907F00F1AE09 /* FacebookManager.swift */,
+				C6EB3B5D5C1777714C771E3B /* PostHogManager.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -2548,6 +2551,7 @@
 				DEB3911F2B0B907F00F1AE09 /* Collection+Extension.swift in Sources */,
 				DEB391582B0B907F00F1AE09 /* TryAgainView.swift in Sources */,
 				DEB3447A2B3DD8110029F34B /* AddPlaceRequest.swift in Sources */,
+				3360559591A51D900A339F39 /* PostHogManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2706,7 +2710,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2725,7 +2729,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2748,7 +2752,7 @@
 				CODE_SIGN_ENTITLEMENTS = LocationTracker/LocationTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NKRD6VXU3X;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2767,7 +2771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
